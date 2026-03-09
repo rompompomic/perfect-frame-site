@@ -1,4 +1,4 @@
-import { ArrowRight, MapPin, HardHat, Snowflake, Award, Zap, Bulldozer } from "lucide-react";
+import { ArrowRight, MapPin, HardHat, Snowflake, Award, Zap, Truck } from "lucide-react";
 
 interface ServiceCardProps {
   icon: React.ReactNode;
