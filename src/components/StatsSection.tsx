@@ -18,9 +18,9 @@ const StatsSection = () => {
     <section className="max-w-[1200px] mx-auto px-6 pt-40 pb-10">
       <div className="flex flex-col md:flex-row gap-1">
         {stats.map((stat, index) => (
-          <div key={index} className="flex-1 p-5 bg-secondary flex flex-col gap-3">
-            <h3 className="text-primary text-2xl lg:text-3xl font-black uppercase leading-tight">{stat.value}</h3>
-            <p className="text-foreground text-lg lg:text-xl">{stat.description}</p>
+          <div key={index} className="flex-1 p-5 bg-secondary flex flex-col justify-between gap-5">
+            <h3 className="text-primary text-2xl lg:text-3xl font-black uppercase leading-8">{stat.value}</h3>
+            <p className="text-foreground text-lg lg:text-xl leading-7">{stat.description}</p>
           </div>
         ))}
       </div>
