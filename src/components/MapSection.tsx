@@ -1,13 +1,19 @@
 import { Clock } from "lucide-react";
-import mapsImage from "@/assets/maps.webp";
 
 const MapSection = () => {
   return (
-    <section className="max-w-[1200px] mx-auto px-6 py-10">
-      <div className="flex flex-col md:flex-row gap-1">
+    <section className="w-full">
+      <div className="flex flex-col md:flex-row">
         {/* Map */}
-        <div className="flex-1 relative min-h-[280px]">
-          <img src={mapsImage} alt="Map showing location" className="w-full h-full object-cover" />
+        <div className="flex-1 relative min-h-[280px] md:min-h-[400px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2179.7910699420386!2d24.253264094513618!3d56.883825336053185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eed2ec1026a8c3%3A0x9c05bc9230970f6!2sKaudz%C4%AB%C5%A1u%20iela%2059%2C%20Rumbula%2C%20Stopi%C5%86u%20pagasts%2C%20Ropa%C5%BEu%20novads%2C%20LV-2121%2C%20Latvija!5e0!3m2!1slv!2snl!4v1773068371217!5m2!1slv!2snl"
+            className="absolute inset-0 w-full h-full border-0"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="NIKAMI location map"
+          />
         </div>
 
         {/* Info card */}
