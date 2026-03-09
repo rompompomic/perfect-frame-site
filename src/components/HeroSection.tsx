@@ -10,7 +10,7 @@ const ServiceCard = ({
   description,
   cta
 }: {icon: React.ReactNode;title: string;description: string;cta: string;}) =>
-<div className="flex-1 p-5 bg-secondary flex flex-col gap-5 my-[15px]">
+<div className="flex-1 p-5 bg-secondary flex flex-col gap-5 py-[21px] my-[50px]">
     <div className="flex items-start gap-6 lg:gap-10">
       <div className="w-20 h-20 bg-background flex flex-col items-center justify-center shrink-0">{icon}</div>
       <div className="flex flex-col gap-3">
