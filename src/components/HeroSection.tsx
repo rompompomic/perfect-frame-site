@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Navbar from "./Navbar";
 import heroImage from "@/assets/hero-image.webp";
 import wasteIcon from "@/assets/icons/Waste.svg";
-import mapPinSimpleAreaIcon from "@/assets/icons/MapPinSimpleArea.svg";
+import containerIcon from "@/assets/icons/Container.svg";
 
 const ServiceCard = ({
   icon,
@@ -47,7 +47,7 @@ const HeroSection = () => {
         {/* Service cards overlapping */}
         <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row gap-1 -mb-32 relative z-20">
           <ServiceCard
-            icon={<img src={mapPinSimpleAreaIcon} alt="Konteineru noma" className="w-10 h-10" />}
+            icon={<img src={containerIcon} alt="Konteineru noma" className="w-10 h-10" />}
             title={"Konteineru\nnoma"}
             description="Piegāde, maiņa, izvešana. Būvgružiem un kokmateriālu atkritumiem."
             cta="Pasūtīt konteineru" />
