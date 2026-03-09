@@ -19,7 +19,7 @@ const Navbar = () => {
                 <span className="text-primary-foreground text-base font-semibold leading-6">371 28 60 1111</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-nikami-blue" fill="currentColor" strokeWidth={0} />
+                <img src={mapPinIcon} alt="Location" className="w-5 h-5" />
                 <span className="text-primary-foreground text-base font-semibold leading-6">Kaudzīšu iela 59</span>
               </div>
               <div className="hidden md:flex items-center gap-2">
