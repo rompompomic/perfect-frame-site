@@ -45,7 +45,7 @@ const services = [
 
 const services2 = [
   {
-    icon: <Bulldozer className="w-10 h-10 text-primary" />,
+    icon: <Truck className="w-10 h-10 text-primary" />,
     title: "Ēku un būvju demontāža",
     description: "Sākot no ēkas nojaukšanas līdz būvgružu izvešanai un to utilizācijai.",
   },
