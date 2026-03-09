@@ -1,4 +1,5 @@
-import { Phone, ShoppingCart, ChevronDown, Percent } from "lucide-react";
+import { Phone, ShoppingCart, ChevronDown } from "lucide-react";
+import discountIcon from "@/assets/icons/discount.svg";
 import logoWhite from "@/assets/logo-white.webp";
 import mapPinIcon from "@/assets/icons/MapPin.svg";
 import emailIcon from "@/assets/icons/email.svg";
