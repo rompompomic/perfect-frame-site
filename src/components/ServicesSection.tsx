@@ -13,8 +13,8 @@ interface ServiceCardProps {
   cta?: string;
 }
 
-const ServiceCard = ({ icon, title, description, cta = "CTA" }: ServiceCardProps) => (
-  <div className="flex-1 min-w-[280px] p-5 bg-background border-2 border-secondary flex flex-col justify-between gap-5">
+const ServiceCard = ({ icon, title, description, cta = "CTA" }: ServiceCardProps) =>
+<div className="flex-1 min-w-[280px] p-5 bg-background border-2 border-secondary flex flex-col justify-between gap-5">
     <div className="flex flex-col gap-6">
       <div className="w-20 h-20 bg-secondary flex items-center justify-center">{icon}</div>
       <div className="flex flex-col gap-3">
@@ -26,65 +26,65 @@ const ServiceCard = ({ icon, title, description, cta = "CTA" }: ServiceCardProps
       {cta}
       <ArrowRight className="w-5 h-5" />
     </button>
-  </div>
-);
+  </div>;
+
 
 const services = [
-  {
-    icon: <img src={mapPinSimpleAreaIcon} alt="Šķirošanas laukums" className="w-10 h-10" />,
-    title: "Šķirošanas laukums",
-    description: "Profesionāla būvniecības atkritumu šķirošana un pārstrāde, Rumbulā – Kaudzīšu iela 59.",
-  },
-  {
-    icon: <img src={hardHatIcon} alt="Būvgružu pārstrāde" className="w-10 h-10" />,
-    title: "Būvgružu pārstrāde",
-    description: "Būvgružu pārstrāde gan mūsu šķirošanas poligonā, gan Jūsu objektā, izmantojot mobilo smalcinātāju.",
-  },
-  {
-    icon: <img src={lightningIcon} alt="Baltās tehnikas pieņemšana" className="w-10 h-10" />,
-    title: "Baltās tehnikas pieņemšana MOSK",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-];
+{
+  icon: <img src={mapPinSimpleAreaIcon} alt="Šķirošanas laukums" className="w-10 h-10" />,
+  title: "Šķirošanas laukums",
+  description: "Profesionāla būvniecības atkritumu šķirošana un pārstrāde, Rumbulā – Kaudzīšu iela 59."
+},
+{
+  icon: <img src={hardHatIcon} alt="Būvgružu pārstrāde" className="w-10 h-10" />,
+  title: "Būvgružu pārstrāde",
+  description: "Būvgružu pārstrāde gan mūsu šķirošanas poligonā, gan Jūsu objektā, izmantojot mobilo smalcinātāju."
+},
+{
+  icon: <img src={lightningIcon} alt="Baltās tehnikas pieņemšana" className="w-10 h-10" />,
+  title: "Baltās tehnikas pieņemšana MOSK",
+  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+}];
+
 
 const services2 = [
-  {
-    icon: <img src={bulldozerIcon} alt="Ēku un būvju demontāža" className="w-10 h-10" />,
-    title: "Ēku un būvju demontāža",
-    description: "Sākot no ēkas nojaukšanas līdz būvgružu izvešanai un to utilizācijai.",
-  },
-  {
-    icon: <img src={snowflakeIcon} alt="Sniega izvešana" className="w-10 h-10" />,
-    title: "Sniega izvešana",
-    description: "Sniega izvešana no Jūsu teritorijas no 7.50 € / m³.",
-  },
-  {
-    icon: <img src={certificateIcon} alt="Zaļo ēku sertifikāti" className="w-10 h-10" />,
-    title: "Zaļo ēku sertifikāti",
-    description: "Iegūsti 50% NĪN atlaidi uz 10 gadiem ar zaļās būvniecības sertifikātiem.",
-  },
-];
+{
+  icon: <img src={bulldozerIcon} alt="Ēku un būvju demontāža" className="w-10 h-10" />,
+  title: "Ēku un būvju demontāža",
+  description: "Sākot no ēkas nojaukšanas līdz būvgružu izvešanai un to utilizācijai."
+},
+{
+  icon: <img src={snowflakeIcon} alt="Sniega izvešana" className="w-10 h-10" />,
+  title: "Sniega izvešana",
+  description: "Sniega izvešana no Jūsu teritorijas no 7.50 € / m³."
+},
+{
+  icon: <img src={certificateIcon} alt="Zaļo ēku sertifikāti" className="w-10 h-10" />,
+  title: "Zaļo ēku sertifikāti",
+  description: "Iegūsti 50% NĪN atlaidi uz 10 gadiem ar zaļās būvniecības sertifikātiem."
+}];
+
 
 const ServicesSection = () => {
   return (
-    <section className="max-w-[1200px] mx-auto px-6 pt-20 pb-10">
+    <section className="max-w-[1200px] mx-auto px-6 pt-20 pb-10 py-[120px]">
       <h2 className="text-primary text-3xl lg:text-5xl font-black uppercase leading-tight mb-10">
         Pieteikt atkritumu nodošanu
       </h2>
       <div className="flex flex-col gap-1">
         <div className="flex flex-col md:flex-row gap-1">
-          {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
-          ))}
+          {services.map((service, index) =>
+          <ServiceCard key={index} {...service} />
+          )}
         </div>
         <div className="flex flex-col md:flex-row gap-1">
-          {services2.map((service, index) => (
-            <ServiceCard key={index} {...service} />
-          ))}
+          {services2.map((service, index) =>
+          <ServiceCard key={index} {...service} />
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ServicesSection;
