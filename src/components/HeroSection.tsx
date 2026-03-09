@@ -53,7 +53,7 @@ const HeroSection = () => {
             cta="Pasūtīt konteineru" />
           
           <ServiceCard
-            icon=wastenSimpleAreaIcon} alt="Atkritumu nodošana" className="w-10 h-10" />}
+            icon={<img src={wasteIcon} alt="Atkritumu nodošana" className="w-10 h-10" />}
             title={"Atkritumu nodošana\nlaukumā"}
             description="Piesaki atkritumu nodošanu šķirošanas laukumā – Kaudzīšu ielā 59, Rumbulā."
             cta="Pieteikt atkritumu nodošanu" />
