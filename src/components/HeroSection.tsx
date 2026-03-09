@@ -2,53 +2,29 @@ import { ArrowRight } from "lucide-react";
 import Navbar from "./Navbar";
 import heroImage from "@/assets/hero-image.webp";
 
-const ServiceCard = ({ icon, title, description, cta }: { icon: React.ReactNode; title: string; description: string; cta: string }) => (
-  <div className="flex-1 p-5 bg-secondary flex flex-col gap-5">
-    <div className="flex items-start gap-6 lg:gap-10">
-      <div className="w-20 h-20 bg-background flex flex-col items-center justify-center shrink-0">
-        {icon}
-      </div>
-      <div className="flex flex-col gap-3">
-        <h3 className="text-primary text-xl lg:text-3xl font-black uppercase leading-tight">{title}</h3>
-        <p className="text-foreground text-base lg:text-xl">{description}</p>
-      </div>
-    </div>
-    <button className="w-full px-4 py-3 bg-primary rounded-sm flex items-center justify-center gap-2.5 text-primary-foreground text-base font-semibold hover:opacity-90 transition-opacity">
-      {cta}
-      <ArrowRight className="w-5 h-5 text-nikami-blue" />
-    </button>
-  </div>
-);
-
 const TruckIcon = () => (
   <svg width="40" height="24" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M39.2187 13.5172C39.6491 13.5172 39.9999 13.868 39.9999 14.2984L40 7.26719C40 7.69851 39.65 8.04844 39.2188 8.04844C38.7883 8.04844 38.4375 7.69851 38.4375 7.26719L38.4374 14.2984C38.4374 13.868 38.7882 13.5172 39.2187 13.5172Z" fill="currentColor"/>
-    <path fillRule="evenodd" clipRule="evenodd" d="M8.12501 0H39.2188C39.6502 0 40 0.349844 40 0.78125V7.26719C40 7.69851 39.65 8.04844 39.2188 8.04844C38.7883 8.04844 38.4375 7.69851 38.4375 7.26719V4.6875H27.5391H25.9766H16.6016H15.0391H9.71821L3.9579 10.3252L8.59844 19.2187H35.0719L38.4374 16.9297V14.2984C38.4374 13.868 38.7882 13.5172 39.2187 13.5172C39.6491 13.5172 39.9999 13.868 39.9999 14.2984V17.3437C39.9999 17.6023 39.8718 17.8446 39.6577 17.9898L35.7782 20.628L31.8943 23.7351C31.7558 23.8459 31.5837 23.9062 31.4063 23.9062H9.68751C9.39165 23.9062 9.1211 23.7391 8.98868 23.4744L7.43407 20.3651L7.43204 20.3617L6.28962 18.1719L4.37493 19.5079C4.23884 19.6029 4.0829 19.6485 3.9286 19.6485C3.68266 19.6485 3.44071 19.5328 3.28868 19.3163L1.54829 16.8396C1.42892 16.6698 1.38212 16.4593 1.41813 16.2548C1.45415 16.0504 1.57017 15.8686 1.74048 15.7498L4.14915 14.0691L2.36118 10.6419L0.22954 8.51609C0.0816499 8.36851 -0.00100637 8.16797 9.25001e-06 7.95906C0.00102487 7.75015 0.0856342 7.55031 0.235009 7.40429L7.57876 0.222734C7.72477 0.0799217 7.92087 0 8.12501 0ZM3.27743 16.5827L4.11946 17.7809L5.56095 16.7752L4.8779 15.4659L3.27743 16.5827ZM31.1322 22.3437L33.0853 20.7812H9.38907L10.1703 22.3437H31.1322ZM8.85321 3.34766C9.00009 3.20391 9.19407 3.125 9.39954 3.125H38.4375V1.5625H8.44352L1.89313 7.96828L3.00188 9.07398L8.85321 3.34766Z" fill="currentColor"/>
-    <path d="M15.0391 4.6875V10H9.37501C8.94352 10 8.59376 10.3498 8.59376 10.7812C8.59376 11.2127 8.94352 11.5625 9.37501 11.5625H33.2031C33.6346 11.5625 33.9844 11.2127 33.9844 10.7812C33.9844 10.3498 33.6346 10 33.2031 10H27.5391V4.6875H25.9766V10H16.6016V4.6875H15.0391Z" fill="currentColor"/>
+    <path d="M39.2187 13.5172C39.6491 13.5172 39.9999 13.868 39.9999 14.2984L40 7.26719C40 7.69851 39.65 8.04844 39.2188 8.04844C38.7883 8.04844 38.4375 7.69851 38.4375 7.26719L38.4374 14.2984C38.4374 13.868 38.7882 13.5172 39.2187 13.5172Z" fill="hsl(var(--primary))"/>
+    <path fillRule="evenodd" clipRule="evenodd" d="M8.12501 0H39.2188C39.6502 0 40 0.349844 40 0.78125V7.26719C40 7.69851 39.65 8.04844 39.2188 8.04844C38.7883 8.04844 38.4375 7.69851 38.4375 7.26719V4.6875H27.5391H25.9766H16.6016H15.0391H9.71821L3.9579 10.3252L8.59844 19.2187H35.0719L38.4374 16.9297V14.2984C38.4374 13.868 38.7882 13.5172 39.2187 13.5172C39.6491 13.5172 39.9999 13.868 39.9999 14.2984V17.3437C39.9999 17.6023 39.8718 17.8446 39.6577 17.9898L35.7782 20.628L31.8943 23.7351C31.7558 23.8459 31.5837 23.9062 31.4063 23.9062H9.68751C9.39165 23.9062 9.1211 23.7391 8.98868 23.4744L7.43407 20.3651L7.43204 20.3617L6.28962 18.1719L4.37493 19.5079C4.23884 19.6029 4.0829 19.6485 3.9286 19.6485C3.68266 19.6485 3.44071 19.5328 3.28868 19.3163L1.54829 16.8396C1.42892 16.6698 1.38212 16.4593 1.41813 16.2548C1.45415 16.0504 1.57017 15.8686 1.74048 15.7498L4.14915 14.0691L2.36118 10.6419L0.22954 8.51609C0.0816499 8.36851 -0.00100637 8.16797 9.25001e-06 7.95906C0.00102487 7.75015 0.0856342 7.55031 0.235009 7.40429L7.57876 0.222734C7.72477 0.0799217 7.92087 0 8.12501 0ZM3.27743 16.5827L4.11946 17.7809L5.56095 16.7752L4.8779 15.4659L3.27743 16.5827ZM31.1322 22.3437L33.0853 20.7812H9.38907L10.1703 22.3437H31.1322ZM8.85321 3.34766C9.00009 3.20391 9.19407 3.125 9.39954 3.125H38.4375V1.5625H8.44352L1.89313 7.96828L3.00188 9.07398L8.85321 3.34766Z" fill="hsl(var(--primary))"/>
+    <path d="M15.0391 4.6875V10H9.37501C8.94352 10 8.59376 10.3498 8.59376 10.7812C8.59376 11.2127 8.94352 11.5625 9.37501 11.5625H33.2031C33.6346 11.5625 33.9844 11.2127 33.9844 10.7812C33.9844 10.3498 33.6346 10 33.2031 10H27.5391V4.6875H25.9766V10H16.6016V4.6875H15.0391Z" fill="hsl(var(--primary))"/>
   </svg>
 );
 
-const WasteIcons = () => (
-  <div className="flex flex-col items-center gap-1">
-    <svg width="23" height="14" viewBox="0 0 23 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16.4365 0.050293C16.6567 0.0503189 16.8448 0.147811 16.9717 0.338379L17.0225 0.42627L17.0234 0.427246L20.0977 7.22998L21.0596 6.86084C21.3497 6.73718 21.6445 6.81952 21.8135 7.03076C21.9798 7.23875 22.0229 7.53401 21.8545 7.78662L18.4512 13.2388L18.4492 13.2427L18.4482 13.2417C18.3248 13.4062 18.1184 13.5327 17.9062 13.5327H17.7393V13.5317L11.3965 11.9839V11.9829C11.0999 11.938 10.9352 11.6847 10.8945 11.4409C10.8522 11.1865 10.9801 10.9336 11.2305 10.8081L12.3057 10.2515L10.5898 7.19189L6.92285 12.1567L6.92383 12.1577C6.7122 12.454 6.29296 12.4928 6.00293 12.2856H6.00195L0.316406 8.06982L0.310547 8.06494C0.186926 7.94132 0.105864 7.77746 0.0654297 7.61572C0.0233224 7.44705 0.0639708 7.23447 0.194336 7.104L5.87793 0.300293C6.00321 0.134471 6.17173 0.0503322 6.37988 0.050293H16.4365Z" fill="currentColor" stroke="currentColor" strokeWidth="0.1"/>
-    </svg>
-    <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9.97266 0.050293C10.2609 0.0504314 10.5129 0.215236 10.5986 0.469238L12.8789 6.57568C13.0066 6.83099 12.9207 7.12655 12.7109 7.29443L12.71 7.29346C12.4972 7.50263 12.2045 7.49922 11.9609 7.37744L11.959 7.37646L10.9219 6.78271L9.35547 9.9165L15.5439 10.1841H15.5479C15.8787 10.2254 16.1719 10.5149 16.1719 10.853V17.6597C16.1719 18.0354 15.8787 18.3286 15.5029 18.3286H6.68457C6.47241 18.3286 6.26505 18.2031 6.1416 18.0386L6.13965 18.0356L4.47656 15.522V15.521L0.145508 9.14014L0.143555 9.13818C0.0180771 8.92905 0.0181939 8.6384 0.143555 8.4292V8.42822L4.02637 2.04736L3.1748 1.45654L3.17188 1.45459C2.96695 1.2906 2.83811 0.99884 2.92383 0.741699C3.00574 0.496024 3.21382 0.282805 3.51074 0.281738L9.9707 0.050293H9.97266Z" fill="currentColor" stroke="currentColor" strokeWidth="0.1"/>
-    </svg>
-    <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12.8809 0.074707C13.0541 0.118013 13.1801 0.247506 13.2617 0.410645L17.1299 8.37842L17.1572 8.44287C17.2124 8.59754 17.2025 8.77512 17.1299 8.92236L17.1309 8.92334L12.9922 18.0903L12.9912 18.0894C12.9053 18.3026 12.6548 18.4683 12.4043 18.4683H4.94922L4.91211 19.5034C4.91088 19.7601 4.70073 20.0077 4.45312 20.0903C4.42557 20.11 4.39471 20.121 4.36816 20.1255C4.33454 20.1311 4.30128 20.1313 4.28223 20.1313C4.07 20.1313 3.86271 20.0049 3.73926 19.8403L3.73828 19.8384L0.140625 14.5005L0.139648 14.4985C0.0759299 14.3923 0.044653 14.2565 0.0498047 14.1226C0.0550152 13.9887 0.0964679 13.8522 0.181641 13.7456L4.2041 8.60205V8.60107C4.37207 8.39111 4.66531 8.3082 4.91699 8.39209C5.16278 8.47409 5.37619 8.6818 5.37695 8.979L5.41309 10.1636L8.91895 9.86475L5.94043 4.479V4.47998C5.77138 4.18394 5.89807 3.76674 6.19141 3.59912L12.3809 0.156738C12.5497 0.0329872 12.7192 0.0343168 12.8809 0.074707Z" fill="currentColor" stroke="currentColor" strokeWidth="0.1"/>
-    </svg>
-  </div>
+const RecycleIcon = () => (
+  <svg width="37" height="33" viewBox="0 0 37 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M28.9248 7.06222C28.77 6.86883 28.4993 6.79148 28.2285 6.90751L27.2229 7.2943L24.1286 0.448204C24.0126 0.216133 23.8192 0.100098 23.5871 0.100098H13.5307C13.3373 0.100098 13.1826 0.177455 13.0666 0.332169L7.38083 7.13958C7.2648 7.25562 7.22612 7.44901 7.2648 7.60372C7.30348 7.75844 7.38083 7.91315 7.49687 8.02919L13.1826 12.2451C13.4534 12.4385 13.8401 12.3999 14.0335 12.1291L17.7467 7.1009L19.5259 10.2725L18.4042 10.8527C18.1721 10.9688 18.0561 11.2008 18.0948 11.4329C18.1335 11.665 18.2882 11.897 18.5589 11.9357L24.9022 13.4829C24.9409 13.4829 24.9795 13.4829 25.0569 13.4829C25.2503 13.4829 25.4437 13.3668 25.5597 13.2121L28.9634 7.75844C29.1181 7.52637 29.0795 7.25562 28.9248 7.06222Z" fill="hsl(var(--primary))"/>
+    <path d="M15.542 22.6883L9.27608 22.4176L10.9006 19.1686L11.9836 19.7874C12.2156 19.9035 12.4864 19.9035 12.6798 19.7101C12.8732 19.5554 12.9505 19.2846 12.8345 19.0526L10.5525 12.9414C10.4751 12.7093 10.243 12.5546 9.97229 12.5546L3.51299 12.7866C3.24224 12.7866 3.04884 12.98 2.97149 13.2121C2.89413 13.4442 3.01017 13.7149 3.20356 13.8696L4.09316 14.4885L0.186636 20.9091C0.0706005 21.1025 0.0706005 21.3733 0.186636 21.5667L4.51863 27.9486L6.1818 30.4627C6.29784 30.6174 6.49123 30.7335 6.68462 30.7335H15.5033C15.8514 30.7335 16.1222 30.4627 16.1222 30.1146V23.3072C16.1222 22.9978 15.8514 22.727 15.542 22.6883Z" fill="hsl(var(--primary))"/>
+    <path d="M36.0416 20.6771L32.1737 12.7093C32.0964 12.5546 31.9804 12.4385 31.8256 12.3999C31.6709 12.3612 31.5162 12.3612 31.3615 12.4772L25.1729 15.9196C24.9022 16.0743 24.7862 16.4611 24.9409 16.7318L27.9578 22.1855L24.322 22.4949L24.2833 21.2572C24.2833 20.9865 24.0899 20.7931 23.8579 20.7157C23.6258 20.6384 23.355 20.7157 23.2003 20.9091L19.1778 26.0534C19.0231 26.2468 19.0231 26.5562 19.1391 26.7496L22.7362 32.0872C22.8522 32.2419 23.0456 32.358 23.239 32.358C23.2777 32.358 23.355 32.358 23.3937 32.3193C23.6258 32.2419 23.8192 32.0098 23.8192 31.7778L23.8579 30.6948H31.3615C31.5936 30.6948 31.8256 30.5401 31.903 30.3467L36.0416 21.1799C36.119 21.0252 36.119 20.8318 36.0416 20.6771Z" fill="hsl(var(--primary))"/>
+  </svg>
 );
 
 const HeroSection = () => {
   return (
     <section className="relative w-full overflow-hidden">
-      {/* Background */}
+      {/* Background with gradient overlay */}
       <div className="absolute inset-0">
         <img src={heroImage} alt="Waste management facility" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-nikami-dark/80" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(48deg, rgba(12,74,120,0.7) 30%, rgba(64,64,64,0.8) 100%)' }} />
       </div>
 
       <div className="relative z-10">
@@ -56,30 +32,56 @@ const HeroSection = () => {
 
         {/* Hero content */}
         <div className="max-w-[1200px] mx-auto px-6 pt-10 lg:pt-16 pb-0">
-          <h1 className="text-primary-foreground text-3xl sm:text-4xl lg:text-6xl font-black uppercase leading-tight max-w-4xl mb-16 lg:mb-24">
+          <h1 className="text-primary-foreground text-3xl sm:text-4xl lg:text-6xl font-black uppercase leading-tight lg:leading-[58px] max-w-[951px]">
             Būvniecības atkritumu pieņemšana, šķirošana, pārstrāde un konteineru noma
           </h1>
         </div>
 
         {/* Service cards overlapping */}
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row gap-1 -mb-32 relative z-20">
-          <ServiceCard
-            icon={<TruckIcon />}
-            title={"Konteineru\nnoma"}
-            description="Piegāde, maiņa, izvešana. Būvgružiem un kokmateriālu atkritumiem."
-            cta="Pasūtīt konteineru"
-          />
-          <ServiceCard
-            icon={<WasteIcons />}
-            title={"Atkritumu nodošana\nlaukumā"}
-            description="Piesaki atkritumu nodošanu šķirošanas laukumā – Kaudzīšu ielā 59, Rumbulā."
-            cta="Pieteikt atkritumu nodošanu"
-          />
+        <div className="max-w-[1200px] mx-auto px-6 mt-16 lg:mt-24 flex flex-col md:flex-row gap-1 -mb-32 relative z-20">
+          <div className="flex-1 p-5 bg-secondary flex flex-col gap-5">
+            <div className="flex items-start gap-10">
+              <div className="w-20 h-20 bg-background flex items-center justify-center shrink-0">
+                <TruckIcon />
+              </div>
+              <div className="flex-1 flex flex-col gap-3">
+                <h3 className="text-primary text-2xl lg:text-3xl font-black uppercase leading-8">Konteineru<br/>noma</h3>
+                <p className="text-foreground text-lg lg:text-xl leading-7">Piegāde, maiņa, izvešana. Būvgružiem un kokmateriālu atkritumiem.</p>
+              </div>
+            </div>
+            <button className="w-full px-4 py-3 bg-primary rounded-sm flex items-center justify-center gap-2.5 text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity">
+              Pasūtīt konteineru
+              <ArrowRight className="w-5 h-5 text-nikami-blue" />
+            </button>
+          </div>
+          <div className="flex-1 p-5 bg-secondary flex flex-col gap-5">
+            <div className="flex items-start gap-10">
+              <div className="w-20 h-20 bg-background flex items-center justify-center shrink-0">
+                <RecycleIcon />
+              </div>
+              <div className="flex-1 flex flex-col gap-3">
+                <h3 className="text-primary text-2xl lg:text-3xl font-black uppercase leading-8">Atkritumu nodošana<br/>laukumā</h3>
+                <p className="text-foreground text-lg lg:text-xl leading-7">Piesaki atkritumu nodošanu šķirošanas laukumā – Kaudzīšu ielā 59, Rumbulā.</p>
+              </div>
+            </div>
+            <button className="w-full px-4 py-3 bg-primary rounded-sm flex items-center justify-center gap-2.5 text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity">
+              Pieteikt atkritumu nodošanu
+              <ArrowRight className="w-5 h-5 text-nikami-blue" />
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Spacer for overlapping cards */}
       <div className="h-32" />
+
+      {/* Chat widget */}
+      <div className="fixed bottom-6 right-6 z-50 w-20 h-20 bg-nikami-blue rounded-[44px] shadow-[0px_2px_12px_0px_rgba(0,0,0,0.10)] flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M25.625 8.125C23.9446 8.12572 22.2924 8.56166 20.8297 9.39128C19.367 10.2209 18.1434 11.4152 17.2789 12.8572C16.4144 14.2992 15.9389 15.9397 15.8984 17.6198C15.858 19.2999 16.2538 20.9609 17.0469 22.4422L15.7281 25.8969C15.6606 26.0743 15.6426 26.2666 15.6763 26.4533C15.7099 26.6399 15.7939 26.8134 15.9189 26.9552C16.044 27.097 16.2052 27.2015 16.3847 27.2573C16.5643 27.313 16.7554 27.3179 16.9375 27.2714L20.7469 26.3214C22.0427 26.948 23.4704 27.2596 24.9122 27.2309C26.354 27.2022 27.7681 26.834 29.0379 26.1559C30.3076 25.4778 31.396 24.5094 32.2167 23.327C33.0374 22.1447 33.5672 20.7822 33.7611 19.3522C33.955 17.9222 33.8074 16.466 33.3302 15.1017C32.853 13.7374 32.0597 12.5042 31.0156 11.5057C29.9714 10.5071 28.7052 9.77122 27.3222 9.35709C25.9392 8.94296 24.4795 8.86219 23.0609 9.12122" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M14.375 21.875C12.812 21.8749 11.2754 21.4841 9.90781 20.7391L6.5625 21.5625L7.67344 18.6484C6.55816 16.9063 6.07335 14.8385 6.29829 12.7857C6.52324 10.7329 7.44483 8.82131 8.90607 7.36537C10.3673 5.90942 12.282 4.99481 14.3355 4.77731C16.389 4.55982 18.4551 5.05215 20.193 6.17344" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
     </section>
   );
 };
