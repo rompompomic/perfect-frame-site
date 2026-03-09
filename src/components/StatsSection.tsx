@@ -15,7 +15,7 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="max-w-[1200px] mx-auto px-6 pt-40 pb-10 py-[30px]">
+    <section className="max-w-[1200px] mx-auto px-6 pt-10 pb-10">
       <div className="flex flex-col md:flex-row gap-1">
         {stats.map((stat, index) =>
         <div key={index} className="flex-1 p-5 bg-secondary flex flex-col gap-3">
