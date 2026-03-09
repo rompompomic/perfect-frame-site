@@ -67,7 +67,7 @@ const services2 = [
 
 const ServicesSection = () => {
   return (
-    <section className="max-w-[1200px] mx-auto px-6 py-10">
+    <section className="max-w-[1200px] mx-auto px-6 pt-20 pb-10">
       <h2 className="text-primary text-3xl lg:text-5xl font-black uppercase leading-tight mb-10">
         Pieteikt atkritumu nodošanu
       </h2>
