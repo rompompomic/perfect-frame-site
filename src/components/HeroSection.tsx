@@ -8,14 +8,14 @@ const ServiceCard = ({
   icon,
   title,
   description,
-  cta
-
-
-
-
-
-}: {icon: React.ReactNode;title: React.ReactNode;description: string;cta: string;}) =>
-<div className="flex-1 p-5 bg-secondary flex flex-col gap-5 py-[21px] my-[50px]">
+  cta,
+}: {
+  icon: React.ReactNode;
+  title: React.ReactNode;
+  description: string;
+  cta: string;
+}) => (
+  <div className="flex-1 p-5 bg-secondary flex flex-col gap-5 py-[21px] my-[50px]">
     <div className="flex items-start gap-6 lg:gap-10">
       <div className="w-20 h-20 bg-background flex flex-col items-center justify-center shrink-0">{icon}</div>
       <div className="flex flex-col gap-3">
@@ -27,8 +27,8 @@ const ServiceCard = ({
       {cta}
       <ArrowRight className="w-5 h-5 text-nikami-blue" />
     </button>
-  </div>;
-
+  </div>
+);
 
 const HeroSection = () => {
   return (
@@ -50,33 +50,33 @@ const HeroSection = () => {
         </div>
 
         {/* Service cards overlapping */}
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row gap-1 -mb-30 relative z-20">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row gap-1 -mb-32 relative z-20">
           <ServiceCard
             icon={<img src={containerIcon} alt="Konteineru noma" className="w-10 h-10" />}
             title={
-            <>
+              <>
                 Konteineru
                 <br />
                 noma
               </>
             }
             description="Piegāde, maiņa, izvešana. Būvgružiem un kokmateriālu atkritumiem."
-            cta="Pasūtīt konteineru" />
-          
+            cta="Pasūtīt konteineru"
+          />
 
           <ServiceCard
             icon={<img src={wasteIcon} alt="Atkritumu nodošana" className="w-10 h-10" />}
             title={"Atkritumu nodošana\nlaukumā"}
             description="Piesaki atkritumu nodošanu šķirošanas laukumā – Kaudzīšu ielā 59, Rumbulā."
-            cta="Pieteikt atkritumu nodošanu" />
-          
+            cta="Pieteikt atkritumu nodošanu"
+          />
         </div>
       </div>
 
       {/* Spacer for overlapping cards */}
       <div className="h-32" />
-    </section>);
-
+    </section>
+  );
 };
 
 export default HeroSection;
