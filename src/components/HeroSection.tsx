@@ -53,7 +53,13 @@ const HeroSection = () => {
         <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row gap-1 -mb-32 relative z-20">
           <ServiceCard
             icon={<img src={containerIcon} alt="Konteineru noma" className="w-10 h-10" />}
-            title="Konteineru <br/>noma"
+            title={
+              <>
+                Konteineru
+                <br />
+                noma
+              </>
+            }
             description="Piegāde, maiņa, izvešana. Būvgružiem un kokmateriālu atkritumiem."
             cta="Pasūtīt konteineru"
           />
