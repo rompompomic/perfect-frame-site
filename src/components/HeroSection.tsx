@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Navbar from "./Navbar";
 import heroImage from "@/assets/hero-image.webp";
 import wasteIcon from "@/assets/icons/Waste.svg";
-import mapPinSimpleAreaIcon from "@/assets/icons/MapPinSimpleArea.svg";
+import containerIcon from "@/assets/icons/Container.svg";
 
 const ServiceCard = ({
   icon,
