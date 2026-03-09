@@ -49,7 +49,7 @@ const TruckIcon = () => (
 
 const WasteIcons = () => (
   <div data-svg-wrapper data-layer="Vector" className="Vector">
-    <svg width="40" height="24" viewBox="0 0 40 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg">
       <mask
         id="path-1-outside-1_426_9724"
         maskUnits="userSpaceOnUse"
