@@ -1,7 +1,23 @@
-import { Phone, ShoppingCart, ChevronDown } from "lucide-react";
+import { Phone, ShoppingCart, ChevronDown, Percent } from "lucide-react";
 import logoWhite from "@/assets/logo-white.webp";
 import mapPinIcon from "@/assets/icons/MapPin.svg";
 import emailIcon from "@/assets/icons/email.svg";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+const serviceLinks = [
+  "Konteineru noma",
+  "Šķirošanas laukums",
+  "Būvgružu pārstrāde",
+  "Ēku un būvju demontāža",
+  "Sniega izvešana",
+  "Zaļo ēku sertifikāti",
+];
 
 const Navbar = () => {
   return (
@@ -52,10 +68,27 @@ const Navbar = () => {
       <div className="self-stretch flex justify-between items-center">
         <div className="h-11 flex items-center gap-10 overflow-hidden">
           <span className="text-primary-foreground text-base font-medium leading-6 cursor-pointer hover:opacity-80">Par mums</span>
-          <div className="flex items-center gap-0.5 cursor-pointer hover:opacity-80">
-            <span className="text-primary-foreground text-base font-semibold leading-6">Pakalpojumi</span>
-            <ChevronDown className="w-4 h-4 text-primary-foreground" />
-          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-0.5 cursor-pointer hover:opacity-80 outline-none">
+              <span className="text-primary-foreground text-base font-semibold leading-6">Pakalpojumi</span>
+              <ChevronDown className="w-4 h-4 text-primary-foreground" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="px-6 py-3 bg-secondary rounded-xs shadow-[0px_2px_12px_0px_rgba(0,0,0,0.15)] flex flex-col gap-2 min-w-[220px]">
+              {serviceLinks.map((label) => (
+                <DropdownMenuItem
+                  key={label}
+                  className="text-primary text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70"
+                >
+                  {label}
+                </DropdownMenuItem>
+              ))}
+              <DropdownMenuSeparator className="bg-muted-foreground/30" />
+              <DropdownMenuItem className="flex items-center gap-2.5 text-nikami-blue text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
+                <Percent className="w-5 h-5 text-nikami-blue" />
+                Akcijas
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <span className="text-primary-foreground text-base font-semibold leading-6 cursor-pointer hover:opacity-80">Kontakti</span>
         </div>
         <div className="flex items-center overflow-hidden">
