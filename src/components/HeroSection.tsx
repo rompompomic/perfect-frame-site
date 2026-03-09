@@ -39,7 +39,7 @@ const HeroSection = () => {
 
         {/* Hero content */}
         <div className="max-w-[1200px] mx-auto px-6 pt-10 lg:pt-16 pb-0">
-          <h1 className="text-primary-foreground text-3xl sm:text-4xl lg:text-6xl font-black uppercase leading-tight max-w-4xl mb-16 lg:mb-24">
+          <h1 className="text-primary-foreground text-3xl sm:text-4xl lg:text-6xl font-black uppercase leading-tight max-w-4xl mb-8 lg:mb-12">
             Būvniecības atkritumu pieņemšana, šķirošana, pārstrāde un konteineru noma
           </h1>
         </div>
