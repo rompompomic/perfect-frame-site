@@ -11,7 +11,7 @@ const ServiceCard = ({
   cta,
 }: {
   icon: React.ReactNode;
-  title: string;
+  title: React.ReactNode;
   description: string;
   cta: string;
 }) => (
