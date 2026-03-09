@@ -15,17 +15,17 @@ const ServiceCard = ({
   description: string;
   cta: string;
 }) => (
-  <div className="flex-1 p-5 bg-secondary flex flex-col gap-5 py-[21px] my-[50px]">
-    <div className="flex items-start gap-6 lg:gap-10">
-      <div className="w-20 h-20 bg-background flex flex-col items-center justify-center shrink-0">{icon}</div>
-      <div className="flex flex-col gap-3">
-        <h3 className="text-primary text-xl lg:text-3xl font-black uppercase leading-tight">{title}</h3>
-        <p className="text-foreground text-base lg:text-xl">{description}</p>
+  <div className="flex-1 p-4 sm:p-5 bg-secondary flex flex-col gap-4 sm:gap-5 py-4 sm:py-[21px] my-0 md:my-[50px]">
+    <div className="flex items-start gap-4 sm:gap-6 lg:gap-10">
+      <div className="w-14 h-14 sm:w-20 sm:h-20 bg-background flex flex-col items-center justify-center shrink-0">{icon}</div>
+      <div className="flex flex-col gap-2 sm:gap-3">
+        <h3 className="text-primary text-lg sm:text-xl lg:text-3xl font-black uppercase leading-tight">{title}</h3>
+        <p className="text-foreground text-sm sm:text-base lg:text-xl">{description}</p>
       </div>
     </div>
-    <button className="w-full px-4 py-3 bg-primary rounded-sm flex items-center justify-center gap-2.5 text-primary-foreground text-base font-semibold hover:opacity-90 transition-opacity">
+    <button className="w-full px-4 py-2.5 sm:py-3 bg-primary rounded-sm flex items-center justify-center gap-2.5 text-primary-foreground text-sm sm:text-base font-semibold hover:opacity-90 transition-opacity">
       {cta}
-      <ArrowRight className="w-5 h-5 text-nikami-blue" />
+      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-nikami-blue" />
     </button>
   </div>
 );
@@ -43,16 +43,16 @@ const HeroSection = () => {
         <Navbar />
 
         {/* Hero content */}
-        <div className="max-w-[1200px] mx-auto px-6 pt-10 lg:pt-16 pb-0">
-          <h1 className="text-primary-foreground text-3xl sm:text-4xl lg:text-6xl font-black uppercase leading-tight max-w-4xl mb-8 lg:mb-12">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-6 sm:pt-10 lg:pt-16 pb-0">
+          <h1 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black uppercase leading-tight max-w-4xl mb-6 sm:mb-8 lg:mb-12">
             Būvniecības atkritumu pieņemšana, šķirošana, pārstrāde un konteineru noma
           </h1>
         </div>
 
         {/* Service cards overlapping */}
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row gap-1 -mb-32 relative z-20">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-1 -mb-16 sm:-mb-24 md:-mb-32 relative z-20">
           <ServiceCard
-            icon={<img src={containerIcon} alt="Konteineru noma" className="w-10 h-10" />}
+            icon={<img src={containerIcon} alt="Konteineru noma" className="w-8 h-8 sm:w-10 sm:h-10" />}
             title={
               <>
                 Konteineru
@@ -65,7 +65,7 @@ const HeroSection = () => {
           />
 
           <ServiceCard
-            icon={<img src={wasteIcon} alt="Atkritumu nodošana" className="w-10 h-10" />}
+            icon={<img src={wasteIcon} alt="Atkritumu nodošana" className="w-8 h-8 sm:w-10 sm:h-10" />}
             title={"Atkritumu nodošana\nlaukumā"}
             description="Piesaki atkritumu nodošanu šķirošanas laukumā – Kaudzīšu ielā 59, Rumbulā."
             cta="Pieteikt atkritumu nodošanu"
@@ -74,7 +74,7 @@ const HeroSection = () => {
       </div>
 
       {/* Spacer for overlapping cards */}
-      <div className="h-32" />
+      <div className="h-16 sm:h-24 md:h-32" />
     </section>
   );
 };
