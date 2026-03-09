@@ -85,7 +85,7 @@ const Navbar = () => {
               ))}
               <DropdownMenuSeparator className="bg-muted-foreground/30" />
               <DropdownMenuItem className="flex items-center gap-2.5 text-nikami-blue text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
-                <Percent className="w-5 h-5 text-nikami-blue" />
+                <img src={discountIcon} alt="Akcijas" className="w-5 h-5" />
                 Akcijas
               </DropdownMenuItem>
             </DropdownMenuContent>
