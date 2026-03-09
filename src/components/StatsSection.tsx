@@ -1,15 +1,15 @@
 const stats = [
   {
-    value: "7000+ apmierinātu klientu",
-    description: "Uzticami pakalpojumi, ātra piegāde un individuāla apkalpošana",
+    value: "30+ gadu pieredze",
+    description: "Kompetence un zināšanas, kas nodrošina augstu darba kvalitāti",
   },
   {
     value: "700+ konteineru",
     description: "Mūsu rīcībā ir dažāda tilpuma konteineri – no 6m³ līdz pat 20m³",
   },
   {
-    value: "30+ gadu pieredze",
-    description: "Kompetence un zināšanas, kas nodrošina augstu darba kvalitāti",
+    value: "7000+ apmierinātu klientu",
+    description: "Uzticami pakalpojumi, ātra piegāde un individuāla apkalpošana",
   },
 ];
 
