@@ -68,7 +68,7 @@ const ServicesSection = () => {
     },
   ];
   return (
-    <section className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-10 sm:pt-20 pb-6 sm:pb-10 mb-6 sm:mb-10">
+    <section className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-10 sm:pt-10 pb-6 sm:pb-10 mb-6 sm:mb-10">
       <h2 className="text-primary text-2xl sm:text-3xl lg:text-5xl font-black uppercase leading-tight mb-6 sm:mb-10">
         {t("services.title")}
       </h2>
