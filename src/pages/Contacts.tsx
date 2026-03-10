@@ -215,7 +215,7 @@ const ContactsMapSection = () => {
         referrerPolicy="no-referrer-when-downgrade"
         title="NIKAMI location map"
       />
-      <div className="absolute top-2 right-2 sm:top-auto sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 sm:right-6 md:right-12 lg:right-24 w-[220px] sm:w-[90%] md:w-[500px] lg:w-[598px] p-3 sm:p-5 bg-primary flex flex-col gap-4 sm:gap-8 z-10">
+      <div className="absolute top-2 right-2 sm:top-6 sm:right-6 md:right-12 lg:right-24 w-[220px] sm:w-[90%] md:w-[500px] lg:w-[598px] p-3 sm:p-5 bg-primary flex flex-col gap-4 sm:gap-8 z-10">
         <h3 className="text-primary-foreground text-sm sm:text-lg lg:text-3xl font-black uppercase leading-tight sm:leading-8">
           {t("contacts.map.title")}
         </h3>
