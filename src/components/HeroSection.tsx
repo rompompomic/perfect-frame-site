@@ -60,7 +60,7 @@ const HeroSection = () => {
         </div>
 
         {/* Service cards overlapping */}
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-1 -mb-16 sm:-mb-24 md:-mb-32 relative z-20">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-1 -mb-24 sm:-mb-28 md:-mb-32 relative z-20">
           <ServiceCard
             icon={
               <img src={containerIcon} alt="Konteineru noma" className="w-8 h-8 sm:w-10 sm:h-10" />
@@ -94,7 +94,7 @@ const HeroSection = () => {
       </div>
 
       {/* Spacer for overlapping cards */}
-      <div className="h-16 sm:h-24 md:h-32" />
+      <div className="h-24 sm:h-28 md:h-32" />
     </section>
   );
 };
