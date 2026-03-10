@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, Play } from "lucide-react";
 import checkInCircleIcon from "@/assets/icons/CheckInCircle.svg";
+import anyQuestionsImage from "@/assets/any-questions.webp";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -206,8 +207,12 @@ const FAQSection = () => {
 const QuestionsBanner = () => {
   const { t } = useTranslation();
   return (
-    <section className="px-4 sm:px-6 lg:px-28 py-10 bg-gradient-to-br from-primary/80 to-muted-foreground/80 shadow-[0px_2px_12px_0px_rgba(0,0,0,0.10)]">
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-2">
+    <section className="relative px-4 sm:px-6 lg:px-28 py-10 overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={anyQuestionsImage} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-primary/70" />
+      </div>
+      <div className="relative z-10 max-w-[1200px] mx-auto flex flex-col gap-2">
         <p className="text-primary-foreground text-xl font-bold leading-7">{t("about.questions.subtitle")}</p>
         <h2 className="text-primary-foreground text-3xl lg:text-5xl font-black uppercase leading-tight max-w-[820px]">
           {t("about.questions.title")}
