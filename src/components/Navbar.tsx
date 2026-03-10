@@ -154,9 +154,9 @@ const Navbar = () => {
                 </div>
               </div>
             )}
-            <span className="text-primary-foreground text-base font-semibold cursor-pointer hover:opacity-80">
+            <Link to="/kontakti" className="text-primary-foreground text-base font-semibold cursor-pointer hover:opacity-80">
               {t("navbar.contacts")}
-            </span>
+            </Link>
           </div>
 
           <div className="h-px bg-primary-foreground/20" />
