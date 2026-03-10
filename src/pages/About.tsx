@@ -294,7 +294,7 @@ const ContactFormSection = () => {
               </span>
             </label>
             <label className="flex items-start gap-2 cursor-pointer">
-              <input type="checkbox" className="w-6 h-6 accent-nikami-blue border-2 border-nikami-blue rounded-sm appearance-none checked:appearance-auto shrink-0 mt-0.5" style={{ borderColor: 'hsl(var(--nikami-blue))' }} />
+              <input type="checkbox" className="w-6 h-6 accent-nikami-blue border-2 border-nikami-blue rounded-sm appearance-none checked:appearance-auto shrink-0 mt-0.5" />
               <span className="text-foreground text-base font-bold leading-6">{t("about.contact.marketing")}</span>
             </label>
           </div>
