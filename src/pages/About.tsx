@@ -22,7 +22,7 @@ const AboutHero = () => {
         <div className="flex-1 flex items-center">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full flex flex-col gap-12">
             <div className="flex flex-col gap-5">
-              <h1 className="text-primary-foreground text-3xl md:text-4xl lg:text-[60px] font-black uppercase leading-[1] lg:leading-[58px] max-w-4xl">
+              <h1 className="text-primary-foreground text-3xl md:text-4xl lg:text-[60px] font-black uppercase leading-[1] lg:leading-[58px]">
                 {t("about.hero.title")}
               </h1>
               <p className="text-primary-foreground text-lg lg:text-xl font-medium leading-7 max-w-[933px]">
