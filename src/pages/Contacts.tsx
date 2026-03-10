@@ -319,9 +319,9 @@ const ContactFormSection = () => {
 const Contacts = () => {
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      {/* Dark navbar strip */}
-      <div className="bg-primary">
-        <Navbar />
+      {/* Light navbar */}
+      <div className="bg-background">
+        <Navbar variant="light" />
       </div>
       <ContactsInfoSection />
       <ContactsMapSection />
