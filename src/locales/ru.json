@@ -186,6 +186,56 @@
       "submit": "Отправить сообщение"
     }
   },
+  "contacts": {
+    "title": "Контакты",
+    "administration": {
+      "title": "Администрация",
+      "contactsLabel": "Контакты:",
+      "phone": "+371 28 60 1111",
+      "phoneNote": "Не работает по субботам",
+      "email": "klienti@nikami.lv",
+      "hoursLabel": "Часы работы:",
+      "weekdays": "Пн-Пт: 8:00 - 17:00",
+      "weekend": "Сб-Вс: закрыто"
+    },
+    "sortingArea": {
+      "title": "Сортировочная площадка - ул. Кaudzīšu 59",
+      "subtitle": "Справки о принятых строительных отходах",
+      "contactsLabel": "Контакты:",
+      "phone": "+371 28 60 1111",
+      "email": "svari@nikami.lv",
+      "hoursLabel": "Часы работы:",
+      "weekdays": "Пн-Пт: 8:00 - 17:00",
+      "saturday": "Сб: 8:00 - 12:30",
+      "sunday": "Вс: по договоренности"
+    },
+    "details": {
+      "title": "Реквизиты",
+      "companyTitle": "О компании",
+      "nameLabel": "Название:",
+      "nameValue": "SIA \"NIKA MI\"",
+      "regLabel": "Регистрационный номер",
+      "regValue": "40003278804",
+      "vatLabel": "Номер рег. НДС",
+      "vatValue": "LV40003278804",
+      "sepaLabel": "Идентификатор SEPA:",
+      "sepaValue": "LV74ZZZ40003278804",
+      "addressLabel": "Юридический адрес:",
+      "addressValue": "Kaudzīšu iela 59-1, Rumbula, Stopiņu pagasts, Ropažu novads, LV-2121",
+      "paymentTitle": "Для расчётов",
+      "bankLabel": "Банк:",
+      "bankValue": "\"Swedbank\" SIA",
+      "bankCodeLabel": "Код банка:",
+      "bankCodeValue": "HABALV22",
+      "accountLabel": "Номер счёта:",
+      "accountValue": "LV65HABA0551006483879",
+      "copyAll": "Копировать все реквизиты"
+    },
+    "map": {
+      "title": "Ждем Вас на нашей сортировочной площадке - ул. Кaudzīšu 59",
+      "cta": "Подать заявку на сдачу отходов"
+    }
+  },
   "notFound": {
     "title": "404",
     "message": "Упс! Страница не найдена",

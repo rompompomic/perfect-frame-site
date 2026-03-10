@@ -210,6 +210,56 @@
       "submit": "Nosūtīt ziņu"
     }
   },
+  "contacts": {
+    "title": "Kontakti",
+    "administration": {
+      "title": "Administrācija",
+      "contactsLabel": "Kontakti:",
+      "phone": "+371 28 60 1111",
+      "phoneNote": "Nedarbojas sestdienā",
+      "email": "klienti@nikami.lv",
+      "hoursLabel": "Darba laiki:",
+      "weekdays": "P.-Pk.: 8:00 - 17:00",
+      "weekend": "S.-Sv.: slēgts"
+    },
+    "sortingArea": {
+      "title": "Šķirošanas laukums - Kaudzīšu iela 59",
+      "subtitle": "Izziņas par pieņemtajiem būvniecības atkritumiem",
+      "contactsLabel": "Kontakti:",
+      "phone": "+371 28 60 1111",
+      "email": "svari@nikami.lv",
+      "hoursLabel": "Darba laiki:",
+      "weekdays": "P.-Pk.: 8:00 - 17:00",
+      "saturday": "S.: 8:00 - 12:30",
+      "sunday": "Sv.: pēc vienošanās"
+    },
+    "details": {
+      "title": "Rekvizīti",
+      "companyTitle": "Par uzņēmumu",
+      "nameLabel": "Nosaukums:",
+      "nameValue": "SIA \"NIKA MI\"",
+      "regLabel": "Reģistrācijas numurs",
+      "regValue": "40003278804",
+      "vatLabel": "PVN reģistrācijas nr.",
+      "vatValue": "LV40003278804",
+      "sepaLabel": "SEPA identifikators:",
+      "sepaValue": "LV74ZZZ40003278804",
+      "addressLabel": "Juridiskā adrese:",
+      "addressValue": "Kaudzīšu iela 59-1, Rumbula, Stopiņu pagasts, Ropažu novads, LV-2121",
+      "paymentTitle": "Norēķiniem",
+      "bankLabel": "Banka:",
+      "bankValue": "\"Swedbank\" SIA",
+      "bankCodeLabel": "Bankas numurs:",
+      "bankCodeValue": "HABALV22",
+      "accountLabel": "Konta numurs:",
+      "accountValue": "LV65HABA0551006483879",
+      "copyAll": "Kopēt visus rekvizītus"
+    },
+    "map": {
+      "title": "Gaidīsim Jūs mūsu šķirošanas laukumā - Kaudzīšu ielā 59",
+      "cta": "Pieteikt atkritumu nodošanu"
+    }
+  },
   "notFound": {
     "title": "404",
     "message": "Ups! Lapa nav atrasta",
