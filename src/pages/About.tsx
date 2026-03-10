@@ -310,6 +310,7 @@ const ContactFormSection = () => {
 const About = () => {
   return (
     <div className="flex flex-col min-h-screen bg-background">
+      <Navbar />
       <AboutHero />
       <WhyChooseSection />
       <PartnersSection />
