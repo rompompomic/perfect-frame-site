@@ -1,6 +1,8 @@
 import { Clock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const MapSection = () => {
+  const { t } = useTranslation();
   return (
     <section className="w-full relative min-h-[300px] sm:min-h-[384px]">
       {/* Full-width map */}
@@ -17,19 +19,21 @@ const MapSection = () => {
       <div className="absolute top-4 sm:top-6 right-4 sm:right-6 md:right-12 lg:right-24 w-[calc(100%-2rem)] sm:w-[90%] md:w-[500px] lg:w-[598px] p-4 sm:p-5 bg-primary flex flex-col gap-4 sm:gap-8 overflow-hidden z-10">
         <div className="flex flex-col gap-4 sm:gap-8">
           <h3 className="text-primary-foreground text-lg sm:text-2xl lg:text-3xl font-black uppercase leading-6 sm:leading-8">
-            Gaidīsim Jūs mūsu šķirošanas laukumā - Kaudzīšu ielā 59
+            {t("map.title")}
           </h3>
           <div className="flex flex-col gap-3 sm:gap-5">
             <div className="h-px bg-primary-foreground/40" />
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4">
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-nikami-blue" />
-                <span className="text-primary-foreground text-sm sm:text-base font-bold leading-6">Darba laiki:</span>
+                <span className="text-primary-foreground text-sm sm:text-base font-bold leading-6">
+                  {t("map.workingHours")}
+                </span>
               </div>
               <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-primary-foreground text-xs sm:text-sm lg:text-base font-medium leading-5 sm:leading-6">
-                <span>P.-Pk.: 8:00 - 17:00,</span>
-                <span>S.: 8:00 - 12:30,</span>
-                <span>Sv.: pēc vienošanās</span>
+                <span>{t("map.weekdays")}</span>
+                <span>{t("map.saturday")}</span>
+                <span>{t("map.sunday")}</span>
               </div>
             </div>
           </div>
