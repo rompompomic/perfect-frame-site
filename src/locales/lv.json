@@ -117,7 +117,8 @@
   },
   "notFound": {
     "title": "404",
+    "heading": "Lapa nav atrasta",
     "message": "Ups! Lapa nav atrasta",
-    "returnHome": "Atgriezties mājās"
+    "returnHome": "Uz sākumlapu"
   }
 }
