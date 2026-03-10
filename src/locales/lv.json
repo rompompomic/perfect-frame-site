@@ -204,7 +204,8 @@
       "phone": "Telefona numurs",
       "email": "E-pasts",
       "message": "Jūsu ziņa",
-      "privacy": "Iepazinies un piekrītu mājas lapas privātuma politikai.",
+      "privacy": "Iepazinies un piekrītu mājas lapas ",
+      "privacyLink": "privātuma politikai",
       "marketing": "Par piekrītu, ka manu e-pastu izmanto mārketinga aktivitātēm",
       "submit": "Nosūtīt ziņu"
     }

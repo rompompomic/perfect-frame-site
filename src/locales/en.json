@@ -204,7 +204,8 @@
       "phone": "Phone number",
       "email": "E-mail",
       "message": "Your message",
-      "privacy": "I have read and agree to the website privacy policy.",
+      "privacy": "I have read and agree to the website ",
+      "privacyLink": "privacy policy",
       "marketing": "I agree that my email will be used for marketing activities",
       "submit": "Send message"
     }
