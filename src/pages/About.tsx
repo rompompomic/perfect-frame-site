@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { CheckCircle, ChevronDown, Play } from "lucide-react";
+import { ChevronDown, Play } from "lucide-react";
+import checkInCircleIcon from "@/assets/icons/CheckInCircle.svg";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -51,7 +52,7 @@ const WhyChooseCard = ({ title, description }: {title: string;description: strin
 <div className="flex-1 p-5 bg-secondary flex flex-col gap-5">
     <div className="flex items-start gap-10">
       <div className="w-20 h-20 bg-background flex items-center justify-center shrink-0">
-        <CheckCircle className="w-10 h-10 text-primary" strokeWidth={1.5} />
+        <img src={checkInCircleIcon} alt="" className="w-10 h-10" />
       </div>
       <div className="flex flex-col gap-3">
         <h3 className="text-primary text-2xl lg:text-3xl font-black uppercase leading-8">{title}</h3>
@@ -138,15 +139,15 @@ const AboutMapSection = () => {
             <div className="h-px bg-primary-foreground" />
             <div className="flex justify-between items-start">
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-6 h-6 text-nikami-blue" strokeWidth={1.5} />
+                <img src={checkInCircleIcon} alt="" className="w-6 h-6" />
                 <span className="text-primary-foreground text-base font-bold leading-6">{t("about.map.tag1")}</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-6 h-6 text-nikami-blue" strokeWidth={1.5} />
+                <img src={checkInCircleIcon} alt="" className="w-6 h-6" />
                 <span className="text-primary-foreground text-base font-bold leading-6">{t("about.map.tag2")}</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-6 h-6 text-nikami-blue" strokeWidth={1.5} />
+                <img src={checkInCircleIcon} alt="" className="w-6 h-6" />
                 <span className="text-primary-foreground text-base font-bold leading-6">{t("about.map.tag3")}</span>
               </div>
             </div>
