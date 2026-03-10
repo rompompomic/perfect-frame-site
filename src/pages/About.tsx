@@ -22,7 +22,7 @@ const AboutHero = () => {
         <div className="flex-1 flex items-center">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full flex flex-col gap-12">
             <div className="relative z-10 w-full max-w-[1400px]">
-              <h1 className="text-primary-foreground text-3xl md:text-4xl lg:text-[60px] font-black uppercase leading-[1] lg:leading-[58px]">
+              <h1 className="text-primary-foreground text-3xl md:text-4xl font-black uppercase leading-[1] lg:leading-[58px] lg:text-5xl">
                 {t("about.hero.title")}
               </h1>
 
@@ -42,13 +42,13 @@ const AboutHero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 /* ───── Why Choose Us ───── */
-const WhyChooseCard = ({ title, description }: { title: string; description: string }) => (
-  <div className="flex-1 p-5 bg-secondary flex flex-col gap-5">
+const WhyChooseCard = ({ title, description }: {title: string;description: string;}) =>
+<div className="flex-1 p-5 bg-secondary flex flex-col gap-5">
     <div className="flex items-start gap-10">
       <div className="w-20 h-20 bg-background flex items-center justify-center shrink-0">
         <CheckCircle className="w-10 h-10 text-primary" strokeWidth={1.5} />
@@ -58,12 +58,12 @@ const WhyChooseCard = ({ title, description }: { title: string; description: str
         <p className="text-foreground text-lg lg:text-xl font-medium leading-7">{description}</p>
       </div>
     </div>
-  </div>
-);
+  </div>;
+
 
 const WhyChooseSection = () => {
   const { t } = useTranslation();
-  const items = t("about.whyChoose.items", { returnObjects: true }) as { title: string; description: string }[];
+  const items = t("about.whyChoose.items", { returnObjects: true }) as {title: string;description: string;}[];
   return (
     <section className="px-4 sm:px-6 lg:px-28 py-20">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
@@ -86,8 +86,8 @@ const WhyChooseSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 /* ───── Partners ───── */
@@ -101,16 +101,16 @@ const PartnersSection = () => {
         </h2>
         <div className="flex flex-col gap-1">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className="h-48 bg-background flex items-center justify-center">
+            {Array.from({ length: 8 }).map((_, i) =>
+            <div key={i} className="h-48 bg-background flex items-center justify-center">
                 <span className="text-muted-foreground text-sm">Partner {i + 1}</span>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 /* ───── Map Section ───── */
@@ -160,45 +160,45 @@ const AboutMapSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 /* ───── FAQ ───── */
 const FAQSection = () => {
   const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState(1);
-  const items = t("about.faq.items", { returnObjects: true }) as { question: string; answer: string }[];
+  const items = t("about.faq.items", { returnObjects: true }) as {question: string;answer: string;}[];
 
   return (
     <section className="px-4 sm:px-6 lg:px-28 py-20 bg-secondary">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
         <h2 className="text-primary text-3xl lg:text-5xl font-black uppercase leading-tight">{t("about.faq.title")}</h2>
         <div className="flex flex-col gap-1">
-          {items.map((item, i) => (
-            <div
-              key={i}
-              className="pl-8 pr-5 py-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2 cursor-pointer"
-              onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
-            >
+          {items.map((item, i) =>
+          <div
+            key={i}
+            className="pl-8 pr-5 py-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2 cursor-pointer"
+            onClick={() => setOpenIndex(openIndex === i ? -1 : i)}>
+            
               <div className="flex items-center justify-between gap-10">
                 <h3 className="text-primary text-xl lg:text-2xl font-black leading-8">{item.question}</h3>
                 <button className="px-4 py-3 bg-background rounded-sm outline outline-1 outline-nikami-blue flex items-center shrink-0">
                   <ChevronDown
-                    className={`w-5 h-5 text-nikami-blue transition-transform ${openIndex === i ? "rotate-180" : ""}`}
-                  />
+                  className={`w-5 h-5 text-nikami-blue transition-transform ${openIndex === i ? "rotate-180" : ""}`} />
+                
                 </button>
               </div>
-              {openIndex === i && (
-                <p className="text-foreground text-base font-medium leading-6 max-w-[880px]">{item.answer}</p>
-              )}
+              {openIndex === i &&
+            <p className="text-foreground text-base font-medium leading-6 max-w-[880px]">{item.answer}</p>
+            }
             </div>
-          ))}
+          )}
         </div>
         <p className="text-foreground text-base font-medium leading-6">{t("about.faq.footer")}</p>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 /* ───── Questions Banner ───── */
@@ -212,8 +212,8 @@ const QuestionsBanner = () => {
           {t("about.questions.title")}
         </h2>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 /* ───── Contact Form ───── */
@@ -279,13 +279,13 @@ const ContactFormSection = () => {
         </div>
         <button
           disabled
-          className="w-60 px-8 py-3 bg-primary/20 rounded-sm text-primary-foreground text-base font-semibold leading-6 cursor-not-allowed"
-        >
+          className="w-60 px-8 py-3 bg-primary/20 rounded-sm text-primary-foreground text-base font-semibold leading-6 cursor-not-allowed">
+          
           {t("about.contact.submit")}
         </button>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 /* ───── Page ───── */
@@ -301,8 +301,8 @@ const About = () => {
       <ContactFormSection />
       <Footer />
       <WeChatButton />
-    </div>
-  );
+    </div>);
+
 };
 
 export default About;
