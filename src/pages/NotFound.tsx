@@ -10,7 +10,7 @@ const NotFound = () => {
 
       <div className="relative flex-1 min-h-[400px] sm:min-h-[480px] md:min-h-[580px] px-6 sm:px-12 md:px-28 pt-16 sm:pt-20 md:pt-24 pb-16 sm:pb-20 md:pb-24 flex flex-col justify-start items-start gap-8 sm:gap-12 overflow-hidden">
         {/* Giant 404 background text */}
-        <span className="absolute -right-4 sm:-right-8 md:-right-12 bottom-0 sm:top-8 md:top-[101px] sm:bottom-auto text-[180px] sm:text-[320px] md:text-[565px] font-black uppercase leading-none text-nikami-light-blue select-none pointer-events-none z-0">
+        <span className="absolute -right-4 sm:-right-8 md:-right-8 lg:-right-12 bottom-0 sm:top-8 md:top-[60px] lg:top-[101px] sm:bottom-auto text-[180px] sm:text-[320px] md:text-[380px] lg:text-[565px] font-black uppercase leading-none text-nikami-light-blue select-none pointer-events-none z-0">
           404
         </span>
 
