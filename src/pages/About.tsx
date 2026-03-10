@@ -143,7 +143,7 @@ const AboutMapSection = () => {
                 <span className="text-primary-foreground text-base font-bold leading-6">{t("about.map.tag1")}</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-6 h-6 text-nikami-blue" strokeWidth={1.5} />
+                <img src={checkInCircleIcon} alt="" className="w-6 h-6" />
                 <span className="text-primary-foreground text-base font-bold leading-6">{t("about.map.tag2")}</span>
               </div>
               <div className="flex items-center gap-2">
