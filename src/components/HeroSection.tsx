@@ -54,7 +54,7 @@ const HeroSection = () => {
         </div>
 
         {/* Service cards */}
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-1 pb-6 sm:pb-8 md:pb-10">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-1 pb-6 sm:pb-8 md:pb-4">
           <ServiceCard
             icon={<img src={containerIcon} alt="Konteineru noma" className="w-8 h-8 sm:w-10 sm:h-10" />}
             title={
