@@ -18,7 +18,7 @@ const MapSection = () => {
       {/* Floating info card */}
       <div className="absolute top-2 sm:top-6 right-2 sm:right-6 md:right-12 lg:right-24 w-[220px] sm:w-[90%] md:w-[500px] lg:w-[598px] p-2 sm:p-5 bg-primary flex flex-col gap-1.5 sm:gap-8 overflow-hidden z-10">
         <div className="flex flex-col gap-4 sm:gap-8">
-          <h3 className="text-primary-foreground text-lg sm:text-xs lg:text-3xl font-black uppercase leading-6 sm:leading-8">
+          <h3 className="text-primary-foreground text-xs sm:text-lg lg:text-3xl font-black uppercase leading-6 sm:leading-8">
             {t("map.title")}
           </h3>
           <div className="flex flex-col gap-3 sm:gap-5">
