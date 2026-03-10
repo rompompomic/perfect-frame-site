@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import chevronDownIcon from "@/assets/icons/ChevronDown.svg";
 import playIcon from "@/assets/icons/Play.svg";
 import checkInCircleIcon from "@/assets/icons/CheckInCircle.svg";
 import anyQuestionsImage from "@/assets/any-questions.webp";
@@ -196,8 +196,10 @@ const FAQSection = () => {
               <div className="flex items-center justify-between gap-10">
                 <h3 className="text-primary text-xl lg:text-2xl font-black leading-8">{item.question}</h3>
                 <button className="px-4 py-3 bg-background rounded-sm outline outline-1 outline-nikami-blue flex items-center shrink-0">
-                  <ChevronDown
-                    className={`w-5 h-5 text-nikami-blue transition-transform ${openIndex === i ? "rotate-180" : ""}`}
+                  <img
+                    src={chevronDownIcon}
+                    alt=""
+                    className={`w-5 h-5 transition-transform ${openIndex === i ? "rotate-180" : ""}`}
                   />
                 </button>
               </div>
