@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full px-4 sm:px-6 lg:px-10 py-3 flex flex-col justify-center items-start gap-3">
+    <nav className="sticky top-0 z-50 w-full px-4 sm:px-6 lg:px-10 py-3 flex flex-col justify-center items-start gap-3 bg-primary/95 backdrop-blur-sm">
       {/* Top bar */}
       <div className="self-stretch flex justify-between items-center">
         <div className="w-20 h-9 sm:w-24 sm:h-11 relative">

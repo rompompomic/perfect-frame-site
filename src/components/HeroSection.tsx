@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import Navbar from "./Navbar";
 import heroImage from "@/assets/hero-image.webp";
 import wasteIcon from "@/assets/icons/Waste.svg";
 import containerIcon from "@/assets/icons/Container.svg";
@@ -44,8 +43,6 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10">
-        <Navbar />
-
         {/* Hero content */}
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-6 sm:pt-10 lg:pt-16 pb-0">
           <h1 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black uppercase leading-tight max-w-4xl mb-6 sm:mb-8 lg:mb-12">
