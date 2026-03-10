@@ -93,6 +93,17 @@ const WhyChooseSection = () => {
 };
 
 /* ───── Partners ───── */
+import partner1 from "@/assets/partners/partner1.webp";
+import partner2 from "@/assets/partners/partner2.svg";
+import partner3 from "@/assets/partners/partner3.webp";
+import partner4 from "@/assets/partners/partner4.svg";
+import partner5 from "@/assets/partners/partner5.webp";
+import partner6 from "@/assets/partners/partner6.webp";
+import partner7 from "@/assets/partners/partner7.webp";
+import partner8 from "@/assets/partners/partner8.webp";
+
+const partnerLogos = [partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner8];
+
 const PartnersSection = () => {
   const { t } = useTranslation();
   return (
@@ -101,18 +112,15 @@ const PartnersSection = () => {
         <h2 className="text-primary text-3xl lg:text-5xl font-black uppercase leading-tight">
           {t("about.partners.title")}
         </h2>
-        <div className="flex flex-col gap-1">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
-            {Array.from({ length: 8 }).map((_, i) =>
-            <div key={i} className="h-48 bg-background flex items-center justify-center">
-                <span className="text-muted-foreground text-sm">Partner {i + 1}</span>
-              </div>
-            )}
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
+          {partnerLogos.map((logo, i) =>
+            <div key={i} className="h-48 bg-background flex items-center justify-center p-6">
+              <img src={logo} alt={`Partner ${i + 1}`} className="max-h-24 max-w-full object-contain" />
+            </div>
+          )}
         </div>
       </div>
     </section>);
-
 };
 
 /* ───── Map Section ───── */
