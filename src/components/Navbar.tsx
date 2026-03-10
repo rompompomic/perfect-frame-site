@@ -232,9 +232,9 @@ const Navbar = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <span className="text-primary-foreground text-sm lg:text-base font-semibold leading-6 cursor-pointer hover:opacity-80">
+            <Link to="/kontakti" className="text-primary-foreground text-sm lg:text-base font-semibold leading-6 cursor-pointer hover:opacity-80">
               {t("navbar.contacts")}
-            </span>
+            </Link>
           </div>
           <div className="flex items-center overflow-hidden">
             <div className="w-10 h-6 px-5 border-r border-primary-foreground/20 flex justify-center items-center overflow-hidden">
