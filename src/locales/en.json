@@ -117,7 +117,8 @@
   },
   "notFound": {
     "title": "404",
+    "heading": "Page not found",
     "message": "Oops! Page not found",
-    "returnHome": "Return to Home"
+    "returnHome": "Go to homepage"
   }
 }
