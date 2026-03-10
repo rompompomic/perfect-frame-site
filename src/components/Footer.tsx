@@ -1,9 +1,11 @@
 import { Phone } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import logoWhite from "@/assets/logo-white.webp";
 import mapPinIcon from "@/assets/icons/MapPin.svg";
 import emailIcon from "@/assets/icons/email.svg";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="w-full bg-nikami-dark px-4 sm:px-6 lg:px-28 py-8 sm:py-10">
       <div className="flex flex-col gap-8 sm:gap-10 mb-8 sm:mb-10">
@@ -15,76 +17,146 @@ const Footer = () => {
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2">
                 <Phone className="w-5 h-5 text-nikami-blue" fill="currentColor" strokeWidth={0} />
-                <span className="text-primary-foreground text-sm sm:text-base font-medium">371 28 60 1111</span>
+                <span className="text-primary-foreground text-sm sm:text-base font-medium">
+                  {t("footer.phone")}
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <img src={mapPinIcon} alt="Location" className="w-5 h-5" />
-                <span className="text-primary-foreground text-sm sm:text-base font-medium">Kaudzīšu iela 59</span>
+                <span className="text-primary-foreground text-sm sm:text-base font-medium">
+                  {t("footer.address")}
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <img src={emailIcon} alt="Email" className="w-5 h-5" />
-                <span className="text-primary-foreground text-sm sm:text-base font-medium">klienti@nikami.lv</span>
+                <span className="text-primary-foreground text-sm sm:text-base font-medium">
+                  {t("footer.email")}
+                </span>
               </div>
             </div>
           </div>
 
           {/* Pakalpojumi */}
           <div className="flex flex-col gap-4 sm:gap-5">
-            <span className="text-primary-foreground/40 text-sm sm:text-base font-bold">Pakalpojumi</span>
+            <span className="text-primary-foreground/40 text-sm sm:text-base font-bold">
+              {t("footer.services")}
+            </span>
             <div className="flex flex-col gap-3 sm:gap-4">
-              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">Konteineru noma</span>
-              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">Atkritumu nodošana laukumā</span>
-              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">Šķirošanas laukums</span>
-              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">Būvgružu pārstrāde</span>
+              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">
+                {t("footer.serviceLinks.containerRental")}
+              </span>
+              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">
+                {t("footer.serviceLinks.wasteDelivery")}
+              </span>
+              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">
+                {t("footer.serviceLinks.sortingArea")}
+              </span>
+              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">
+                {t("footer.serviceLinks.constructionWaste")}
+              </span>
             </div>
           </div>
 
           {/* Par uzņēmumu */}
           <div className="flex flex-col gap-4 sm:gap-5">
-            <span className="text-primary-foreground/40 text-sm sm:text-base font-bold">Par uzņēmumu</span>
+            <span className="text-primary-foreground/40 text-sm sm:text-base font-bold">
+              {t("footer.about")}
+            </span>
             <div className="flex flex-col gap-3 sm:gap-4">
-              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">Kontakti</span>
-              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">Norēķini</span>
-              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">Rekvizīti</span>
+              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">
+                {t("footer.companyLinks.contacts")}
+              </span>
+              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">
+                {t("footer.companyLinks.payments")}
+              </span>
+              <span className="text-primary-foreground text-sm sm:text-base font-medium cursor-pointer hover:opacity-80">
+                {t("footer.companyLinks.details")}
+              </span>
             </div>
           </div>
 
           {/* Darba laiks & Social */}
           <div className="flex flex-col gap-6 sm:gap-8">
             <div className="flex flex-col gap-4 sm:gap-5">
-              <span className="text-primary-foreground text-lg sm:text-xl font-bold">Darba laiks</span>
+              <span className="text-primary-foreground text-lg sm:text-xl font-bold">
+                {t("footer.workingHours")}
+              </span>
               <div className="flex flex-col gap-2 sm:gap-3">
                 <div className="flex items-center gap-2">
-                  <span className="text-primary-foreground text-sm sm:text-base font-medium">P. - Pk.:</span>
-                  <span className="text-primary-foreground text-sm sm:text-base font-bold">8:00 - 17:00</span>
+                  <span className="text-primary-foreground text-sm sm:text-base font-medium">
+                    {t("footer.weekdays")}
+                  </span>
+                  <span className="text-primary-foreground text-sm sm:text-base font-bold">
+                    {t("footer.weekdaysTime")}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-primary-foreground text-sm sm:text-base font-medium">S.:</span>
-                  <span className="text-primary-foreground text-sm sm:text-base font-bold">8:00 - 12:30</span>
+                  <span className="text-primary-foreground text-sm sm:text-base font-medium">
+                    {t("footer.saturday")}
+                  </span>
+                  <span className="text-primary-foreground text-sm sm:text-base font-bold">
+                    {t("footer.saturdayTime")}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-primary-foreground text-sm sm:text-base font-medium">Sv.:</span>
-                  <span className="text-primary-foreground text-sm sm:text-base font-bold">Pēc vienošanās</span>
+                  <span className="text-primary-foreground text-sm sm:text-base font-medium">
+                    {t("footer.sunday")}
+                  </span>
+                  <span className="text-primary-foreground text-sm sm:text-base font-bold">
+                    {t("footer.sundayTime")}
+                  </span>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col gap-2">
-              <span className="text-primary-foreground text-sm sm:text-base font-bold">Seko mums:</span>
+              <span className="text-primary-foreground text-sm sm:text-base font-bold">
+                {t("footer.followUs")}
+              </span>
               <div className="flex gap-4">
                 {/* Facebook */}
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM13.4766 6C11.3116 6.00001 10.5498 7.0914 10.5498 8.92676V10.2773H9.2002V12.5273H10.5498V19.0557H13.251V12.5273H15.0527L15.292 10.2773H13.251L13.2539 9.15137C13.2539 8.56459 13.3096 8.25001 14.1523 8.25H15.2793V6H13.4766Z" fill="hsl(var(--nikami-blue))" />
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM13.4766 6C11.3116 6.00001 10.5498 7.0914 10.5498 8.92676V10.2773H9.2002V12.5273H10.5498V19.0557H13.251V12.5273H15.0527L15.292 10.2773H13.251L13.2539 9.15137C13.2539 8.56459 13.3096 8.25001 14.1523 8.25H15.2793V6H13.4766Z"
+                    fill="hsl(var(--nikami-blue))"
+                  />
                 </svg>
                 {/* Instagram */}
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM11.999 5.59961C10.2623 5.59961 10.0438 5.60761 9.36133 5.63867C8.68039 5.66988 8.21537 5.77739 7.80859 5.93555C7.38774 6.09898 7.03047 6.31809 6.6748 6.67383C6.3188 7.02957 6.09955 7.38681 5.93555 7.80762C5.7769 8.21466 5.66934 8.68031 5.63867 9.36133C5.60815 10.0437 5.59961 10.2622 5.59961 12C5.59961 13.7382 5.60774 13.956 5.63867 14.6387C5.67001 15.3196 5.77752 15.7846 5.93555 16.1914C6.0991 16.6122 6.31813 16.9696 6.67383 17.3252C7.02943 17.6812 7.38695 17.901 7.80762 18.0645C8.21477 18.2227 8.68024 18.3301 9.36133 18.3613C10.0438 18.3924 10.2622 18.4004 12 18.4004C13.7381 18.4004 13.956 18.3924 14.6387 18.3613C15.3197 18.3301 15.7853 18.2227 16.1924 18.0645C16.6132 17.901 16.9696 17.6812 17.3252 17.3252C17.6812 16.9695 17.9005 16.6122 18.0645 16.1914C18.2217 15.7845 18.3293 15.3194 18.3613 14.6387C18.392 13.956 18.4004 13.7382 18.4004 12C18.4004 10.2621 18.392 10.0438 18.3613 9.36133C18.3293 8.68001 18.2218 8.21455 18.0645 7.80762C17.9005 7.38668 17.6812 7.02957 17.3252 6.67383C16.9693 6.31797 16.6136 6.09885 16.1924 5.93555C15.7845 5.77731 15.3188 5.6699 14.6377 5.63867C13.9551 5.60761 13.7373 5.59961 11.999 5.59961Z" fill="var(--Blue, #4895E8)" />
-                  <path d="M11.4268 6.75391C11.5971 6.75364 11.7875 6.75391 12.001 6.75391C13.7095 6.75391 13.9122 6.75937 14.5869 6.79004C15.2108 6.81858 15.5498 6.92315 15.7754 7.01074C16.0739 7.12672 16.2869 7.26532 16.5107 7.48926C16.7347 7.71325 16.873 7.92692 16.9893 8.22559C17.0768 8.45088 17.1815 8.78936 17.21 9.41309C17.2406 10.0878 17.2471 10.291 17.2471 11.999C17.2471 13.7067 17.2406 13.9095 17.21 14.584C17.1814 15.208 17.0769 15.5471 16.9893 15.7725C16.8733 16.071 16.7347 16.284 16.5107 16.5078C16.2868 16.7317 16.074 16.8704 15.7754 16.9863C15.5501 17.0743 15.2109 17.1785 14.5869 17.207C13.9123 17.2377 13.7095 17.2441 12.001 17.2441C10.292 17.2441 10.0887 17.2377 9.41406 17.207C8.7903 17.1782 8.45128 17.0739 8.22559 16.9863C7.92706 16.8703 7.71417 16.7308 7.49023 16.5068C7.2663 16.2829 7.12699 16.0702 7.01074 15.7715C6.92318 15.5462 6.81943 15.2075 6.79102 14.584C6.76035 13.9093 6.75391 13.7062 6.75391 11.9971C6.75391 10.2883 6.76036 10.0866 6.79102 9.41211C6.81954 8.78827 6.92316 8.44924 7.01074 8.22363C7.12674 7.92496 7.26623 7.71131 7.49023 7.4873C7.71404 7.26355 7.92726 7.12498 8.22559 7.00879C8.45114 6.92081 8.79032 6.81678 9.41406 6.78809C10.0045 6.76142 10.2339 6.75329 11.4268 6.75195V6.75391ZM12.001 8.71387C10.186 8.71387 8.71402 10.185 8.71387 12C8.71387 13.8151 10.1859 15.2861 12.001 15.2861C13.8159 15.2859 15.2871 13.815 15.2871 12C15.287 10.1852 13.8157 8.71413 12.001 8.71387ZM15.417 7.81641C14.993 7.81641 14.6484 8.15985 14.6484 8.58398C14.6484 9.00798 14.993 9.35156 15.417 9.35156C15.841 9.35153 16.1846 9.00796 16.1846 8.58398C16.1846 8.16 15.841 7.81644 15.417 7.81641Z" fill="var(--Blue, #4895E8)" />
-                  <path d="M12.0005 9.8667C13.1787 9.8667 14.1339 10.8218 14.1339 12.0001C14.1339 13.1782 13.1787 14.1334 12.0005 14.1334C10.8223 14.1334 9.86719 13.1782 9.86719 12.0001C9.86719 10.8218 10.8223 9.8667 12.0005 9.8667Z" fill="var(--Blue, #4895E8)" />
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM11.999 5.59961C10.2623 5.59961 10.0438 5.60761 9.36133 5.63867C8.68039 5.66988 8.21537 5.77739 7.80859 5.93555C7.38774 6.09898 7.03047 6.31809 6.6748 6.67383C6.3188 7.02957 6.09955 7.38681 5.93555 7.80762C5.7769 8.21466 5.66934 8.68031 5.63867 9.36133C5.60815 10.0437 5.59961 10.2622 5.59961 12C5.59961 13.7382 5.60774 13.956 5.63867 14.6387C5.67001 15.3196 5.77752 15.7846 5.93555 16.1914C6.0991 16.6122 6.31813 16.9696 6.67383 17.3252C7.02943 17.6812 7.38695 17.901 7.80762 18.0645C8.21477 18.2227 8.68024 18.3301 9.36133 18.3613C10.0438 18.3924 10.2622 18.4004 12 18.4004C13.7381 18.4004 13.956 18.3924 14.6387 18.3613C15.3197 18.3301 15.7853 18.2227 16.1924 18.0645C16.6132 17.901 16.9696 17.6812 17.3252 17.3252C17.6812 16.9695 17.9005 16.6122 18.0645 16.1914C18.2217 15.7845 18.3293 15.3194 18.3613 14.6387C18.392 13.956 18.4004 13.7382 18.4004 12C18.4004 10.2621 18.392 10.0438 18.3613 9.36133C18.3293 8.68001 18.2218 8.21455 18.0645 7.80762C17.9005 7.38668 17.6812 7.02957 17.3252 6.67383C16.9693 6.31797 16.6136 6.09885 16.1924 5.93555C15.7845 5.77731 15.3188 5.6699 14.6377 5.63867C13.9551 5.60761 13.7373 5.59961 11.999 5.59961Z"
+                    fill="var(--Blue, #4895E8)"
+                  />
+                  <path
+                    d="M11.4268 6.75391C11.5971 6.75364 11.7875 6.75391 12.001 6.75391C13.7095 6.75391 13.9122 6.75937 14.5869 6.79004C15.2108 6.81858 15.5498 6.92315 15.7754 7.01074C16.0739 7.12672 16.2869 7.26532 16.5107 7.48926C16.7347 7.71325 16.873 7.92692 16.9893 8.22559C17.0768 8.45088 17.1815 8.78936 17.21 9.41309C17.2406 10.0878 17.2471 10.291 17.2471 11.999C17.2471 13.7067 17.2406 13.9095 17.21 14.584C17.1814 15.208 17.0769 15.5471 16.9893 15.7725C16.8733 16.071 16.7347 16.284 16.5107 16.5078C16.2868 16.7317 16.074 16.8704 15.7754 16.9863C15.5501 17.0743 15.2109 17.1785 14.5869 17.207C13.9123 17.2377 13.7095 17.2441 12.001 17.2441C10.292 17.2441 10.0887 17.2377 9.41406 17.207C8.7903 17.1782 8.45128 17.0739 8.22559 16.9863C7.92706 16.8703 7.71417 16.7308 7.49023 16.5068C7.2663 16.2829 7.12699 16.0702 7.01074 15.7715C6.92318 15.5462 6.81943 15.2075 6.79102 14.584C6.76035 13.9093 6.75391 13.7062 6.75391 11.9971C6.75391 10.2883 6.76036 10.0866 6.79102 9.41211C6.81954 8.78827 6.92316 8.44924 7.01074 8.22363C7.12674 7.92496 7.26623 7.71131 7.49023 7.4873C7.71404 7.26355 7.92726 7.12498 8.22559 7.00879C8.45114 6.92081 8.79032 6.81678 9.41406 6.78809C10.0045 6.76142 10.2339 6.75329 11.4268 6.75195V6.75391ZM12.001 8.71387C10.186 8.71387 8.71402 10.185 8.71387 12C8.71387 13.8151 10.1859 15.2861 12.001 15.2861C13.8159 15.2859 15.2871 13.815 15.2871 12C15.287 10.1852 13.8157 8.71413 12.001 8.71387ZM15.417 7.81641C14.993 7.81641 14.6484 8.15985 14.6484 8.58398C14.6484 9.00798 14.993 9.35156 15.417 9.35156C15.841 9.35153 16.1846 9.00796 16.1846 8.58398C16.1846 8.16 15.841 7.81644 15.417 7.81641Z"
+                    fill="var(--Blue, #4895E8)"
+                  />
+                  <path
+                    d="M12.0005 9.8667C13.1787 9.8667 14.1339 10.8218 14.1339 12.0001C14.1339 13.1782 13.1787 14.1334 12.0005 14.1334C10.8223 14.1334 9.86719 13.1782 9.86719 12.0001C9.86719 10.8218 10.8223 9.8667 12.0005 9.8667Z"
+                    fill="var(--Blue, #4895E8)"
+                  />
                 </svg>
                 {/* LinkedIn */}
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM15.1562 9.74707C13.7126 9.74719 13.066 10.5404 12.7051 11.0967V9.93945H9.98535C10.0212 10.7078 9.98535 18.1104 9.98535 18.1104H12.7051V13.5469C12.7051 13.3027 12.723 13.0586 12.7949 12.8838C12.9915 12.396 13.4393 11.8916 14.1904 11.8916C15.1747 11.8917 15.5683 12.6404 15.5684 13.7383V18.1094H18.2871L18.2881 13.4248C18.2881 10.9151 16.9458 9.74707 15.1562 9.74707ZM5.76074 18.1094H8.48047V9.93848H5.76074V18.1094ZM7.13867 6C6.20844 6 5.59972 6.61009 5.59961 7.41113C5.59961 8.19569 6.19053 8.82324 7.10352 8.82324H7.12012C8.06835 8.82324 8.65918 8.19569 8.65918 7.41113C8.64143 6.61014 8.06881 6.00007 7.13867 6Z" fill="hsl(var(--nikami-blue))" />
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM15.1562 9.74707C13.7126 9.74719 13.066 10.5404 12.7051 11.0967V9.93945H9.98535C10.0212 10.7078 9.98535 18.1104 9.98535 18.1104H12.7051V13.5469C12.7051 13.3027 12.723 13.0586 12.7949 12.8838C12.9915 12.396 13.4393 11.8916 14.1904 11.8916C15.1747 11.8917 15.5683 12.6404 15.5684 13.7383V18.1094H18.2871L18.2881 13.4248C18.2881 10.9151 16.9458 9.74707 15.1562 9.74707ZM5.76074 18.1094H8.48047V9.93848H5.76074V18.1094ZM7.13867 6C6.20844 6 5.59972 6.61009 5.59961 7.41113C5.59961 8.19569 6.19053 8.82324 7.10352 8.82324H7.12012C8.06835 8.82324 8.65918 8.19569 8.65918 7.41113C8.64143 6.61014 8.06881 6.00007 7.13867 6Z"
+                    fill="hsl(var(--nikami-blue))"
+                  />
                 </svg>
               </div>
             </div>
@@ -95,7 +167,7 @@ const Footer = () => {
       {/* Bottom */}
       <div className="border-t border-primary-foreground/20 pt-4 sm:pt-5 flex flex-col sm:flex-row justify-between items-center gap-4">
         <span className="text-primary-foreground/40 text-sm sm:text-base font-medium text-center sm:text-left">
-          © 2026 NIKA MI. Visas tiesības aizsargātas.
+          © 2026 NIKA MI. {t("footer.rights")}.
         </span>
       </div>
     </footer>

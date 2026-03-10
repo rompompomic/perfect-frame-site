@@ -1,0 +1,123 @@
+{
+  "navbar": {
+    "phone": "371 28 60 1111",
+    "address": "Kaudzīšu iela 59",
+    "email": "klienti@nikami.lv",
+    "orderContainer": "Pasūtīt konteineru",
+    "getOffer": "Saņemt piedāvājumu",
+    "login": "Login",
+    "about": "Par mums",
+    "services": "Pakalpojumi",
+    "contacts": "Kontakti",
+    "promotions": "Akcijas",
+    "serviceLinks": {
+      "containerRental": "Konteineru noma",
+      "sortingArea": "Šķirošanas laukums",
+      "constructionWaste": "Būvgružu pārstrāde",
+      "demolition": "Ēku un būvju demontāža",
+      "snowRemoval": "Sniega izvešana",
+      "greenCertificates": "Zaļo ēku sertifikāti"
+    }
+  },
+  "hero": {
+    "title": "Būvniecības atkritumu pieņemšana, šķirošana, pārstrāde un konteineru noma",
+    "containerRental": {
+      "title": "Konteineru noma",
+      "description": "Piegāde, maiņa, izvešana. Būvgružiem un kokmateriālu atkritumiem.",
+      "cta": "Pasūtīt konteineru"
+    },
+    "wasteDelivery": {
+      "title": "Atkritumu nodošana laukumā",
+      "description": "Piesaki atkritumu nodošanu šķirošanas laukumā – Kaudzīšu ielā 59, Rumbulā.",
+      "cta": "Pieteikt atkritumu nodošanu"
+    }
+  },
+  "stats": [
+    {
+      "value": "30+ gadu pieredze",
+      "description": "Kompetence un zināšanas, kas nodrošina augstu darba kvalitāti"
+    },
+    {
+      "value": "700+ konteineru",
+      "description": "Mūsu rīcībā ir dažāda tilpuma konteineri – no 6m³ līdz pat 20m³"
+    },
+    {
+      "value": "7000+ apmierinātu klientu",
+      "description": "Uzticami pakalpojumi, ātra piegāde un individuāla apkalpošana"
+    }
+  ],
+  "services": {
+    "title": "Pieteikt atkritumu nodošanu",
+    "items": [
+      {
+        "title": "Šķirošanas laukums",
+        "description": "Profesionāla būvniecības atkritumu šķirošana un pārstrāde, Rumbulā – Kaudzīšu iela 59."
+      },
+      {
+        "title": "Būvgružu pārstrāde",
+        "description": "Būvgružu pārstrāde gan mūsu šķirošanas poligonā, gan Jūsu objektā, izmantojot mobilo smalcinātāju."
+      },
+      {
+        "title": "Baltās tehnikas pieņemšana MOSK",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      },
+      {
+        "title": "Ēku un būvju demontāža",
+        "description": "Sākot no ēkas nojaukšanas līdz būvgružu izvešanai un to utilizācijai."
+      },
+      {
+        "title": "Sniega izvešana",
+        "description": "Sniega izvešana no Jūsu teritorijas no 7.50 € / m³."
+      },
+      {
+        "title": "Zaļo ēku sertifikāti",
+        "description": "Iegūsti 50% NĪN atlaidi uz 10 gadiem ar zaļās būvniecības sertifikātiem."
+      }
+    ]
+  },
+  "common": {
+    "cta": "Sazināties"
+  },
+  "footer": {
+    "phone": "371 28 60 1111",
+    "address": "Kaudzīšu iela 59",
+    "email": "klienti@nikami.lv",
+    "about": "Par mums",
+    "services": "Pakalpojumi",
+    "contacts": "Kontakti",
+    "privacy": "Privātuma politika",
+    "terms": "Noteikumi un nosacījumi",
+    "rights": "Visas tiesības aizsargātas",
+    "serviceLinks": {
+      "containerRental": "Konteineru noma",
+      "wasteDelivery": "Atkritumu nodošana laukumā",
+      "sortingArea": "Šķirošanas laukums",
+      "constructionWaste": "Būvgružu pārstrāde"
+    },
+    "companyLinks": {
+      "contacts": "Kontakti",
+      "payments": "Norēķini",
+      "details": "Rekvizīti"
+    },
+    "workingHours": "Darba laiks",
+    "weekdays": "P. - Pk.:",
+    "weekdaysTime": "8:00 - 17:00",
+    "saturday": "S.:",
+    "saturdayTime": "8:00 - 12:30",
+    "sunday": "Sv.:",
+    "sundayTime": "Pēc vienošanās",
+    "followUs": "Seko mums:"
+  },
+  "map": {
+    "title": "Gaidīsim Jūs mūsu šķirošanas laukumā - Kaudzīšu ielā 59",
+    "workingHours": "Darba laiki:",
+    "weekdays": "P.-Pk.: 8:00 - 17:00",
+    "saturday": "S.: 9:00 - 13:00",
+    "sunday": "Sv.: Slēgts"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Ups! Lapa nav atrasta",
+    "returnHome": "Atgriezties mājās"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "navbar": {
+    "phone": "371 28 60 1111",
+    "address": "Kaudzīšu iela 59",
+    "email": "klienti@nikami.lv",
+    "orderContainer": "Order Container",
+    "getOffer": "Get Offer",
+    "login": "Login",
+    "about": "About Us",
+    "services": "Services",
+    "contacts": "Contacts",
+    "promotions": "Promotions",
+    "serviceLinks": {
+      "containerRental": "Container Rental",
+      "sortingArea": "Sorting Area",
+      "constructionWaste": "Construction Waste Recycling",
+      "demolition": "Building Demolition",
+      "snowRemoval": "Snow Removal",
+      "greenCertificates": "Green Building Certificates"
+    }
+  },
+  "hero": {
+    "title": "Construction Waste Acceptance, Sorting, Recycling and Container Rental",
+    "containerRental": {
+      "title": "Container Rental",
+      "description": "Delivery, exchange, removal. For construction waste and wood waste.",
+      "cta": "Order Container"
+    },
+    "wasteDelivery": {
+      "title": "Waste Delivery to Site",
+      "description": "Register waste delivery to sorting site - Kaudzīšu iela 59, Rumbula.",
+      "cta": "Apply for Waste Delivery"
+    }
+  },
+  "stats": [
+    {
+      "value": "30+ years experience",
+      "description": "Competence and knowledge that ensure high work quality"
+    },
+    {
+      "value": "700+ containers",
+      "description": "We have various volume containers - from 6m³ to 20m³"
+    },
+    {
+      "value": "7000+ satisfied customers",
+      "description": "Reliable services, fast delivery and individual service"
+    }
+  ],
+  "services": {
+    "title": "Apply for Waste Delivery",
+    "items": [
+      {
+        "title": "Sorting Area",
+        "description": "Professional construction waste sorting and recycling in Rumbula - Kaudzīšu iela 59."
+      },
+      {
+        "title": "Construction Waste Recycling",
+        "description": "Construction waste recycling both at our sorting site and at your facility using mobile crusher."
+      },
+      {
+        "title": "White Goods Acceptance MOSK",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      },
+      {
+        "title": "Building Demolition",
+        "description": "From building demolition to construction waste removal and utilization."
+      },
+      {
+        "title": "Snow Removal",
+        "description": "Snow removal from your territory from 7.50 € / m³."
+      },
+      {
+        "title": "Green Building Certificates",
+        "description": "Get 50% NIN discount for 10 years with green building certificates."
+      }
+    ]
+  },
+  "common": {
+    "cta": "Contact Us"
+  },
+  "footer": {
+    "phone": "371 28 60 1111",
+    "address": "Kaudzīšu iela 59",
+    "email": "klienti@nikami.lv",
+    "about": "About Us",
+    "services": "Services",
+    "contacts": "Contacts",
+    "privacy": "Privacy Policy",
+    "terms": "Terms and Conditions",
+    "rights": "All rights reserved",
+    "serviceLinks": {
+      "containerRental": "Container Rental",
+      "wasteDelivery": "Waste Delivery to Site",
+      "sortingArea": "Sorting Area",
+      "constructionWaste": "Construction Waste Recycling"
+    },
+    "companyLinks": {
+      "contacts": "Contacts",
+      "payments": "Payments",
+      "details": "Company Details"
+    },
+    "workingHours": "Working Hours",
+    "weekdays": "Mon-Fri:",
+    "weekdaysTime": "8:00 - 17:00",
+    "saturday": "Sat:",
+    "saturdayTime": "8:00 - 12:30",
+    "sunday": "Sun:",
+    "sundayTime": "By appointment",
+    "followUs": "Follow Us:"
+  },
+  "map": {
+    "title": "We await you at our sorting site - Kaudzīšu iela 59",
+    "workingHours": "Working Hours:",
+    "weekdays": "Mon-Fri: 8:00 - 17:00",
+    "saturday": "Sat: 9:00 - 13:00",
+    "sunday": "Sun: Closed"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  }
+}
