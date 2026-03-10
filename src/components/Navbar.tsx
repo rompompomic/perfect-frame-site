@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Phone, ShoppingCart, ChevronDown, Menu, X } from "lucide-react";
 import discountIcon from "@/assets/icons/discount.svg";
 import logoWhite from "@/assets/logo-white.webp";
+import logoBlack from "@/assets/logo-black.webp";
 import mapPinIcon from "@/assets/icons/MapPin.svg";
 import emailIcon from "@/assets/icons/email.svg";
 import {
