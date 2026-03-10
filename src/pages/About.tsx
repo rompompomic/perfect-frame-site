@@ -19,26 +19,30 @@ const AboutHero = () => {
       </div>
       <div className="relative z-10 h-full flex flex-col">
         <Navbar />
-        <div className="flex-1 flex items-center">
-          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full flex flex-col gap-12">
-            <div className="relative z-10 w-full max-w-[1400px]">
-              <h1 className="text-primary-foreground text-3xl md:text-4xl lg:text-[60px] font-black uppercase leading-[1] lg:leading-[58px]">
-                {t("about.hero.title")}
-              </h1>
+        <div className="w-[1200px] inline-flex flex-col items-start gap-12">
+          <div className="flex w-full flex-col items-start gap-5">
+            <h1 className="self-stretch text-white text-[60px] font-black uppercase leading-[58px]">
+              {t("about.hero.title")}
+            </h1>
 
-              <p className="mt-5 max-w-[1180px] text-primary-foreground text-lg lg:text-xl font-medium leading-7">
-                {t("about.hero.description")}
-              </p>
-            </div>
-            <div className="flex items-center gap-4">
-              <button className="w-36 px-4 py-3 bg-nikami-blue rounded-sm text-primary-foreground text-base font-semibold leading-6 flex justify-center items-center hover:opacity-90 transition-opacity">
-                {t("common.cta")}
-              </button>
-              <button className="px-4 py-3 rounded-sm outline outline-1 outline-offset-[-1px] outline-nikami-blue text-primary-foreground text-base font-semibold leading-6 flex items-center gap-2.5 hover:opacity-90 transition-opacity">
-                {t("about.hero.watchVideo")}
-                <Play className="w-5 h-5 text-nikami-blue" fill="hsl(var(--nikami-blue))" strokeWidth={0} />
-              </button>
-            </div>
+            <p className="w-[933px] text-white text-xl font-medium leading-7">{t("about.hero.description")}</p>
+          </div>
+
+          <div className="inline-flex items-center gap-4">
+            <button className="flex h-[48px] w-[144px] items-center justify-center gap-2.5 rounded-[2px] border-x border-[#4895E8] bg-[#4895E8] px-4 py-3">
+              <span className="text-base font-semibold leading-6 text-white">Sazināties</span>
+            </button>
+
+            <button className="flex h-[48px] items-center justify-start gap-2.5 rounded-[2px] px-4 py-3 outline outline-1 outline-offset-[-1px] outline-[#4895E8]">
+              <span className="text-base font-semibold leading-6 text-white">Skatīt video</span>
+
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.75 10.0004C18.7505 10.2126 18.6961 10.4213 18.5921 10.6063C18.488 10.7912 18.3379 10.9461 18.1562 11.0559L6.9 17.9418C6.71022 18.058 6.49286 18.1214 6.27037 18.1256C6.04788 18.1297 5.82832 18.0743 5.63438 17.9652C5.44227 17.8578 5.28225 17.7012 5.17075 17.5114C5.05926 17.3217 5.00032 17.1056 5 16.8855V3.11523C5.00032 2.89514 5.05926 2.67911 5.17075 2.48935C5.28225 2.29959 5.44227 2.14295 5.63438 2.03555C5.82832 1.92644 6.04788 1.87109 6.27037 1.87521C6.49286 1.87933 6.71022 1.94278 6.9 2.05898L18.1562 8.94492C18.3379 9.05466 18.488 9.20954 18.5921 9.3945C18.6961 9.57945 18.7505 9.78818 18.75 10.0004Z"
+                  fill="#4895E8"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
