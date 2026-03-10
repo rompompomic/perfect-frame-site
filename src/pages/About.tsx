@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { CheckCircle, ChevronDown, Play } from "lucide-react";
+import { ChevronDown, Play } from "lucide-react";
+import checkInCircleIcon from "@/assets/icons/CheckInCircle.svg";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
