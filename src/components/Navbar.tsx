@@ -45,7 +45,7 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
       {/* Top bar */}
       <div className="self-stretch flex justify-between items-center">
         <Link to="/" className="w-20 h-9 sm:w-24 sm:h-11 relative block">
-          <img src={logoWhite} alt="NIKAMI logo" className="w-full h-full object-contain" />
+          <img src={isLight ? logoBlack : logoWhite} alt="NIKAMI logo" className="w-full h-full object-contain" />
         </Link>
 
         {/* Desktop contact & actions */}
