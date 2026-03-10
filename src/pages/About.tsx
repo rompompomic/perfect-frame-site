@@ -21,12 +21,12 @@ const AboutHero = () => {
         <Navbar />
         <div className="flex-1 flex items-center">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full flex flex-col gap-12">
-            <div className="flex flex-col gap-5">
-              <h1 className="max-w-[980px] text-primary-foreground text-3xl md:text-4xl lg:text-[60px] font-black uppercase leading-[1] lg:leading-[58px]">
+            <div className="relative z-10 w-full max-w-[1400px]">
+              <h1 className="text-primary-foreground text-3xl md:text-4xl lg:text-[60px] font-black uppercase leading-[1] lg:leading-[58px]">
                 {t("about.hero.title")}
               </h1>
 
-              <p className="max-w-[930px] text-primary-foreground text-lg lg:text-xl font-medium leading-7">
+              <p className="mt-5 max-w-[1180px] text-primary-foreground text-lg lg:text-xl font-medium leading-7">
                 {t("about.hero.description")}
               </p>
             </div>
