@@ -286,12 +286,15 @@ const ContactFormSection = () => {
 
           {/* Checkboxes */}
           <div className="flex flex-col gap-3">
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" defaultChecked className="w-6 h-6 accent-nikami-blue" />
-              <span className="text-foreground text-base font-bold leading-6">{t("about.contact.privacy")}</span>
+            <label className="flex items-start gap-2 cursor-pointer">
+              <input type="checkbox" defaultChecked className="w-6 h-6 accent-nikami-blue border-2 border-nikami-blue rounded-sm appearance-none checked:appearance-auto shrink-0 mt-0.5" />
+              <span className="text-foreground text-base font-bold leading-6">
+                {t("about.contact.privacy")}
+                <a href="#" className="underline text-foreground hover:text-nikami-blue transition-colors">{t("about.contact.privacyLink")}</a>.
+              </span>
             </label>
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" className="w-6 h-6 accent-nikami-blue" />
+            <label className="flex items-start gap-2 cursor-pointer">
+              <input type="checkbox" className="w-6 h-6 accent-nikami-blue border-2 border-nikami-blue rounded-sm appearance-none checked:appearance-auto shrink-0 mt-0.5" />
               <span className="text-foreground text-base font-bold leading-6">{t("about.contact.marketing")}</span>
             </label>
           </div>
