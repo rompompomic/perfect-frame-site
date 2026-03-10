@@ -36,57 +36,56 @@ const ServiceCard = ({
 const HeroSection = () => {
   const { t } = useTranslation();
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img src={heroImage} alt="Waste management facility" className="w-full h-full object-cover" />
-
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-nikami-dark/80" />
-      </div>
-
-      <div className="relative z-10">
-        <Navbar />
-
-        {/* Hero content */}
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-6 sm:pt-10 lg:pt-16 pb-0">
-          <h1 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black uppercase leading-tight max-w-4xl mb-6 sm:mb-8 lg:mb-12">
-            {t("hero.title")}
-          </h1>
+    <div className="relative w-full">
+      {/* Hero background section */}
+      <section className="relative w-full pb-32 sm:pb-40 md:pb-20">
+        {/* Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <img src={heroImage} alt="Waste management facility" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-nikami-dark/80" />
         </div>
 
-        {/* Service cards overlapping */}
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-1 -mb-48 sm:-mb-28 md:-mb-32 relative z-20 my-0 sm:pb-30">
-          <ServiceCard
-            icon={<img src={containerIcon} alt="Konteineru noma" className="w-8 h-8 sm:w-10 sm:h-10" />}
-            title={
-              <>
-                {t("hero.containerRental.title")
-                  .split(" ")
-                  .map((word, index) => (
-                    <span key={index}>
-                      {word}
-                      {index < t("hero.containerRental.title").split(" ").length - 1 && " "}
-                      {index === 0 && <br />}
-                    </span>
-                  ))}
-              </>
-            }
-            description={t("hero.containerRental.description")}
-            cta={t("hero.containerRental.cta")}
-          />
+        <div className="relative z-10">
+          <Navbar />
 
-          <ServiceCard
-            icon={<img src={wasteIcon} alt="Atkritumu nodošana" className="w-8 h-8 sm:w-10 sm:h-10" />}
-            title={t("hero.wasteDelivery.title")}
-            description={t("hero.wasteDelivery.description")}
-            cta={t("hero.wasteDelivery.cta")}
-          />
+          {/* Hero content */}
+          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-6 sm:pt-10 lg:pt-16 pb-0">
+            <h1 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black uppercase leading-tight max-w-4xl mb-6 sm:mb-8 lg:mb-12">
+              {t("hero.title")}
+            </h1>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Spacer for overlapping cards */}
-      <div className="h-48 sm:h-28 md:h-32" />
-    </section>
+      {/* Service cards - positioned to overlap the hero */}
+      <div className="relative z-20 -mt-24 sm:-mt-32 md:-mt-20 max-w-[1200px] mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-1 mb-8 sm:mb-10 md:mb-12">
+        <ServiceCard
+          icon={<img src={containerIcon} alt="Konteineru noma" className="w-8 h-8 sm:w-10 sm:h-10" />}
+          title={
+            <>
+              {t("hero.containerRental.title")
+                .split(" ")
+                .map((word, index) => (
+                  <span key={index}>
+                    {word}
+                    {index < t("hero.containerRental.title").split(" ").length - 1 && " "}
+                    {index === 0 && <br />}
+                  </span>
+                ))}
+            </>
+          }
+          description={t("hero.containerRental.description")}
+          cta={t("hero.containerRental.cta")}
+        />
+
+        <ServiceCard
+          icon={<img src={wasteIcon} alt="Atkritumu nodošana" className="w-8 h-8 sm:w-10 sm:h-10" />}
+          title={t("hero.wasteDelivery.title")}
+          description={t("hero.wasteDelivery.description")}
+          cta={t("hero.wasteDelivery.cta")}
+        />
+      </div>
+    </div>
   );
 };
 
