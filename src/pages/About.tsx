@@ -22,10 +22,11 @@ const AboutHero = () => {
         <div className="flex-1 flex items-center">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full flex flex-col gap-12">
             <div className="flex flex-col gap-5">
-              <h1 className="text-primary-foreground text-3xl md:text-4xl lg:text-[60px] font-black uppercase leading-[1] lg:leading-[58px]">
+              <h1 className="max-w-[980px] text-primary-foreground text-3xl md:text-4xl lg:text-[60px] font-black uppercase leading-[1] lg:leading-[58px]">
                 {t("about.hero.title")}
               </h1>
-              <p className="text-primary-foreground text-lg lg:text-xl font-medium leading-7 max-w-[933px]">
+
+              <p className="max-w-[930px] text-primary-foreground text-lg lg:text-xl font-medium leading-7">
                 {t("about.hero.description")}
               </p>
             </div>
@@ -154,9 +155,7 @@ const AboutMapSection = () => {
               <button className="px-8 py-3 bg-nikami-blue rounded-sm text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity">
                 {t("about.map.cta")}
               </button>
-              <span className="text-primary-foreground text-base font-medium leading-6">
-                {t("about.map.capacity")}
-              </span>
+              <span className="text-primary-foreground text-base font-medium leading-6">{t("about.map.capacity")}</span>
             </div>
           </div>
         </div>
@@ -174,9 +173,7 @@ const FAQSection = () => {
   return (
     <section className="px-4 sm:px-6 lg:px-28 py-20 bg-secondary">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
-        <h2 className="text-primary text-3xl lg:text-5xl font-black uppercase leading-tight">
-          {t("about.faq.title")}
-        </h2>
+        <h2 className="text-primary text-3xl lg:text-5xl font-black uppercase leading-tight">{t("about.faq.title")}</h2>
         <div className="flex flex-col gap-1">
           {items.map((item, i) => (
             <div
@@ -240,9 +237,7 @@ const ContactFormSection = () => {
                 <input className="h-12 pl-5 pr-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground" />
               </div>
               <div className="flex flex-col gap-0.5">
-                <label className="pl-1 text-foreground text-sm font-bold leading-5">
-                  {t("about.contact.company")}
-                </label>
+                <label className="pl-1 text-foreground text-sm font-bold leading-5">{t("about.contact.company")}</label>
                 <input className="h-12 pl-5 pr-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground" />
               </div>
               <div className="flex flex-col gap-0.5">
@@ -274,15 +269,11 @@ const ContactFormSection = () => {
           <div className="flex flex-col gap-3">
             <label className="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" defaultChecked className="w-6 h-6 accent-nikami-blue" />
-              <span className="text-foreground text-base font-bold leading-6">
-                {t("about.contact.privacy")}
-              </span>
+              <span className="text-foreground text-base font-bold leading-6">{t("about.contact.privacy")}</span>
             </label>
             <label className="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" className="w-6 h-6 accent-nikami-blue" />
-              <span className="text-foreground text-base font-bold leading-6">
-                {t("about.contact.marketing")}
-              </span>
+              <span className="text-foreground text-base font-bold leading-6">{t("about.contact.marketing")}</span>
             </label>
           </div>
         </div>
