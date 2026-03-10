@@ -129,47 +129,48 @@ const PartnersSection = () => {
 const AboutMapSection = () => {
   const { t } = useTranslation();
   return (
-    <section className="w-full h-96 relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 h-full relative">
-        <div className="flex h-full items-start pt-10 gap-1">
-          {/* Map placeholder */}
-          <div className="flex-1 relative h-72 flex items-center justify-center">
-            <img src={mapsImage} alt="Map" className="w-full h-full object-cover rounded-sm" />
-            <img src={mapPinIcon} alt="Location pin" className="absolute w-14 h-14" />
+    <section className="w-full relative min-h-[300px] sm:min-h-[384px]">
+      {/* Full-width map */}
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2179.7910699420386!2d24.253264094513618!3d56.883825336053185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eed2ec1026a8c3%3A0x9c05bc9230970f6!2sKaudz%C4%AB%C5%A1u%20iela%2059%2C%20Rumbula%2C%20Stopi%C5%86u%20pagasts%2C%20Ropa%C5%BEu%20novads%2C%20LV-2121%2C%20Latvija!5e0!3m2!1slv!2snl!4v1773068371217!5m2!1slv!2snl"
+        className="absolute inset-0 w-full h-full border-0"
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="NIKAMI location map"
+      />
+
+      {/* Floating info card */}
+      <div className="absolute top-2 sm:top-6 right-2 sm:right-6 md:right-12 lg:right-24 w-[220px] sm:w-[90%] md:w-[500px] lg:w-[598px] p-2 sm:p-5 bg-primary flex flex-col gap-1.5 sm:gap-5 overflow-hidden z-10">
+        <div className="flex flex-col gap-2">
+          <h3 className="text-primary-foreground text-xs sm:text-lg lg:text-3xl font-black uppercase leading-6 sm:leading-8">
+            {t("about.map.title")}
+          </h3>
+          <p className="text-primary-foreground text-xs sm:text-lg lg:text-xl font-medium leading-5 sm:leading-7">
+            {t("about.map.subtitle")}
+          </p>
+        </div>
+        <div className="h-px bg-primary-foreground/40" />
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-2">
+            <img src={checkInCircleIcon} alt="" className="w-5 h-5 sm:w-6 sm:h-6 [filter:invert(43%)_sepia(98%)_saturate(1856%)_hue-rotate(196deg)_brightness(97%)_contrast(101%)]" />
+            <span className="text-primary-foreground text-xs sm:text-base font-bold leading-6">{t("about.map.tag1")}</span>
           </div>
-          {/* Info card */}
-          <div className="w-full md:w-[598px] p-5 bg-primary flex flex-col gap-5 overflow-hidden">
-            <div className="flex flex-col gap-2">
-              <h3 className="text-primary-foreground text-2xl lg:text-3xl font-black uppercase leading-8">
-                {t("about.map.title")}
-              </h3>
-              <p className="text-primary-foreground text-lg lg:text-xl font-medium leading-7">
-                {t("about.map.subtitle")}
-              </p>
-            </div>
-            <div className="h-px bg-primary-foreground" />
-            <div className="flex justify-between items-start">
-              <div className="flex items-center gap-2">
-                <img src={checkInCircleIcon} alt="" className="w-6 h-6" />
-                <span className="text-primary-foreground text-base font-bold leading-6">{t("about.map.tag1")}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <img src={checkInCircleIcon} alt="" className="w-6 h-6" />
-                <span className="text-primary-foreground text-base font-bold leading-6">{t("about.map.tag2")}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <img src={checkInCircleIcon} alt="" className="w-6 h-6" />
-                <span className="text-primary-foreground text-base font-bold leading-6">{t("about.map.tag3")}</span>
-              </div>
-            </div>
-            <div className="h-px bg-primary-foreground" />
-            <div className="flex justify-between items-center">
-              <button className="px-8 py-3 bg-nikami-blue rounded-sm text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity">
-                {t("about.map.cta")}
-              </button>
-              <span className="text-primary-foreground text-base font-medium leading-6">{t("about.map.capacity")}</span>
-            </div>
+          <div className="flex items-center gap-2">
+            <img src={checkInCircleIcon} alt="" className="w-5 h-5 sm:w-6 sm:h-6 [filter:invert(43%)_sepia(98%)_saturate(1856%)_hue-rotate(196deg)_brightness(97%)_contrast(101%)]" />
+            <span className="text-primary-foreground text-xs sm:text-base font-bold leading-6">{t("about.map.tag2")}</span>
           </div>
+          <div className="flex items-center gap-2">
+            <img src={checkInCircleIcon} alt="" className="w-5 h-5 sm:w-6 sm:h-6 [filter:invert(43%)_sepia(98%)_saturate(1856%)_hue-rotate(196deg)_brightness(97%)_contrast(101%)]" />
+            <span className="text-primary-foreground text-xs sm:text-base font-bold leading-6">{t("about.map.tag3")}</span>
+          </div>
+        </div>
+        <div className="h-px bg-primary-foreground/40" />
+        <div className="flex justify-between items-center">
+          <button className="px-4 sm:px-8 py-2 sm:py-3 bg-nikami-blue rounded-sm text-primary-foreground text-xs sm:text-base font-semibold leading-6 hover:opacity-90 transition-opacity">
+            {t("about.map.cta")}
+          </button>
+          <span className="text-primary-foreground text-xs sm:text-base font-medium leading-6">{t("about.map.capacity")}</span>
         </div>
       </div>
     </section>);
