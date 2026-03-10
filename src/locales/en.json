@@ -115,6 +115,100 @@
     "saturday": "Sat: 9:00 - 13:00",
     "sunday": "Sun: Closed"
   },
+  "about": {
+    "hero": {
+      "title": "Professional construction waste management in Riga and surroundings",
+      "description": "SIA ''NIKA MI'' provides reliable and wide-profile solutions for construction and wood waste management in Riga and its surroundings. We have containers of various volumes – from 6 m³ to 20 m³",
+      "watchVideo": "Watch Video"
+    },
+    "whyChoose": {
+      "title": "Why choose NIKA MI?",
+      "subtitle": "Our team will help you handle tasks of any complexity.",
+      "items": [
+        {
+          "title": "30+ years of experience",
+          "description": "Competence and knowledge that ensure high work quality"
+        },
+        {
+          "title": "Professionalism",
+          "description": "Strict deadline adherence and professional service delivery"
+        },
+        {
+          "title": "Environmentally friendly waste management",
+          "description": "Using specialized sorting equipment and cooperation with other waste utilization companies"
+        },
+        {
+          "title": "Licensed company operations",
+          "description": "Category B polluting activity permit (No. RI18IB0021, issued July 20, 2018)"
+        }
+      ]
+    },
+    "partners": {
+      "title": "Cooperation partners"
+    },
+    "map": {
+      "title": "Construction waste container rental in Riga and nearby regions",
+      "subtitle": "Wide range of 700+ containers of various sizes",
+      "tag1": "Clean construction waste",
+      "tag2": "Mixed construction waste",
+      "tag3": "Wood materials",
+      "cta": "Order Container",
+      "capacity": "Capacity from 6 to 20 m³"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "question": "What area does NIKA MI cover for container delivery?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+          "question": "What waste is prohibited from being brought to NIKA MI sorting site?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been."
+        },
+        {
+          "question": "Is there a minimum waste volume that can be brought to NIKA MI?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+          "question": "Can individuals use NIKA MI services?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+          "question": "What is the difference between clean and mixed construction waste? What is wood waste?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+          "question": "Does NIKA MI accept old electronics and furniture?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+          "question": "Are any documents required when delivering waste to the sorting site?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+          "question": "Is payment required immediately when ordering a container?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        }
+      ],
+      "footer": "If you cannot find the information you are looking for here, contact us – we will provide you with all the necessary answers!"
+    },
+    "questions": {
+      "subtitle": "Have questions?",
+      "title": "We will develop the best solution for your needs!"
+    },
+    "contact": {
+      "title": "Contact us",
+      "name": "Name, Surname",
+      "company": "Company",
+      "phone": "Phone number",
+      "email": "E-mail",
+      "message": "Your message",
+      "privacy": "I have read and agree to the website privacy policy.",
+      "marketing": "I agree that my email will be used for marketing activities",
+      "submit": "Send message"
+    }
+  },
   "notFound": {
     "title": "404",
     "message": "Oops! Page not found",

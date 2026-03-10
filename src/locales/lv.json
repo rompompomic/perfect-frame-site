@@ -115,6 +115,100 @@
     "saturday": "S.: 9:00 - 13:00",
     "sunday": "Sv.: Slēgts"
   },
+  "about": {
+    "hero": {
+      "title": "Profesionāla būvniecības atkritumu apsaimniekošana Rīgā un Pierīgā",
+      "description": "SIA ''NIKA MI'' nodrošina uzticamus un plaša profila risinājumus būvgružu un kokmateriālu atkritumu apsaimniekošanā Rīgā un tās apkārtnē. Mūsu rīcībā ir dažāda tilpuma konteineri – no 6 m³ līdz pat 20 m³",
+      "watchVideo": "Skatīt video"
+    },
+    "whyChoose": {
+      "title": "Kāpēc izvēlēties NIKA MI?",
+      "subtitle": "Mūsu komanda palīdzēs jums tikt galā ar jebkuras sarežģītības uzdevumiem.",
+      "items": [
+        {
+          "title": "30+ gadu pieredze",
+          "description": "Kompetence un zināšanās, kas nodrošina augstu darba kvalitāti"
+        },
+        {
+          "title": "Profesionalitāte",
+          "description": "Stingra termiņu ievērošana un profesionāla servisa nodrošināšana"
+        },
+        {
+          "title": "Videi draudzīga atkritumu apsaimniekošana",
+          "description": "Izmantojot speciālas šķirošanas iekārtas un sadarbība ar citiem atkritumu utilizācijas uzņēmumiem"
+        },
+        {
+          "title": "Uzņēmuma licencēta darbība",
+          "description": "B kategorijas piesārņojošas darbības atļauja (Nr. RI18IB0021, izsniegta 2018. gada 20. jūlijā)"
+        }
+      ]
+    },
+    "partners": {
+      "title": "Sadarbības partneri"
+    },
+    "map": {
+      "title": "Būvgružu konteineru noma Rīgā un tuvākajos reģionos",
+      "subtitle": "Plašs 700+ dažādu izmēru konteineru klāsts",
+      "tag1": "Tīriem būvgružiem",
+      "tag2": "Jauktiem būvgružiem",
+      "tag3": "Kokmateriāliem",
+      "cta": "Pasūtīt konteineru",
+      "capacity": "Ietilpība no 6 līdz 20 m³"
+    },
+    "faq": {
+      "title": "Biežāk uzdotie jautājumi",
+      "items": [
+        {
+          "question": "Kādās robežās NIKA MI nodrošina konteineru piegādi?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been."
+        },
+        {
+          "question": "Kādus atkritumus aizliegts vest uz NIKA MI šķirošanas laukumu?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been"
+        },
+        {
+          "question": "Vai ir kāds minimālais atkritumu apjoms, ko drīkst vest uz NIKA MI?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+          "question": "Vai fiziskas personas var izmantot NIKA MI pakalpojumus?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+          "question": "Kā atšķiras tīrie no jauktiem būvgružiem? Kas ir kokmateriālu atkritumi?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+          "question": "Vai NIKA MI pieņem nolietoto elektrotehniku un mēbeles?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+          "question": "Nododot atkritumus šķirošanas laukumā nepieciešami kādi dokumenti?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        },
+        {
+          "question": "Vai pasūtot konteineru uzreiz nepieciešams veikt apmaksu?",
+          "answer": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        }
+      ],
+      "footer": "Ja šeit neatrodat sev interesējošo informāciju, sazinieties ar mums – sniegsim Jums visas nepieciešamās atbildes!"
+    },
+    "questions": {
+      "subtitle": "Radušies jautājumi?",
+      "title": "Mēs izstrādāsim labāko risinājumu Jūsu vajadzībām!"
+    },
+    "contact": {
+      "title": "Sazinies ar mums",
+      "name": "Vārds, Uzvārds",
+      "company": "Uzņēmums",
+      "phone": "Telefona numurs",
+      "email": "E-pasts",
+      "message": "Jūsu ziņa",
+      "privacy": "Iepazinies un piekrītu mājas lapas privātuma politikai.",
+      "marketing": "Par piekrītu, ka manu e-pastu izmanto mārketinga aktivitātēm",
+      "submit": "Nosūtīt ziņu"
+    }
+  },
   "notFound": {
     "title": "404",
     "message": "Ups! Lapa nav atrasta",
