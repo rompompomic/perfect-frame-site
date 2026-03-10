@@ -118,9 +118,9 @@ const Navbar = () => {
 
           {/* Nav links */}
           <div className="flex flex-col gap-3">
-            <span className="text-primary-foreground text-base font-medium cursor-pointer hover:opacity-80">
+            <Link to="/par-mums" className="text-primary-foreground text-base font-medium cursor-pointer hover:opacity-80">
               {t("navbar.about")}
-            </span>
+            </Link>
             <button
               onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
               className="flex items-center gap-1 text-primary-foreground text-base font-semibold cursor-pointer hover:opacity-80">
