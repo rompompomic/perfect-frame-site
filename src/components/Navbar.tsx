@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Phone, ShoppingCart, ChevronDown, Menu, X } from "lucide-react";
 import discountIcon from "@/assets/icons/discount.svg";
@@ -117,9 +118,9 @@ const Navbar = () => {
 
           {/* Nav links */}
           <div className="flex flex-col gap-3">
-            <span className="text-primary-foreground text-base font-medium cursor-pointer hover:opacity-80">
+            <Link to="/par-mums" className="text-primary-foreground text-base font-medium cursor-pointer hover:opacity-80">
               {t("navbar.about")}
-            </span>
+            </Link>
             <button
               onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
               className="flex items-center gap-1 text-primary-foreground text-base font-semibold cursor-pointer hover:opacity-80">
@@ -199,9 +200,9 @@ const Navbar = () => {
         <div className="h-px bg-primary-foreground/20 mb-3" />
         <div className="flex justify-between items-center">
           <div className="h-11 flex items-center gap-6 lg:gap-10 overflow-hidden">
-            <span className="text-primary-foreground text-sm lg:text-base font-medium leading-6 cursor-pointer hover:opacity-80">
+            <Link to="/par-mums" className="text-primary-foreground text-sm lg:text-base font-medium leading-6 cursor-pointer hover:opacity-80">
               {t("navbar.about")}
-            </span>
+            </Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-0.5 cursor-pointer hover:opacity-80 outline-none">
                 <span className="text-primary-foreground text-sm lg:text-base font-semibold leading-6">
