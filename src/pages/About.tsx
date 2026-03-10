@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ChevronDown, Play } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import playIcon from "@/assets/icons/Play.svg";
 import checkInCircleIcon from "@/assets/icons/CheckInCircle.svg";
 import anyQuestionsImage from "@/assets/any-questions.webp";
 import { useTranslation } from "react-i18next";
@@ -38,7 +39,7 @@ const AboutHero = () => {
               </button>
               <button className="px-4 py-3 rounded-sm outline outline-1 outline-offset-[-1px] outline-nikami-blue text-primary-foreground text-base font-semibold leading-6 flex items-center gap-2.5 hover:opacity-90 transition-opacity">
                 {t("about.hero.watchVideo")}
-                <Play className="w-5 h-5 text-nikami-blue" fill="hsl(var(--nikami-blue))" strokeWidth={0} />
+                <img src={playIcon} alt="Play" className="w-5 h-5" />
               </button>
             </div>
           </div>
