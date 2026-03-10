@@ -179,7 +179,7 @@ const AboutMapSection = () => {
 /* ───── FAQ ───── */
 const FAQSection = () => {
   const { t } = useTranslation();
-  const [openIndex, setOpenIndex] = useState(1);
+  const [openIndex, setOpenIndex] = useState(-1);
   const items = t("about.faq.items", { returnObjects: true }) as { question: string; answer: string }[];
 
   return (
