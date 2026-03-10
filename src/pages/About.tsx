@@ -52,7 +52,7 @@ const WhyChooseCard = ({ title, description }: {title: string;description: strin
 <div className="flex-1 p-5 bg-secondary flex flex-col gap-5">
     <div className="flex items-start gap-10">
       <div className="w-20 h-20 bg-background flex items-center justify-center shrink-0">
-        <CheckCircle className="w-10 h-10 text-primary" strokeWidth={1.5} />
+        <img src={checkInCircleIcon} alt="" className="w-10 h-10" />
       </div>
       <div className="flex flex-col gap-3">
         <h3 className="text-primary text-2xl lg:text-3xl font-black uppercase leading-8">{title}</h3>
