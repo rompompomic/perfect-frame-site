@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ChevronDown, Play } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import playIcon from "@/assets/icons/Play.svg";
 import checkInCircleIcon from "@/assets/icons/CheckInCircle.svg";
 import anyQuestionsImage from "@/assets/any-questions.webp";
 import { useTranslation } from "react-i18next";
