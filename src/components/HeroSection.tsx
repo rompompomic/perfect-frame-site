@@ -94,7 +94,7 @@ const HeroSection = () => {
       </div>
 
       {/* Spacer for overlapping cards */}
-      <div className="h-16 sm:h-24 md:h-32" />
+      <div className="h-24 sm:h-28 md:h-32" />
     </section>
   );
 };
