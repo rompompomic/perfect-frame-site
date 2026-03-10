@@ -27,9 +27,9 @@ const Navbar = () => {
     <nav className="w-full px-4 sm:px-6 lg:px-10 py-3 flex flex-col justify-center items-start gap-3">
       {/* Top bar */}
       <div className="self-stretch flex justify-between items-center">
-        <div className="w-20 h-9 sm:w-24 sm:h-11 relative">
+        <Link to="/" className="w-20 h-9 sm:w-24 sm:h-11 relative block">
           <img src={logoWhite} alt="NIKAMI logo" className="w-full h-full object-contain" />
-        </div>
+        </Link>
 
         {/* Desktop contact & actions */}
         <div className="hidden md:flex items-center gap-8">
