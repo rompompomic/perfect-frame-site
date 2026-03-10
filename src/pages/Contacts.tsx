@@ -194,7 +194,7 @@ const ContactsInfoSection = () => {
             className="self-stretch px-8 py-3 rounded-sm outline outline-1 outline-nikami-blue text-primary text-base font-semibold leading-6 flex justify-center items-center gap-2.5 hover:opacity-80 transition-opacity"
           >
             {allCopied ? "✓" : t("contacts.details.copyAll")}
-            {!allCopied && <Copy className="w-5 h-5 text-nikami-blue" />}
+            {!allCopied && <img src={copyIcon} alt="Copy" className="w-5 h-5" />}
           </button>
         </div>
       </div>
