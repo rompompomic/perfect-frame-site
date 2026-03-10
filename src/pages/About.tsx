@@ -12,17 +12,17 @@ import mapPinIcon from "@/assets/icons/MapPinSimpleArea.svg";
 const AboutHero = () => {
   const { t } = useTranslation();
   return (
-    <section className="relative w-full min-h-[720px]">
+    <section className="relative w-full h-[720px]">
       <div className="absolute inset-0 overflow-hidden">
         <img src={heroImage} alt="Waste management facility" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-nikami-dark/80" />
       </div>
-      <div className="relative z-10">
+      <div className="relative z-10 h-full flex flex-col">
         <Navbar />
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-10 lg:pt-16 pb-16">
-          <div className="flex flex-col gap-12">
+        <div className="flex-1 flex items-center">
+          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full flex flex-col gap-12">
             <div className="flex flex-col gap-5">
-              <h1 className="text-primary-foreground text-3xl md:text-4xl lg:text-6xl font-black uppercase leading-tight max-w-4xl">
+              <h1 className="text-primary-foreground text-3xl md:text-4xl lg:text-[60px] font-black uppercase leading-[1] lg:leading-[58px] max-w-4xl">
                 {t("about.hero.title")}
               </h1>
               <p className="text-primary-foreground text-lg lg:text-xl font-medium leading-7 max-w-[933px]">
@@ -30,10 +30,10 @@ const AboutHero = () => {
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <button className="px-4 py-3 bg-nikami-blue rounded-sm text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity">
+              <button className="w-36 px-4 py-3 bg-nikami-blue rounded-sm text-primary-foreground text-base font-semibold leading-6 flex justify-center items-center hover:opacity-90 transition-opacity">
                 {t("common.cta")}
               </button>
-              <button className="px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue text-primary-foreground text-base font-semibold leading-6 flex items-center gap-2.5 hover:opacity-90 transition-opacity">
+              <button className="px-4 py-3 rounded-sm outline outline-1 outline-offset-[-1px] outline-nikami-blue text-primary-foreground text-base font-semibold leading-6 flex items-center gap-2.5 hover:opacity-90 transition-opacity">
                 {t("about.hero.watchVideo")}
                 <Play className="w-5 h-5 text-nikami-blue" fill="hsl(var(--nikami-blue))" strokeWidth={0} />
               </button>
