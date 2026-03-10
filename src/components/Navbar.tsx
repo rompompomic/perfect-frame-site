@@ -200,9 +200,9 @@ const Navbar = () => {
         <div className="h-px bg-primary-foreground/20 mb-3" />
         <div className="flex justify-between items-center">
           <div className="h-11 flex items-center gap-6 lg:gap-10 overflow-hidden">
-            <span className="text-primary-foreground text-sm lg:text-base font-medium leading-6 cursor-pointer hover:opacity-80">
+            <Link to="/par-mums" className="text-primary-foreground text-sm lg:text-base font-medium leading-6 cursor-pointer hover:opacity-80">
               {t("navbar.about")}
-            </span>
+            </Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-0.5 cursor-pointer hover:opacity-80 outline-none">
                 <span className="text-primary-foreground text-sm lg:text-base font-semibold leading-6">
