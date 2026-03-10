@@ -60,7 +60,7 @@ const HeroSection = () => {
         </div>
 
         {/* Service cards overlapping */}
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-1 -mb-16 sm:-mb-24 md:-mb-32 relative z-20">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-1 -mb-24 sm:-mb-28 md:-mb-32 relative z-20">
           <ServiceCard
             icon={
               <img src={containerIcon} alt="Konteineru noma" className="w-8 h-8 sm:w-10 sm:h-10" />
