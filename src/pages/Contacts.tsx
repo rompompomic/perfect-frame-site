@@ -32,7 +32,7 @@ const DetailRow = ({ label, value, showDivider = true }: { label: string; value:
     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1">
       <span className="text-foreground text-sm sm:text-base font-medium leading-6">{label}</span>
       <div className="flex items-center gap-2">
-        <span className="text-foreground text-sm sm:text-base font-bold leading-6 text-right">{value}</span>
+        <span className="text-foreground text-sm sm:text-base font-bold leading-6 sm:text-right">{value}</span>
         <CopyButton text={value} />
       </div>
     </div>
