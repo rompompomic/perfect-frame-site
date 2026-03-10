@@ -126,20 +126,20 @@
       "subtitle": "Mūsu komanda palīdzēs jums tikt galā ar jebkuras sarežģītības uzdevumiem.",
       "items": [
         {
-          "title": "30+ gadu pieredze",
-          "description": "Kompetence un zināšanās, kas nodrošina augstu darba kvalitāti"
-        },
-        {
           "title": "Profesionalitāte",
           "description": "Stingra termiņu ievērošana un profesionāla servisa nodrošināšana"
         },
         {
-          "title": "Videi draudzīga atkritumu apsaimniekošana",
-          "description": "Izmantojot speciālas šķirošanas iekārtas un sadarbība ar citiem atkritumu utilizācijas uzņēmumiem"
+          "title": "30+ gadu pieredze",
+          "description": "Kompetence un zināšanās, kas nodrošina augstu darba kvalitāti"
         },
         {
           "title": "Uzņēmuma licencēta darbība",
           "description": "B kategorijas piesārņojošas darbības atļauja (Nr. RI18IB0021, izsniegta 2018. gada 20. jūlijā)"
+        },
+        {
+          "title": "Videi draudzīga atkritumu apsaimniekošana",
+          "description": "Izmantojot speciālas šķirošanas iekārtas un sadarbība ar citiem atkritumu utilizācijas uzņēmumiem"
         }
       ]
     },
