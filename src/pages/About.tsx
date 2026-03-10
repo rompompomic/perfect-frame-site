@@ -13,14 +13,14 @@ import heroImage from "@/assets/hero-image.webp";
 const AboutHero = () => {
   const { t } = useTranslation();
   return (
-    <section className="relative w-full min-h-[520px] sm:min-h-[620px] lg:min-h-[720px]">
+    <section className="relative w-full min-h-[520px] sm:min-h-[620px] lg:min-h-[720px] flex flex-col">
       <div className="absolute inset-0 overflow-hidden">
         <img src={heroImage} alt="Waste management facility" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-nikami-dark/80" />
       </div>
-      <div className="relative z-10 h-full flex flex-col">
+      <div className="relative z-10 flex-1 flex flex-col">
         <Navbar />
-        <div className="flex-1 flex items-center">
+        <div className="flex-1 flex items-center pb-10 sm:pb-0">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full flex flex-col gap-8 sm:gap-12">
             <div className="relative z-10 w-full max-w-[1400px]">
               <h1 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-tight lg:leading-[58px]">
