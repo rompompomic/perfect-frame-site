@@ -21,7 +21,7 @@ const AboutHero = () => {
         <Navbar />
         <div className="flex-1 flex items-center">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full flex flex-col gap-12">
-            <div className="relative z-10 w-full max-w-[1400px]">
+            <div className="relative z-10 w-full max-w-[1600px]">
               <h1 className="text-primary-foreground text-3xl md:text-4xl lg:text-[60px] font-black uppercase leading-[1] lg:leading-[58px]">
                 {t("about.hero.title")}
               </h1>
