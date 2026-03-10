@@ -13,7 +13,7 @@ import heroImage from "@/assets/hero-image.webp";
 const AboutHero = () => {
   const { t } = useTranslation();
   return (
-    <section className="relative w-full min-h-[520px] sm:min-h-[620px] lg:min-h-[720px]">
+    <section className="relative w-full h-[520px] sm:h-[620px] lg:h-[720px]">
       <div className="absolute inset-0 overflow-hidden">
         <img src={heroImage} alt="Waste management facility" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-nikami-dark/80" />
