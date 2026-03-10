@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import Navbar from "./Navbar";
 import heroImage from "@/assets/hero-image.webp";
 import wasteIcon from "@/assets/icons/Waste.svg";
 import containerIcon from "@/assets/icons/Container.svg";
