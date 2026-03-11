@@ -63,7 +63,7 @@ export default function OrderContainer() {
   return (
     <MainLayout>
       <div className="bg-primary">
-        <Navbar variant="white" />
+        <Navbar variant="light" />
       </div>
 
       <div className="min-h-screen bg-[#E4F1FF] px-4 py-[60px]">

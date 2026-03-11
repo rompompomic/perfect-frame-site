@@ -6,6 +6,7 @@ import WeChatButton from "@/components/WeChatButton";
 import MainLayout from "@/components/MainLayout";
 import anyQuestionsImage from "@/assets/any-questions.webp";
 import copyIcon from "@/assets/icons/CopyIcon.svg";
+import Footer from "@/components/Footer";
 
 /* ───── Copy button helper ───── */
 const CopyButton = ({ text }: { text: string }) => {
@@ -386,8 +387,9 @@ const Contacts = () => {
       <ContactsMapSection />
       <QuestionsBanner />
       <ContactFormSection />
+      <Footer />
       <WeChatButton />
-    </MainLayout>
+    </div>
   );
 };
 

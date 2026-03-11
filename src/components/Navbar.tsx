@@ -5,7 +5,6 @@ import { Phone, ShoppingCart, ChevronDown, Menu, X } from "lucide-react";
 import discountIcon from "@/assets/icons/discount.svg";
 import logoBlack from "@/assets/logo-black.png";
 import logoWhite from "@/assets/logo-white.webp";
-import logoBlack from "@/assets/logo-black.webp";
 import mapPinIcon from "@/assets/icons/MapPin.svg";
 import emailIcon from "@/assets/icons/email.svg";
 import {
@@ -21,7 +20,6 @@ interface NavbarProps {
 }
 
 const Navbar = ({ variant = "dark" }: NavbarProps) => {
- 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
@@ -45,11 +43,15 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
 
   return (
     <nav
-      className={`${variant === "white" ? "bg-white" : "bg-transparent"} w-full px-4 sm:px-6 lg:px-10 py-3 flex flex-col justify-center items-start gap-3`}>
+      className={`${isLight ? "bg-white" : "bg-transparent"} w-full px-4 sm:px-6 lg:px-10 py-3 flex flex-col justify-center items-start gap-3`}>
       {/* Top bar */}
       <div className="self-stretch flex justify-between items-center">
         <Link to="/" className="w-20 h-9 sm:w-24 sm:h-11 relative block">
-          <img src={isLight ? logoBlack : logoWhite} alt="NIKAMI logo" className="w-full h-full object-contain" />
+          <img
+            src={isLight ? logoBlack : logoWhite}
+            alt="NIKAMI logo"
+            className="w-full h-full object-contain"
+          />
         </Link>
 
         {/* Desktop contact & actions */}
@@ -75,12 +77,13 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
             </div>
           </div>
           <div className="hidden lg:flex items-center gap-4">
-            <button  
-              onClick={() => navigate("/order-container")} 
+            <button
+              onClick={() => navigate("/order-container")}
               className={`px-4 py-3 ${btnPrimaryBg} rounded-sm ${btnPrimaryText} text-base font-semibold leading-6`}>
               {t("navbar.orderContainer")}
             </button>
-            <button className={`px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${btnOutlineText} text-base font-semibold leading-6`}>
+            <button
+              className={`px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${btnOutlineText} text-base font-semibold leading-6`}>
               {t("navbar.getOffer")}
             </button>
             <button
@@ -91,7 +94,7 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
           <button className="relative px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue flex items-center gap-2.5">
             <ShoppingCart className="w-5 h-5 text-nikami-blue" />
             <span
-              className={`absolute -top-1.5 -right-1.5 w-4 h-4 bg-nikami-blue rounded-full ${variant === "white" ? "text-white" : "text-primary-foreground"} text-xs font-medium flex items-center justify-center`}>
+              className={`absolute -top-1.5 -right-1.5 w-4 h-4 bg-nikami-blue rounded-full ${isLight ? "text-white" : "text-primary-foreground"} text-xs font-medium flex items-center justify-center`}>
               4
             </span>
           </button>
@@ -102,7 +105,7 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
           <button className="relative p-2 rounded-sm outline outline-1 outline-nikami-blue flex items-center">
             <ShoppingCart className="w-5 h-5 text-nikami-blue" />
             <span
-              className={`absolute -top-1.5 -right-1.5 w-4 h-4 bg-nikami-blue rounded-full ${variant === "white" ? "text-white" : "text-primary-foreground"} text-xs font-medium flex items-center justify-center`}>
+              className={`absolute -top-1.5 -right-1.5 w-4 h-4 bg-nikami-blue rounded-full ${isLight ? "text-white" : "text-primary-foreground"} text-xs font-medium flex items-center justify-center`}>
               4
             </span>
           </button>
@@ -117,26 +120,21 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className={`md:hidden self-stretch flex flex-col gap-4 pt-4 pb-2 border-t ${borderColor} animate-in slide-in-from-top-2 duration-200`}>
+        <div
+          className={`md:hidden self-stretch flex flex-col gap-4 pt-4 pb-2 border-t ${borderColor} animate-in slide-in-from-top-2 duration-200`}>
           {/* Contact info */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
               <Phone className="w-5 h-5 text-nikami-blue" fill="currentColor" strokeWidth={0} />
-              <span className={`${textColor} text-sm font-semibold`}>
-                {t("navbar.phone")}
-              </span>
+              <span className={`${textColor} text-sm font-semibold`}>{t("navbar.phone")}</span>
             </div>
             <div className="flex items-center gap-2">
               <img src={mapPinIcon} alt="Location" className="w-5 h-5" />
-              <span className={`${textColor} text-sm font-semibold`}>
-                {t("navbar.address")}
-              </span>
+              <span className={`${textColor} text-sm font-semibold`}>{t("navbar.address")}</span>
             </div>
             <div className="flex items-center gap-2">
               <img src={emailIcon} alt="Email" className="w-5 h-5" />
-              <span className={`${textColor} text-sm font-semibold`}>
-                {t("navbar.email")}
-              </span>
+              <span className={`${textColor} text-sm font-semibold`}>{t("navbar.email")}</span>
             </div>
           </div>
 
@@ -144,7 +142,9 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
 
           {/* Nav links */}
           <div className="flex flex-col gap-3">
-            <Link to="/par-mums" className={`${textColor} text-base font-medium cursor-pointer hover:opacity-80`}>
+            <Link
+              to="/par-mums"
+              className={`${textColor} text-base font-medium cursor-pointer hover:opacity-80`}>
               {t("navbar.about")}
             </Link>
             <button
@@ -180,7 +180,9 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
                 </div>
               </div>
             )}
-            <Link to="/kontakti" className={`${textColor} text-base font-semibold cursor-pointer hover:opacity-80`}>
+            <Link
+              to="/kontakti"
+              className={`${textColor} text-base font-semibold cursor-pointer hover:opacity-80`}>
               {t("navbar.contacts")}
             </Link>
           </div>
@@ -209,15 +211,16 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
           {/* CTA buttons */}
           <div className="flex flex-col gap-2">
             <button
-              onClick={() => navigate("/order-container")} 
+              onClick={() => navigate("/order-container")}
               className={`w-full px-4 py-3 ${btnPrimaryBg} rounded-sm ${btnPrimaryText} text-sm font-semibold`}>
               {t("navbar.orderContainer")}
             </button>
-            <button className={`w-full px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${btnOutlineText} text-sm font-semibold`}>
+            <button
+              className={`w-full px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${btnOutlineText} text-sm font-semibold`}>
               {t("navbar.getOffer")}
             </button>
             <button
-              className={`w-full px-4 py-3 bg-primary rounded-sm ${variant === "white" ? "text-white" : "text-primary-foreground"} text-sm font-semibold`}>
+              className={`w-full px-4 py-3 bg-primary rounded-sm ${isLight ? "text-white" : "text-primary-foreground"} text-sm font-semibold`}>
               {t("navbar.login")}
             </button>
           </div>
@@ -229,7 +232,9 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
         <div className={`h-px ${dividerBg} mb-3`} />
         <div className="flex justify-between items-center">
           <div className="h-11 flex items-center gap-6 lg:gap-10 overflow-hidden">
-            <Link to="/par-mums" className={`${textColor} text-sm lg:text-base font-medium leading-6 cursor-pointer hover:opacity-80`}>
+            <Link
+              to="/par-mums"
+              className={`${textColor} text-sm lg:text-base font-medium leading-6 cursor-pointer hover:opacity-80`}>
               {t("navbar.about")}
             </Link>
             <DropdownMenu>
@@ -261,19 +266,23 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link to="/kontakti" className={`${textColor} text-sm lg:text-base font-semibold leading-6 cursor-pointer hover:opacity-80`}>
+            <Link
+              to="/kontakti"
+              className={`${textColor} text-sm lg:text-base font-semibold leading-6 cursor-pointer hover:opacity-80`}>
               {t("navbar.contacts")}
             </Link>
           </div>
           <div className="flex items-center overflow-hidden">
-            <div className={`w-10 h-6 px-5 border-r ${borderColor} flex justify-center items-center overflow-hidden`}>
+            <div
+              className={`w-10 h-6 px-5 border-r ${borderColor} flex justify-center items-center overflow-hidden`}>
               <span
                 className={`px-2 py-1 ${i18n.language === "lv" ? "opacity-40" : "cursor-pointer hover:opacity-80"} ${textColor} text-sm lg:text-base font-semibold leading-6`}
                 onClick={() => i18n.language !== "lv" && changeLanguage("lv")}>
                 LV
               </span>
             </div>
-            <div className={`w-10 h-6 px-5 border-r ${borderColor} flex justify-center items-center overflow-hidden`}>
+            <div
+              className={`w-10 h-6 px-5 border-r ${borderColor} flex justify-center items-center overflow-hidden`}>
               <span
                 className={`px-2 py-1 ${i18n.language === "en" ? "opacity-40" : "cursor-pointer hover:opacity-80"} ${textColor} text-sm lg:text-base font-semibold leading-6`}
                 onClick={() => i18n.language !== "en" && changeLanguage("en")}>
