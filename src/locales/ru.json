@@ -158,14 +158,38 @@
     "faq": {
       "title": "Часто задаваемые вопросы",
       "items": [
-        { "question": "В каких пределах NIKA MI обеспечивает доставку контейнеров?", "answer": "Lorem Ipsum is simply dummy text." },
-        { "question": "Какие отходы запрещено привозить на сортировочную площадку NIKA MI?", "answer": "Lorem Ipsum is simply dummy text." },
-        { "question": "Есть ли минимальный объем отходов для сдачи на NIKA MI?", "answer": "Lorem Ipsum is simply dummy text." },
-        { "question": "Могут ли физические лица пользоваться услугами NIKA MI?", "answer": "Lorem Ipsum is simply dummy text." },
-        { "question": "Чем отличаются чистые от смешанных строительных отходов?", "answer": "Lorem Ipsum is simply dummy text." },
-        { "question": "Принимает ли NIKA MI старую технику и мебель?", "answer": "Lorem Ipsum is simply dummy text." },
-        { "question": "Нужны ли документы при сдаче отходов на площадку?", "answer": "Lorem Ipsum is simply dummy text." },
-        { "question": "Нужно ли сразу оплачивать при заказе контейнера?", "answer": "Lorem Ipsum is simply dummy text." }
+        {
+          "question": "В каких пределах NIKA MI обеспечивает доставку контейнеров?",
+          "answer": "Lorem Ipsum is simply dummy text."
+        },
+        {
+          "question": "Какие отходы запрещено привозить на сортировочную площадку NIKA MI?",
+          "answer": "Lorem Ipsum is simply dummy text."
+        },
+        {
+          "question": "Есть ли минимальный объем отходов для сдачи на NIKA MI?",
+          "answer": "Lorem Ipsum is simply dummy text."
+        },
+        {
+          "question": "Могут ли физические лица пользоваться услугами NIKA MI?",
+          "answer": "Lorem Ipsum is simply dummy text."
+        },
+        {
+          "question": "Чем отличаются чистые от смешанных строительных отходов?",
+          "answer": "Lorem Ipsum is simply dummy text."
+        },
+        {
+          "question": "Принимает ли NIKA MI старую технику и мебель?",
+          "answer": "Lorem Ipsum is simply dummy text."
+        },
+        {
+          "question": "Нужны ли документы при сдаче отходов на площадку?",
+          "answer": "Lorem Ipsum is simply dummy text."
+        },
+        {
+          "question": "Нужно ли сразу оплачивать при заказе контейнера?",
+          "answer": "Lorem Ipsum is simply dummy text."
+        }
       ],
       "footer": "Если вы не нашли интересующую информацию, свяжитесь с нами – мы предоставим все необходимые ответы!"
     },
@@ -240,5 +264,47 @@
     "title": "404",
     "message": "Упс! Страница не найдена",
     "returnHome": "Вернуться домой"
+  },
+  "orderContainer": {
+    "steps": {
+      "container": "Контейнер",
+      "address": "Адрес",
+      "period": "Период",
+      "application": "Заявка"
+    },
+    "step1": {
+      "title": "1. Выберите контейнер",
+      "subtitle": "Выберите тип контейнера",
+      "categories": {
+        "clean": "Для чистых строительных отходов",
+        "mixed": "Для смешанных строительных отходов",
+        "wood": "Для древесных материалов"
+      },
+      "accordion": {
+        "title": "ЧТО ВХОДИТ В ЧИСТЫЕ СТРОИТЕЛЬНЫЕ ОТХОДЫ?",
+        "items": [
+          "Монолитный бетон",
+          "Строительные конструкции",
+          "Кирпичные стены",
+          "Бетонные блоки",
+          "Асфальтовые покрытия",
+          "Строительные материалы"
+        ]
+      },
+      "dimensions": {
+        "height": "Высота",
+        "width": "Ширина",
+        "length": "Длина"
+      },
+      "delivery": {
+        "single": "Доставка по одному адресу",
+        "multiple": "Разные адреса доставки"
+      },
+      "nextStep": "Следующий шаг"
+    },
+    "tooltip": {
+      "title": "Lorem Ipsum",
+      "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been."
+    }
   }
 }
