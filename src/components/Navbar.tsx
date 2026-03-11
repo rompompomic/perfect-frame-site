@@ -14,6 +14,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useAuthModal } from "@/features/AuthModal/UseAuthModal";
+import { AuthModal } from "@/features/AuthModal/AuthModal";
 
 interface NavbarProps {
   variant?: "dark" | "light";
@@ -25,6 +27,7 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
 
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
+  const auth = useAuthModal();
 
   const isLight = variant === "light";
 
@@ -87,7 +90,8 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
               {t("navbar.getOffer")}
             </button>
             <button
-              className={`px-4 py-3 bg-primary rounded-sm ${btnOutlineText} text-base font-semibold leading-6`}>
+              onClick={() => auth.open("signin")}
+              className={`px-4 py-3 bg-primary rounded-sm text-white text-base font-semibold leading-6`}>
               {t("navbar.login")}
             </button>
           </div>
@@ -220,7 +224,8 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
               {t("navbar.getOffer")}
             </button>
             <button
-              className={`w-full px-4 py-3 bg-primary rounded-sm ${isLight ? "text-white" : "text-primary-foreground"} text-sm font-semibold`}>
+              onClick={() => auth.open("signin")}
+              className={`w-full px-4 py-3 bg-primary rounded-sm text-white text-sm font-semibold`}>
               {t("navbar.login")}
             </button>
           </div>
@@ -299,6 +304,14 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
           </div>
         </div>
       </div>
+      <AuthModal
+        isOpen={auth.isOpen}
+        screen={auth.screen}
+        email={auth.email}
+        setEmail={auth.setEmail}
+        navigate={auth.navigate}
+        onClose={auth.close}
+      />
     </nav>
   );
 };
