@@ -5,6 +5,7 @@ import { Phone, ShoppingCart, ChevronDown, Menu, X } from "lucide-react";
 import discountIcon from "@/assets/icons/discount.svg";
 import logoBlack from "@/assets/logo-black.png";
 import logoWhite from "@/assets/logo-white.webp";
+import logoBlack from "@/assets/logo-black.webp";
 import mapPinIcon from "@/assets/icons/MapPin.svg";
 import emailIcon from "@/assets/icons/email.svg";
 import {
@@ -16,15 +17,27 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 interface NavbarProps {
-  variant?: "transparent" | "white";
+  variant?: "dark" | "light";
 }
 
-const Navbar = ({ variant = "transparent" }: NavbarProps) => {
+const Navbar = ({ variant = "dark" }: NavbarProps) => {
+ 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
-  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
+
+  const isLight = variant === "light";
+
+  const textColor = isLight ? "text-foreground" : "text-primary-foreground";
+  const borderColor = isLight ? "border-muted-foreground/20" : "border-primary-foreground/20";
+  const dividerBg = isLight ? "bg-muted-foreground/20" : "bg-primary-foreground/20";
+  const btnPrimaryBg = isLight ? "bg-primary" : "bg-primary";
+  const btnPrimaryText = "text-primary-foreground";
+  const btnOutlineText = isLight ? "text-primary" : "text-primary-foreground";
+  const hamburgerText = isLight ? "text-foreground" : "text-primary-foreground";
+  const mobileSubText = isLight ? "text-foreground/80" : "text-primary-foreground/80";
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -36,11 +49,7 @@ const Navbar = ({ variant = "transparent" }: NavbarProps) => {
       {/* Top bar */}
       <div className="self-stretch flex justify-between items-center">
         <Link to="/" className="w-20 h-9 sm:w-24 sm:h-11 relative block">
-          <img
-            src={variant === "white" ? logoBlack : logoWhite}
-            alt="NIKAMI logo"
-            className="w-full h-full object-contain"
-          />
+          <img src={isLight ? logoBlack : logoWhite} alt="NIKAMI logo" className="w-full h-full object-contain" />
         </Link>
 
         {/* Desktop contact & actions */}
@@ -48,38 +57,34 @@ const Navbar = ({ variant = "transparent" }: NavbarProps) => {
           <div className="flex items-center gap-4 overflow-hidden">
             <div className="flex items-center gap-2">
               <Phone className="w-5 h-5 text-nikami-blue" fill="currentColor" strokeWidth={0} />
-              <span
-                className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm lg:text-base font-semibold leading-6`}>
+              <span className={`${textColor} text-sm lg:text-base font-semibold leading-6`}>
                 {t("navbar.phone")}
               </span>
             </div>
             <div className="flex items-center gap-2">
               <img src={mapPinIcon} alt="Location" className="w-5 h-5" />
-              <span
-                className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm lg:text-base font-semibold leading-6`}>
+              <span className={`${textColor} text-sm lg:text-base font-semibold leading-6`}>
                 {t("navbar.address")}
               </span>
             </div>
             <div className="hidden lg:flex items-center gap-2">
               <img src={emailIcon} alt="Email" className="w-5 h-5" />
-              <span
-                className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-base font-semibold leading-6`}>
+              <span className={`${textColor} text-base font-semibold leading-6`}>
                 {t("navbar.email")}
               </span>
             </div>
           </div>
           <div className="hidden lg:flex items-center gap-4">
-            <button
-              onClick={() => navigate("/order-container")}
-              className={`px-4 py-3 bg-primary rounded-sm ${variant === "white" ? "text-white" : "text-primary-foreground"} text-base font-semibold leading-6`}>
+            <button  
+              onClick={() => navigate("/order-container")} 
+              className={`px-4 py-3 ${btnPrimaryBg} rounded-sm ${btnPrimaryText} text-base font-semibold leading-6`}>
               {t("navbar.orderContainer")}
             </button>
-            <button
-              className={`px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${variant === "white" ? "text-black" : "text-primary-foreground"} text-base font-semibold leading-6`}>
+            <button className={`px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${btnOutlineText} text-base font-semibold leading-6`}>
               {t("navbar.getOffer")}
             </button>
             <button
-              className={`px-4 py-3 bg-primary rounded-sm ${variant === "white" ? "text-white" : "text-primary-foreground"} text-base font-semibold leading-6`}>
+              className={`px-4 py-3 bg-primary rounded-sm ${btnOutlineText} text-base font-semibold leading-6`}>
               {t("navbar.login")}
             </button>
           </div>
@@ -103,7 +108,7 @@ const Navbar = ({ variant = "transparent" }: NavbarProps) => {
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`p-2 ${variant === "white" ? "text-black" : "text-primary-foreground"}`}
+            className={`p-2 ${hamburgerText}`}
             aria-label="Toggle menu">
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -112,44 +117,39 @@ const Navbar = ({ variant = "transparent" }: NavbarProps) => {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden self-stretch flex flex-col gap-4 pt-4 pb-2 border-t border-primary-foreground/20 animate-in slide-in-from-top-2 duration-200">
+        <div className={`md:hidden self-stretch flex flex-col gap-4 pt-4 pb-2 border-t ${borderColor} animate-in slide-in-from-top-2 duration-200`}>
           {/* Contact info */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
               <Phone className="w-5 h-5 text-nikami-blue" fill="currentColor" strokeWidth={0} />
-              <span
-                className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm font-semibold`}>
+              <span className={`${textColor} text-sm font-semibold`}>
                 {t("navbar.phone")}
               </span>
             </div>
             <div className="flex items-center gap-2">
               <img src={mapPinIcon} alt="Location" className="w-5 h-5" />
-              <span
-                className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm font-semibold`}>
+              <span className={`${textColor} text-sm font-semibold`}>
                 {t("navbar.address")}
               </span>
             </div>
             <div className="flex items-center gap-2">
               <img src={emailIcon} alt="Email" className="w-5 h-5" />
-              <span
-                className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm font-semibold`}>
+              <span className={`${textColor} text-sm font-semibold`}>
                 {t("navbar.email")}
               </span>
             </div>
           </div>
 
-          <div className="h-px bg-primary-foreground/20" />
+          <div className={`h-px ${dividerBg}`} />
 
           {/* Nav links */}
           <div className="flex flex-col gap-3">
-            <Link
-              to="/par-mums"
-              className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-base font-medium cursor-pointer hover:opacity-80`}>
+            <Link to="/par-mums" className={`${textColor} text-base font-medium cursor-pointer hover:opacity-80`}>
               {t("navbar.about")}
             </Link>
             <button
               onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-              className={`flex items-center gap-1 ${variant === "white" ? "text-black" : "text-primary-foreground"} text-base font-semibold cursor-pointer hover:opacity-80`}>
+              className={`flex items-center gap-1 ${textColor} text-base font-semibold cursor-pointer hover:opacity-80`}>
               {t("navbar.services")}
               <ChevronDown
                 className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
@@ -167,11 +167,11 @@ const Navbar = ({ variant = "transparent" }: NavbarProps) => {
                 ].map((label, index) => (
                   <span
                     key={index}
-                    className={`${variant === "white" ? "text-gray-700" : "text-primary-foreground/80"} text-sm font-medium cursor-pointer hover:opacity-80`}>
+                    className={`${mobileSubText} text-sm font-medium cursor-pointer hover:opacity-80`}>
                     {label}
                   </span>
                 ))}
-                <div className="h-px bg-primary-foreground/20 my-1" />
+                <div className={`h-px ${dividerBg} my-1`} />
                 <div className="flex items-center gap-2 cursor-pointer hover:opacity-80">
                   <img src={discountIcon} alt="Akcijas" className="w-5 h-5" />
                   <span className="text-nikami-blue text-sm font-bold">
@@ -180,29 +180,27 @@ const Navbar = ({ variant = "transparent" }: NavbarProps) => {
                 </div>
               </div>
             )}
-            <Link
-              to="/kontakti"
-              className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-base font-semibold cursor-pointer hover:opacity-80`}>
+            <Link to="/kontakti" className={`${textColor} text-base font-semibold cursor-pointer hover:opacity-80`}>
               {t("navbar.contacts")}
             </Link>
           </div>
 
-          <div className="h-px bg-primary-foreground/20" />
+          <div className={`h-px ${dividerBg}`} />
 
           {/* Language switcher */}
           <div className="flex items-center gap-4">
             <span
-              className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm font-semibold ${i18n.language === "lv" ? "opacity-40" : "cursor-pointer hover:opacity-80"}`}
+              className={`${textColor} text-sm font-semibold ${i18n.language === "lv" ? "opacity-40" : "cursor-pointer hover:opacity-80"}`}
               onClick={() => i18n.language !== "lv" && changeLanguage("lv")}>
               LV
             </span>
             <span
-              className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm font-semibold ${i18n.language === "en" ? "opacity-40" : "cursor-pointer hover:opacity-80"}`}
+              className={`${textColor} text-sm font-semibold ${i18n.language === "en" ? "opacity-40" : "cursor-pointer hover:opacity-80"}`}
               onClick={() => i18n.language !== "en" && changeLanguage("en")}>
               EN
             </span>
             <span
-              className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm font-semibold ${i18n.language === "ru" ? "opacity-40" : "cursor-pointer hover:opacity-80"}`}
+              className={`${textColor} text-sm font-semibold ${i18n.language === "ru" ? "opacity-40" : "cursor-pointer hover:opacity-80"}`}
               onClick={() => i18n.language !== "ru" && changeLanguage("ru")}>
               RU
             </span>
@@ -211,12 +209,11 @@ const Navbar = ({ variant = "transparent" }: NavbarProps) => {
           {/* CTA buttons */}
           <div className="flex flex-col gap-2">
             <button
-              onClick={() => navigate("/order-container")}
-              className={`w-full px-4 py-3 bg-primary rounded-sm ${variant === "white" ? "text-white" : "text-primary-foreground"} text-sm font-semibold`}>
+              onClick={() => navigate("/order-container")} 
+              className={`w-full px-4 py-3 ${btnPrimaryBg} rounded-sm ${btnPrimaryText} text-sm font-semibold`}>
               {t("navbar.orderContainer")}
             </button>
-            <button
-              className={`w-full px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm font-semibold`}>
+            <button className={`w-full px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${btnOutlineText} text-sm font-semibold`}>
               {t("navbar.getOffer")}
             </button>
             <button
@@ -229,23 +226,18 @@ const Navbar = ({ variant = "transparent" }: NavbarProps) => {
 
       {/* Desktop bottom bar */}
       <div className="hidden md:block self-stretch">
-        <div className="h-px bg-primary-foreground/20 mb-3" />
+        <div className={`h-px ${dividerBg} mb-3`} />
         <div className="flex justify-between items-center">
           <div className="h-11 flex items-center gap-6 lg:gap-10 overflow-hidden">
-            <Link
-              to="/par-mums"
-              className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm lg:text-base font-medium leading-6 cursor-pointer hover:opacity-80`}>
+            <Link to="/par-mums" className={`${textColor} text-sm lg:text-base font-medium leading-6 cursor-pointer hover:opacity-80`}>
               {t("navbar.about")}
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-0.5 cursor-pointer hover:opacity-80 outline-none">
-                <span
-                  className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm lg:text-base font-semibold leading-6`}>
+                <span className={`${textColor} text-sm lg:text-base font-semibold leading-6`}>
                   {t("navbar.services")}
                 </span>
-                <ChevronDown
-                  className={`w-4 h-4 ${variant === "white" ? "text-black" : "text-primary-foreground"}`}
-                />
+                <ChevronDown className={`w-4 h-4 ${textColor}`} />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="px-6 py-3 bg-secondary rounded-xs shadow-[0px_2px_12px_0px_rgba(0,0,0,0.15)] flex flex-col gap-2 min-w-[220px]">
                 {[
@@ -269,30 +261,28 @@ const Navbar = ({ variant = "transparent" }: NavbarProps) => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link
-              to="/kontakti"
-              className={`${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm lg:text-base font-semibold leading-6 cursor-pointer hover:opacity-80`}>
+            <Link to="/kontakti" className={`${textColor} text-sm lg:text-base font-semibold leading-6 cursor-pointer hover:opacity-80`}>
               {t("navbar.contacts")}
             </Link>
           </div>
           <div className="flex items-center overflow-hidden">
-            <div className="w-10 h-6 px-5 border-r border-primary-foreground/20 flex justify-center items-center overflow-hidden">
+            <div className={`w-10 h-6 px-5 border-r ${borderColor} flex justify-center items-center overflow-hidden`}>
               <span
-                className={`px-2 py-1 ${i18n.language === "lv" ? "opacity-40" : "cursor-pointer hover:opacity-80"} ${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm lg:text-base font-semibold leading-6`}
+                className={`px-2 py-1 ${i18n.language === "lv" ? "opacity-40" : "cursor-pointer hover:opacity-80"} ${textColor} text-sm lg:text-base font-semibold leading-6`}
                 onClick={() => i18n.language !== "lv" && changeLanguage("lv")}>
                 LV
               </span>
             </div>
-            <div className="w-10 h-6 px-5 border-r border-primary-foreground/20 flex justify-center items-center overflow-hidden">
+            <div className={`w-10 h-6 px-5 border-r ${borderColor} flex justify-center items-center overflow-hidden`}>
               <span
-                className={`px-2 py-1 ${i18n.language === "en" ? "opacity-40" : "cursor-pointer hover:opacity-80"} ${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm lg:text-base font-semibold leading-6`}
+                className={`px-2 py-1 ${i18n.language === "en" ? "opacity-40" : "cursor-pointer hover:opacity-80"} ${textColor} text-sm lg:text-base font-semibold leading-6`}
                 onClick={() => i18n.language !== "en" && changeLanguage("en")}>
                 EN
               </span>
             </div>
             <div className="w-10 h-6 px-5 flex justify-center items-center overflow-hidden">
               <span
-                className={`px-2 py-1 ${i18n.language === "ru" ? "opacity-40" : "cursor-pointer hover:opacity-80"} ${variant === "white" ? "text-black" : "text-primary-foreground"} text-sm lg:text-base font-semibold leading-6`}
+                className={`px-2 py-1 ${i18n.language === "ru" ? "opacity-40" : "cursor-pointer hover:opacity-80"} ${textColor} text-sm lg:text-base font-semibold leading-6`}
                 onClick={() => i18n.language !== "ru" && changeLanguage("ru")}>
                 RU
               </span>
