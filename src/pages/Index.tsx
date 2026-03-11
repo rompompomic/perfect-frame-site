@@ -2,19 +2,18 @@ import HeroSection from "@/components/HeroSection";
 import StatsSection from "@/components/StatsSection";
 import ServicesSection from "@/components/ServicesSection";
 import MapSection from "@/components/MapSection";
-import Footer from "@/components/Footer";
 import WeChatButton from "@/components/WeChatButton";
+import MainLayout from "@/components/MainLayout";
 
 const Index = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <MainLayout>
       <HeroSection />
       <StatsSection />
       <ServicesSection />
       <MapSection />
-      <Footer />
       <WeChatButton />
-    </div>
+    </MainLayout>
   );
 };
 

@@ -22,7 +22,9 @@ const ServiceCard = ({
         {icon}
       </div>
       <div className="flex flex-col gap-2 sm:gap-3">
-        <h3 className="text-primary text-lg sm:text-xl lg:text-3xl font-black uppercase leading-tight">{title}</h3>
+        <h3 className="text-primary text-lg sm:text-xl lg:text-3xl font-black uppercase leading-tight">
+          {title}
+        </h3>
         <p className="text-foreground text-sm sm:text-base lg:text-xl">{description}</p>
       </div>
     </div>
@@ -39,7 +41,11 @@ const HeroSection = () => {
     <section className="relative w-full">
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <img src={heroImage} alt="Waste management facility" className="w-full h-full object-cover" />
+        <img
+          src={heroImage}
+          alt="Waste management facility"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-nikami-dark/80" />
       </div>
 
@@ -56,7 +62,9 @@ const HeroSection = () => {
         {/* Service cards */}
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-1 pb-6 sm:pb-8 md:pb-2">
           <ServiceCard
-            icon={<img src={containerIcon} alt="Konteineru noma" className="w-8 h-8 sm:w-10 sm:h-10" />}
+            icon={
+              <img src={containerIcon} alt="Konteineru noma" className="w-8 h-8 sm:w-10 sm:h-10" />
+            }
             title={
               <>
                 {t("hero.containerRental.title")
@@ -75,7 +83,9 @@ const HeroSection = () => {
           />
 
           <ServiceCard
-            icon={<img src={wasteIcon} alt="Atkritumu nodošana" className="w-8 h-8 sm:w-10 sm:h-10" />}
+            icon={
+              <img src={wasteIcon} alt="Atkritumu nodošana" className="w-8 h-8 sm:w-10 sm:h-10" />
+            }
             title={t("hero.wasteDelivery.title")}
             description={t("hero.wasteDelivery.description")}
             cta={t("hero.wasteDelivery.cta")}

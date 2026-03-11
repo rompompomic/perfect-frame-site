@@ -264,5 +264,47 @@
     "title": "404",
     "message": "Oops! Page not found",
     "returnHome": "Return to Home"
+  },
+  "orderContainer": {
+    "steps": {
+      "container": "Container",
+      "address": "Address",
+      "period": "Period",
+      "application": "Application"
+    },
+    "step1": {
+      "title": "1. Choose a container",
+      "subtitle": "Select the container type",
+      "categories": {
+        "clean": "For clean construction waste",
+        "mixed": "For mixed construction waste",
+        "wood": "For wood materials"
+      },
+      "accordion": {
+        "title": "WHAT IS INCLUDED IN CLEAN CONSTRUCTION WASTE?",
+        "items": [
+          "Monolithic concrete",
+          "Monolithic concrete",
+          "Monolithic concrete",
+          "Monolithic concrete",
+          "Monolithic concrete",
+          "Monolithic concrete"
+        ]
+      },
+      "dimensions": {
+        "height": "Height",
+        "width": "Width",
+        "length": "Length"
+      },
+      "delivery": {
+        "single": "Delivery to one address",
+        "multiple": "Different delivery addresses"
+      },
+      "nextStep": "Next step"
+    },
+    "tooltip": {
+      "title": "Lorem Ipsum",
+      "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been."
+    }
   }
 }

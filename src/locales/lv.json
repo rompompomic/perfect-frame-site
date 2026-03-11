@@ -12,11 +12,11 @@
     "promotions": "Akcijas",
     "serviceLinks": {
       "containerRental": "Konteineru noma",
-      "sortingArea": "Šķirošanas laukums",
-      "constructionWaste": "Būvgružu pārstrāde",
-      "demolition": "Ēku un būvju demontāža",
-      "snowRemoval": "Sniega izvešana",
-      "greenCertificates": "Zaļo ēku sertifikāti"
+      "sortingArea": "Šķirošanas laukumi",
+      "constructionWaste": "Būvgružu izvešana",
+      "demolition": "Demontāžas darbi",
+      "snowRemoval": "Sniega tīrīšana",
+      "greenCertificates": "Zaļie sertifikāti"
     }
   },
   "hero": {
@@ -264,5 +264,47 @@
     "title": "404",
     "message": "Ups! Lapa nav atrasta",
     "returnHome": "Atgriezties mājās"
+  },
+  "orderContainer": {
+    "steps": {
+      "container": "Konteiners",
+      "address": "Adrese",
+      "period": "Periods",
+      "application": "Pieteikums"
+    },
+    "step1": {
+      "title": "1. Izvēlieties konteineru",
+      "subtitle": "Izvēlieties konteinera veidu",
+      "categories": {
+        "clean": "Tīriem būvgružiem",
+        "mixed": "Jauktiem būvgružiem",
+        "wood": "Kokmateriāliem"
+      },
+      "accordion": {
+        "title": "KAS IETILPST TĪRAJOS BŪVGRUŽOS?",
+        "items": [
+          "Monolitas betona",
+          "Monolitas betona",
+          "Monolitas betona",
+          "Monolitas betona",
+          "Monolitas betona",
+          "Monolitas betona"
+        ]
+      },
+      "dimensions": {
+        "height": "Augstums",
+        "width": "Platums",
+        "length": "Garums"
+      },
+      "delivery": {
+        "single": "Piegāde uz vienu adresi",
+        "multiple": "Atšķirīgas piegādes adreses"
+      },
+      "nextStep": "Nākamais solis"
+    },
+    "tooltip": {
+      "title": "Lorem Ipsum",
+      "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been."
+    }
   }
 }
