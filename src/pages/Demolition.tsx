@@ -18,7 +18,7 @@ const DemolitionHero = () => {
     <section className="relative w-full min-h-[520px] sm:min-h-[620px] lg:min-h-[720px] flex flex-col">
       <div className="absolute inset-0 overflow-hidden">
         <img src={heroImage} alt="Demolition works" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-nikami-dark/80" />
+        <div />
       </div>
       <div className="relative z-10 flex-1 flex flex-col">
         <Navbar />
@@ -90,9 +90,7 @@ const ServiceTypesSection = () => {
                   <span className="text-primary text-2xl font-black">{type.number}</span>
                 </div>
                 <div className="flex flex-col gap-3">
-                  <h4 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">
-                    {type.title}
-                  </h4>
+                  <h4 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{type.title}</h4>
                   <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
                     {type.description}
                   </p>
@@ -126,19 +124,23 @@ const ServicesListSection = () => {
         <div className="flex flex-col md:flex-row gap-1">
           {/* Left column */}
           <div className="flex-1 flex flex-col gap-1">
-            {services.filter((_, i) => i % 2 === 0).map((text, i) => (
-              <div key={i} className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
-                <p className="text-primary text-base sm:text-lg lg:text-2xl font-black leading-8">{text}</p>
-              </div>
-            ))}
+            {services
+              .filter((_, i) => i % 2 === 0)
+              .map((text, i) => (
+                <div key={i} className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
+                  <p className="text-primary text-base sm:text-lg lg:text-2xl font-black leading-8">{text}</p>
+                </div>
+              ))}
           </div>
           {/* Right column */}
           <div className="flex-1 flex flex-col gap-1">
-            {services.filter((_, i) => i % 2 !== 0).map((text, i) => (
-              <div key={i} className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
-                <p className="text-primary text-base sm:text-lg lg:text-2xl font-black leading-8">{text}</p>
-              </div>
-            ))}
+            {services
+              .filter((_, i) => i % 2 !== 0)
+              .map((text, i) => (
+                <div key={i} className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
+                  <p className="text-primary text-base sm:text-lg lg:text-2xl font-black leading-8">{text}</p>
+                </div>
+              ))}
           </div>
         </div>
       </div>
