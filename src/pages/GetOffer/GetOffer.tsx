@@ -224,7 +224,7 @@ const GetOffer = () => {
                 {/* Photo previews + upload button in one row */}
                 <div className="flex items-center gap-2 flex-wrap">
                   {photos.map((photo, index) =>
-                  <div key={index} className="relative w-[46px] h-[46px] rounded-sm overflow-hidden border border-muted-foreground/20">
+                  <div key={index} className="relative w-12 h-12 rounded-sm overflow-hidden border border-muted-foreground/20">
                       <img
                       src={photo.preview}
                       alt={`Upload ${index + 1}`}
