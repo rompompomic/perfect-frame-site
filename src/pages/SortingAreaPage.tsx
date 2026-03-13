@@ -57,23 +57,23 @@ const WasteCardsSection = () => {
   const navigate = useNavigate();
 
   const cards = [
-    { img: jauktiImg, title: t("sortingAreaPage.cards.mixed.title"), price: t("sortingAreaPage.cards.mixed.price") },
-    { img: tiriImg, title: t("sortingAreaPage.cards.clean.title"), price: t("sortingAreaPage.cards.clean.price") },
     {
       img: betonaImg,
       title: t("sortingAreaPage.cards.concrete.title"),
       price: t("sortingAreaPage.cards.concrete.price"),
     },
-    {
-      img: elektroImg,
-      title: t("sortingAreaPage.cards.electronics.title"),
-      price: t("sortingAreaPage.cards.electronics.price"),
-    },
-    { img: kokaImg, title: t("sortingAreaPage.cards.wood.title"), price: t("sortingAreaPage.cards.wood.price") },
+    { img: tiriImg, title: t("sortingAreaPage.cards.clean.title"), price: t("sortingAreaPage.cards.clean.price") },
+    { img: jauktiImg, title: t("sortingAreaPage.cards.mixed.title"), price: t("sortingAreaPage.cards.mixed.price") },
     {
       img: lielgabaritaImg,
       title: t("sortingAreaPage.cards.bulky.title"),
       price: t("sortingAreaPage.cards.bulky.price"),
+    },
+    { img: kokaImg, title: t("sortingAreaPage.cards.wood.title"), price: t("sortingAreaPage.cards.wood.price") },
+    {
+      img: elektroImg,
+      title: t("sortingAreaPage.cards.electronics.title"),
+      price: t("sortingAreaPage.cards.electronics.price"),
     },
   ];
 
