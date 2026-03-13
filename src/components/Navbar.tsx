@@ -221,6 +221,7 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
               {t("navbar.orderContainer")}
             </button>
             <button
+              onClick={() => navigate("/sanemt-piedavajumu")}
               className={`w-full px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${btnOutlineText} text-sm font-semibold`}>
               {t("navbar.getOffer")}
             </button>
