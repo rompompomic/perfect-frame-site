@@ -12,6 +12,7 @@ import OrderContainer from "./pages/OrderContainer/OrderContainer.tsx";
 import Promotions from "./pages/Promotions.tsx";
 import GetOffer from "./pages/GetOffer/GetOffer.tsx";
 import Certificates from "./pages/Certificates.tsx";
+import Demolition from "./pages/Demolition.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/order-container" element={<OrderContainer />} />
           <Route path="/akcijas" element={<Promotions />} />
           <Route path="/sertifikati" element={<Certificates />} />
+          <Route path="/demontaza" element={<Demolition />} />
           <Route path="/sanemt-piedavajumu" element={<GetOffer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
