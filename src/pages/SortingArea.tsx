@@ -146,32 +146,15 @@ const EquipmentSection = () => {
               {equipment[0]?.description}
             </p>
           </div>
-          {/* Middle column - 2 stacked */}
-          <div className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
-            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{equipment[1]?.title}</h3>
-            <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
-              {equipment[1]?.description}
-            </p>
-          </div>
-          <div className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
-            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{equipment[3]?.title}</h3>
-            <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
-              {equipment[3]?.description}
-            </p>
-          </div>
-          {/* Right column - 2 stacked */}
-          <div className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
-            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{equipment[2]?.title}</h3>
-            <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
-              {equipment[2]?.description}
-            </p>
-          </div>
-          <div className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
-            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{equipment[4]?.title}</h3>
-            <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
-              {equipment[4]?.description}
-            </p>
-          </div>
+          {/* Remaining 4 cards in natural order: grid auto-places into cols 2-3 */}
+          {equipment.slice(1).map((item, i) => (
+            <div key={i} className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
+              <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{item?.title}</h3>
+              <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
+                {item?.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
