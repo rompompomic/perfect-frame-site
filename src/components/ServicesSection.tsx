@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useTranslation } from "react-i18next";
 import mapPinSimpleAreaIcon from "@/assets/icons/MapPinSimpleArea.svg";
 import hardHatIcon from "@/assets/icons/HardHat.svg";
