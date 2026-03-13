@@ -39,7 +39,7 @@ const SnowHero = () => {
     <section className="relative w-full min-h-[520px] sm:min-h-[620px] lg:min-h-[720px] flex flex-col">
       <div className="absolute inset-0 overflow-hidden">
         <img src={heroImage} alt="Snow removal" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/60 to-foreground/60" />
+        <div />
       </div>
       <div className="relative z-10 flex-1 flex flex-col">
         <Navbar />
@@ -89,9 +89,7 @@ const TerritorySection = () => {
               <div className="w-20 h-20 bg-background flex items-center justify-center shrink-0">
                 <MaskedIcon src={card.icon} alt={card.title} />
               </div>
-              <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">
-                {card.title}
-              </h3>
+              <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{card.title}</h3>
             </div>
           ))}
         </div>
