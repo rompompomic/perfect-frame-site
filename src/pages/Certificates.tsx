@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import MainLayout from "@/components/MainLayout";
 import WeChatButton from "@/components/WeChatButton";
+import QuestionsBanner from "@/components/QuestionsBanner";
+import ContactFormSection from "@/components/ContactFormSection";
 import heroImage from "@/assets/certificates-hero.webp";
 import cert1 from "@/assets/certificate-1.webp";
 import cert2 from "@/assets/certificate-2.webp";
@@ -14,7 +16,6 @@ import leafIcon from "@/assets/icons/Leaf.svg";
 import cloudSunIcon from "@/assets/icons/CloudSun.svg";
 import handshakeIcon from "@/assets/icons/Handshake.svg";
 import chartLineUpIcon from "@/assets/icons/ChartLineUp.svg";
-import certificateIcon from "@/assets/icons/Certificate.svg";
 
 // Condition icons
 import buildingIcon from "@/assets/icons/building.svg";
