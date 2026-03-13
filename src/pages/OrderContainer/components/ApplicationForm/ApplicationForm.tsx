@@ -7,7 +7,7 @@ import { InfoTooltip } from "@/components/ui/InfoTooltip/InfoTooltip";
 import { CustomSelect } from "@/components/ui/CustomSelect/CustomSelect";
 import SEBicon from "@/assets/banks/SEB.png";
 import Swedbankicon from "@/assets/banks/Swedbank.png";
-import Luminoricon from "@/assets/banks/Luminor.png";
+import Luminoricon from "@/assets/banks/luminor.png";
 import Citadeleicon from "@/assets/banks/Citadele.png";
 
 type PersonType = "fiziska" | "juridiska";
