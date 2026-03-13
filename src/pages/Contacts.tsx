@@ -56,7 +56,6 @@ const ContactInfoCard = ({
       {subtitle && <p className="text-foreground text-sm sm:text-base font-medium leading-6">{subtitle}</p>}
     </div>
     <div className="flex flex-col sm:flex-row gap-1">
-      {/* Contacts sub-card */}
       <div className="flex-1 px-4 sm:px-5 py-3 bg-background flex flex-col gap-3">
         <span className="text-foreground text-base font-bold leading-6">{contacts.phone && "Kontakti:"}</span>
         <div className="flex flex-col gap-1">
@@ -74,7 +73,6 @@ const ContactInfoCard = ({
           </a>
         </div>
       </div>
-      {/* Hours sub-card */}
       <div className="flex-1 px-4 sm:px-5 py-3 bg-background flex flex-col gap-3">
         <span className="text-foreground text-base font-bold leading-6">Darba laiki:</span>
         <div className="flex flex-col gap-1">
@@ -113,7 +111,6 @@ const ContactsInfoSection = () => {
   return (
     <section className="px-4 sm:px-6 lg:px-28 py-10 sm:py-16 lg:py-20">
       <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-8 lg:gap-10">
-        {/* Left column – Contact cards */}
         <div className="flex-1 flex flex-col gap-6 lg:gap-10">
           <h2 className="text-primary text-3xl sm:text-4xl lg:text-6xl font-black uppercase leading-tight">
             {t("contacts.title")}
@@ -144,13 +141,11 @@ const ContactsInfoSection = () => {
           </div>
         </div>
 
-        {/* Right column – Rekvizīti */}
         <div className="flex-1 p-4 sm:p-5 outline outline-2 outline-nikami-light-blue flex flex-col gap-6 lg:gap-10">
           <h2 className="text-primary text-3xl sm:text-4xl lg:text-6xl font-black uppercase leading-tight">
             {t("contacts.details.title")}
           </h2>
           <div className="flex flex-col gap-8 flex-1 justify-between">
-            {/* Par uzņēmumu */}
             <div className="flex flex-col gap-4 sm:gap-5">
               <h3 className="text-foreground text-xl sm:text-2xl lg:text-3xl font-black uppercase leading-tight">
                 {t("contacts.details.companyTitle")}
@@ -168,7 +163,6 @@ const ContactsInfoSection = () => {
               </div>
             </div>
 
-            {/* Norēķiniem */}
             <div className="flex flex-col gap-4 sm:gap-5">
               <h3 className="text-foreground text-xl sm:text-2xl lg:text-3xl font-black uppercase leading-tight">
                 {t("contacts.details.paymentTitle")}
@@ -229,160 +223,10 @@ const ContactsMapSection = () => {
   );
 };
 
-/* ───── Questions Banner (reused from About) ───── */
-const QuestionsBanner = () => {
-  const { t } = useTranslation();
-  return (
-    <section className="relative px-4 sm:px-6 lg:px-28 py-8 sm:py-10 overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={anyQuestionsImage} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-primary/70" />
-      </div>
-      <div className="relative z-10 max-w-[1200px] mx-auto flex flex-col gap-2">
-        <p className="text-primary-foreground text-base sm:text-xl font-bold leading-6 sm:leading-7">
-          {t("about.questions.subtitle")}
-        </p>
-        <h2 className="text-primary-foreground text-2xl sm:text-3xl lg:text-5xl font-black uppercase leading-tight max-w-[820px]">
-          {t("about.questions.title")}
-        </h2>
-      </div>
-    </section>
-  );
-};
-
-/* ───── Contact Form (reused from About) ───── */
-const ContactFormSection = () => {
-  const { t } = useTranslation();
-  const [privacyAccepted, setPrivacyAccepted] = useState(false);
-  const [marketingAccepted, setMarketingAccepted] = useState(false);
-  return (
-    <section className="px-4 sm:px-6 lg:px-28 py-10 sm:py-16 lg:py-20 bg-secondary">
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-6 sm:gap-10">
-        <h2 className="text-primary text-2xl sm:text-3xl lg:text-5xl font-black uppercase leading-tight">
-          {t("about.contact.title")}
-        </h2>
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-            <div className="flex-1 flex flex-col gap-3">
-              <div className="flex flex-col gap-0.5">
-                <label className="pl-1 text-foreground text-sm font-bold leading-5">
-                  {t("about.contact.name")}
-                  <span className="text-nikami-blue">*</span>
-                </label>
-                <input className="h-12 pl-5 pr-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground" />
-              </div>
-              <div className="flex flex-col gap-0.5">
-                <label className="pl-1 text-foreground text-sm font-bold leading-5">{t("about.contact.company")}</label>
-                <input className="h-12 pl-5 pr-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground" />
-              </div>
-              <div className="flex flex-col gap-0.5">
-                <label className="pl-1 text-foreground text-sm font-bold leading-5">
-                  {t("about.contact.phone")}
-                  <span className="text-nikami-blue">*</span>
-                </label>
-                <input className="h-12 pl-5 pr-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground" />
-              </div>
-              <div className="flex flex-col gap-0.5">
-                <label className="pl-1 text-foreground text-sm font-bold leading-5">
-                  {t("about.contact.email")}
-                  <span className="text-nikami-blue">*</span>
-                </label>
-                <input className="h-12 pl-5 pr-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground" />
-              </div>
-            </div>
-            <div className="flex-1 flex flex-col gap-0.5">
-              <label className="pl-1 text-foreground text-sm font-bold leading-5">
-                {t("about.contact.message")}
-                <span className="text-nikami-blue">*</span>
-              </label>
-              <textarea className="flex-1 min-h-[180px] sm:min-h-[200px] pl-5 pr-3 pt-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground resize-none" />
-            </div>
-          </div>
-          {/* Checkboxes */}
-          <div className="flex flex-col gap-3 mt-2">
-            {/* Privacy checkbox */}
-            <div
-              className="flex items-center gap-2 cursor-pointer"
-              onClick={() => setPrivacyAccepted(!privacyAccepted)}
-            >
-              <div className="w-6 h-6 relative flex-shrink-0 flex items-center justify-center">
-                {privacyAccepted ? (
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <rect
-                      x="1"
-                      y="1"
-                      width="14"
-                      height="14"
-                      fill="hsl(var(--nikami-blue))"
-                      stroke="hsl(var(--nikami-blue))"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                ) : (
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <rect x="0.5" y="0.5" width="15" height="15" stroke="hsl(var(--nikami-blue))" />
-                  </svg>
-                )}
-                {privacyAccepted && (
-                  <svg className="absolute" width="12" height="11" viewBox="0 0 12 11" fill="none">
-                    <path d="M0.650391 5.63062L4.15039 8.63062L10.6504 0.630615" stroke="white" strokeWidth="2" />
-                  </svg>
-                )}
-              </div>
-              <span className="text-foreground text-base font-bold leading-6">
-                {t("getOffer.privacy")} <span className="underline">{t("getOffer.privacyLink")}</span>.
-              </span>
-            </div>
-
-            {/* Marketing checkbox */}
-            <div
-              className="flex items-center gap-2 cursor-pointer"
-              onClick={() => setMarketingAccepted(!marketingAccepted)}
-            >
-              <div className="w-6 h-6 relative flex-shrink-0 flex items-center justify-center">
-                {marketingAccepted ? (
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <rect
-                      x="1"
-                      y="1"
-                      width="14"
-                      height="14"
-                      fill="hsl(var(--nikami-blue))"
-                      stroke="hsl(var(--nikami-blue))"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                ) : (
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <rect x="0.5" y="0.5" width="15" height="15" stroke="hsl(var(--nikami-blue))" />
-                  </svg>
-                )}
-                {marketingAccepted && (
-                  <svg className="absolute" width="12" height="11" viewBox="0 0 12 11" fill="none">
-                    <path d="M0.650391 5.63062L4.15039 8.63062L10.6504 0.630615" stroke="white" strokeWidth="2" />
-                  </svg>
-                )}
-              </div>
-              <span className="text-foreground text-base font-bold leading-6">{t("getOffer.marketing")}</span>
-            </div>
-          </div>
-        </div>
-        <button
-          disabled
-          className="w-full sm:w-60 px-8 py-3 bg-primary/20 rounded-sm text-primary-foreground text-base font-semibold leading-6 cursor-not-allowed"
-        >
-          {t("about.contact.submit")}
-        </button>
-      </div>
-    </section>
-  );
-};
-
 /* ───── Page ───── */
 const Contacts = () => {
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      {/* Light navbar */}
       <div className="bg-background">
         <Navbar variant="light" />
       </div>
