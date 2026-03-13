@@ -16,7 +16,7 @@ const MaskedIcon = ({ src, alt }: { src: string; alt: string }) => (
   <div
     className="w-14 h-14"
     style={{
-      backgroundColor: "hsl(var(--primary))",
+      backgroundColor: "hsl(var(--nikami-blue))",
       WebkitMaskImage: `url(${src})`,
       WebkitMaskSize: "contain",
       WebkitMaskRepeat: "no-repeat",
@@ -71,10 +71,10 @@ const TerritorySection = () => {
   const { t } = useTranslation();
 
   const cards = [
-    { icon: parkingIcon, title: t("snowRemoval.territories.parking") },
     { icon: smallHouseIcon, title: t("snowRemoval.territories.yards") },
-    { icon: factoryIcon, title: t("snowRemoval.territories.industrial") },
+    { icon: parkingIcon, title: t("snowRemoval.territories.parking") },
     { icon: bigHouseIcon, title: t("snowRemoval.territories.company") },
+    { icon: factoryIcon, title: t("snowRemoval.territories.industrial") },
   ];
 
   return (
