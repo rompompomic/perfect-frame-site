@@ -317,6 +317,57 @@
       { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" }
     ]
   },
+  "certificates": {
+    "hero": {
+      "title": "Piesakies un iegūsti 50% NĪN atlaidi uz 10 gadiem ar zaļās būvniecības sertifikātiem!",
+      "description": "Zaļās būvniecības standarti veicina atjaunojamo un otrreiz pārstrādāto materiālu izmantošanu, jo tiem ir mazāka ietekme uz vidi.",
+      "descriptionBold": "Iegūstiet sertifikāciju ātri, ērti un izdevīgi!",
+      "cta": "Pieteikties"
+    },
+    "section": {
+      "title": "Vadošie zaļās ēkas sertifikāti ir LEED, BREEAM un DGNB",
+      "subtitle": "Iegūstiet vairāk priekšrocības savam nekustamajam īpašumam",
+      "cert1": "LEED",
+      "cert2": "BREEAM",
+      "cert3": "DGNB"
+    },
+    "benefits": [
+      "Videi draudzīga uzņēmuma reputācija",
+      "Palielināta energoefektivitāte un zemas ekspluatācijas izmaksas",
+      "Vides ietekmes mazināšana un klimata pārmaiņu novēršana",
+      "Latvijas likumdošanas prasību izpilde attiecībā uz vides aizsardzību un ilgtspēju",
+      "Paaugstināta nekustamā īpašuma vērtība, 50% nodokļu atlaide un ilgtermiņa ieguldījumu atdeve",
+      "Iegūstiet sertifikāciju ātri, ērti un izdevīgi!"
+    ],
+    "conditions": {
+      "title": "Atvieglojumu piešķiršanas nosacījumi",
+      "items": [
+        "Atvieglojumi tiek piešķirti visiem ēkas īpašniekiem, ja ēka atbilst atbilstības kritērijiem.",
+        "Nav nepieciešams atkārtoti iesniegt pieteikumu, ja nav mainījies atvieglojumu piešķiršanas pamats vai atbilstība.",
+        "Atvieglojumi tiek piešķirti jaunuzceltām vai pilnībā renovētām ēkām, kas nodotas ekspluatācijā pēc 2024. gada 1. janvāra.",
+        "Nodokļa maksātājam līdz taksācijas gada 15. decembrim jāiesniedz pieteikums atvieglojumu saņemšanai.",
+        "Atlaide tiek piemērota 10 gadu periodā, sākot no nākamā mēneša pēc ēkas nodošanas ekspluatācijā un sertifikāta stāšanās spēkā.",
+        "Atvieglojumu piešķiršanas nosacījumi var mainīties saskaņā ar normatīvajiem aktiem."
+      ],
+      "cta": "Saņemt piedāvājumu"
+    },
+    "questions": {
+      "subtitle": "Radušies jautājumi?",
+      "title": "Mēs izstrādāsim labāko risinājumu Jūsu vajadzībām!"
+    },
+    "contact": {
+      "title": "Sazinies ar mums",
+      "name": "Vārds, Uzvārds",
+      "company": "Uzņēmums",
+      "phone": "Telefona numurs",
+      "email": "E-pasts",
+      "message": "Jūsu ziņa",
+      "privacy": "Iepazinies un piekrītu mājas lapas ",
+      "privacyLink": "privātuma politikai",
+      "marketing": "Par piekrītu, ka manu e-pastu izmanto mārketinga aktivitātēm",
+      "submit": "Nosūtīt ziņu"
+    }
+  },
   "getOffer": {
     "title": "Saņemt piedāvājumu",
     "subtitle": "Mēs izstrādāsim labāko risinājumu Jūsu vajadzībām!",
