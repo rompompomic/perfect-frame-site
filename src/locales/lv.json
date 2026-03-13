@@ -366,6 +366,73 @@
       "submit": "Nosūtīt ziņu"
     }
   },
+  "sortingArea": {
+    "hero": {
+      "title": "Būvgružu pārstrāde\nun šķirošana Rīgā\nun Rīgas rajonā",
+      "description": "SIA ''NIKA MI'' piedāvā būvgružu pārstrādes un šķirošanas pakalpojumus, izmantojot speciālas šķirošanas poligonu iekārtas un sadarbojoties ar citiem uzņēmumiem atkritumu utilizācijas jomā.",
+      "cta": "Pieteikt atkritumu nodošanu"
+    },
+    "services": {
+      "title": "Konteineri būvgružiem, būvgružu izvešanu, utilizācija, šķirošana un pārstrāde"
+    },
+    "cards": {
+      "card1": {
+        "title": "Uzņēmuma rīcībā ir savs smagās tehnikas autoparks",
+        "description": "Mēs operatīvi atbrīvosim jūsu objektu no nevajadzīgiem atkritumiem, nodrošinot būvgružu izvešanu jums ērtā laikā. Uzņēmuma rīcībā ir savs smagās tehnikas autoparks, kā arī specializētas iekārtas atkritumu smalcināšanai un utilizācijai."
+      },
+      "card2": {
+        "title": "Pilna cikla demontāžas darbi",
+        "description": "Darbi tiek veikti mūsu uzņēmuma īpašajos šķirošanas poligonos, kā arī sadarbojoties ar partneriem, kuri nodrošina savus utilizācijas laukumus. Pie mums iespējams pasūtīt visu veidu pilna cikla demontāžas darbus – pēc to izpildes pasūtītājam nav jāmeklē citi pakalpojumu sniedzēji atkritumu izvešanai."
+      },
+      "card3": {
+        "title": "NIKA MI piedāvā pilnvērtīgus risinājumus",
+        "description": "Būvniecības un demontāžas procesā nereti rodas problēma ar būvgružu utilizāciju. NIKA MI piedāvā pilnvērtīgus risinājumus – no demontāžas darbu veikšanas līdz būvgružu pārstrādei un šķirošana"
+      }
+    },
+    "ctaBanner": {
+      "title": "Piesaki būvgružu izvešanu sev ērtākajā veidā – mūsu mājaslapā vai pa tālruni",
+      "phone": "+371 28601111",
+      "cta": "Pieteikt būvgružu izvešanu"
+    },
+    "equipment": {
+      "title": "Mūsu spectehnika demontāžai, transportēšanai un smalcināšanai",
+      "items": [
+        {
+          "title": "Ekskavatori (16–30 t)",
+          "description": "ar atskaldāmajiem āmuriem vai hidrauliskajām šķērēm – ēku un būvju demontāžai, kā arī betona, dzelzsbetona, ķieģeļu, metāla smalcināšanai."
+        },
+        {
+          "title": "Būvgružu sijātāji",
+          "description": "precīzu frakciju iegūšanai."
+        },
+        {
+          "title": "Konteineri",
+          "description": "atšķiroto materiālu nogādāšanai utilizācijai."
+        },
+        {
+          "title": "Būvgružu drupinātāji",
+          "description": "sadrupina būvgružus dažādās frakcijās un atdala metālus (armatūru) un citus piemaisījumus."
+        },
+        {
+          "title": "Frontālie iekrāvēji (16 t)",
+          "description": "šķembu un smilts aizvešanai."
+        }
+      ]
+    },
+    "recycling": {
+      "title": "Dzelzsbetona un betona pārstrāde Rīgā un Rīgas rajonā",
+      "description1": "Pēc ēku demontāžas bieži rodas jautājums par būvniecības atkritumu utilizāciju. NIKA MI nodrošina dzelzsbetona un betona pārstrādi, izmantojot modernu aprīkojumu un efektīvas tehnoloģijas.",
+      "description2": "Darbi tiek veikti gan mūsu šķirošanas poligonā, gan pasūtītāja objektā, izmantojot mobilo smalcinātāju.",
+      "benefits": [
+        "Tehnika ļauj atdalīt armatūru un citus piemaisījumus no betona.",
+        "Izmantojam progresīvas pārstrādes tehnoloģijas.",
+        "Strādājam ar dažādu izmēru dzelzsbetona blokiem.",
+        "Pēc pārstrādes iegūtie materiāli tiek izmantoti atkārtoti būvniecībā vai citām vajadzībām.",
+        "Sagatavojam klienta vajadzībām atbilstošas frakcijas.",
+        "Pārstrādājam arī lielus dzelzsbetona gabalus."
+      ]
+    }
+  },
   "demolition": {
     "hero": {
       "title": "Profesionāla ēku demontāža\nRīgā un Rīgas rajonā",
