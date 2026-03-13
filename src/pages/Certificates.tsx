@@ -88,13 +88,24 @@ const CertificatesSection = () => {
           ))}
         </div>
 
-        {/* Benefit cards */}
+        {/* Benefit cards - row 1 */}
         <div className="flex flex-col gap-1">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
-            {benefits.map((text, i) => (
+            {benefits.slice(0, 3).map((text, i) => (
               <div key={i} className="p-5 border-2 border-secondary flex flex-col justify-between gap-5 min-h-[180px]">
                 <div className="w-20 h-20 bg-secondary flex items-center justify-center shrink-0">
                   <img src={benefitIcons[i]} alt="" className="w-10 h-10" />
+                </div>
+                <p className="text-foreground text-base sm:text-xl font-medium leading-7">{text}</p>
+              </div>
+            ))}
+          </div>
+          {/* Row 2 - 2 cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+            {benefits.slice(3, 5).map((text, i) => (
+              <div key={i} className="p-5 border-2 border-secondary flex flex-col justify-between gap-5 min-h-[180px]">
+                <div className="w-20 h-20 bg-secondary flex items-center justify-center shrink-0">
+                  <img src={benefitIcons[i + 3]} alt="" className="w-10 h-10" />
                 </div>
                 <p className="text-foreground text-base sm:text-xl font-medium leading-7">{text}</p>
               </div>
