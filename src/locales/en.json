@@ -446,6 +446,24 @@
       ]
     }
   },
+  "snowRemoval": {
+    "hero": {
+      "title": "Need to get rid of snow?\nWe will help!",
+      "description": "NIKA MI offers snow removal in Riga, Riga region, Ropaži municipality, Ulbroka and Salaspils.",
+      "cta": "Request snow removal"
+    },
+    "territories": {
+      "title": "We will remove snow from your territories:",
+      "parking": "Parking lots",
+      "yards": "Large and small courtyards",
+      "industrial": "Industrial territories",
+      "company": "Company territories"
+    },
+    "pricing": {
+      "price": "from 7.50 €/m³*",
+      "note": "*Price is without VAT and includes only snow removal, without cleaning and loading."
+    }
+  },
   "demolition": {
     "hero": {
       "title": "Professional building demolition\nin Riga and Riga region",

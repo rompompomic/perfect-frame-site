@@ -433,6 +433,24 @@
       ]
     }
   },
+  "snowRemoval": {
+    "hero": {
+      "title": "Jāatbrīvojas no sniega?\nMēs palīdzēsim!",
+      "description": "NIKA MI piedāvā sniega izvešanu Rīgā, Rīgas rajonā, Ropažu novadā, Ulbrokā un Salaspilī.",
+      "cta": "Pieteikt sniega izvešanu"
+    },
+    "territories": {
+      "title": "Izvedīsim sniegu no jūsu teritorijām:",
+      "parking": "Stāvlaukumiem",
+      "yards": "Lieliem un maziem pagalmiem",
+      "industrial": "Industriālām teritorijām",
+      "company": "Uzņēmumu teritorijām"
+    },
+    "pricing": {
+      "price": "no 7.50 €/m³*",
+      "note": "*Cena norādīta bez PVN, kas ietver tikai sniega izvešanu, bez tā tīrīšanas un iekraušanas."
+    }
+  },
   "demolition": {
     "hero": {
       "title": "Profesionāla ēku demontāža\nRīgā un Rīgas rajonā",
