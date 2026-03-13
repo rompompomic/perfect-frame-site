@@ -258,7 +258,6 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
                   t("navbar.serviceLinks.constructionWaste"),
                   t("navbar.serviceLinks.demolition"),
                   t("navbar.serviceLinks.snowRemoval"),
-                  t("navbar.serviceLinks.greenCertificates"),
                 ].map((label, index) => (
                   <DropdownMenuItem
                     key={index}
@@ -266,6 +265,11 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
                     {label}
                   </DropdownMenuItem>
                 ))}
+                <DropdownMenuItem className="text-primary text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
+                  <Link to="/sertifikati">
+                    {t("navbar.serviceLinks.greenCertificates")}
+                  </Link>
+                </DropdownMenuItem>
                 <DropdownMenuSeparator className="bg-muted-foreground/30" />
                 <DropdownMenuItem className="flex items-center gap-2.5 text-nikami-blue text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
                   <Link to="/akcijas" className="flex items-center gap-2.5">
