@@ -253,16 +253,16 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="px-6 py-3 bg-secondary rounded-xs shadow-[0px_2px_12px_0px_rgba(0,0,0,0.15)] flex flex-col gap-2 min-w-[220px]">
                 {[
-                  t("navbar.serviceLinks.containerRental"),
-                  t("navbar.serviceLinks.sortingArea"),
-                  t("navbar.serviceLinks.constructionWaste"),
-                  t("navbar.serviceLinks.demolition"),
-                  t("navbar.serviceLinks.snowRemoval"),
-                ].map((label, index) => (
+                  { label: t("navbar.serviceLinks.containerRental"), to: "/order-container" },
+                  { label: t("navbar.serviceLinks.sortingArea"), to: "#" },
+                  { label: t("navbar.serviceLinks.constructionWaste"), to: "#" },
+                  { label: t("navbar.serviceLinks.demolition"), to: "/demontaza" },
+                  { label: t("navbar.serviceLinks.snowRemoval"), to: "#" },
+                ].map((item, index) => (
                   <DropdownMenuItem
                     key={index}
                     className="text-primary text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
-                    {label}
+                    <Link to={item.to}>{item.label}</Link>
                   </DropdownMenuItem>
                 ))}
                 <DropdownMenuItem className="text-primary text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
