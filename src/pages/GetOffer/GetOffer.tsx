@@ -194,7 +194,7 @@ const GetOffer = () => {
               </div>
 
               {/* Photo upload */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-end gap-5">
+              <div className="flex flex-col sm:flex-row items-start gap-5">
                 <div className="flex flex-col gap-0.5">
                   <input
                     ref={fileInputRef}
