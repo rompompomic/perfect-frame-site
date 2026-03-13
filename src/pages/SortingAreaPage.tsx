@@ -104,7 +104,7 @@ const WasteCardsSection = () => {
         </p>
         <button
           onClick={() => navigate("/sanemt-piedavajumu")}
-          className="w-full sm:w-auto self-start px-4 py-3 bg-primary rounded-sm text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity"
+          className="w-full px-4 py-3 bg-primary rounded-sm text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity"
         >
           {t("sortingAreaPage.cards.cta")}
         </button>
