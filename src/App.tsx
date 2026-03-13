@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound.tsx";
 import "./lib/i18n";
 import OrderContainer from "./pages/OrderContainer/OrderContainer.tsx";
 import Promotions from "./pages/Promotions.tsx";
+import GetOffer from "./pages/GetOffer/GetOffer.tsx";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/kontakti" element={<Contacts />} />
           <Route path="/order-container" element={<OrderContainer />} />
           <Route path="/akcijas" element={<Promotions />} />
+          <Route path="/sanemt-piedavajumu" element={<GetOffer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

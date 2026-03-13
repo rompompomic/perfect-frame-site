@@ -316,5 +316,19 @@
       { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
       { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" }
     ]
+  },
+  "getOffer": {
+    "title": "Saņemt piedāvājumu",
+    "subtitle": "Mēs izstrādāsim labāko risinājumu Jūsu vajadzībām!",
+    "serviceType": "Pakalpojuma veids",
+    "name": "Vārds, uzvārds",
+    "phone": "Telefona numurs",
+    "email": "E-pasts",
+    "comments": "Komentāri",
+    "uploadPhoto": "Augšupielādēt fotoattēlu",
+    "photoLimit": "*Līdz 5 fotoattēliem",
+    "privacy": "Iepazinos un piekrītu mājas lapas",
+    "privacyLink": "privātuma politikai",
+    "submit": "Nosūtīt pieteikumu"
   }
 }

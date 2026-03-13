@@ -316,5 +316,19 @@
       { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
       { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" }
     ]
+  },
+  "getOffer": {
+    "title": "Получить предложение",
+    "subtitle": "Мы разработаем лучшее решение для ваших потребностей!",
+    "serviceType": "Тип услуги",
+    "name": "Имя, фамилия",
+    "phone": "Номер телефона",
+    "email": "Эл. почта",
+    "comments": "Комментарии",
+    "uploadPhoto": "Загрузить фото",
+    "photoLimit": "*До 5 фотографий",
+    "privacy": "Ознакомлен и согласен с",
+    "privacyLink": "политикой конфиденциальности",
+    "submit": "Отправить заявку"
   }
 }
