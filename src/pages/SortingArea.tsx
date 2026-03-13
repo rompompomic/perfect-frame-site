@@ -169,7 +169,7 @@ const ConcreteRecyclingSection = () => {
   return (
     <section className="px-4 sm:px-6 lg:px-28 py-10 sm:py-16 lg:py-20">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
-        <h2 className="text-primary text-2xl sm:text-3xl lg:text-5xl font-black uppercase leading-tight lg:leading-[48px] max-w-[900px]">
+        <h2 className="text-primary text-2xl sm:text-3xl lg:text-5xl font-black uppercase leading-tight lg:leading-[48px] max-w-[1000px]">
           {t("sortingArea.recycling.title")}
         </h2>
         <div className="flex flex-col gap-10">
