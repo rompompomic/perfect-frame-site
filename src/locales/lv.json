@@ -484,6 +484,44 @@
       ]
     }
   },
+  "sortingAreaPage": {
+    "hero": {
+      "title": "Sakrājušies atkritumi?\nNodod tos mūsu šķirošanas laukumā! Mēs palīdzēsim!",
+      "description": "Profesionāla būvniecības atkritumu šķirošana un pārstrāde,",
+      "descriptionBold": "Rumbulā - Kaudzīšu ielā 59",
+      "cta": "Pieteikt atkritumu nodošanu"
+    },
+    "cards": {
+      "title": "NIKA MI šķirošanas laukums pieņem:",
+      "mixed": {
+        "title": "Jaukti, nešķiroti\nbūvniecības atkritumi",
+        "price": "no 79-109 €/t + PVN"
+      },
+      "clean": {
+        "title": "Tīri būvniecības atkritumi",
+        "price": "8.50 €/t + PVN"
+      },
+      "concrete": {
+        "title": "Monolītas betona un dzelzsbetona konstrukcijas",
+        "price": "8.50 €/t + PVN"
+      },
+      "electronics": {
+        "title": "Elektrotehnikas un sadzīves tehnikas nodošana",
+        "price": "Bezmaksas"
+      },
+      "wood": {
+        "title": "Būvniecības atkritumi\nno koka",
+        "price": "Bezmaksas"
+      },
+      "bulky": {
+        "title": "Lielgabarīta\natkritumi",
+        "price": "160 €/t + PVN"
+      },
+      "noticeTitle": "Ievērībai!",
+      "noticeText": "Šķirošanas laukumā pieņemam jebkuru atkritumu daudzumu, taču jāņem vērā, ka tiek piemērota minimālā maksa par 250 kg — tas nozīmē, ka arī tad, ja atvedat 1 kg atkritumu, maksa būs kā par 250 kg.",
+      "cta": "Pieteikt atkritumu nodošanu"
+    }
+  },
   "getOffer": {
     "title": "Saņemt piedāvājumu",
     "subtitle": "Mēs izstrādāsim labāko risinājumu Jūsu vajadzībām!",

@@ -497,6 +497,44 @@
       ]
     }
   },
+  "sortingAreaPage": {
+    "hero": {
+      "title": "Accumulated waste?\nDrop it off at our sorting area! We will help!",
+      "description": "Professional construction waste sorting and recycling,",
+      "descriptionBold": "in Rumbula - Kaudzīšu iela 59",
+      "cta": "Request waste drop-off"
+    },
+    "cards": {
+      "title": "NIKA MI sorting area accepts:",
+      "mixed": {
+        "title": "Mixed, unsorted\nconstruction waste",
+        "price": "from 79-109 €/t + VAT"
+      },
+      "clean": {
+        "title": "Clean construction waste",
+        "price": "8.50 €/t + VAT"
+      },
+      "concrete": {
+        "title": "Monolithic concrete and reinforced concrete structures",
+        "price": "8.50 €/t + VAT"
+      },
+      "electronics": {
+        "title": "Electronics and household appliance drop-off",
+        "price": "Free"
+      },
+      "wood": {
+        "title": "Wood construction\nwaste",
+        "price": "Free"
+      },
+      "bulky": {
+        "title": "Bulky\nwaste",
+        "price": "160 €/t + VAT"
+      },
+      "noticeTitle": "Attention!",
+      "noticeText": "The sorting area accepts any amount of waste, but please note that a minimum fee for 250 kg applies — this means that even if you bring 1 kg of waste, the fee will be as for 250 kg.",
+      "cta": "Request waste drop-off"
+    }
+  },
   "getOffer": {
     "title": "Get an offer",
     "subtitle": "We will develop the best solution for your needs!",
