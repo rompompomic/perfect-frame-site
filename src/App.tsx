@@ -31,6 +31,7 @@ const App = () => (
           <Route path="/akcijas" element={<Promotions />} />
           <Route path="/sertifikati" element={<Certificates />} />
           <Route path="/demontaza" element={<Demolition />} />
+          <Route path="/skirosanas-laukumi" element={<SortingArea />} />
           <Route path="/sanemt-piedavajumu" element={<GetOffer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -379,6 +379,73 @@
       "submit": "Send message"
     }
   },
+  "sortingArea": {
+    "hero": {
+      "title": "Construction waste recycling\nand sorting in Riga\nand Riga region",
+      "description": "SIA ''NIKA MI'' offers construction waste recycling and sorting services, using specialized sorting site equipment and cooperating with other companies in the waste utilization field.",
+      "cta": "Apply for waste delivery"
+    },
+    "services": {
+      "title": "Containers for construction waste, waste removal, utilization, sorting and recycling"
+    },
+    "cards": {
+      "card1": {
+        "title": "The company has its own heavy equipment fleet",
+        "description": "We will quickly clear your site of unnecessary waste, ensuring construction waste removal at a time convenient for you. The company has its own heavy equipment fleet, as well as specialized equipment for waste crushing and utilization."
+      },
+      "card2": {
+        "title": "Full-cycle demolition works",
+        "description": "Works are carried out at our company's special sorting sites, as well as in cooperation with partners who provide their own utilization sites. You can order all types of full-cycle demolition works from us – after completion, the client does not need to look for other service providers for waste removal."
+      },
+      "card3": {
+        "title": "NIKA MI offers comprehensive solutions",
+        "description": "During construction and demolition, a problem with construction waste utilization often arises. NIKA MI offers comprehensive solutions – from demolition works to construction waste recycling and sorting."
+      }
+    },
+    "ctaBanner": {
+      "title": "Order construction waste removal in the most convenient way – on our website or by phone",
+      "phone": "+371 28601111",
+      "cta": "Apply for waste removal"
+    },
+    "equipment": {
+      "title": "Our special equipment for demolition, transportation and crushing",
+      "items": [
+        {
+          "title": "Excavators (16–30 t)",
+          "description": "with breaking hammers or hydraulic shears – for building and structure demolition, as well as crushing concrete, reinforced concrete, bricks, and metal."
+        },
+        {
+          "title": "Construction waste screeners",
+          "description": "for obtaining precise fractions."
+        },
+        {
+          "title": "Containers",
+          "description": "for transporting sorted materials for utilization."
+        },
+        {
+          "title": "Construction waste crushers",
+          "description": "crushes construction waste into various fractions and separates metals (reinforcement) and other impurities."
+        },
+        {
+          "title": "Front loaders (16 t)",
+          "description": "for gravel and sand removal."
+        }
+      ]
+    },
+    "recycling": {
+      "title": "Reinforced concrete and concrete recycling in Riga and Riga region",
+      "description1": "After building demolition, the question of construction waste utilization often arises. NIKA MI provides reinforced concrete and concrete recycling using modern equipment and effective technologies.",
+      "description2": "Works are carried out both at our sorting site and at the client's facility using a mobile crusher.",
+      "benefits": [
+        "Equipment allows separating reinforcement and other impurities from concrete.",
+        "We use progressive recycling technologies.",
+        "We work with reinforced concrete blocks of various sizes.",
+        "Materials obtained after recycling are reused in construction or for other needs.",
+        "We prepare fractions according to client needs.",
+        "We also recycle large reinforced concrete pieces."
+      ]
+    }
+  },
   "demolition": {
     "hero": {
       "title": "Professional building demolition\nin Riga and Riga region",
