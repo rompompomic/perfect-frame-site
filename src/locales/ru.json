@@ -306,5 +306,15 @@
       "title": "Lorem Ipsum",
       "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been."
     }
+  },
+  "promotions": {
+    "title": "Акции",
+    "subtitle": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+    "items": [
+      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
+      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
+      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
+      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" }
+    ]
   }
 }

@@ -9,6 +9,7 @@ import Contacts from "./pages/Contacts.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import "./lib/i18n";
 import OrderContainer from "./pages/OrderContainer/OrderContainer.tsx";
+import Promotions from "./pages/Promotions.tsx";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/par-mums" element={<About />} />
           <Route path="/kontakti" element={<Contacts />} />
           <Route path="/order-container" element={<OrderContainer />} />
+          <Route path="/akcijas" element={<Promotions />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
