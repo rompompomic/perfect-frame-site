@@ -332,5 +332,19 @@
         "cta": "CTA"
       }
     ]
+  },
+  "getOffer": {
+    "title": "Get an offer",
+    "subtitle": "We will develop the best solution for your needs!",
+    "serviceType": "Service type",
+    "name": "Name, surname",
+    "phone": "Phone number",
+    "email": "Email",
+    "comments": "Comments",
+    "uploadPhoto": "Upload photo",
+    "photoLimit": "*Up to 5 photos",
+    "privacy": "I have read and agree to the website's",
+    "privacyLink": "privacy policy",
+    "submit": "Submit application"
   }
 }
