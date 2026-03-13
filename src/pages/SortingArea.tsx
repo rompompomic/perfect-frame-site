@@ -54,19 +54,19 @@ const ServiceCardsSection = () => {
 
   const cards = [
     {
-      icon: truckIcon,
-      title: t("sortingArea.cards.card1.title"),
-      description: t("sortingArea.cards.card1.description"),
+      icon: wasteIcon,
+      title: t("sortingArea.cards.card3.title"),
+      description: t("sortingArea.cards.card3.description"),
     },
     {
-      icon: wasteIcon,
+      icon: craneIcon,
       title: t("sortingArea.cards.card2.title"),
       description: t("sortingArea.cards.card2.description"),
     },
     {
-      icon: craneIcon,
-      title: t("sortingArea.cards.card3.title"),
-      description: t("sortingArea.cards.card3.description"),
+      icon: truckIcon,
+      title: t("sortingArea.cards.card1.title"),
+      description: t("sortingArea.cards.card1.description"),
     },
   ];
 
