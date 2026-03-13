@@ -26,6 +26,7 @@ const GetOffer = () => {
   const [comments, setComments] = useState("");
   const [photos, setPhotos] = useState<{ file: File; preview: string }[]>([]);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const [marketingAccepted, setMarketingAccepted] = useState(false);
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -245,21 +246,54 @@ const GetOffer = () => {
             </div>
           </div>
 
-          {/* Privacy checkbox */}
-          <div className="flex items-start gap-3 mt-2">
-            <input
-              type="checkbox"
-              checked={privacyAccepted}
-              onChange={(e) => setPrivacyAccepted(e.target.checked)}
-              className="mt-1 w-4 h-4 accent-nikami-blue cursor-pointer"
-              required
-            />
-            <span className="text-foreground text-sm font-medium leading-5">
-              {t("getOffer.privacy")}{" "}
-              <a href="#" className="text-nikami-blue underline">
-                {t("getOffer.privacyLink")}
-              </a>
-            </span>
+          {/* Checkboxes */}
+          <div className="flex flex-col gap-3 mt-2">
+            {/* Privacy checkbox */}
+            <div className="flex items-center gap-2 cursor-pointer" onClick={() => setPrivacyAccepted(!privacyAccepted)}>
+              <div className="w-6 h-6 relative flex-shrink-0 flex items-center justify-center">
+                {privacyAccepted ? (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect x="1" y="1" width="14" height="14" fill="hsl(var(--nikami-blue))" stroke="hsl(var(--nikami-blue))" strokeWidth="2" />
+                  </svg>
+                ) : (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect x="0.5" y="0.5" width="15" height="15" stroke="hsl(var(--nikami-blue))" />
+                  </svg>
+                )}
+                {privacyAccepted && (
+                  <svg className="absolute" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                    <path d="M0.650391 5.63062L4.15039 8.63062L10.6504 0.630615" stroke="white" strokeWidth="2" />
+                  </svg>
+                )}
+              </div>
+              <span className="text-foreground text-base font-bold leading-6">
+                {t("getOffer.privacy")}{" "}
+                <span className="underline">{t("getOffer.privacyLink")}</span>.
+              </span>
+            </div>
+
+            {/* Marketing checkbox */}
+            <div className="flex items-center gap-2 cursor-pointer" onClick={() => setMarketingAccepted(!marketingAccepted)}>
+              <div className="w-6 h-6 relative flex-shrink-0 flex items-center justify-center">
+                {marketingAccepted ? (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect x="1" y="1" width="14" height="14" fill="hsl(var(--nikami-blue))" stroke="hsl(var(--nikami-blue))" strokeWidth="2" />
+                  </svg>
+                ) : (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect x="0.5" y="0.5" width="15" height="15" stroke="hsl(var(--nikami-blue))" />
+                  </svg>
+                )}
+                {marketingAccepted && (
+                  <svg className="absolute" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                    <path d="M0.650391 5.63062L4.15039 8.63062L10.6504 0.630615" stroke="white" strokeWidth="2" />
+                  </svg>
+                )}
+              </div>
+              <span className="text-foreground text-base font-bold leading-6">
+                {t("getOffer.marketing")}
+              </span>
+            </div>
           </div>
 
           {/* Submit button */}
