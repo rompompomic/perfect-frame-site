@@ -29,7 +29,7 @@ const PromotionCard = ({ title, description, cta }: Promotion) => (
             {description}
           </p>
         </div>
-        <button className="w-full px-4 py-3 bg-primary rounded-sm flex items-center justify-center gap-2.5 hover:bg-primary/90 transition-colors">
+        <button className="w-full px-4 py-3 bg-primary rounded-sm flex items-center justify-center gap-2.5 hover:bg-primary/90 transition-colors text-nikami-blue">
           <span className="text-primary-foreground text-base font-semibold leading-6">
             {cta}
           </span>
