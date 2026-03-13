@@ -23,7 +23,7 @@ import calendarIcon from "@/assets/icons/calendar.svg";
 import hourglassIcon from "@/assets/icons/hourglass.svg";
 import discountTagIcon from "@/assets/icons/discount-tag.svg";
 
-const benefitIcons = [thumbsUpIcon, leafIcon, cloudSunIcon, handshakeIcon, chartLineUpIcon, certificateIcon];
+const benefitIcons = [cloudSunIcon, leafIcon, thumbsUpIcon, chartLineUpIcon, handshakeIcon];
 const conditionIcons = [buildingIcon, documentIcon, calendarIcon, hourglassIcon, discountTagIcon, documentIcon];
 
 /* ───── Hero ───── */
