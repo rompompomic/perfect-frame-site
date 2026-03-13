@@ -131,25 +131,23 @@ const ConditionsSection = () => {
         </h2>
 
         <div className="flex flex-col gap-1">
-          {/* Row 1 - 3 cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
             {conditions.slice(0, 3).map((text, i) => (
-              <div key={i} className="p-5 bg-background flex flex-col justify-between gap-5 min-h-[180px]">
-                <div className="w-20 h-20 bg-secondary flex items-center justify-center shrink-0">
-                  <img src={conditionIcons[i]} alt="" className="w-10 h-10" />
+              <div key={i} className="p-5 bg-background flex flex-col sm:flex-row sm:items-center lg:flex-col lg:items-start justify-between gap-5 min-h-[120px] sm:min-h-0 lg:min-h-[180px]">
+                <div className="w-16 h-16 sm:w-14 sm:h-14 lg:w-20 lg:h-20 bg-secondary flex items-center justify-center shrink-0">
+                  <img src={conditionIcons[i]} alt="" className="w-8 h-8 sm:w-7 sm:h-7 lg:w-10 lg:h-10" />
                 </div>
-                <p className="text-foreground text-base sm:text-xl font-medium leading-7">{text}</p>
+                <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">{text}</p>
               </div>
             ))}
           </div>
-          {/* Row 2 - 2 cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
             {conditions.slice(3, 5).map((text, i) => (
-              <div key={i} className="p-5 bg-background flex flex-col justify-between gap-5 min-h-[180px]">
-                <div className="w-20 h-20 bg-secondary flex items-center justify-center shrink-0">
-                  <img src={conditionIcons[i + 3]} alt="" className="w-10 h-10" />
+              <div key={i} className="p-5 bg-background flex flex-col sm:flex-row sm:items-center lg:flex-col lg:items-start justify-between gap-5 min-h-[120px] sm:min-h-0 lg:min-h-[180px]">
+                <div className="w-16 h-16 sm:w-14 sm:h-14 lg:w-20 lg:h-20 bg-secondary flex items-center justify-center shrink-0">
+                  <img src={conditionIcons[i + 3]} alt="" className="w-8 h-8 sm:w-7 sm:h-7 lg:w-10 lg:h-10" />
                 </div>
-                <p className="text-foreground text-base sm:text-xl font-medium leading-7">{text}</p>
+                <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">{text}</p>
               </div>
             ))}
           </div>
