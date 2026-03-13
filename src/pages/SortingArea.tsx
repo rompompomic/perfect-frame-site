@@ -21,7 +21,7 @@ const SortingHero = () => {
     <section className="relative w-full min-h-[520px] sm:min-h-[620px] lg:min-h-[720px] flex flex-col">
       <div className="absolute inset-0 overflow-hidden">
         <img src={heroImage} alt="Sorting area" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/70 via-primary/60 to-nikami-dark/70" />
+        <div />
       </div>
       <div className="relative z-10 flex-1 flex flex-col">
         <Navbar />
@@ -83,9 +83,7 @@ const ServiceCardsSection = () => {
                 <img src={card.icon} alt="" className="w-10 h-10" />
               </div>
               <div className="flex flex-col gap-3">
-                <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">
-                  {card.title}
-                </h3>
+                <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{card.title}</h3>
                 <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
                   {card.description}
                 </p>
@@ -143,43 +141,33 @@ const EquipmentSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
           {/* First card spans full height on left */}
           <div className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2 md:row-span-2 lg:row-span-2">
-            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">
-              {equipment[0]?.title}
-            </h3>
+            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{equipment[0]?.title}</h3>
             <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
               {equipment[0]?.description}
             </p>
           </div>
           {/* Middle column - 2 stacked */}
           <div className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
-            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">
-              {equipment[1]?.title}
-            </h3>
+            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{equipment[1]?.title}</h3>
             <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
               {equipment[1]?.description}
             </p>
           </div>
           <div className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
-            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">
-              {equipment[3]?.title}
-            </h3>
+            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{equipment[3]?.title}</h3>
             <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
               {equipment[3]?.description}
             </p>
           </div>
           {/* Right column - 2 stacked */}
           <div className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
-            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">
-              {equipment[2]?.title}
-            </h3>
+            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{equipment[2]?.title}</h3>
             <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
               {equipment[2]?.description}
             </p>
           </div>
           <div className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
-            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">
-              {equipment[4]?.title}
-            </h3>
+            <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{equipment[4]?.title}</h3>
             <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
               {equipment[4]?.description}
             </p>
@@ -216,9 +204,7 @@ const ConcreteRecyclingSection = () => {
                 <div className="w-20 h-20 bg-background flex items-center justify-center shrink-0">
                   <img src={checkIcon} alt="" className="w-10 h-10" />
                 </div>
-                <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
-                  {text}
-                </p>
+                <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">{text}</p>
               </div>
             ))}
           </div>
