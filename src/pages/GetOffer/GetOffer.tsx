@@ -221,27 +221,35 @@ const GetOffer = () => {
                   </span>
                 </div>
 
-                {/* Photo previews */}
-                {photos.length > 0 && (
-                  <div className="flex items-center gap-2 flex-wrap">
-                    {photos.map((photo, index) => (
-                      <div key={index} className="relative w-11 h-11 rounded-xs overflow-hidden">
-                        <img
-                          src={photo.preview}
-                          alt={`Upload ${index + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                        <button
-                          type="button"
-                          onClick={() => removePhoto(index)}
-                          className="absolute top-0.5 right-0.5 w-4 h-4 bg-nikami-blue rounded-full flex items-center justify-center"
-                        >
-                          <img src={crossIcon} alt="Remove" className="w-2.5 h-2.5" />
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                {/* Photo previews + upload button in one row */}
+                <div className="flex items-center gap-2 flex-wrap">
+                  {photos.map((photo, index) => (
+                    <div key={index} className="relative w-[46px] h-[46px] rounded-sm overflow-hidden border border-muted-foreground/20">
+                      <img
+                        src={photo.preview}
+                        alt={`Upload ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => removePhoto(index)}
+                        className="absolute -top-0.5 -right-0.5 w-5 h-4 bg-nikami-blue rounded-sm flex items-center justify-center"
+                      >
+                        <img src={crossIcon} alt="Remove" className="w-2.5 h-2.5" />
+                      </button>
+                    </div>
+                  ))}
+
+                  {photos.length < 5 && (
+                    <button
+                      type="button"
+                      onClick={() => fileInputRef.current?.click()}
+                      className="w-[46px] h-[46px] rounded-sm border border-nikami-blue flex items-center justify-center cursor-pointer hover:bg-nikami-light-blue transition-colors"
+                    >
+                      <img src={uploadIcon} alt="" className="w-5 h-5" />
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           </div>
