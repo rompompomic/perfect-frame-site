@@ -66,27 +66,27 @@ export default function OrderContainer() {
         <Navbar variant="light" />
       </div>
 
-      <div className="min-h-screen bg-[#E4F1FF] px-4 sm:px-6 py-8 sm:py-10 md:py-[60px]">
+      <div className="min-h-screen bg-[#E4F1FF] px-4 py-[60px]">
         <div className="max-w-[1200px] mx-auto">
           {currentStep !== 4 && <StepIndicator currentStep={currentStep} />}
 
           {currentStep == 0 && (
             <>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[58px] font-black text-[#1a3c6e] uppercase tracking-tight mb-2 leading-tight">
+              <h1 className="text-[58px] sm:text-5xl font-black text-[#1a3c6e] uppercase tracking-tight mb-2">
                 {t("orderContainer.step1.title")}
               </h1>
-              <div className="flex items-center gap-2 mb-4 sm:mb-6 text-[#334155] font-semibold text-sm sm:text-base md:text-[20px]">
+              <div className="flex items-center gap-2 mb-6 text-[#334155] font-semibold text-[20px]">
                 <span>{t("orderContainer.step1.subtitle")}</span>
                 <InfoTooltip variant="red" text={t("orderContainer.tooltip.text")} />
               </div>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mb-5">
-                <div className="flex flex-wrap bg-transparent rounded-[2px] border-[1px] border-[#05376D] shadow-sm">
+              <div className="flex items-center gap-2 mb-5">
+                <div className="flex bg-transparent rounded-[2px] border-[1px] border-[#05376D] shadow-sm">
                   {wasteCategories.map((cat) => (
                     <button
                       key={cat.id}
                       onClick={() => setSelectedCategory(cat.id)}
-                      className={`px-3 sm:px-[18px] py-2.5 sm:py-[12px] rounded-[2px] text-xs sm:text-sm font-semibold transition-all duration-200
+                      className={`px-[18px] py-[12px] rounded-[2px] text-sm font-semibold transition-all duration-200
                     ${
                       selectedCategory === cat.id
                         ? "bg-[#1a3c6e] text-white shadow"
@@ -101,7 +101,7 @@ export default function OrderContainer() {
 
               <InfoAccordion category={selectedCategory} />
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-[4px] mb-6">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-[4px] mb-6">
                 {CONTAINERS.map((container) => (
                   <ContainerCard
                     key={container.id}
@@ -113,17 +113,15 @@ export default function OrderContainer() {
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-6 sm:mb-8">
+              <div className="flex gap-3 mb-8">
                 <button
                   onClick={() => setDeliveryMode("single")}
-                  className={`px-4 sm:px-5 py-2.5 rounded-[2px] border-[1px] border-[#05366A] text-xs sm:text-sm font-semibold transition-all
-                    ${deliveryMode === "single" ? "bg-[#05366A] text-white" : ""}`}>
+                  className={`px-5 py-2.5 rounded-[2px] border-[1px] border-[#05366A] text-sm font-semibold transition-all`}>
                   {t("orderContainer.step1.delivery.single")}
                 </button>
                 <button
                   onClick={() => setDeliveryMode("multiple")}
-                  className={`px-4 sm:px-5 py-2.5 rounded-[2px] border-[1px] border-[#05366A] text-xs sm:text-sm font-semibold transition-all
-                    ${deliveryMode === "multiple" ? "bg-[#05366A] text-white" : ""}`}>
+                  className={`px-5 py-2.5 rounded-[2px] border-[1px] bg-[#05366A] text-white text-sm font-semibold transition-all`}>
                   {t("orderContainer.step1.delivery.multiple")}
                 </button>
               </div>

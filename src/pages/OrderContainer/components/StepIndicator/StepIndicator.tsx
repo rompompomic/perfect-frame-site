@@ -19,7 +19,7 @@ export const StepIndicator = ({ currentStep }: StepIndicatorProps) => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex items-center w-full max-w-[1200px] mb-6 sm:mb-8 md:mb-10">
+    <div className="flex items-center w-full max-w-[1200px] mb-10">
       {steps.map((step, i) => {
         const isCompleted = i < currentStep;
         const isActive = i === currentStep;
@@ -28,11 +28,11 @@ export const StepIndicator = ({ currentStep }: StepIndicatorProps) => {
           <>
             <div key={i} className="flex flex-col items-center shrink-0">
               <div
-                className={`w-10 h-10 sm:w-12 sm:h-12 md:w-[56px] md:h-[56px] cursor-pointer rounded-full flex items-center justify-center border-2 transition-colors
+                className={`w-[56px] h-[56px] cursor-pointer rounded-full flex items-center justify-center border-2 transition-colors
                   ${isCompleted || isActive ? "bg-[#4895E8] border-[#4895E8]" : "bg-white border-white"}`}>
                 {isCompleted ? (
                   <svg
-                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white"
+                    className="w-7 h-7 text-white"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -42,7 +42,7 @@ export const StepIndicator = ({ currentStep }: StepIndicatorProps) => {
                 ) : (
                   <img
                     src={step.icon}
-                    className={`w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 ${isActive ? "brightness-0 invert" : ""}`}
+                    className={`w-7 h-7 ${isActive ? "brightness-0 invert" : ""}`}
                     alt={t(step.labelKey)}
                   />
                 )}
@@ -51,7 +51,7 @@ export const StepIndicator = ({ currentStep }: StepIndicatorProps) => {
 
             {i < steps.length - 1 && (
               <div
-                className={`flex-1 h-[3px] sm:h-[4px] transition-colors ${
+                className={`flex-1 h-[4px] transition-colors ${
                   i < currentStep ? "bg-[#4895E8]" : "bg-white"
                 }`}
               />
