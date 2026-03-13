@@ -13,6 +13,7 @@ import Promotions from "./pages/Promotions.tsx";
 import GetOffer from "./pages/GetOffer/GetOffer.tsx";
 import Certificates from "./pages/Certificates.tsx";
 import Demolition from "./pages/Demolition.tsx";
+import SortingArea from "./pages/SortingArea.tsx";
 
 const queryClient = new QueryClient();
 
