@@ -379,6 +379,39 @@
       "submit": "Send message"
     }
   },
+  "demolition": {
+    "hero": {
+      "title": "Professional building demolition\nin Riga and Riga region",
+      "description": "SIA \"NIKA MI\" offers demolition services, ensuring deadline compliance and accurate work execution. Apply for a consultation and receive the best solution."
+    },
+    "about": {
+      "title": "NIKA MI provides professional demolition services with guaranteed quality and cleanliness",
+      "subtitle": "We calculate costs, create a schedule and perform work within the contractual deadline"
+    },
+    "serviceTypes": {
+      "title": "Service types:",
+      "type1": {
+        "title": "We perform full demolition",
+        "description": "From building demolition to construction waste removal and utilization."
+      },
+      "type2": {
+        "title": "Client-performed demolition",
+        "description": "We provide everything needed: equipment, containers, specialist support and work organization."
+      }
+    },
+    "services": {
+      "title": "Our services:",
+      "subtitle": "We have extensive experience with complex and hazardous objects – we safely demolish old, emergency-state buildings.",
+      "items": [
+        "Full cycle: demolition → crushing → construction waste removal and recycling.",
+        "Demolition of various building types – garages, sheds, boiler houses, etc.",
+        "Demolition of bunkers and other industrial structures.",
+        "Single, two and multi-story building demolition.",
+        "Site cleanup after completion of work.",
+        "Demolition of wooden, brick, frame buildings (from roof to foundations)."
+      ]
+    }
+  },
   "getOffer": {
     "title": "Get an offer",
     "subtitle": "We will develop the best solution for your needs!",

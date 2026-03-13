@@ -366,6 +366,39 @@
       "submit": "Nosūtīt ziņu"
     }
   },
+  "demolition": {
+    "hero": {
+      "title": "Profesionāla ēku demontāža\nRīgā un Rīgas rajonā",
+      "description": "SIA \"NIKA MI\" piedāvā demontāžas darbus, nodrošinot laika termiņu ievērošanu un akurātu darbu izpildi. Piesakaties konsultācijai un saņemiet labāko risinājumu."
+    },
+    "about": {
+      "title": "NIKA MI nodrošina profesionālus demontāžas pakalpojumus ar garantētu kvalitāti un tīrību",
+      "subtitle": "Mēs aprēķinām izmaksas, sastādām grafiku un veicam darbus līgumā noteiktajā termiņā"
+    },
+    "serviceTypes": {
+      "title": "Pakalpojuma veidi:",
+      "type1": {
+        "title": "Mēs veicam pilnu demontāžu",
+        "description": "Sākot no ēkas nojaukšanas līdz būvgružu izvešanai un to utilizācijai."
+      },
+      "type2": {
+        "title": "Klienta veikta demontāža",
+        "description": "Mēs nodrošinām visu nepieciešamo: tehniku, konteinerus, speciālistu atbalstu un darbu organizēšanu."
+      }
+    },
+    "services": {
+      "title": "Mūsu pakalpojumi:",
+      "subtitle": "Mums ir plaša pieredze arī ar sarežģītiem un bīstamiem objektiem – droši nojaucam vecas, avārijas stāvoklī esošas ēkas.",
+      "items": [
+        "Pilns cikls: nojaukšana → smalcināšana → būvgružu izvešana un pārstrāde.",
+        "Dažādu tipu ēku demontāža – garāžas, šķūņi, katlumājas u.c.",
+        "Bunkuru un citu industriālo konstrukciju nojaukšana.",
+        "Viena, divu un daudzstāvu ēku nojaukšana.",
+        "Teritorijas sakopšana pēc darbu pabeigšanas.",
+        "Koka, ķieģeļu, karkasa ēku demontāža (no jumta līdz pamatiem)."
+      ]
+    }
+  },
   "getOffer": {
     "title": "Saņemt piedāvājumu",
     "subtitle": "Mēs izstrādāsim labāko risinājumu Jūsu vajadzībām!",
