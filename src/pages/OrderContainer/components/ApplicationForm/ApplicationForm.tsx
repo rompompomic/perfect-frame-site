@@ -50,8 +50,8 @@ const SERVICE_OPTIONS: { value: ServiceKind; label: string }[] = [
 
 const PAYMENT_METHODS: { value: PaymentMethod; label: string }[] = [
   { value: "tiessaiste", label: "Apmaksa tiešsaistē" },
-  { value: "vietas", label: "Samaksa uz vietas ar stingras uzskaites kviti" },
-  { value: "epasts", label: "Saņemt rēķinu uz e-pastu" },
+  { value: "vietas", label: "Samaksa uz vietas" },
+  { value: "epasts", label: "Rēķins uz e-pastu" },
 ];
 
 const PAYMENT_TYPES: { value: PaymentType; label: string }[] = [
@@ -129,23 +129,22 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
     setForm((prev) => ({ ...prev, [key]: val }));
 
   const isFiziska = form.personType === "fiziska";
-
   const canSubmit = form.agreeTerms && form.name && form.phone && form.email;
 
   return (
     <div className="w-full">
-      <h1 className="text-[58px] sm:text-5xl font-black text-[#1a3c6e] uppercase tracking-tight mb-6">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[58px] font-black text-[#1a3c6e] uppercase tracking-tight mb-4 sm:mb-6 leading-tight">
         4. Pieteikuma aizpildīšana
       </h1>
 
-      <h2 className="text-[32px] font-black text-[#000] uppercase mb-4">Aizpildiet pieteikumu</h2>
+      <h2 className="text-xl sm:text-2xl md:text-[32px] font-black text-[#000] uppercase mb-4">Aizpildiet pieteikumu</h2>
 
       <div className="flex mb-5 border border-[#05376D] rounded-[4px] w-fit overflow-hidden">
         {(["fiziska", "juridiska"] as PersonType[]).map((type) => (
           <button
             key={type}
             onClick={() => set("personType", type)}
-            className={`px-5 py-2.5 text-sm font-semibold transition-colors
+            className={`px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-colors
               ${
                 form.personType === type
                   ? "bg-[#05376D] text-white"
@@ -156,11 +155,11 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
         <div className="flex flex-col gap-4">
           {isFiziska ? (
             <>
-              <div className="flex flex-col gap-1 flex-1 min-w-[180px]">
+              <div className="flex flex-col gap-1 flex-1 min-w-0">
                 <label className="text-xs font-semibold text-[#334155]">
                   Pakalpojuma veids<span className="text-[#4895E8]">*</span>
                 </label>
@@ -175,16 +174,9 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
 
               <Field label="Vārds, uzvārds" required>
                 <div className="relative">
-                  <input
-                    type="text"
-                    value={form.name}
-                    onChange={(e) => set("name", e.target.value)}
-                    className={inputCls}
-                  />
+                  <input type="text" value={form.name} onChange={(e) => set("name", e.target.value)} className={inputCls} />
                   {form.name && (
-                    <button
-                      onClick={() => set("name", "")}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-[#9AAFBE] hover:text-[#334155] text-xl leading-none">
+                    <button onClick={() => set("name", "")} className="absolute right-3 top-1/2 -translate-y-1/2">
                       <ClearIcon />
                     </button>
                   )}
@@ -192,118 +184,61 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
               </Field>
 
               <Field label="Telefona numurs" required>
-                <input
-                  type="tel"
-                  value={form.phone}
-                  onChange={(e) => set("phone", e.target.value)}
-                  className={inputCls}
-                />
+                <input type="tel" value={form.phone} onChange={(e) => set("phone", e.target.value)} className={inputCls} />
               </Field>
 
               <Field label="E-pasts" required>
-                <input
-                  type="email"
-                  value={form.email}
-                  onChange={(e) => set("email", e.target.value)}
-                  className={inputCls}
-                />
+                <input type="email" value={form.email} onChange={(e) => set("email", e.target.value)} className={inputCls} />
               </Field>
             </>
           ) : (
             <>
               <Field label="Meklēt kompāniju pēc reģistrācijas numura vai nosaukuma" required>
                 <div className="relative">
-                  <input
-                    type="text"
-                    value={form.companySearch}
-                    onChange={(e) => set("companySearch", e.target.value)}
-                    placeholder="40003825499"
-                    className={inputCls}
-                  />
+                  <input type="text" value={form.companySearch} onChange={(e) => set("companySearch", e.target.value)} placeholder="40003825499" className={inputCls} />
                   {form.companySearch && (
-                    <button
-                      onClick={() => set("companySearch", "")}
-                      className="absolute right-3 top-1/2 -translate-y-1/2">
+                    <button onClick={() => set("companySearch", "")} className="absolute right-3 top-1/2 -translate-y-1/2">
                       <ClearIcon />
                     </button>
                   )}
                 </div>
               </Field>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Field label="Uzņēmuma nosaukums">
-                  <input
-                    type="text"
-                    value={form.companyName}
-                    onChange={(e) => set("companyName", e.target.value)}
-                    placeholder="SIA Uzņēmums"
-                    className={inputCls}
-                  />
+                  <input type="text" value={form.companyName} onChange={(e) => set("companyName", e.target.value)} placeholder="SIA Uzņēmums" className={inputCls} />
                 </Field>
                 <Field label="Juridiskā adrese">
-                  <input
-                    type="text"
-                    value={form.legalAddress}
-                    onChange={(e) => set("legalAddress", e.target.value)}
-                    placeholder="Adreses nosaukums 123"
-                    className={inputCls}
-                  />
+                  <input type="text" value={form.legalAddress} onChange={(e) => set("legalAddress", e.target.value)} placeholder="Adreses nosaukums 123" className={inputCls} />
                 </Field>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Field label="Reģistrācijas numurs">
-                  <input
-                    type="text"
-                    value={form.registrationNumber}
-                    onChange={(e) => set("registrationNumber", e.target.value)}
-                    placeholder="40003825499"
-                    className={inputCls}
-                  />
+                  <input type="text" value={form.registrationNumber} onChange={(e) => set("registrationNumber", e.target.value)} placeholder="40003825499" className={inputCls} />
                 </Field>
                 <Field label="PVN maksātāja nr.">
-                  <input
-                    type="text"
-                    value={form.pvnNumber}
-                    onChange={(e) => set("pvnNumber", e.target.value)}
-                    placeholder="LV40003825499"
-                    className={inputCls}
-                  />
+                  <input type="text" value={form.pvnNumber} onChange={(e) => set("pvnNumber", e.target.value)} placeholder="LV40003825499" className={inputCls} />
                 </Field>
               </div>
 
               <Field label="Vārds, uzvārds" required>
                 <div className="relative">
-                  <input
-                    type="text"
-                    value={form.name}
-                    onChange={(e) => set("name", e.target.value)}
-                    className={inputCls}
-                  />
+                  <input type="text" value={form.name} onChange={(e) => set("name", e.target.value)} className={inputCls} />
                   {form.name && (
-                    <button
-                      onClick={() => set("name", "")}
-                      className="absolute right-3 top-1/2 -translate-y-1/2">
+                    <button onClick={() => set("name", "")} className="absolute right-3 top-1/2 -translate-y-1/2">
                       <ClearIcon />
                     </button>
                   )}
                 </div>
               </Field>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Field label="E-pasts" required>
                   <div className="relative">
-                    <input
-                      type="email"
-                      value={form.email}
-                      onChange={(e) => set("email", e.target.value)}
-                      placeholder="janis.berzins@gmail.com"
-                      className={inputCls}
-                    />
+                    <input type="email" value={form.email} onChange={(e) => set("email", e.target.value)} placeholder="janis.berzins@gmail.com" className={inputCls} />
                     {form.email && (
-                      <button
-                        onClick={() => set("email", "")}
-                        className="absolute right-3 top-1/2 -translate-y-1/2">
+                      <button onClick={() => set("email", "")} className="absolute right-3 top-1/2 -translate-y-1/2">
                         <ClearIcon />
                       </button>
                     )}
@@ -311,17 +246,9 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
                 </Field>
                 <Field label="Telefona numurs" required>
                   <div className="relative">
-                    <input
-                      type="tel"
-                      value={form.phone}
-                      onChange={(e) => set("phone", e.target.value)}
-                      placeholder="+371 277 00 770"
-                      className={inputCls}
-                    />
+                    <input type="tel" value={form.phone} onChange={(e) => set("phone", e.target.value)} placeholder="+371 277 00 770" className={inputCls} />
                     {form.phone && (
-                      <button
-                        onClick={() => set("phone", "")}
-                        className="absolute right-3 top-1/2 -translate-y-1/2">
+                      <button onClick={() => set("phone", "")} className="absolute right-3 top-1/2 -translate-y-1/2">
                         <ClearIcon />
                       </button>
                     )}
@@ -343,38 +270,34 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
             />
           </Field>
 
-          <div className="rounded-[4px] font-normal text-[16px] text-[#000] leading-relaxed">
-            <span className="font-bold text-[16px] text-[#05376D]">Uzmanību!</span> Izvēlētais laiks
+          <div className="rounded-[4px] font-normal text-sm sm:text-[16px] text-[#000] leading-relaxed">
+            <span className="font-bold text-sm sm:text-[16px] text-[#05376D]">Uzmanību!</span> Izvēlētais laiks
             ir aptuvens. Pēc pasūtījuma saņemšanas dispečeris ar Jums sazināsies un apstiprinās
             pasūtījumu. Pakalpojuma cena var mainīties atkarībā no laikapstākļiem un ceļu satiksmes.
           </div>
         </div>
       </div>
 
-      <div className="mb-8">
+      <div className="mb-6 sm:mb-8">
         <div className="flex items-center gap-2 mb-4">
-          <h2 className="text-[32px] font-black text-[#000] uppercase">
+          <h2 className="text-xl sm:text-2xl md:text-[32px] font-black text-[#000] uppercase">
             Vai ir nepieciešama apus izziņa?
           </h2>
           <InfoTooltip variant="red" text="Apus izziņa ir nepieciešama noteiktos gadījumos." />
         </div>
 
-        <div className="flex items-center gap-3 flex-wrap">
-          <div className="flex items-center gap-3 rounded-[4px] overflow-hidden">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-2 sm:gap-3 rounded-[4px] overflow-hidden">
             <button
               onClick={() => set("needsCertificate", false)}
-              className={`px-5 py-2.5 text-sm font-semibold transition-colors border border-[#05376D]
+              className={`px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-colors border border-[#05376D]
                 ${!form.needsCertificate ? "text-[#05376D]" : "text-[#05376D] hover:bg-[#f0f6ff]"}`}>
               Nav nepieciešama
             </button>
             <button
               onClick={() => set("needsCertificate", true)}
-              className={`px-5 py-2.5 text-sm font-semibold transition-colors border border-[#05376D]
-                ${
-                  form.needsCertificate
-                    ? "bg-[#05376D] text-white"
-                    : "text-[#05376D] hover:bg-[#f0f6ff]"
-                }`}>
+              className={`px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-colors border border-[#05376D]
+                ${form.needsCertificate ? "bg-[#05376D] text-white" : "text-[#05376D] hover:bg-[#f0f6ff]"}`}>
               Ir nepieciešama
             </button>
           </div>
@@ -385,7 +308,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
               value={form.cadastreNumber}
               onChange={(e) => set("cadastreNumber", e.target.value)}
               placeholder="123564346"
-              className="px-3 py-2.5 border border-[#D0DCE8] rounded-[4px] text-sm text-[#334155] outline-none focus:border-[#4895E8] transition-colors w-48"
+              className="px-3 py-2.5 border border-[#D0DCE8] rounded-[4px] text-sm text-[#334155] outline-none focus:border-[#4895E8] transition-colors w-full sm:w-48"
             />
           )}
 
@@ -398,7 +321,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
         </div>
       </div>
 
-      <div className="mb-8">
+      <div className="mb-6 sm:mb-8">
         <h2 className="text-base font-black text-[#05376D] uppercase mb-4">
           Izvēlies apmaksas veidu
         </h2>
@@ -408,7 +331,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
             <button
               key={m.value}
               onClick={() => set("paymentMethod", m.value)}
-              className={`px-4 py-2.5 text-sm font-semibold transition-colors border-r border-[#05376D] last:border-r-0
+              className={`px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-colors border-r border-[#05376D] last:border-r-0
                 ${
                   form.paymentMethod === m.value
                     ? "bg-[#05376D] text-white"
@@ -421,7 +344,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
 
         {form.paymentMethod === "tiessaiste" && (
           <>
-            <div className="flex gap-6 mb-4 flex-wrap">
+            <div className="flex flex-wrap gap-3 sm:gap-6 mb-4">
               {PAYMENT_TYPES.map((pt) => (
                 <label key={pt.value} className="flex items-center gap-2 cursor-pointer">
                   <div
@@ -432,16 +355,16 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
                       <div className="w-2 h-2 rounded-full bg-[#4895E8]" />
                     )}
                   </div>
-                  <span className="text-[16px] font-semibold text-[#000]">{pt.label}</span>
+                  <span className="text-sm sm:text-[16px] font-semibold text-[#000]">{pt.label}</span>
                 </label>
               ))}
             </div>
 
             {form.paymentType === "internetbanka" && (
-              <div className="flex gap-3 flex-wrap">
+              <div className="flex flex-wrap gap-3">
                 {BANKS.map((bank) => (
-                  <div key={bank.value} className="bg-white p-3 rounded-[4px]">
-                    <img src={bank.logo} alt={bank.label} className="h-8 w-auto" />
+                  <div key={bank.value} className="bg-white p-2 sm:p-3 rounded-[4px]">
+                    <img src={bank.logo} alt={bank.label} className="h-6 sm:h-8 w-auto" />
                   </div>
                 ))}
               </div>
@@ -450,7 +373,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
         )}
       </div>
 
-      <div className="flex flex-col gap-3 mb-8">
+      <div className="flex flex-col gap-3 mb-6 sm:mb-8">
         <label className="flex items-start gap-3 cursor-pointer">
           <div
             onClick={() => set("agreeTerms", !form.agreeTerms)}
@@ -458,17 +381,11 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
               ${form.agreeTerms ? "bg-[#4895E8] border-[#4895E8]" : "border-[#D0DCE8] bg-white"}`}>
             {form.agreeTerms && (
               <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                <path
-                  d="M1 4l3 3 5-6"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+                <path d="M1 4l3 3 5-6" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             )}
           </div>
-          <span className="text-[16px] font-semibold text-[#000]">
+          <span className="text-sm sm:text-[16px] font-semibold text-[#000]">
             Esmu informēts, ka konteinerā nedrīkst iekraut bīstamos atkritumus – riepas, šiferis,
             krāsas un citus, kas atbilstoši MK Nr. 302 no 2011.19.04. noteikumiem kvalificējas kā
             bīstamie/neatļautie atkritumi. <br />
@@ -491,40 +408,32 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
               ${form.agreeMarketing ? "bg-[#4895E8] border-[#4895E8]" : "border-[#D0DCE8] bg-white"}`}>
             {form.agreeMarketing && (
               <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                <path
-                  d="M1 4l3 3 5-6"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+                <path d="M1 4l3 3 5-6" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             )}
           </div>
-          <span className="text-[16px] font-semibold text-[#000]">
+          <span className="text-sm sm:text-[16px] font-semibold text-[#000]">
             Piekrītu saņemt īpašos piedāvājumus no SIA "NIKA MI".
           </span>
         </label>
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
         <button
           onClick={onBack}
-          className={`flex-1 h-[46px] border border-[#4895E8] font-semibold text-sm rounded-[4px] flex items-center relative transition-colors`}>
+          className="flex-1 h-[46px] border border-[#4895E8] font-semibold text-sm rounded-[4px] flex items-center relative transition-colors">
           <span className="absolute left-1/2 -translate-x-1/2 text-[#05376D]">Atpakaļ</span>
-          <span className="rotate-180 ml-auto bg-[#4895E8] w-12 h-full absolute left-0 top-0 rounded-r-[4px] flex items-center justify-center">
-            <img src={ArrowRightIcon} alt="Next" className="w-5 h-5 brightness-0 invert" />
+          <span className="rotate-180 bg-[#4895E8] w-12 h-full absolute left-0 top-0 rounded-r-[4px] flex items-center justify-center">
+            <img src={ArrowRightIcon} alt="Back" className="w-5 h-5 brightness-0 invert" />
           </span>
         </button>
 
         <button
-          //   onClick={() => canSubmit && onSubmit(form)}
           onClick={() => onSubmit(form)}
           disabled={!canSubmit}
-          className={`flex-1 cursor-pointer h-[46px] text-white font-semibold text-sm rounded-[4px] flex items-center relative transition-colors
-                ${"bg-[#05376D] hover:bg-[#15305a]"}`}>
+          className="flex-1 cursor-pointer h-[46px] text-white font-semibold text-sm rounded-[4px] flex items-center relative transition-colors bg-[#05376D] hover:bg-[#15305a]">
           <span className="absolute left-1/2 -translate-x-1/2">Nākamais solis</span>
-          <span className="ml-auto bg-[#4895E8] w-12 h-full absolute right-0 top-0 rounded-r-[4px] flex items-center justify-center">
+          <span className="bg-[#4895E8] w-12 h-full absolute right-0 top-0 rounded-r-[4px] flex items-center justify-center">
             <img src={ArrowRightIcon} alt="Next" className="w-5 h-5 brightness-0 invert" />
           </span>
         </button>
