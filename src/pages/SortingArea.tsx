@@ -105,7 +105,7 @@ const CtaBanner = () => {
     <section className="relative px-4 sm:px-6 lg:px-28 py-8 sm:py-10 overflow-hidden">
       <div className="absolute inset-0">
         <img src={anyQuestionsImage} alt="" className="w-full h-full object-cover" />
-        <div />
+        <div className="absolute inset-0 bg-primary/70" />
       </div>
       <div className="relative z-10 max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <h2 className="text-primary-foreground text-xl sm:text-2xl lg:text-3xl font-black uppercase leading-tight max-w-[820px]">
