@@ -333,6 +333,52 @@
       }
     ]
   },
+  "certificates": {
+    "hero": {
+      "title": "Apply and get a 50% real estate tax discount for 10 years with green building certificates!",
+      "description": "Green building standards promote the use of renewable and recycled materials, as they have a lower environmental impact.",
+      "descriptionBold": "Get certified quickly, conveniently and affordably!",
+      "cta": "Apply"
+    },
+    "section": {
+      "title": "The leading green building certificates are LEED, BREEAM and DGNB",
+      "subtitle": "Gain more advantages for your real estate property"
+    },
+    "benefits": [
+      "Reducing environmental impact and preventing climate change",
+      "Increased energy efficiency and low operating costs",
+      "Environmentally friendly company reputation",
+      "Increased property value, 50% tax discount and long-term return on investment",
+      "Compliance with Latvian legislation on environmental protection and sustainability"
+    ],
+    "conditions": {
+      "title": "Conditions for granting benefits",
+      "items": [
+        "Benefits are granted to newly built or fully renovated buildings commissioned after January 1, 2024.",
+        "No need to resubmit an application if the basis or eligibility for benefits has not changed.",
+        "Benefits are granted to all building owners if the building meets the eligibility criteria.",
+        "The discount is applied for a 10-year period, starting from the month following the building's commissioning and the certificate coming into effect.",
+        "The taxpayer must submit an application for benefits by December 15 of the tax year."
+      ],
+      "cta": "Get an offer"
+    },
+    "questions": {
+      "subtitle": "Have questions?",
+      "title": "We will develop the best solution for your needs!"
+    },
+    "contact": {
+      "title": "Contact us",
+      "name": "Name, Surname",
+      "company": "Company",
+      "phone": "Phone number",
+      "email": "E-mail",
+      "message": "Your message",
+      "privacy": "I have read and agree to the website ",
+      "privacyLink": "privacy policy",
+      "marketing": "I agree that my email will be used for marketing activities",
+      "submit": "Send message"
+    }
+  },
   "getOffer": {
     "title": "Get an offer",
     "subtitle": "We will develop the best solution for your needs!",
@@ -345,6 +391,7 @@
     "photoLimit": "*Up to 5 photos",
     "privacy": "I have read and agree to the website's",
     "privacyLink": "privacy policy",
+    "marketing": "I agree that my email will be used for marketing activities",
     "submit": "Submit application"
   }
 }
