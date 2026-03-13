@@ -14,7 +14,7 @@ import bigHouseIcon from "@/assets/icons/big-house.webp";
 /* ───── Masked WebP Icon ───── */
 const MaskedIcon = ({ src, alt }: { src: string; alt: string }) => (
   <div
-    className="w-14 h-14"
+    className="w-12 h-12"
     style={{
       backgroundColor: "hsl(var(--nikami-blue))",
       WebkitMaskImage: `url(${src})`,
