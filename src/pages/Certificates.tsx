@@ -94,7 +94,7 @@ const CertificatesSection = () => {
           {benefits.map((text, i) => (
             <div
               key={i}
-              className={`p-5 border-2 border-secondary flex flex-col justify-between gap-5 min-h-[180px] lg:col-span-2 ${i === 4 ? "md:col-span-2" : ""} ${i === 3 ? "lg:col-start-2" : ""}`}
+              className={`p-5 border-2 border-secondary flex flex-col justify-between gap-5 min-h-[180px] ${i >= 3 ? "lg:col-span-3" : "lg:col-span-2"} ${i === 4 ? "md:col-span-2" : ""}`}
             >
               <div className="w-20 h-20 bg-secondary flex items-center justify-center shrink-0">
                 <img src={benefitIcons[i]} alt="" className="w-10 h-10" />
