@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useTranslation } from "react-i18next";
 import Navbar from "./Navbar";
 import heroImage from "@/assets/hero-image.webp";
