@@ -341,12 +341,11 @@
     "conditions": {
       "title": "Atvieglojumu piešķiršanas nosacījumi",
       "items": [
-        "Atvieglojumi tiek piešķirti visiem ēkas īpašniekiem, ja ēka atbilst atbilstības kritērijiem.",
-        "Nav nepieciešams atkārtoti iesniegt pieteikumu, ja nav mainījies atvieglojumu piešķiršanas pamats vai atbilstība.",
         "Atvieglojumi tiek piešķirti jaunuzceltām vai pilnībā renovētām ēkām, kas nodotas ekspluatācijā pēc 2024. gada 1. janvāra.",
-        "Nodokļa maksātājam līdz taksācijas gada 15. decembrim jāiesniedz pieteikums atvieglojumu saņemšanai.",
+        "Nav nepieciešams atkārtoti iesniegt pieteikumu, ja nav mainījies atvieglojumu piešķiršanas pamats vai atbilstība.",
+        "Atvieglojumi tiek piešķirti visiem ēkas īpašniekiem, ja ēka atbilst atbilstības kritērijiem.",
         "Atlaide tiek piemērota 10 gadu periodā, sākot no nākamā mēneša pēc ēkas nodošanas ekspluatācijā un sertifikāta stāšanās spēkā.",
-        "Atvieglojumu piešķiršanas nosacījumi var mainīties saskaņā ar normatīvajiem aktiem."
+        "Nodokļa maksātājam līdz taksācijas gada 15. decembrim jāiesniedz pieteikums atvieglojumu saņemšanai."
       ],
       "cta": "Saņemt piedāvājumu"
     },

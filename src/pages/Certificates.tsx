@@ -24,7 +24,7 @@ import hourglassIcon from "@/assets/icons/hourglass.svg";
 import discountTagIcon from "@/assets/icons/discount-tag.svg";
 
 const benefitIcons = [cloudSunIcon, leafIcon, thumbsUpIcon, chartLineUpIcon, handshakeIcon];
-const conditionIcons = [buildingIcon, documentIcon, calendarIcon, hourglassIcon, discountTagIcon, documentIcon];
+const conditionIcons = [calendarIcon, documentIcon, buildingIcon, discountTagIcon, hourglassIcon];
 
 /* ───── Hero ───── */
 const CertificatesHero = () => {
@@ -130,15 +130,29 @@ const ConditionsSection = () => {
           {t("certificates.conditions.title")}
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
-          {conditions.map((text, i) => (
-            <div key={i} className="p-5 bg-background flex flex-col justify-between gap-5 min-h-[180px]">
-              <div className="w-20 h-20 bg-secondary flex items-center justify-center shrink-0">
-                <img src={conditionIcons[i]} alt="" className="w-10 h-10" />
+        <div className="flex flex-col gap-1">
+          {/* Row 1 - 3 cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+            {conditions.slice(0, 3).map((text, i) => (
+              <div key={i} className="p-5 bg-background flex flex-col justify-between gap-5 min-h-[180px]">
+                <div className="w-20 h-20 bg-secondary flex items-center justify-center shrink-0">
+                  <img src={conditionIcons[i]} alt="" className="w-10 h-10" />
+                </div>
+                <p className="text-foreground text-base sm:text-xl font-medium leading-7">{text}</p>
               </div>
-              <p className="text-foreground text-base sm:text-xl font-medium leading-7">{text}</p>
-            </div>
-          ))}
+            ))}
+          </div>
+          {/* Row 2 - 2 cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
+            {conditions.slice(3, 5).map((text, i) => (
+              <div key={i} className="p-5 bg-background flex flex-col justify-between gap-5 min-h-[180px]">
+                <div className="w-20 h-20 bg-secondary flex items-center justify-center shrink-0">
+                  <img src={conditionIcons[i + 3]} alt="" className="w-10 h-10" />
+                </div>
+                <p className="text-foreground text-base sm:text-xl font-medium leading-7">{text}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <button
