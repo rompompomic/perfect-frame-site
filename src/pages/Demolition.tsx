@@ -34,15 +34,15 @@ const DemolitionHero = () => {
             </div>
             <button
               onClick={() => navigate("/kontakti")}
-              className="w-36 px-4 py-3 bg-nikami-blue rounded-sm text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity"
-            >
+              className="w-36 px-4 py-3 bg-nikami-blue rounded-sm text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity">
+              
               {t("common.cta")}
             </button>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 /* ───── About + Service Types ───── */
@@ -50,25 +50,25 @@ const ServiceTypesSection = () => {
   const { t } = useTranslation();
 
   const types = [
-    {
-      number: "1",
-      title: t("demolition.serviceTypes.type1.title"),
-      description: t("demolition.serviceTypes.type1.description"),
-      icon: bulldozerIcon,
-    },
-    {
-      number: "2",
-      title: t("demolition.serviceTypes.type2.title"),
-      description: t("demolition.serviceTypes.type2.description"),
-      icon: hardHatIcon,
-    },
-  ];
+  {
+    number: "1",
+    title: t("demolition.serviceTypes.type1.title"),
+    description: t("demolition.serviceTypes.type1.description"),
+    icon: bulldozerIcon
+  },
+  {
+    number: "2",
+    title: t("demolition.serviceTypes.type2.title"),
+    description: t("demolition.serviceTypes.type2.description"),
+    icon: hardHatIcon
+  }];
+
 
   return (
     <section className="px-4 sm:px-6 lg:px-28 py-10 sm:py-16 lg:py-20">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
         <div className="flex flex-col gap-2">
-          <h2 className="text-primary text-2xl sm:text-3xl lg:text-5xl font-black uppercase leading-tight lg:leading-[48px]">
+          <h2 className="text-primary text-2xl sm:text-3xl font-black uppercase leading-tight lg:leading-[48px] lg:text-4xl">
             {t("demolition.about.title")}
           </h2>
           <p className="max-w-[933px] text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
@@ -83,8 +83,8 @@ const ServiceTypesSection = () => {
         </div>
 
         <div className="flex flex-col md:flex-row gap-1">
-          {types.map((type, i) => (
-            <div key={i} className="flex-1 p-5 bg-secondary flex flex-col gap-5">
+          {types.map((type, i) =>
+          <div key={i} className="flex-1 p-5 bg-secondary flex flex-col gap-5">
               <div className="flex items-start gap-6 sm:gap-10">
                 <div className="w-20 h-20 bg-background flex items-center justify-center shrink-0">
                   <span className="text-primary text-2xl font-black">{type.number}</span>
@@ -97,11 +97,11 @@ const ServiceTypesSection = () => {
                 </div>
               </div>
             </div>
-          ))}
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 /* ───── Services List ───── */
@@ -124,28 +124,28 @@ const ServicesListSection = () => {
         <div className="flex flex-col md:flex-row gap-1">
           {/* Left column */}
           <div className="flex-1 flex flex-col gap-1">
-            {services
-              .filter((_, i) => i % 2 === 0)
-              .map((text, i) => (
-                <div key={i} className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
+            {services.
+            filter((_, i) => i % 2 === 0).
+            map((text, i) =>
+            <div key={i} className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
                   <p className="text-primary text-base sm:text-lg lg:text-2xl font-black leading-8">{text}</p>
                 </div>
-              ))}
+            )}
           </div>
           {/* Right column */}
           <div className="flex-1 flex flex-col gap-1">
-            {services
-              .filter((_, i) => i % 2 !== 0)
-              .map((text, i) => (
-                <div key={i} className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
+            {services.
+            filter((_, i) => i % 2 !== 0).
+            map((text, i) =>
+            <div key={i} className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2">
                   <p className="text-primary text-base sm:text-lg lg:text-2xl font-black leading-8">{text}</p>
                 </div>
-              ))}
+            )}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 /* ───── Page ───── */
@@ -158,8 +158,8 @@ const Demolition = () => {
       <QuestionsBanner />
       <ContactFormSection />
       <WeChatButton />
-    </MainLayout>
-  );
+    </MainLayout>);
+
 };
 
 export default Demolition;
