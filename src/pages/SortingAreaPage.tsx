@@ -30,7 +30,7 @@ const SortingHero = () => {
         <div className="flex-1 flex items-center pb-10 sm:pb-0">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full flex flex-col gap-8 sm:gap-12">
             <div className="flex flex-col gap-5">
-              <h1 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black uppercase leading-tight lg:leading-[58px] max-w-[930px]">
+              <h1 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black uppercase leading-tight lg:leading-[58px] max-w-[960px]">
                 {t("sortingAreaPage.hero.title")}
               </h1>
               <p className="max-w-[560px] text-primary-foreground text-base sm:text-lg lg:text-xl font-medium leading-6 sm:leading-7">
