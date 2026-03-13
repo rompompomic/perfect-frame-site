@@ -3,7 +3,10 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import MainLayout from "@/components/MainLayout";
 import WeChatButton from "@/components/WeChatButton";
-import heroImage from "@/assets/hero-image.webp";
+import heroImage from "@/assets/certificates-hero.webp";
+import cert1 from "@/assets/certificate-1.webp";
+import cert2 from "@/assets/certificate-2.webp";
+import cert3 from "@/assets/certificate-3.webp";
 
 // Benefit icons
 import thumbsUpIcon from "@/assets/icons/ThumbsUp.svg";
@@ -78,11 +81,9 @@ const CertificatesSection = () => {
 
         {/* Certificate logos */}
         <div className="flex flex-col sm:flex-row gap-1">
-          {[1, 2, 3].map((i) => (
+          {[cert1, cert2, cert3].map((src, i) => (
             <div key={i} className="flex-1 h-48 p-5 bg-muted flex items-center justify-center">
-              <div className="w-28 h-28 bg-muted-foreground/10 rounded flex items-center justify-center text-muted-foreground text-sm">
-                {t(`certificates.section.cert${i}`)}
-              </div>
+              <img src={src} alt={["LEED", "BREEAM", "DGNB"][i]} className="w-28 h-28 object-contain" />
             </div>
           ))}
         </div>
