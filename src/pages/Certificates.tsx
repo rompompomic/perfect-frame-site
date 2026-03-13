@@ -35,7 +35,7 @@ const CertificatesHero = () => {
     <section className="relative w-full min-h-[520px] sm:min-h-[620px] lg:min-h-[720px] flex flex-col">
       <div className="absolute inset-0 overflow-hidden">
         <img src={heroImage} alt="Green certificates" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-nikami-dark/80" />
+        <div />
       </div>
       <div className="relative z-10 flex-1 flex flex-col">
         <Navbar />
@@ -145,7 +145,6 @@ const ConditionsSection = () => {
     </section>
   );
 };
-
 
 /* ───── Page ───── */
 const Certificates = () => {
