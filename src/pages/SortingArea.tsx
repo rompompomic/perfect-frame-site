@@ -107,14 +107,14 @@ const CtaBanner = () => {
         <img src={anyQuestionsImage} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-primary/70" />
       </div>
-      <div className="relative z-10 max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <h2 className="text-primary-foreground text-xl sm:text-2xl lg:text-3xl font-black uppercase leading-tight max-w-[820px]">
+      <div className="relative z-10 max-w-[1200px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-4">
+        <h2 className="text-primary-foreground text-lg sm:text-2xl lg:text-3xl font-black uppercase leading-snug max-w-[820px]">
           {t("sortingArea.ctaBanner.title")}{" "}
           <span className="text-nikami-blue">{t("sortingArea.ctaBanner.phone")}</span>
         </h2>
         <button
           onClick={() => navigate("/sanemt-piedavajumu")}
-          className="shrink-0 px-4 py-3 bg-nikami-blue rounded-sm text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity"
+          className="shrink-0 w-full sm:w-auto px-4 py-3 bg-nikami-blue rounded-sm text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity text-center"
         >
           {t("sortingArea.ctaBanner.cta")}
         </button>
