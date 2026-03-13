@@ -21,7 +21,7 @@ import buildingIcon from "@/assets/icons/building.svg";
 import documentIcon from "@/assets/icons/document.svg";
 import calendarIcon from "@/assets/icons/calendar.svg";
 import hourglassIcon from "@/assets/icons/hourglass.svg";
-import discountTagIcon from "@/assets/icons/discount-tag.svg";
+import discountTagIcon from "@/assets/icons/discount-40x40.svg";
 
 const benefitIcons = [cloudSunIcon, leafIcon, thumbsUpIcon, chartLineUpIcon, handshakeIcon];
 const conditionIcons = [calendarIcon, documentIcon, buildingIcon, discountTagIcon, hourglassIcon];
@@ -197,7 +197,8 @@ const ContactFormSection = () => {
             <div className="flex-1 flex flex-col gap-3">
               <div className="flex flex-col gap-0.5">
                 <label className="pl-1 text-foreground text-sm font-bold leading-5">
-                  {t("certificates.contact.name")}<span className="text-nikami-blue">*</span>
+                  {t("certificates.contact.name")}
+                  <span className="text-nikami-blue">*</span>
                 </label>
                 <input className="h-12 pl-5 pr-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground" />
               </div>
@@ -209,40 +210,57 @@ const ContactFormSection = () => {
               </div>
               <div className="flex flex-col gap-0.5">
                 <label className="pl-1 text-foreground text-sm font-bold leading-5">
-                  {t("certificates.contact.phone")}<span className="text-nikami-blue">*</span>
+                  {t("certificates.contact.phone")}
+                  <span className="text-nikami-blue">*</span>
                 </label>
                 <input className="h-12 pl-5 pr-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground" />
               </div>
               <div className="flex flex-col gap-0.5">
                 <label className="pl-1 text-foreground text-sm font-bold leading-5">
-                  {t("certificates.contact.email")}<span className="text-nikami-blue">*</span>
+                  {t("certificates.contact.email")}
+                  <span className="text-nikami-blue">*</span>
                 </label>
                 <input className="h-12 pl-5 pr-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground" />
               </div>
             </div>
             <div className="flex-1 flex flex-col gap-0.5">
               <label className="pl-1 text-foreground text-sm font-bold leading-5">
-                {t("certificates.contact.message")}<span className="text-nikami-blue">*</span>
+                {t("certificates.contact.message")}
+                <span className="text-nikami-blue">*</span>
               </label>
               <textarea className="flex-1 min-h-[180px] sm:min-h-[200px] pl-5 pr-3 pt-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground resize-none" />
             </div>
           </div>
           <div className="flex flex-col gap-3">
             <label className="flex items-start gap-2 cursor-pointer">
-              <input type="checkbox" defaultChecked className="w-5 h-5 sm:w-6 sm:h-6 accent-nikami-blue border-2 border-nikami-blue rounded-sm appearance-none checked:appearance-auto shrink-0 mt-0.5" />
+              <input
+                type="checkbox"
+                defaultChecked
+                className="w-5 h-5 sm:w-6 sm:h-6 accent-nikami-blue border-2 border-nikami-blue rounded-sm appearance-none checked:appearance-auto shrink-0 mt-0.5"
+              />
               <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
-                {t("certificates.contact.privacy")}<a href="#" className="underline hover:text-nikami-blue transition-colors">{t("certificates.contact.privacyLink")}</a>.
+                {t("certificates.contact.privacy")}
+                <a href="#" className="underline hover:text-nikami-blue transition-colors">
+                  {t("certificates.contact.privacyLink")}
+                </a>
+                .
               </span>
             </label>
             <label className="flex items-start gap-2 cursor-pointer">
-              <input type="checkbox" className="w-5 h-5 sm:w-6 sm:h-6 accent-nikami-blue border-2 border-nikami-blue rounded-sm appearance-none checked:appearance-auto shrink-0 mt-0.5" />
+              <input
+                type="checkbox"
+                className="w-5 h-5 sm:w-6 sm:h-6 accent-nikami-blue border-2 border-nikami-blue rounded-sm appearance-none checked:appearance-auto shrink-0 mt-0.5"
+              />
               <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
                 {t("certificates.contact.marketing")}
               </span>
             </label>
           </div>
         </div>
-        <button disabled className="w-full sm:w-60 px-8 py-3 bg-primary/20 rounded-sm text-primary-foreground text-base font-semibold leading-6 cursor-not-allowed">
+        <button
+          disabled
+          className="w-full sm:w-60 px-8 py-3 bg-primary/20 rounded-sm text-primary-foreground text-base font-semibold leading-6 cursor-not-allowed"
+        >
           {t("certificates.contact.submit")}
         </button>
       </div>
