@@ -30,7 +30,7 @@ const SortingHero = () => {
         <div className="flex-1 flex items-center pb-10 sm:pb-0">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full flex flex-col gap-8 sm:gap-12">
             <div className="flex flex-col gap-5">
-              <h1 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black uppercase leading-tight lg:leading-[58px] max-w-[850px]">
+              <h1 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black uppercase leading-tight lg:leading-[58px] max-w-[930px]">
                 {t("sortingAreaPage.hero.title")}
               </h1>
               <p className="max-w-[560px] text-primary-foreground text-base sm:text-lg lg:text-xl font-medium leading-6 sm:leading-7">
@@ -59,10 +59,22 @@ const WasteCardsSection = () => {
   const cards = [
     { img: jauktiImg, title: t("sortingAreaPage.cards.mixed.title"), price: t("sortingAreaPage.cards.mixed.price") },
     { img: tiriImg, title: t("sortingAreaPage.cards.clean.title"), price: t("sortingAreaPage.cards.clean.price") },
-    { img: betonaImg, title: t("sortingAreaPage.cards.concrete.title"), price: t("sortingAreaPage.cards.concrete.price") },
-    { img: elektroImg, title: t("sortingAreaPage.cards.electronics.title"), price: t("sortingAreaPage.cards.electronics.price") },
+    {
+      img: betonaImg,
+      title: t("sortingAreaPage.cards.concrete.title"),
+      price: t("sortingAreaPage.cards.concrete.price"),
+    },
+    {
+      img: elektroImg,
+      title: t("sortingAreaPage.cards.electronics.title"),
+      price: t("sortingAreaPage.cards.electronics.price"),
+    },
     { img: kokaImg, title: t("sortingAreaPage.cards.wood.title"), price: t("sortingAreaPage.cards.wood.price") },
-    { img: lielgabaritaImg, title: t("sortingAreaPage.cards.bulky.title"), price: t("sortingAreaPage.cards.bulky.price") },
+    {
+      img: lielgabaritaImg,
+      title: t("sortingAreaPage.cards.bulky.title"),
+      price: t("sortingAreaPage.cards.bulky.price"),
+    },
   ];
 
   return (
