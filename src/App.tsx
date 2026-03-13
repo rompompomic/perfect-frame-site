@@ -15,6 +15,7 @@ import Certificates from "./pages/Certificates.tsx";
 import Demolition from "./pages/Demolition.tsx";
 import SortingArea from "./pages/SortingArea.tsx";
 import SnowRemoval from "./pages/SnowRemoval.tsx";
+import SortingAreaPage from "./pages/SortingAreaPage.tsx";
 
 const queryClient = new QueryClient();
 
