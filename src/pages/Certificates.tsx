@@ -121,9 +121,12 @@ const ConditionsSection = () => {
           {t("certificates.conditions.title")}
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-1">
           {conditions.map((text, i) => (
-            <div key={i} className={`p-5 bg-background flex flex-col justify-between gap-5 min-h-[180px] ${i === 4 ? "sm:col-span-2 lg:col-span-1" : ""}`}>
+            <div
+              key={i}
+              className={`p-5 bg-background flex flex-col justify-between gap-5 min-h-[180px] lg:col-span-2 ${i === 4 ? "md:col-span-2" : ""} ${i === 3 ? "lg:col-start-2" : ""}`}
+            >
               <div className="w-20 h-20 bg-secondary flex items-center justify-center shrink-0">
                 <img src={conditionIcons[i]} alt="" className="w-10 h-10" />
               </div>
