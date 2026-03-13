@@ -81,11 +81,9 @@ const CertificatesSection = () => {
 
         {/* Certificate logos */}
         <div className="flex flex-col sm:flex-row gap-1">
-          {[1, 2, 3].map((i) => (
+          {[cert1, cert2, cert3].map((src, i) => (
             <div key={i} className="flex-1 h-48 p-5 bg-muted flex items-center justify-center">
-              <div className="w-28 h-28 bg-muted-foreground/10 rounded flex items-center justify-center text-muted-foreground text-sm">
-                {t(`certificates.section.cert${i}`)}
-              </div>
+              <img src={src} alt={["LEED", "BREEAM", "DGNB"][i]} className="w-28 h-28 object-contain" />
             </div>
           ))}
         </div>
