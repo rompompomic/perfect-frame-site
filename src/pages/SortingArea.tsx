@@ -140,7 +140,7 @@ const EquipmentSection = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
           {/* First card spans full height on left */}
-          <div className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2 md:row-span-2 lg:row-span-2">
+          <div className="p-5 bg-background border-l-[6px] border-nikami-blue flex flex-col gap-2 md:row-span-2 lg:row-span-2 justify-between">
             <h3 className="text-primary text-lg sm:text-xl lg:text-2xl font-black leading-8">{equipment[0]?.title}</h3>
             <p className="text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
               {equipment[0]?.description}
