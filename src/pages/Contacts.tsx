@@ -252,6 +252,8 @@ const QuestionsBanner = () => {
 /* ───── Contact Form (reused from About) ───── */
 const ContactFormSection = () => {
   const { t } = useTranslation();
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const [marketingAccepted, setMarketingAccepted] = useState(false);
   return (
     <section className="px-4 sm:px-6 lg:px-28 py-10 sm:py-16 lg:py-20 bg-secondary">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-6 sm:gap-10">
