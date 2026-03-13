@@ -9,6 +9,7 @@ import Contacts from "./pages/Contacts.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import "./lib/i18n";
 import OrderContainer from "./pages/OrderContainer/OrderContainer.tsx";
+import Promotions from "./pages/Promotions.tsx";
 
 const queryClient = new QueryClient();
 
