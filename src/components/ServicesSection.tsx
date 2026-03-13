@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { useTranslation } from "react-i18next";
 import mapPinSimpleAreaIcon from "@/assets/icons/MapPinSimpleArea.svg";
 import hardHatIcon from "@/assets/icons/HardHat.svg";
 import lightningIcon from "@/assets/icons/Lightning.svg";
