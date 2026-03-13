@@ -18,32 +18,18 @@ const CopyButton = ({ text }: { text: string }) => {
   };
   return (
     <button onClick={handleCopy} className="shrink-0 p-0.5 hover:opacity-70 transition-opacity">
-      {copied ? (
-        <Check className="w-5 h-5 text-nikami-blue" />
-      ) : (
-        <img src={copyIcon} alt="Copy" className="w-5 h-5" />
-      )}
+      {copied ? <Check className="w-5 h-5 text-nikami-blue" /> : <img src={copyIcon} alt="Copy" className="w-5 h-5" />}
     </button>
   );
 };
 
 /* ───── Detail Row ───── */
-const DetailRow = ({
-  label,
-  value,
-  showDivider = true,
-}: {
-  label: string;
-  value: string;
-  showDivider?: boolean;
-}) => (
+const DetailRow = ({ label, value, showDivider = true }: { label: string; value: string; showDivider?: boolean }) => (
   <>
     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1">
       <span className="text-foreground text-sm sm:text-base font-medium leading-6">{label}</span>
       <div className="flex items-center gap-2">
-        <span className="text-foreground text-sm sm:text-base font-bold leading-6 sm:text-right">
-          {value}
-        </span>
+        <span className="text-foreground text-sm sm:text-base font-bold leading-6 sm:text-right">{value}</span>
         <CopyButton text={value} />
       </div>
     </div>
@@ -65,33 +51,24 @@ const ContactInfoCard = ({
 }) => (
   <div className="flex-1 pl-4 sm:pl-8 pr-4 sm:pr-5 py-4 sm:py-5 bg-nikami-light-blue border-l-4 sm:border-l-[6px] border-nikami-blue flex flex-col justify-between gap-4">
     <div className="flex flex-col gap-1">
-      <h3 className="text-foreground text-xl sm:text-2xl lg:text-3xl font-black uppercase leading-tight">
-        {title}
-      </h3>
-      {subtitle && (
-        <p className="text-foreground text-sm sm:text-base font-medium leading-6">{subtitle}</p>
-      )}
+      <h3 className="text-foreground text-xl sm:text-2xl lg:text-3xl font-black uppercase leading-tight">{title}</h3>
+      {subtitle && <p className="text-foreground text-sm sm:text-base font-medium leading-6">{subtitle}</p>}
     </div>
     <div className="flex flex-col sm:flex-row gap-1">
       {/* Contacts sub-card */}
       <div className="flex-1 px-4 sm:px-5 py-3 bg-background flex flex-col gap-3">
-        <span className="text-foreground text-base font-bold leading-6">
-          {contacts.phone && "Kontakti:"}
-        </span>
+        <span className="text-foreground text-base font-bold leading-6">{contacts.phone && "Kontakti:"}</span>
         <div className="flex flex-col gap-1">
           <div className="flex flex-col">
-            <span className="text-foreground text-sm sm:text-base font-medium leading-6">
-              {contacts.phone}
-            </span>
+            <span className="text-foreground text-sm sm:text-base font-medium leading-6">{contacts.phone}</span>
             {contacts.phoneNote && (
-              <span className="text-foreground/30 text-xs font-medium leading-4">
-                {contacts.phoneNote}
-              </span>
+              <span className="text-foreground/30 text-xs font-medium leading-4">{contacts.phoneNote}</span>
             )}
           </div>
           <a
             href={`mailto:${contacts.email}`}
-            className="text-foreground text-sm sm:text-base font-medium underline leading-6 hover:text-nikami-blue transition-colors">
+            className="text-foreground text-sm sm:text-base font-medium underline leading-6 hover:text-nikami-blue transition-colors"
+          >
             {contacts.email}
           </a>
         </div>
@@ -178,22 +155,10 @@ const ContactsInfoSection = () => {
                 {t("contacts.details.companyTitle")}
               </h3>
               <div className="flex flex-col gap-2.5">
-                <DetailRow
-                  label={t("contacts.details.nameLabel")}
-                  value={t("contacts.details.nameValue")}
-                />
-                <DetailRow
-                  label={t("contacts.details.regLabel")}
-                  value={t("contacts.details.regValue")}
-                />
-                <DetailRow
-                  label={t("contacts.details.vatLabel")}
-                  value={t("contacts.details.vatValue")}
-                />
-                <DetailRow
-                  label={t("contacts.details.sepaLabel")}
-                  value={t("contacts.details.sepaValue")}
-                />
+                <DetailRow label={t("contacts.details.nameLabel")} value={t("contacts.details.nameValue")} />
+                <DetailRow label={t("contacts.details.regLabel")} value={t("contacts.details.regValue")} />
+                <DetailRow label={t("contacts.details.vatLabel")} value={t("contacts.details.vatValue")} />
+                <DetailRow label={t("contacts.details.sepaLabel")} value={t("contacts.details.sepaValue")} />
                 <DetailRow
                   label={t("contacts.details.addressLabel")}
                   value={t("contacts.details.addressValue")}
@@ -208,14 +173,8 @@ const ContactsInfoSection = () => {
                 {t("contacts.details.paymentTitle")}
               </h3>
               <div className="flex flex-col gap-2.5">
-                <DetailRow
-                  label={t("contacts.details.bankLabel")}
-                  value={t("contacts.details.bankValue")}
-                />
-                <DetailRow
-                  label={t("contacts.details.bankCodeLabel")}
-                  value={t("contacts.details.bankCodeValue")}
-                />
+                <DetailRow label={t("contacts.details.bankLabel")} value={t("contacts.details.bankValue")} />
+                <DetailRow label={t("contacts.details.bankCodeLabel")} value={t("contacts.details.bankCodeValue")} />
                 <DetailRow
                   label={t("contacts.details.accountLabel")}
                   value={t("contacts.details.accountValue")}
@@ -227,7 +186,8 @@ const ContactsInfoSection = () => {
 
           <button
             onClick={handleCopyAll}
-            className="self-stretch px-8 py-3 rounded-sm outline outline-1 outline-nikami-blue text-primary text-base font-semibold leading-6 flex justify-center items-center gap-2.5 hover:opacity-80 transition-opacity">
+            className="self-stretch px-8 py-3 rounded-sm outline outline-1 outline-nikami-blue text-primary text-base font-semibold leading-6 flex justify-center items-center gap-2.5 hover:opacity-80 transition-opacity"
+          >
             {allCopied ? "✓" : t("contacts.details.copyAll")}
             {!allCopied && (
               <img
@@ -309,9 +269,7 @@ const ContactFormSection = () => {
                 <input className="h-12 pl-5 pr-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground" />
               </div>
               <div className="flex flex-col gap-0.5">
-                <label className="pl-1 text-foreground text-sm font-bold leading-5">
-                  {t("about.contact.company")}
-                </label>
+                <label className="pl-1 text-foreground text-sm font-bold leading-5">{t("about.contact.company")}</label>
                 <input className="h-12 pl-5 pr-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground" />
               </div>
               <div className="flex flex-col gap-0.5">
@@ -337,37 +295,79 @@ const ContactFormSection = () => {
               <textarea className="flex-1 min-h-[180px] sm:min-h-[200px] pl-5 pr-3 pt-3 bg-background rounded-sm outline outline-1 outline-muted-foreground/30 text-foreground resize-none" />
             </div>
           </div>
-          <div className="flex flex-col gap-3">
-            <label className="flex items-start gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                defaultChecked
-                className="w-5 h-5 sm:w-6 sm:h-6 accent-nikami-blue border-2 border-nikami-blue rounded-sm appearance-none checked:appearance-auto shrink-0 mt-0.5"
-              />
-              <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
-                {t("about.contact.privacy")}
-                <a
-                  href="#"
-                  className="underline text-foreground hover:text-nikami-blue transition-colors">
-                  {t("about.contact.privacyLink")}
-                </a>
-                .
+          {/* Checkboxes */}
+          <div className="flex flex-col gap-3 mt-2">
+            {/* Privacy checkbox */}
+            <div
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={() => setPrivacyAccepted(!privacyAccepted)}
+            >
+              <div className="w-6 h-6 relative flex-shrink-0 flex items-center justify-center">
+                {privacyAccepted ? (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect
+                      x="1"
+                      y="1"
+                      width="14"
+                      height="14"
+                      fill="hsl(var(--nikami-blue))"
+                      stroke="hsl(var(--nikami-blue))"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                ) : (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect x="0.5" y="0.5" width="15" height="15" stroke="hsl(var(--nikami-blue))" />
+                  </svg>
+                )}
+                {privacyAccepted && (
+                  <svg className="absolute" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                    <path d="M0.650391 5.63062L4.15039 8.63062L10.6504 0.630615" stroke="white" strokeWidth="2" />
+                  </svg>
+                )}
+              </div>
+              <span className="text-foreground text-base font-bold leading-6">
+                {t("getOffer.privacy")} <span className="underline">{t("getOffer.privacyLink")}</span>.
               </span>
-            </label>
-            <label className="flex items-start gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                className="w-5 h-5 sm:w-6 sm:h-6 accent-nikami-blue border-2 border-nikami-blue rounded-sm appearance-none checked:appearance-auto shrink-0 mt-0.5"
-              />
-              <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
-                {t("about.contact.marketing")}
-              </span>
-            </label>
+            </div>
+
+            {/* Marketing checkbox */}
+            <div
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={() => setMarketingAccepted(!marketingAccepted)}
+            >
+              <div className="w-6 h-6 relative flex-shrink-0 flex items-center justify-center">
+                {marketingAccepted ? (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect
+                      x="1"
+                      y="1"
+                      width="14"
+                      height="14"
+                      fill="hsl(var(--nikami-blue))"
+                      stroke="hsl(var(--nikami-blue))"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                ) : (
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect x="0.5" y="0.5" width="15" height="15" stroke="hsl(var(--nikami-blue))" />
+                  </svg>
+                )}
+                {marketingAccepted && (
+                  <svg className="absolute" width="12" height="11" viewBox="0 0 12 11" fill="none">
+                    <path d="M0.650391 5.63062L4.15039 8.63062L10.6504 0.630615" stroke="white" strokeWidth="2" />
+                  </svg>
+                )}
+              </div>
+              <span className="text-foreground text-base font-bold leading-6">{t("getOffer.marketing")}</span>
+            </div>
           </div>
         </div>
         <button
           disabled
-          className="w-full sm:w-60 px-8 py-3 bg-primary/20 rounded-sm text-primary-foreground text-base font-semibold leading-6 cursor-not-allowed">
+          className="w-full sm:w-60 px-8 py-3 bg-primary/20 rounded-sm text-primary-foreground text-base font-semibold leading-6 cursor-not-allowed"
+        >
           {t("about.contact.submit")}
         </button>
       </div>
