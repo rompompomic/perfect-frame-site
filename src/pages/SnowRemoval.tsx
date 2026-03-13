@@ -16,7 +16,7 @@ const MaskedIcon = ({ src, alt }: { src: string; alt: string }) => (
   <div
     className="w-14 h-14"
     style={{
-      backgroundColor: "hsl(var(--primary))",
+      backgroundColor: "hsl(var(--nikami-blue))",
       WebkitMaskImage: `url(${src})`,
       WebkitMaskSize: "contain",
       WebkitMaskRepeat: "no-repeat",
