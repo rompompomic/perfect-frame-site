@@ -4,7 +4,8 @@ import { Copy, Check } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import WeChatButton from "@/components/WeChatButton";
 import MainLayout from "@/components/MainLayout";
-import anyQuestionsImage from "@/assets/any-questions.webp";
+import QuestionsBanner from "@/components/QuestionsBanner";
+import ContactFormSection from "@/components/ContactFormSection";
 import copyIcon from "@/assets/icons/CopyIcon.svg";
 import Footer from "@/components/Footer";
 
