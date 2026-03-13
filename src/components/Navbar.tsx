@@ -267,8 +267,8 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
                   </DropdownMenuItem>
                 ))}
                 <DropdownMenuSeparator className="bg-muted-foreground/30" />
-                <DropdownMenuItem asChild className="flex items-center gap-2.5 text-nikami-blue text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
-                  <Link to="/akcijas">
+                <DropdownMenuItem className="flex items-center gap-2.5 text-nikami-blue text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
+                  <Link to="/akcijas" className="flex items-center gap-2.5">
                     <img src={discountIcon} alt="Akcijas" className="w-5 h-5" />
                     {t("navbar.promotions")}
                   </Link>
