@@ -14,9 +14,9 @@ interface Promotion {
 
 const PromotionCard = ({ title, description, cta }: Promotion) => (
   <div className="flex-1 p-4 sm:p-5 bg-secondary flex flex-col gap-4 sm:gap-5">
-    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-10">
+    <div className="flex flex-col lg:flex-row gap-4 lg:gap-10">
       {/* Tag icon */}
-      <div className="w-full sm:w-28 md:w-36 h-28 sm:min-h-[140px] bg-background flex items-center justify-center shrink-0">
+      <div className="w-full lg:w-36 h-28 lg:min-h-[140px] bg-background flex items-center justify-center shrink-0">
         <img src={discountTag} alt="" className="w-[50px] h-[60px] sm:w-[60px] sm:h-[70px]" />
       </div>
       {/* Content */}
