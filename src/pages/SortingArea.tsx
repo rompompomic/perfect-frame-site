@@ -54,12 +54,12 @@ const ServiceCardsSection = () => {
 
   const cards = [
     {
-      icon: wasteIcon,
+      icon: craneIcon,
       title: t("sortingArea.cards.card3.title"),
       description: t("sortingArea.cards.card3.description"),
     },
     {
-      icon: craneIcon,
+      icon: wasteIcon,
       title: t("sortingArea.cards.card2.title"),
       description: t("sortingArea.cards.card2.description"),
     },
