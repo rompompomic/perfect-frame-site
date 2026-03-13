@@ -24,7 +24,7 @@ import hourglassIcon from "@/assets/icons/hourglass.svg";
 import discountTagIcon from "@/assets/icons/discount-tag.svg";
 
 const benefitIcons = [cloudSunIcon, leafIcon, thumbsUpIcon, chartLineUpIcon, handshakeIcon];
-const conditionIcons = [buildingIcon, documentIcon, calendarIcon, hourglassIcon, discountTagIcon, documentIcon];
+const conditionIcons = [calendarIcon, documentIcon, buildingIcon, discountTagIcon, hourglassIcon];
 
 /* ───── Hero ───── */
 const CertificatesHero = () => {
