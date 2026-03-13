@@ -257,7 +257,7 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
                   { label: t("navbar.serviceLinks.sortingArea"), to: "#" },
                   { label: t("navbar.serviceLinks.constructionWaste"), to: "/buvgruzu-izvesana" },
                   { label: t("navbar.serviceLinks.demolition"), to: "/demontaza" },
-                  { label: t("navbar.serviceLinks.snowRemoval"), to: "#" },
+                  { label: t("navbar.serviceLinks.snowRemoval"), to: "/sniega-tirisana" },
                 ].map((item, index) => (
                   <DropdownMenuItem
                     key={index}
