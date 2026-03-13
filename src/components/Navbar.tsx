@@ -254,8 +254,8 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
               <DropdownMenuContent className="px-6 py-3 bg-secondary rounded-xs shadow-[0px_2px_12px_0px_rgba(0,0,0,0.15)] flex flex-col gap-2 min-w-[220px]">
                 {[
                   { label: t("navbar.serviceLinks.containerRental"), to: "/order-container" },
-                  { label: t("navbar.serviceLinks.sortingArea"), to: "/skirosanas-laukumi" },
-                  { label: t("navbar.serviceLinks.constructionWaste"), to: "#" },
+                  { label: t("navbar.serviceLinks.sortingArea"), to: "#" },
+                  { label: t("navbar.serviceLinks.constructionWaste"), to: "/buvgruzu-izvesana" },
                   { label: t("navbar.serviceLinks.demolition"), to: "/demontaza" },
                   { label: t("navbar.serviceLinks.snowRemoval"), to: "#" },
                 ].map((item, index) => (
