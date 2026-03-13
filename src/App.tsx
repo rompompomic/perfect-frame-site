@@ -15,6 +15,7 @@ import Certificates from "./pages/Certificates.tsx";
 import Demolition from "./pages/Demolition.tsx";
 import SortingArea from "./pages/SortingArea.tsx";
 import SnowRemoval from "./pages/SnowRemoval.tsx";
+import SortingAreaPage from "./pages/SortingAreaPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/demontaza" element={<Demolition />} />
           <Route path="/buvgruzu-izvesana" element={<SortingArea />} />
           <Route path="/sniega-tirisana" element={<SnowRemoval />} />
+          <Route path="/skirosanas-laukumi" element={<SortingAreaPage />} />
           <Route path="/sanemt-piedavajumu" element={<GetOffer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
