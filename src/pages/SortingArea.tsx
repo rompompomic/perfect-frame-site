@@ -5,7 +5,7 @@ import MainLayout from "@/components/MainLayout";
 import WeChatButton from "@/components/WeChatButton";
 import QuestionsBanner from "@/components/QuestionsBanner";
 import ContactFormSection from "@/components/ContactFormSection";
-import heroImage from "@/assets/skirosana-hero.webp";
+import heroImage from "@/assets/buvgruzu-hero.webp";
 import truckIcon from "@/assets/icons/TruckSimple.svg";
 import wasteIcon from "@/assets/icons/WasteSimple.svg";
 import craneIcon from "@/assets/icons/OverheadCrane.svg";
