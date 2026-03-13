@@ -49,7 +49,7 @@ const SnowHero = () => {
               <h1 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black uppercase leading-tight lg:leading-[58px] max-w-[849px]">
                 {t("snowRemoval.hero.title")}
               </h1>
-              <p className="max-w-[724px] text-primary-foreground text-base sm:text-lg lg:text-xl font-medium leading-6 sm:leading-7">
+              <p className="max-w-[849px] text-primary-foreground text-base sm:text-lg lg:text-xl font-medium leading-6 sm:leading-7">
                 {t("snowRemoval.hero.description")}
               </p>
             </div>
