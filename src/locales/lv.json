@@ -652,17 +652,32 @@
     "confirmed": "Apstiprināts",
     "additional": "Papildu {{label}}",
     "additionalNumber": "Papildu {{label}} numurs"
-  }
-},
+  },
 
   "promotions": {
     "title": "Akcijas",
     "subtitle": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
     "items": [
-      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
-      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
-      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
-      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" }
+      {
+        "title": "Title",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+        "cta": "CTA"
+      },
+      {
+        "title": "Title",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+        "cta": "CTA"
+      },
+      {
+        "title": "Title",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+        "cta": "CTA"
+      },
+      {
+        "title": "Title",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+        "cta": "CTA"
+      }
     ]
   },
   "certificates": {
