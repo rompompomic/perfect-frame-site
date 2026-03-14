@@ -302,9 +302,355 @@
       },
       "nextStep": "Next step"
     },
+    "back": "Back",
+    "next": "Next step",
+    "step2": {
+      "title": "2. Delivery address",
+      "subtitle": "Enter delivery addresses"
+    },
+    "step3": {
+      "title": "3. Usage period",
+      "subtitle": "Choose the container usage type and period",
+      "serviceNew": "Install new container",
+      "serviceSwap": "Container swap",
+      "servicePickup": "Container pickup",
+      "containerHeader": "Container",
+      "service": "Service",
+      "period": "Period",
+      "promoLabel": "Enter promo code or object number here:",
+      "promoError": "Promo code is not valid",
+      "promoSuccess": "✓ Discount {{amount}} € applied",
+      "orderDetails": "Order details",
+      "containerNumber": "Container {{index}}:",
+      "summary": {
+        "address": "Address:",
+        "service": "Service:",
+        "delivery": "Delivery:",
+        "removal": "Removal:",
+        "price": "Price:",
+        "priceCalc": "Price calculation",
+        "wasteRemoval": "Construction waste removal:",
+        "rentalFee": "Container rental period:",
+        "discount": "Applied discount:",
+        "subtotal": "Total excl. VAT:",
+        "vat": "VAT 21%:",
+        "total": "Total incl. VAT:"
+      }
+    },
+    "step4": {
+      "title": "4. Application",
+      "subtitle": "Fill in the application",
+      "individual": "Individual",
+      "legal": "Legal entity",
+      "serviceType": "Service type",
+      "fullName": "Full name",
+      "phone": "Phone number",
+      "email": "E-mail",
+      "searchCompany": "Search company by registration number or name",
+      "companyName": "Company name",
+      "legalAddress": "Legal address",
+      "regNumber": "Registration number",
+      "vatNumber": "VAT number",
+      "comments": "Comments",
+      "attentionBold": "Attention!",
+      "attentionText": "The selected time is approximate. After receiving the order, the dispatcher will contact you and confirm the order. The service price may change depending on weather and traffic conditions.",
+      "apusTitle": "Is APUS certificate required?",
+      "apusNo": "Not required",
+      "apusYes": "Required",
+      "paymentTitle": "Choose payment method",
+      "serviceNoma": "Container rental",
+      "serviceIzvesana": "Container removal",
+      "serviceMaina": "Container swap",
+      "payOnline": "Online payment",
+      "payOnsite": "Pay on-site with strict accounting receipt",
+      "payEmail": "Receive invoice by email",
+      "payInternet": "Internet banking",
+      "payCard": "Credit/debit card",
+      "payGoogle": "Google Pay/Apple Pay",
+      "termsHazardous": "I am informed that the container cannot contain hazardous waste – tires, asbestos, paints and others that qualify as hazardous/prohibited waste under Cabinet Regulation No. 302 of 19.04.2011.",
+      "termsAgree": "I agree to the portal's:",
+      "termsLink": "Construction waste container ordering and usage terms",
+      "privacyLink": "Privacy Policy",
+      "marketingText": "I agree to receive special offers from SIA \"NIKA MI\"."
+    },
+    "success": {
+      "title": "Thank you.",
+      "message": "Your order has been successfully placed. Track the status in your account.",
+      "goToOrders": "Go to orders"
+    },
     "tooltip": {
       "title": "Lorem Ipsum",
       "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been."
     }
+  },
+  "auth": {
+    "titles": {
+      "signin": "Sign in",
+      "signup": "Sign up",
+      "verification": "Verification",
+      "resetPassword": "Reset password",
+      "changePassword": "Change password",
+      "changingEmail": "Changing e-mail",
+      "changingPhone": "Changing phone number"
+    },
+    "signIn": {
+      "tabPhone": "With phone",
+      "tabEmail": "With e-mail",
+      "phoneLabel": "Phone number",
+      "emailLabel": "E-mail",
+      "phonePlaceholder": "Enter your phone number",
+      "emailPlaceholder": "Enter your email",
+      "passwordLabel": "Password",
+      "forgotPassword": "Forgot password?",
+      "rememberMe": "Remember me",
+      "signUpBtn": "Sign up",
+      "signInBtn": "Sign in"
+    },
+    "signUp": {
+      "tabIndividual": "Individual",
+      "tabLegal": "Legal",
+      "firstNameLabel": "First name",
+      "lastNameLabel": "Last name",
+      "emailLabel": "E-mail",
+      "phoneLabel": "Phone number",
+      "companyLabel": "Company name",
+      "passwordLabel": "Password",
+      "confirmPasswordLabel": "Confirm password",
+      "signUpBtn": "Sign up"
+    },
+    "verification": {
+      "message": "We've sent you a text message",
+      "message2": "with a 4-digit code",
+      "verifyBtn": "Verify",
+      "noCode": "Didn't receive the code?",
+      "resendBtn": "Resend"
+    },
+    "resetPassword": {
+      "emailLabel": "E-mail",
+      "sendLinkBtn": "Send link"
+    },
+    "resetCode": {
+      "sentTo": "We've sent a code to",
+      "emailLabel": "E-mail",
+      "changePasswordBtn": "Change password",
+      "noCode": "Didn't receive the code?",
+      "resendBtn": "Resend"
+    },
+    "changePassword": {
+      "currentLabel": "Current password",
+      "newLabel": "New password",
+      "confirmLabel": "Confirm new password",
+      "saveBtn": "Save changes"
+    },
+    "changingEmail": {
+      "sentTo": "We've sent a code to",
+      "newEmailLabel": "New e-mail",
+      "saveBtn": "Save changes",
+      "noCode": "Didn't receive the code?",
+      "resendBtn": "Resend"
+    },
+    "changingPhone": {
+      "sentTo": "We've sent a code to",
+      "newPhoneLabel": "New phone",
+      "saveBtn": "Save changes",
+      "noCode": "Didn't receive the code?",
+      "resendBtn": "Resend"
+    },
+    "otpLabel": "Code",
+    "orContinueWith": "Or continue with"
+  },
+  "cart": {
+    "title": "Cart",
+    "totalTitle": "Total",
+    "wasteRemoval": "Construction waste removal (x{{count}})",
+    "priceVat": "Price incl. VAT:",
+    "checkout": "Checkout"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "shareOrder": "Share order",
+    "paymentMethod": "Payment Method",
+    "confirmOur": "Confirm our",
+    "marketingPolicy": "Marketing Policy",
+    "termsAndPrivacy": "Terms and Privacy conditions",
+    "payOrder": "Pay order",
+    "form": {
+      "individualTab": "Individual",
+      "legalTab": "Legal entity",
+      "nameLabel": "Full name",
+      "personalCode": "Personal code",
+      "billingAddress": "Billing address",
+      "emailLabel": "E-mail",
+      "phoneLabel": "Phone number",
+      "additionalEmail": "Additional e-mail",
+      "comments": "Comments",
+      "addBillingContacts": "Add contacts for billing"
+    },
+    "summary": {
+      "title": "Summary",
+      "container": "Container {{id}}:",
+      "address": "Address:",
+      "service": "Service:",
+      "delivery": "Delivery:",
+      "removal": "Removal:",
+      "price": "Price:",
+      "priceCalc": "Price calculation",
+      "wasteRemoval": "Construction waste removal:",
+      "rentalPeriod": "Container rental period:",
+      "discount": "Applied discount:",
+      "subtotal": "Total excl. VAT:",
+      "vat": "VAT 21%:",
+      "total": "Total incl. VAT:"
+    },
+    "additionalService": {
+      "title": "Additional Service",
+      "apusQuestion": "Is APUS certificate required?",
+      "required": "Required",
+      "notRequired": "Not required",
+      "containers": "Containers",
+      "all": "All",
+      "containerPrice": "Container {{size}} price",
+      "total": "Total"
+    },
+    "payment": {
+      "internetBanking": "Internet banking",
+      "appleGooglePay": "Apple Pay or Google Pay",
+      "card": "Pay by card",
+      "email": "Receive invoice by email",
+      "onsite": "Pay on-site with a strict accounting receipt",
+      "paymentMethod": "Payment Method",
+      "securePayments": "100% secure payments",
+      "makePayment": "Make payment"
+    }
+  },
+  "invoices": {
+    "title": "Invoices",
+    "awaitingPayment": "Awaiting payment",
+    "paid": "Paid",
+    "filter": {
+      "dates": "Dates (from to)",
+      "orderStatus": "Order status",
+      "address": "Address",
+      "paymentStatus": "Payment status",
+      "clear": "Clear"
+    },
+    "row": {
+      "view": "View invoice",
+      "download": "Download",
+      "pay": "Make payment"
+    },
+    "selection": {
+      "selected": "SELECTED",
+      "of": "OF",
+      "sendEmail": "Send to e-mail"
+    }
+  },
+  "invoiceDetail": {
+    "titlePrefix": "Invoice №",
+    "daysUntilPayment": "Days until payment",
+    "sendEmail": "Send to e-mail",
+    "download": "Download",
+    "reorder": "Reorder",
+    "paymentStatus": "Payment Status",
+    "type": "Type",
+    "createdAt": "Created at",
+    "paymentPeriod": "Payment period",
+    "relatedOrders": "Related orders",
+    "positions": "POSITIONS",
+    "totalTitle": "Total",
+    "vat": "VAT",
+    "minusVat": "-VAT",
+    "totalPrice": "Total price",
+    "payInvoice": "Pay invoice",
+    "position": {
+      "titlePrefix": "Construction waste removal №",
+      "deliveryAddress": "Delivery address",
+      "container": "Container",
+      "promoUsed": "Promo used",
+      "originalPrice": "Original price",
+      "priceWithPromo": "Price with promo",
+      "vat": "VAT",
+      "rentalPeriod": "Rental period",
+      "processingFee": "Processing fee"
+    },
+    "status": {
+      "awaiting": "Awaiting payment",
+      "paid": "Paid"
+    }
+  },
+  "orders": {
+    "title": "My Orders",
+    "filter": {
+      "dates": "Dates (from to)",
+      "orderStatus": "Order status",
+      "address": "Address",
+      "paymentStatus": "Payment status",
+      "clear": "Clear"
+    },
+    "activeOrders": "Active Orders",
+    "orderArchive": "Order Archive",
+    "card": {
+      "orderStatus": "Order status",
+      "payNow": "Pay now",
+      "replaceContainer": "Replace the container",
+      "viewOrder": "View order",
+      "invoice": "Invoice",
+      "receipt": "Receipt",
+      "reorder": "Reorder"
+    }
+  },
+  "orderDetail": {
+    "invoice": "Invoice",
+    "receipt": "Receipt",
+    "orderNumber": "Order number",
+    "serviceType": "Service type",
+    "paymentStatus": "Payment Status",
+    "orderStatus": "Order Status",
+    "positions": "Positions",
+    "summary": "Summary",
+    "address": "Address:",
+    "service": "Service:",
+    "delivery": "Delivery:",
+    "removal": "Removal:",
+    "price": "Price:",
+    "priceCalc": "Price calculation",
+    "wasteRemoval": "Construction waste removal:",
+    "rentalPeriod": "Container rental period:",
+    "discount": "Applied discount:",
+    "subtotal": "Total excl. VAT:",
+    "vat": "VAT 21%:",
+    "total": "Total incl. VAT:",
+    "paid": "Paid",
+    "position": {
+      "deliveryAddress": "Delivery address",
+      "container": "Container",
+      "orderedAt": "Ordered at",
+      "pickupAt": "Pickup at",
+      "deliverAt": "Deliver at",
+      "promoUsed": "Promo used",
+      "rentalDays": "Rental days",
+      "comments": "Comments"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "E-mail",
+    "phone": "Phone number",
+    "password": "Password",
+    "saveChanges": "Save changes",
+    "companyName": "Company name",
+    "type": "Type",
+    "regNumber": "Reg. number",
+    "paymentTerms": "Payment terms",
+    "vatNumber": "VAT number",
+    "invoicingPeriod": "Invoicing period",
+    "billingAddress": "Billing address",
+    "rentalDays": "Rental days",
+    "security": "Security",
+    "confirmed": "Confirmed",
+    "additional": "Additional {{label}}",
+    "additionalNumber": "Additional {{label}} number"
   }
 }

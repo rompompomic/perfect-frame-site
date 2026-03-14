@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { AuthScreen } from "../UseAuthModal";
 import { ModalInput, PasswordInput, PrimaryButton, SocialButtons, Tabs } from "../components";
 
@@ -9,6 +10,7 @@ export function SignUpScreen({
   navigate: (s: AuthScreen) => void;
   onClose: () => void;
 }) {
+  const { t } = useTranslation();
   const [personType, setPersonType] = useState<"individual" | "legal">("individual");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -22,8 +24,8 @@ export function SignUpScreen({
     <div className="flex flex-col gap-4">
       <Tabs
         options={[
-          { value: "individual", label: "Individual" },
-          { value: "legal", label: "Legal" },
+          { value: "individual", label: t("auth.signUp.tabIndividual") },
+          { value: "legal", label: t("auth.signUp.tabLegal") },
         ]}
         value={personType}
         onChange={(v) => setPersonType(v as "individual" | "legal")}
@@ -32,7 +34,7 @@ export function SignUpScreen({
       {personType === "individual" ? (
         <>
           <ModalInput
-            label="First name"
+            label={t("auth.signUp.firstNameLabel")}
             required
             placeholder="Placeholder"
             value={firstName}
@@ -40,7 +42,7 @@ export function SignUpScreen({
             onClear={() => setFirstName("")}
           />
           <ModalInput
-            label="Last name"
+            label={t("auth.signUp.lastNameLabel")}
             required
             placeholder="Placeholder"
             value={lastName}
@@ -48,7 +50,7 @@ export function SignUpScreen({
             onClear={() => setLastName("")}
           />
           <ModalInput
-            label="E-mail"
+            label={t("auth.signUp.emailLabel")}
             required
             type="email"
             placeholder="Placeholder"
@@ -57,7 +59,7 @@ export function SignUpScreen({
             onClear={() => setEmail("")}
           />
           <ModalInput
-            label="Phone number"
+            label={t("auth.signUp.phoneLabel")}
             required
             type="tel"
             placeholder="Placeholder"
@@ -69,7 +71,7 @@ export function SignUpScreen({
       ) : (
         <>
           <ModalInput
-            label="Company name"
+            label={t("auth.signUp.companyLabel")}
             required
             placeholder="Placeholder"
             value={companyName}
@@ -82,7 +84,7 @@ export function SignUpScreen({
             }
           />
           <ModalInput
-            label="E-mail"
+            label={t("auth.signUp.emailLabel")}
             required
             type="email"
             placeholder="Placeholder"
@@ -91,7 +93,7 @@ export function SignUpScreen({
             onClear={() => setEmail("")}
           />
           <ModalInput
-            label="Phone number"
+            label={t("auth.signUp.phoneLabel")}
             required
             type="tel"
             placeholder="Placeholder"
@@ -102,15 +104,15 @@ export function SignUpScreen({
         </>
       )}
 
-      <PasswordInput label="Password" required value={password} onChange={setPassword} />
+      <PasswordInput label={t("auth.signUp.passwordLabel")} required value={password} onChange={setPassword} />
       <PasswordInput
-        label="Confirm password"
+        label={t("auth.signUp.confirmPasswordLabel")}
         required
         value={confirmPassword}
         onChange={setConfirmPassword}
       />
 
-      <PrimaryButton onClick={() => navigate("verification")}>Sign up</PrimaryButton>
+      <PrimaryButton onClick={() => navigate("verification")}>{t("auth.signUp.signUpBtn")}</PrimaryButton>
 
       {personType === "individual" && <SocialButtons />}
     </div>

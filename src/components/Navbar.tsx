@@ -96,7 +96,7 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
             </button>
           </div>
           <button className="relative px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue flex items-center gap-2.5">
-            <ShoppingCart className="w-5 h-5 text-nikami-blue" />
+            <ShoppingCart className="w-5 h-5 text-nikami-blue" onClick={() => navigate("/cart")} />
             <span
               className={`absolute -top-1.5 -right-1.5 w-4 h-4 bg-nikami-blue rounded-full ${isLight ? "text-white" : "text-primary-foreground"} text-xs font-medium flex items-center justify-center`}>
               4
@@ -107,7 +107,7 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
         {/* Mobile: cart + hamburger */}
         <div className="flex md:hidden items-center gap-3">
           <button className="relative p-2 rounded-sm outline outline-1 outline-nikami-blue flex items-center">
-            <ShoppingCart className="w-5 h-5 text-nikami-blue" />
+            <ShoppingCart className="w-5 h-5 text-nikami-blue" onClick={() => navigate("/cart")} />
             <span
               className={`absolute -top-1.5 -right-1.5 w-4 h-4 bg-nikami-blue rounded-full ${isLight ? "text-white" : "text-primary-foreground"} text-xs font-medium flex items-center justify-center`}>
               4
@@ -311,6 +311,8 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
         setEmail={auth.setEmail}
         navigate={auth.navigate}
         onClose={auth.close}
+        phone={auth.phone}
+        setPhone={auth.setPhone}
       />
     </nav>
   );

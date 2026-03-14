@@ -5,7 +5,7 @@
     "email": "klienti@nikami.lv",
     "orderContainer": "Заказать контейнер",
     "getOffer": "Получить предложение",
-    "login": "Login",
+    "login": "Войти",
     "about": "О нас",
     "services": "Услуги",
     "contacts": "Контакты",
@@ -302,9 +302,355 @@
       },
       "nextStep": "Следующий шаг"
     },
+    "back": "Назад",
+    "next": "Следующий шаг",
+    "step2": {
+      "title": "2. Адрес доставки",
+      "subtitle": "Введите адреса доставки"
+    },
+    "step3": {
+      "title": "3. Период использования",
+      "subtitle": "Выберите тип и период использования контейнера",
+      "serviceNew": "Установить новый контейнер",
+      "serviceSwap": "Замена контейнера",
+      "servicePickup": "Вывоз контейнера",
+      "containerHeader": "Контейнер",
+      "service": "Услуга",
+      "period": "Период",
+      "promoLabel": "Введите промокод или номер объекта здесь:",
+      "promoError": "Промокод недействителен",
+      "promoSuccess": "✓ Скидка {{amount}} € применена",
+      "orderDetails": "Детали заказа",
+      "containerNumber": "Контейнер {{index}}:",
+      "summary": {
+        "address": "Адрес:",
+        "service": "Услуга:",
+        "delivery": "Доставка:",
+        "removal": "Вывоз:",
+        "price": "Цена:",
+        "priceCalc": "Расчёт цены",
+        "wasteRemoval": "Вывоз строительных отходов:",
+        "rentalFee": "Аренда контейнера за период:",
+        "discount": "Применённая скидка:",
+        "subtotal": "Итого без НДС:",
+        "vat": "НДС 21%:",
+        "total": "Итого с НДС:"
+      }
+    },
+    "step4": {
+      "title": "4. Заявка",
+      "subtitle": "Заполните заявку",
+      "individual": "Физическое лицо",
+      "legal": "Юридическое лицо",
+      "serviceType": "Тип услуги",
+      "fullName": "Имя, фамилия",
+      "phone": "Номер телефона",
+      "email": "E-mail",
+      "searchCompany": "Найти компанию по регистрационному номеру или названию",
+      "companyName": "Название компании",
+      "legalAddress": "Юридический адрес",
+      "regNumber": "Регистрационный номер",
+      "vatNumber": "Номер плательщика НДС",
+      "comments": "Комментарии",
+      "attentionBold": "Внимание!",
+      "attentionText": "Выбранное время является приблизительным. После получения заказа диспетчер свяжется с вами и подтвердит заказ. Цена услуги может измениться в зависимости от погодных условий и дорожного движения.",
+      "apusTitle": "Требуется ли справка APUS?",
+      "apusNo": "Не требуется",
+      "apusYes": "Требуется",
+      "paymentTitle": "Выберите способ оплаты",
+      "serviceNoma": "Аренда контейнера",
+      "serviceIzvesana": "Вывоз контейнера",
+      "serviceMaina": "Замена контейнера",
+      "payOnline": "Оплата онлайн",
+      "payOnsite": "Оплата на месте со строгим отчётным квитанцией",
+      "payEmail": "Получить счёт на e-mail",
+      "payInternet": "Интернет-банк",
+      "payCard": "Кредитная/дебетовая карта",
+      "payGoogle": "Google Pay/Apple Pay",
+      "termsHazardous": "Я информирован, что в контейнер нельзя загружать опасные отходы – шины, шифер, краски и другие, которые согласно Правилам Кабинета Министров № 302 от 19.04.2011 квалифицируются как опасные/запрещённые отходы.",
+      "termsAgree": "Согласен с условиями портала:",
+      "termsLink": "Условия заказа и использования контейнеров для строительных отходов",
+      "privacyLink": "Политикой конфиденциальности",
+      "marketingText": "Согласен получать специальные предложения от SIA \"NIKA MI\"."
+    },
+    "success": {
+      "title": "Спасибо.",
+      "message": "Ваш заказ успешно оформлен. Отслеживайте статус в вашем аккаунте.",
+      "goToOrders": "К заказам"
+    },
     "tooltip": {
       "title": "Lorem Ipsum",
       "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been."
     }
+  },
+  "auth": {
+    "titles": {
+      "signin": "Войти",
+      "signup": "Зарегистрироваться",
+      "verification": "Верификация",
+      "resetPassword": "Сброс пароля",
+      "changePassword": "Изменить пароль",
+      "changingEmail": "Смена эл. почты",
+      "changingPhone": "Смена номера телефона"
+    },
+    "signIn": {
+      "tabPhone": "По телефону",
+      "tabEmail": "По эл. почте",
+      "phoneLabel": "Номер телефона",
+      "emailLabel": "Эл. почта",
+      "phonePlaceholder": "Введите номер телефона",
+      "emailPlaceholder": "Введите эл. почту",
+      "passwordLabel": "Пароль",
+      "forgotPassword": "Забыли пароль?",
+      "rememberMe": "Запомнить меня",
+      "signUpBtn": "Зарегистрироваться",
+      "signInBtn": "Войти"
+    },
+    "signUp": {
+      "tabIndividual": "Физическое лицо",
+      "tabLegal": "Юридическое лицо",
+      "firstNameLabel": "Имя",
+      "lastNameLabel": "Фамилия",
+      "emailLabel": "Эл. почта",
+      "phoneLabel": "Номер телефона",
+      "companyLabel": "Название компании",
+      "passwordLabel": "Пароль",
+      "confirmPasswordLabel": "Подтвердить пароль",
+      "signUpBtn": "Зарегистрироваться"
+    },
+    "verification": {
+      "message": "Мы отправили вам SMS-сообщение",
+      "message2": "с 4-значным кодом",
+      "verifyBtn": "Подтвердить",
+      "noCode": "Не получили код?",
+      "resendBtn": "Отправить повторно"
+    },
+    "resetPassword": {
+      "emailLabel": "Эл. почта",
+      "sendLinkBtn": "Отправить ссылку"
+    },
+    "resetCode": {
+      "sentTo": "Мы отправили код на",
+      "emailLabel": "Эл. почта",
+      "changePasswordBtn": "Изменить пароль",
+      "noCode": "Не получили код?",
+      "resendBtn": "Отправить повторно"
+    },
+    "changePassword": {
+      "currentLabel": "Текущий пароль",
+      "newLabel": "Новый пароль",
+      "confirmLabel": "Подтвердить новый пароль",
+      "saveBtn": "Сохранить изменения"
+    },
+    "changingEmail": {
+      "sentTo": "Мы отправили код на",
+      "newEmailLabel": "Новая эл. почта",
+      "saveBtn": "Сохранить изменения",
+      "noCode": "Не получили код?",
+      "resendBtn": "Отправить повторно"
+    },
+    "changingPhone": {
+      "sentTo": "Мы отправили код на",
+      "newPhoneLabel": "Новый телефон",
+      "saveBtn": "Сохранить изменения",
+      "noCode": "Не получили код?",
+      "resendBtn": "Отправить повторно"
+    },
+    "otpLabel": "Код",
+    "orContinueWith": "Или продолжить через"
+  },
+  "cart": {
+    "title": "Корзина",
+    "totalTitle": "Итого",
+    "wasteRemoval": "Вывоз строительных отходов (x{{count}})",
+    "priceVat": "Цена с НДС:",
+    "checkout": "Оформить заказ"
+  },
+  "checkout": {
+    "title": "Оформление заказа",
+    "shareOrder": "Поделиться заказом",
+    "paymentMethod": "Способ оплаты",
+    "confirmOur": "Подтверждаю нашу",
+    "marketingPolicy": "Маркетинговую политику",
+    "termsAndPrivacy": "Условия использования и политику конфиденциальности",
+    "payOrder": "Оплатить заказ",
+    "form": {
+      "individualTab": "Физическое лицо",
+      "legalTab": "Юридическое лицо",
+      "nameLabel": "Имя, фамилия",
+      "personalCode": "Личный код",
+      "billingAddress": "Адрес выставления счёта",
+      "emailLabel": "Эл. почта",
+      "phoneLabel": "Номер телефона",
+      "additionalEmail": "Дополнительная эл. почта",
+      "comments": "Комментарии",
+      "addBillingContacts": "Добавить контакты для выставления счёта"
+    },
+    "summary": {
+      "title": "Сводка",
+      "container": "Контейнер {{id}}:",
+      "address": "Адрес:",
+      "service": "Услуга:",
+      "delivery": "Доставка:",
+      "removal": "Вывоз:",
+      "price": "Цена:",
+      "priceCalc": "Расчёт цены",
+      "wasteRemoval": "Вывоз строительных отходов:",
+      "rentalPeriod": "Аренда контейнера/ов за период:",
+      "discount": "Применённая скидка:",
+      "subtotal": "Итого без НДС:",
+      "vat": "НДС 21%:",
+      "total": "Итого с НДС:"
+    },
+    "additionalService": {
+      "title": "Дополнительная услуга",
+      "apusQuestion": "Необходима ли справка APUS?",
+      "required": "Необходима",
+      "notRequired": "Не нужна",
+      "containers": "Контейнеры",
+      "all": "Все",
+      "containerPrice": "Цена контейнера {{size}}",
+      "total": "Итого"
+    },
+    "payment": {
+      "internetBanking": "Интернет-банк",
+      "appleGooglePay": "Apple Pay или Google Pay",
+      "card": "Оплата картой",
+      "email": "Получить счёт на эл. почту",
+      "onsite": "Оплата на месте со строгим кассовым чеком",
+      "paymentMethod": "Способ оплаты",
+      "securePayments": "100% безопасные платежи",
+      "makePayment": "Совершить платёж"
+    }
+  },
+  "invoices": {
+    "title": "Счета",
+    "awaitingPayment": "Ожидает оплаты",
+    "paid": "Оплачено",
+    "filter": {
+      "dates": "Даты (с по)",
+      "orderStatus": "Статус заказа",
+      "address": "Адрес",
+      "paymentStatus": "Статус оплаты",
+      "clear": "Очистить"
+    },
+    "row": {
+      "view": "Просмотр счёта",
+      "download": "Скачать",
+      "pay": "Совершить платёж"
+    },
+    "selection": {
+      "selected": "ВЫБРАНО",
+      "of": "ИЗ",
+      "sendEmail": "Отправить на эл. почту"
+    }
+  },
+  "invoiceDetail": {
+    "titlePrefix": "Счёт №",
+    "daysUntilPayment": "Дней до оплаты",
+    "sendEmail": "Отправить на эл. почту",
+    "download": "Скачать",
+    "reorder": "Повторить заказ",
+    "paymentStatus": "Статус оплаты",
+    "type": "Тип",
+    "createdAt": "Создан",
+    "paymentPeriod": "Период оплаты",
+    "relatedOrders": "Связанные заказы",
+    "positions": "ПОЗИЦИИ",
+    "totalTitle": "Итого",
+    "vat": "НДС",
+    "minusVat": "Без НДС",
+    "totalPrice": "Итоговая цена",
+    "payInvoice": "Оплатить счёт",
+    "position": {
+      "titlePrefix": "Вывоз строительных отходов №",
+      "deliveryAddress": "Адрес доставки",
+      "container": "Контейнер",
+      "promoUsed": "Использованная промо",
+      "originalPrice": "Исходная цена",
+      "priceWithPromo": "Цена с промо",
+      "vat": "НДС",
+      "rentalPeriod": "Период аренды",
+      "processingFee": "Плата за обработку"
+    },
+    "status": {
+      "awaiting": "Ожидает оплаты",
+      "paid": "Оплачено"
+    }
+  },
+  "orders": {
+    "title": "Мои заказы",
+    "filter": {
+      "dates": "Даты (с по)",
+      "orderStatus": "Статус заказа",
+      "address": "Адрес",
+      "paymentStatus": "Статус оплаты",
+      "clear": "Очистить"
+    },
+    "activeOrders": "Активные заказы",
+    "orderArchive": "Архив заказов",
+    "card": {
+      "orderStatus": "Статус заказа",
+      "payNow": "Оплатить сейчас",
+      "replaceContainer": "Заменить контейнер",
+      "viewOrder": "Просмотр заказа",
+      "invoice": "Счёт",
+      "receipt": "Квитанция",
+      "reorder": "Повторить"
+    }
+  },
+  "orderDetail": {
+    "invoice": "Счёт",
+    "receipt": "Квитанция",
+    "orderNumber": "Номер заказа",
+    "serviceType": "Тип услуги",
+    "paymentStatus": "Статус оплаты",
+    "orderStatus": "Статус заказа",
+    "positions": "Позиции",
+    "summary": "Сводка",
+    "address": "Адрес:",
+    "service": "Услуга:",
+    "delivery": "Доставка:",
+    "removal": "Вывоз:",
+    "price": "Цена:",
+    "priceCalc": "Расчёт цены",
+    "wasteRemoval": "Вывоз строительных отходов:",
+    "rentalPeriod": "Аренда контейнера/ов за период:",
+    "discount": "Применённая скидка:",
+    "subtotal": "Итого без НДС:",
+    "vat": "НДС 21%:",
+    "total": "Итого с НДС:",
+    "paid": "Оплачено",
+    "position": {
+      "deliveryAddress": "Адрес доставки",
+      "container": "Контейнер",
+      "orderedAt": "Заказано",
+      "pickupAt": "Забрать",
+      "deliverAt": "Доставить",
+      "promoUsed": "Использованная промо",
+      "rentalDays": "Дни аренды",
+      "comments": "Комментарии"
+    }
+  },
+  "profile": {
+    "title": "Профиль",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "email": "Эл. почта",
+    "phone": "Номер телефона",
+    "password": "Пароль",
+    "saveChanges": "Сохранить изменения",
+    "companyName": "Название компании",
+    "type": "Тип",
+    "regNumber": "Рег. номер",
+    "paymentTerms": "Условия оплаты",
+    "vatNumber": "НДС номер",
+    "invoicingPeriod": "Период выставления счётов",
+    "billingAddress": "Адрес выставления счёта",
+    "rentalDays": "Дни аренды",
+    "security": "Безопасность",
+    "confirmed": "Подтверждено",
+    "additional": "Дополнительный {{label}}",
+    "additionalNumber": "Дополнительный номер {{label}}"
   }
 }

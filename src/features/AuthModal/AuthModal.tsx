@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import type { AuthScreen } from "./UseAuthModal";
 import { SignInScreen } from "./screens/SignInScreen";
 import { SignUpScreen } from "./screens/SignUpScreen";
@@ -6,15 +7,9 @@ import { VerificationScreen } from "./screens/VerificationScreen";
 import { ResetPasswordScreen } from "./screens/ResetPasswordScreen";
 import { ResetCodeScreen } from "./screens/ResetCodeScreen";
 import { ChangePasswordScreen } from "./screens/ChangePasswordScreen";
-
-const SCREEN_TITLES: Record<AuthScreen, string> = {
-  signin: "Sign in",
-  signup: "Sign up",
-  verification: "Verification",
-  "reset-password": "Reset password",
-  "reset-code": "Reset password",
-  "change-password": "Change password",
-};
+import { ChangingEmailScreen } from "./screens/ChangingEmailScreen";
+import { ChangingPhoneScreen } from "./screens/ChangingPhoneScreen";
+import { ChangingPasswordScreen } from "./screens/ChangingPasswordScreen";
 
 function CloseButton({ onClick }: { onClick: () => void }) {
   return (
@@ -41,13 +36,38 @@ interface AuthModalProps {
   screen: AuthScreen;
   email: string;
   setEmail: (v: string) => void;
+  phone: string;
+  setPhone: (v: string) => void;
   navigate: (s: AuthScreen) => void;
   onClose: () => void;
 }
 
-export function AuthModal({ isOpen, screen, email, setEmail, navigate, onClose }: AuthModalProps) {
+export function AuthModal({
+  isOpen,
+  screen,
+  email,
+  setEmail,
+  phone,
+  setPhone,
+  navigate,
+  onClose,
+}: AuthModalProps) {
+  const { t } = useTranslation();
+
+  const SCREEN_TITLES: Record<AuthScreen, string> = {
+    signin: t("auth.titles.signin"),
+    signup: t("auth.titles.signup"),
+    verification: t("auth.titles.verification"),
+    "reset-password": t("auth.titles.resetPassword"),
+    "reset-code": t("auth.titles.resetPassword"),
+    "change-password": t("auth.titles.changePassword"),
+    "changing-email": t("auth.titles.changingEmail"),
+    "changing-phone": t("auth.titles.changingPhone"),
+    "changing-password": t("auth.titles.changePassword"),
+  };
+
   const renderScreen = () => {
-    const props = { navigate, onClose, email, setEmail };
+    const props = { navigate, onClose, email, setEmail, phone, setPhone };
     switch (screen) {
       case "signin":
         return <SignInScreen {...props} />;
@@ -61,6 +81,12 @@ export function AuthModal({ isOpen, screen, email, setEmail, navigate, onClose }
         return <ResetCodeScreen {...props} />;
       case "change-password":
         return <ChangePasswordScreen {...props} />;
+      case "changing-email":
+        return <ChangingEmailScreen {...props} />;
+      case "changing-phone":
+        return <ChangingPhoneScreen {...props} />;
+      case "changing-password":
+        return <ChangingPasswordScreen {...props} />;
     }
   };
 

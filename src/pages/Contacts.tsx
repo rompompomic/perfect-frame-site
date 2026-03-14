@@ -57,11 +57,15 @@ const ContactInfoCard = ({
   subtitle,
   contacts,
   hours,
+  contactsLabel,
+  hoursLabel,
 }: {
   title: string;
   subtitle?: string;
   contacts: { phone: string; phoneNote?: string; email: string };
   hours: string[];
+  contactsLabel: string;
+  hoursLabel: string;
 }) => (
   <div className="flex-1 pl-4 sm:pl-8 pr-4 sm:pr-5 py-4 sm:py-5 bg-nikami-light-blue border-l-4 sm:border-l-[6px] border-nikami-blue flex flex-col justify-between gap-4">
     <div className="flex flex-col gap-1">
@@ -76,7 +80,7 @@ const ContactInfoCard = ({
       {/* Contacts sub-card */}
       <div className="flex-1 px-4 sm:px-5 py-3 bg-background flex flex-col gap-3">
         <span className="text-foreground text-base font-bold leading-6">
-          {contacts.phone && "Kontakti:"}
+          {contacts.phone && contactsLabel}
         </span>
         <div className="flex flex-col gap-1">
           <div className="flex flex-col">
@@ -98,7 +102,7 @@ const ContactInfoCard = ({
       </div>
       {/* Hours sub-card */}
       <div className="flex-1 px-4 sm:px-5 py-3 bg-background flex flex-col gap-3">
-        <span className="text-foreground text-base font-bold leading-6">Darba laiki:</span>
+        <span className="text-foreground text-base font-bold leading-6">{hoursLabel}</span>
         <div className="flex flex-col gap-1">
           {hours.map((h, i) => (
             <span key={i} className="text-foreground text-sm sm:text-base font-medium leading-6">
@@ -149,6 +153,8 @@ const ContactsInfoSection = () => {
                 email: t("contacts.administration.email"),
               }}
               hours={[t("contacts.administration.weekdays"), t("contacts.administration.weekend")]}
+              contactsLabel={t("contacts.administration.contactsLabel")}
+              hoursLabel={t("contacts.administration.hoursLabel")}
             />
             <ContactInfoCard
               title={t("contacts.sortingArea.title")}
@@ -162,6 +168,8 @@ const ContactsInfoSection = () => {
                 t("contacts.sortingArea.saturday"),
                 t("contacts.sortingArea.sunday"),
               ]}
+              contactsLabel={t("contacts.sortingArea.contactsLabel")}
+              hoursLabel={t("contacts.sortingArea.hoursLabel")}
             />
           </div>
         </div>

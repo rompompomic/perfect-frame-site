@@ -118,10 +118,10 @@ export function DeliveryAddress({ containers, onBack, onNext }: Props) {
     <div className="min-h-screen bg-[#E4F1FF] px-4 py-[60px]">
       <div className="max-w-[1200px] mx-auto">
         <h1 className="text-[58px] sm:text-5xl font-black text-[#1a3c6e] uppercase tracking-tight mb-2">
-          2. Piegādes adrese
+          {t("orderContainer.step2.title")}
         </h1>
         <div className="flex items-center gap-2 mb-8 text-[#334155] font-semibold text-[20px]">
-          <span>Ievadiet piegādes adreses</span>
+          <span>{t("orderContainer.step2.subtitle")}</span>
           <InfoTooltip variant="red" text={t("orderContainer.tooltip.text")} />
         </div>
 
@@ -152,7 +152,7 @@ export function DeliveryAddress({ containers, onBack, onNext }: Props) {
           <button
             onClick={onBack}
             className={`flex-1 h-[46px] border border-[#4895E8]  font-semibold text-sm rounded-[4px] flex items-center relative transition-colors`}>
-            <span className="absolute left-1/2 -translate-x-1/2 text-[#05376D]">Atpakaļ</span>
+            <span className="absolute left-1/2 -translate-x-1/2 text-[#05376D]">{t("orderContainer.back")}</span>
             <span className="rotate-180 ml-auto bg-[#4895E8] w-12 h-full absolute left-0 top-0 rounded-r-[4px] flex items-center justify-center">
               <img src={ArrowRightIcon} alt="Next" className="w-5 h-5 brightness-0 invert" />
             </span>
@@ -164,7 +164,7 @@ export function DeliveryAddress({ containers, onBack, onNext }: Props) {
             className={`flex-1 h-[46px] text-white font-semibold text-sm rounded-[4px] flex items-center relative transition-colors
                 ${"bg-[#05376D] hover:bg-[#15305a]"}
                 `}>
-            <span className="absolute left-1/2 -translate-x-1/2">Nākamais solis</span>
+            <span className="absolute left-1/2 -translate-x-1/2">{t("orderContainer.next")}</span>
             <span className="ml-auto bg-[#4895E8] w-12 h-full absolute right-0 top-0 rounded-r-[4px] flex items-center justify-center">
               <img src={ArrowRightIcon} alt="Next" className="w-5 h-5 brightness-0 invert" />
             </span>

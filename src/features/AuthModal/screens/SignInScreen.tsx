@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   ModalInput,
   PasswordInput,
@@ -15,6 +16,7 @@ interface SignInScreenProps {
 }
 
 export const SignInScreen: FC<SignInScreenProps> = ({ navigate, onClose }) => {
+  const { t } = useTranslation();
   const [loginType, setLoginType] = useState<"phone" | "email">("phone");
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
@@ -24,17 +26,17 @@ export const SignInScreen: FC<SignInScreenProps> = ({ navigate, onClose }) => {
     <div className="flex flex-col gap-5">
       <Tabs
         options={[
-          { value: "phone", label: "With phone" },
-          { value: "email", label: "With e-mail" },
+          { value: "phone", label: t("auth.signIn.tabPhone") },
+          { value: "email", label: t("auth.signIn.tabEmail") },
         ]}
         value={loginType}
         onChange={(v) => setLoginType(v as "phone" | "email")}
       />
 
       <ModalInput
-        label={loginType === "phone" ? "Phone number" : "E-mail"}
+        label={loginType === "phone" ? t("auth.signIn.phoneLabel") : t("auth.signIn.emailLabel")}
         required
-        placeholder={loginType === "phone" ? "Enter your phone number" : "Enter your email"}
+        placeholder={loginType === "phone" ? t("auth.signIn.phonePlaceholder") : t("auth.signIn.emailPlaceholder")}
         value={identifier}
         onChange={(e) => {
           if (loginType === "phone") {
@@ -49,7 +51,7 @@ export const SignInScreen: FC<SignInScreenProps> = ({ navigate, onClose }) => {
       />
 
       <PasswordInput
-        label="Password"
+        label={t("auth.signIn.passwordLabel")}
         required
         value={password}
         onChange={setPassword}
@@ -58,7 +60,7 @@ export const SignInScreen: FC<SignInScreenProps> = ({ navigate, onClose }) => {
             type="button"
             onClick={() => navigate("reset-password")}
             className="text-sm text-[#05376D] hover:underline">
-            Forgot password?
+            {t("auth.signIn.forgotPassword")}
           </button>
         }
       />
@@ -80,11 +82,11 @@ export const SignInScreen: FC<SignInScreenProps> = ({ navigate, onClose }) => {
             </svg>
           )}
         </div>
-        <span className="text-sm font-bold text-[#000]">Remember me</span>
+        <span className="text-sm font-bold text-[#000]">{t("auth.signIn.rememberMe")}</span>
       </label>
 
-      <OutlineButton onClick={() => navigate("signup")}>Sign up</OutlineButton>
-      <PrimaryButton onClick={() => navigate("verification")}>Sign in</PrimaryButton>
+      <OutlineButton onClick={() => navigate("signup")}>{t("auth.signIn.signUpBtn")}</OutlineButton>
+      <PrimaryButton onClick={() => navigate("verification")}>{t("auth.signIn.signInBtn")}</PrimaryButton>
 
       <SocialButtons />
     </div>

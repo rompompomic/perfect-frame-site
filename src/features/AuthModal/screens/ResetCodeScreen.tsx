@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { ModalInput, OtpInput, PrimaryButton } from "../components";
 import { AuthScreen } from "../UseAuthModal";
 
@@ -13,18 +14,19 @@ export function ResetCodeScreen({
   email: string;
   setEmail: (v: string) => void;
 }) {
+  const { t } = useTranslation();
   const [code, setCode] = useState(Array(6).fill(""));
   const filled = code.every((c) => c !== "");
 
   return (
     <div className="flex flex-col gap-5">
       <p className="text-sm text-[#334155]">
-        We've sent a code to{" "}
+        {t("auth.resetCode.sentTo")}{" "}
         <span className="font-semibold text-[#1a1a1a]">{email || "email@email.lv"}</span>
       </p>
 
       <ModalInput
-        label="E-mail"
+        label={t("auth.resetCode.emailLabel")}
         required
         type="email"
         value={email}
@@ -35,13 +37,13 @@ export function ResetCodeScreen({
       <OtpInput length={6} value={code} onChange={setCode} />
 
       <PrimaryButton onClick={() => navigate("change-password")} disabled={!filled}>
-        Change password
+        {t("auth.resetCode.changePasswordBtn")}
       </PrimaryButton>
 
       <p className="text-sm text-[#000]">
-        Didn't receive the code?{" "}
+        {t("auth.resetCode.noCode")}{" "}
         <button type="button" className="font-semibold text-[#05376D] underline hover:no-underline">
-          Resend
+          {t("auth.resetCode.resendBtn")}
         </button>
       </p>
     </div>
