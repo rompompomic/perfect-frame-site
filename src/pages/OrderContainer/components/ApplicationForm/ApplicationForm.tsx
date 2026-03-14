@@ -5,67 +5,15 @@ import { useTranslation } from "react-i18next";
 import ArrowRightIcon from "@/assets/icons/arrow-right.svg";
 import { InfoTooltip } from "@/components/ui/InfoTooltip/InfoTooltip";
 import { CustomSelect } from "@/components/ui/CustomSelect/CustomSelect";
-import SEBicon from "@/assets/banks/SEB.png";
-import Swedbankicon from "@/assets/banks/Swedbank.png";
-import Luminoricon from "@/assets/banks/luminor.png";
-import Citadeleicon from "@/assets/banks/Citadele.png";
 
-type PersonType = "fiziska" | "juridiska";
-type ServiceKind = "noma" | "izvešana" | "maina";
-type PaymentMethod = "tiessaiste" | "vietas" | "epasts";
-type PaymentType = "internetbanka" | "karte" | "googlepay";
-type Bank = "seb" | "swedbank" | "luminor" | "citadele";
-
-export interface ApplicationFormData {
-  personType: PersonType;
-  serviceKind: ServiceKind;
-  name: string;
-  phone: string;
-  email: string;
-  comment: string;
-  needsCertificate: boolean;
-  cadastreNumber: string;
-  paymentMethod: PaymentMethod;
-  paymentType: PaymentType;
-  bank: Bank | null;
-  agreeTerms: boolean;
-  agreeMarketing: boolean;
-  companySearch: string;
-  companyName: string;
-  legalAddress: string;
-  registrationNumber: string;
-  pvnNumber: string;
-}
-
-interface Props {
-  onBack: () => void;
-  onSubmit: (data: ApplicationFormData) => void;
-}
-
-const SERVICE_OPTIONS: { value: ServiceKind; label: string }[] = [
-  { value: "noma", label: "Konteineru noma" },
-  { value: "izvešana", label: "Konteineru izvešana" },
-  { value: "maina", label: "Konteineru maiņa" },
-];
-
-const PAYMENT_METHODS: { value: PaymentMethod; label: string }[] = [
-  { value: "tiessaiste", label: "Apmaksa tiešsaistē" },
-  { value: "vietas", label: "Samaksa uz vietas ar stingras uzskaites kviti" },
-  { value: "epasts", label: "Saņemt rēķinu uz e-pastu" },
-];
-
-const PAYMENT_TYPES: { value: PaymentType; label: string }[] = [
-  { value: "internetbanka", label: "Internetbanka" },
-  { value: "karte", label: "Kredītkarte/debatkarte" },
-  { value: "googlepay", label: "Google Pay/Apple Pay" },
-];
-
-const BANKS: { value: Bank; label: string; logo: string }[] = [
-  { value: "seb", label: "SEB", logo: SEBicon },
-  { value: "swedbank", label: "Swedbank", logo: Swedbankicon },
-  { value: "luminor", label: "Luminor", logo: Luminoricon },
-  { value: "citadele", label: "Citadele", logo: Citadeleicon },
-];
+import {
+  ApplicationFormData,
+  BANKS,
+  PaymentMethod,
+  PaymentType,
+  PersonType,
+  ServiceKind,
+} from "./mock";
 
 const CERTIFICATE_PRICE = 34;
 
@@ -101,7 +49,12 @@ const ClearIcon = () => (
   </svg>
 );
 
-export function ApplicationForm({ onBack, onSubmit }: Props) {
+interface ApplicationFormProps {
+  onBack: () => void;
+  onSubmit: (data: ApplicationFormData) => void;
+}
+
+export function ApplicationForm({ onBack, onSubmit }: ApplicationFormProps) {
   const { t } = useTranslation();
 
   const [form, setForm] = useState<ApplicationFormData>({
@@ -128,6 +81,24 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
   const set = <K extends keyof ApplicationFormData>(key: K, val: ApplicationFormData[K]) =>
     setForm((prev) => ({ ...prev, [key]: val }));
 
+  const localizedServiceOptions = [
+    { value: "noma" as ServiceKind, label: t("orderContainer.step4.serviceNoma") },
+    { value: "izvešana" as ServiceKind, label: t("orderContainer.step4.serviceIzvesana") },
+    { value: "maina" as ServiceKind, label: t("orderContainer.step4.serviceMaina") },
+  ];
+
+  const localizedPaymentMethods = [
+    { value: "tiessaiste" as PaymentMethod, label: t("orderContainer.step4.payOnline") },
+    { value: "vietas" as PaymentMethod, label: t("orderContainer.step4.payOnsite") },
+    { value: "epasts" as PaymentMethod, label: t("orderContainer.step4.payEmail") },
+  ];
+
+  const localizedPaymentTypes = [
+    { value: "internetbanka" as PaymentType, label: t("orderContainer.step4.payInternet") },
+    { value: "karte" as PaymentType, label: t("orderContainer.step4.payCard") },
+    { value: "googlepay" as PaymentType, label: t("orderContainer.step4.payGoogle") },
+  ];
+
   const isFiziska = form.personType === "fiziska";
 
   const canSubmit = form.agreeTerms && form.name && form.phone && form.email;
@@ -135,10 +106,10 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
   return (
     <div className="w-full">
       <h1 className="text-[58px] sm:text-5xl font-black text-[#1a3c6e] uppercase tracking-tight mb-6">
-        4. Pieteikuma aizpildīšana
+        {t("orderContainer.step4.title")}
       </h1>
 
-      <h2 className="text-[32px] font-black text-[#000] uppercase mb-4">Aizpildiet pieteikumu</h2>
+      <h2 className="text-[32px] font-black text-[#000] uppercase mb-4">{t("orderContainer.step4.subtitle")}</h2>
 
       <div className="flex mb-5 border border-[#05376D] rounded-[4px] w-fit overflow-hidden">
         {(["fiziska", "juridiska"] as PersonType[]).map((type) => (
@@ -151,7 +122,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
                   ? "bg-[#05376D] text-white"
                   : "bg-transparent text-[#05376D] hover:bg-[#f0f6ff]"
               }`}>
-            {type === "fiziska" ? "Fiziska persona" : "Juridiska persona"}
+            {type === "fiziska" ? t("orderContainer.step4.individual") : t("orderContainer.step4.legal")}
           </button>
         ))}
       </div>
@@ -162,18 +133,18 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
             <>
               <div className="flex flex-col gap-1 flex-1 min-w-[180px]">
                 <label className="text-xs font-semibold text-[#334155]">
-                  Pakalpojuma veids<span className="text-[#4895E8]">*</span>
+                  {t("orderContainer.step4.serviceType")}<span className="text-[#4895E8]">*</span>
                 </label>
                 <div className="relative">
                   <CustomSelect
                     value={form.serviceKind}
                     onChange={(value) => set("serviceKind", value as ServiceKind)}
-                    options={SERVICE_OPTIONS}
+                    options={localizedServiceOptions}
                   />
                 </div>
               </div>
 
-              <Field label="Vārds, uzvārds" required>
+              <Field label={t("orderContainer.step4.fullName")} required>
                 <div className="relative">
                   <input
                     type="text"
@@ -191,7 +162,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
                 </div>
               </Field>
 
-              <Field label="Telefona numurs" required>
+              <Field label={t("orderContainer.step4.phone")} required>
                 <input
                   type="tel"
                   value={form.phone}
@@ -200,7 +171,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
                 />
               </Field>
 
-              <Field label="E-pasts" required>
+              <Field label={t("orderContainer.step4.email")} required>
                 <input
                   type="email"
                   value={form.email}
@@ -211,7 +182,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
             </>
           ) : (
             <>
-              <Field label="Meklēt kompāniju pēc reģistrācijas numura vai nosaukuma" required>
+              <Field label={t("orderContainer.step4.searchCompany")} required>
                 <div className="relative">
                   <input
                     type="text"
@@ -231,7 +202,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
               </Field>
 
               <div className="grid grid-cols-2 gap-3">
-                <Field label="Uzņēmuma nosaukums">
+                <Field label={t("orderContainer.step4.companyName")}>
                   <input
                     type="text"
                     value={form.companyName}
@@ -240,7 +211,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
                     className={inputCls}
                   />
                 </Field>
-                <Field label="Juridiskā adrese">
+                <Field label={t("orderContainer.step4.legalAddress")}>
                   <input
                     type="text"
                     value={form.legalAddress}
@@ -252,7 +223,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                <Field label="Reģistrācijas numurs">
+                <Field label={t("orderContainer.step4.regNumber")}>
                   <input
                     type="text"
                     value={form.registrationNumber}
@@ -261,7 +232,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
                     className={inputCls}
                   />
                 </Field>
-                <Field label="PVN maksātāja nr.">
+                <Field label={t("orderContainer.step4.vatNumber")}>
                   <input
                     type="text"
                     value={form.pvnNumber}
@@ -272,7 +243,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
                 </Field>
               </div>
 
-              <Field label="Vārds, uzvārds" required>
+              <Field label={t("orderContainer.step4.fullName")} required>
                 <div className="relative">
                   <input
                     type="text"
@@ -291,7 +262,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
               </Field>
 
               <div className="grid grid-cols-2 gap-3">
-                <Field label="E-pasts" required>
+                <Field label={t("orderContainer.step4.email")} required>
                   <div className="relative">
                     <input
                       type="email"
@@ -309,7 +280,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
                     )}
                   </div>
                 </Field>
-                <Field label="Telefona numurs" required>
+                <Field label={t("orderContainer.step4.phone")} required>
                   <div className="relative">
                     <input
                       type="tel"
@@ -333,7 +304,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
         </div>
 
         <div className="flex flex-col gap-4">
-          <Field label="Komentāri">
+          <Field label={t("orderContainer.step4.comments")}>
             <textarea
               value={form.comment}
               onChange={(e) => set("comment", e.target.value)}
@@ -344,9 +315,8 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
           </Field>
 
           <div className="rounded-[4px] font-normal text-[16px] text-[#000] leading-relaxed">
-            <span className="font-bold text-[16px] text-[#05376D]">Uzmanību!</span> Izvēlētais laiks
-            ir aptuvens. Pēc pasūtījuma saņemšanas dispečeris ar Jums sazināsies un apstiprinās
-            pasūtījumu. Pakalpojuma cena var mainīties atkarībā no laikapstākļiem un ceļu satiksmes.
+            <span className="font-bold text-[16px] text-[#05376D]">{t("orderContainer.step4.attentionBold")}</span>{" "}
+            {t("orderContainer.step4.attentionText")}
           </div>
         </div>
       </div>
@@ -354,7 +324,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-4">
           <h2 className="text-[32px] font-black text-[#000] uppercase">
-            Vai ir nepieciešama apus izziņa?
+            {t("orderContainer.step4.apusTitle")}
           </h2>
           <InfoTooltip variant="red" text="Apus izziņa ir nepieciešama noteiktos gadījumos." />
         </div>
@@ -365,7 +335,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
               onClick={() => set("needsCertificate", false)}
               className={`px-5 py-2.5 text-sm font-semibold transition-colors border border-[#05376D]
                 ${!form.needsCertificate ? "text-[#05376D]" : "text-[#05376D] hover:bg-[#f0f6ff]"}`}>
-              Nav nepieciešama
+              {t("orderContainer.step4.apusNo")}
             </button>
             <button
               onClick={() => set("needsCertificate", true)}
@@ -375,7 +345,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
                     ? "bg-[#05376D] text-white"
                     : "text-[#05376D] hover:bg-[#f0f6ff]"
                 }`}>
-              Ir nepieciešama
+              {t("orderContainer.step4.apusYes")}
             </button>
           </div>
 
@@ -400,11 +370,11 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
 
       <div className="mb-8">
         <h2 className="text-base font-black text-[#05376D] uppercase mb-4">
-          Izvēlies apmaksas veidu
+          {t("orderContainer.step4.paymentTitle")}
         </h2>
 
         <div className="flex flex-wrap gap-0 mb-5 border border-[#05376D] rounded-[4px] w-fit overflow-hidden">
-          {PAYMENT_METHODS.map((m) => (
+          {localizedPaymentMethods.map((m) => (
             <button
               key={m.value}
               onClick={() => set("paymentMethod", m.value)}
@@ -422,7 +392,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
         {form.paymentMethod === "tiessaiste" && (
           <>
             <div className="flex gap-6 mb-4 flex-wrap">
-              {PAYMENT_TYPES.map((pt) => (
+              {localizedPaymentTypes.map((pt) => (
                 <label key={pt.value} className="flex items-center gap-2 cursor-pointer">
                   <div
                     onClick={() => set("paymentType", pt.value)}
@@ -469,16 +439,14 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
             )}
           </div>
           <span className="text-[16px] font-semibold text-[#000]">
-            Esmu informēts, ka konteinerā nedrīkst iekraut bīstamos atkritumus – riepas, šiferis,
-            krāsas un citus, kas atbilstoši MK Nr. 302 no 2011.19.04. noteikumiem kvalificējas kā
-            bīstamie/neatļautie atkritumi. <br />
-            Piekrītu portāla:{" "}
+            {t("orderContainer.step4.termsHazardous")} <br />
+            {t("orderContainer.step4.termsAgree")}{" "}
             <a href="#" className="text-[#4895E8] hover:underline">
-              Būvniecības atkritumu konteineru pasūtīšanas un lietošanas noteikumiem
+              {t("orderContainer.step4.termsLink")}
             </a>
             ;{" "}
             <a href="#" className="text-[#4895E8] hover:underline">
-              Privātuma politikai
+              {t("orderContainer.step4.privacyLink")}
             </a>
             .<span className="text-[#4895E8]"> *</span>
           </span>
@@ -502,7 +470,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
             )}
           </div>
           <span className="text-[16px] font-semibold text-[#000]">
-            Piekrītu saņemt īpašos piedāvājumus no SIA "NIKA MI".
+            {t("orderContainer.step4.marketingText")}
           </span>
         </label>
       </div>
@@ -511,7 +479,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
         <button
           onClick={onBack}
           className={`flex-1 h-[46px] border border-[#4895E8] font-semibold text-sm rounded-[4px] flex items-center relative transition-colors`}>
-          <span className="absolute left-1/2 -translate-x-1/2 text-[#05376D]">Atpakaļ</span>
+          <span className="absolute left-1/2 -translate-x-1/2 text-[#05376D]">{t("orderContainer.back")}</span>
           <span className="rotate-180 ml-auto bg-[#4895E8] w-12 h-full absolute left-0 top-0 rounded-r-[4px] flex items-center justify-center">
             <img src={ArrowRightIcon} alt="Next" className="w-5 h-5 brightness-0 invert" />
           </span>
@@ -523,7 +491,7 @@ export function ApplicationForm({ onBack, onSubmit }: Props) {
           disabled={!canSubmit}
           className={`flex-1 cursor-pointer h-[46px] text-white font-semibold text-sm rounded-[4px] flex items-center relative transition-colors
                 ${"bg-[#05376D] hover:bg-[#15305a]"}`}>
-          <span className="absolute left-1/2 -translate-x-1/2">Nākamais solis</span>
+          <span className="absolute left-1/2 -translate-x-1/2">{t("orderContainer.next")}</span>
           <span className="ml-auto bg-[#4895E8] w-12 h-full absolute right-0 top-0 rounded-r-[4px] flex items-center justify-center">
             <img src={ArrowRightIcon} alt="Next" className="w-5 h-5 brightness-0 invert" />
           </span>

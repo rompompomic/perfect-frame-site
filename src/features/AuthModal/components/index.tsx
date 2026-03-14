@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, forwardRef } from "react";
+import { useTranslation } from "react-i18next";
 
 import GoogleIcon from "@/assets/google.png";
 import MetaIcon from "@/assets/meta.png";
@@ -130,6 +131,7 @@ interface OtpInputProps {
 }
 
 export function OtpInput({ length, value, onChange }: OtpInputProps) {
+  const { t } = useTranslation();
   const refs = useRef<(HTMLInputElement | null)[]>([]);
 
   const handleChange = (i: number, v: string) => {
@@ -148,8 +150,8 @@ export function OtpInput({ length, value, onChange }: OtpInputProps) {
 
   return (
     <div className="flex flex-col gap-1">
-      <label className="text-sm font-semibold text-[#1a1a1a]">Code</label>
-      <div className="flex items-center justify-between gap-2">
+      <label className="text-sm font-semibold text-[#1a1a1a]">{t("auth.otpLabel")}</label>
+      <div className="flex items-center justify-around gap-2">
         {Array.from({ length }).map((_, i) => (
           <input
             key={i}
@@ -173,10 +175,11 @@ export function OtpInput({ length, value, onChange }: OtpInputProps) {
 }
 
 export function SocialButtons() {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-2 ">
-        <span className="text-[12px] text-[#000]">Or continue with</span>
+        <span className="text-[12px] text-[#000]">{t("auth.orContinueWith")}</span>
         <div className="flex-1 h-px bg-[#E2E8F0]" />
       </div>
       <div className="flex gap-3">

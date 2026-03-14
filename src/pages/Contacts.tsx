@@ -9,7 +9,6 @@ import ContactFormSection from "@/components/ContactFormSection";
 import copyIcon from "@/assets/icons/CopyIcon.svg";
 import Footer from "@/components/Footer";
 
-/* ───── Copy button helper ───── */
 const CopyButton = ({ text }: { text: string }) => {
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
@@ -24,7 +23,6 @@ const CopyButton = ({ text }: { text: string }) => {
   );
 };
 
-/* ───── Detail Row ───── */
 const DetailRow = ({ label, value, showDivider = true }: { label: string; value: string; showDivider?: boolean }) => (
   <>
     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1">
@@ -38,17 +36,20 @@ const DetailRow = ({ label, value, showDivider = true }: { label: string; value:
   </>
 );
 
-/* ───── Contact Info Card ───── */
 const ContactInfoCard = ({
   title,
   subtitle,
   contacts,
   hours,
+  contactsLabel,
+  hoursLabel,
 }: {
   title: string;
   subtitle?: string;
   contacts: { phone: string; phoneNote?: string; email: string };
   hours: string[];
+  contactsLabel: string;
+  hoursLabel: string;
 }) => (
   <div className="flex-1 pl-4 sm:pl-8 pr-4 sm:pr-5 py-4 sm:py-5 bg-nikami-light-blue border-l-4 sm:border-l-[6px] border-nikami-blue flex flex-col justify-between gap-4">
     <div className="flex flex-col gap-1">
@@ -57,7 +58,9 @@ const ContactInfoCard = ({
     </div>
     <div className="flex flex-col sm:flex-row gap-1">
       <div className="flex-1 px-4 sm:px-5 py-3 bg-background flex flex-col gap-3">
-        <span className="text-foreground text-base font-bold leading-6">{contacts.phone && "Kontakti:"}</span>
+        <span className="text-foreground text-base font-bold leading-6">
+          {contacts.phone && contactsLabel}
+        </span>
         <div className="flex flex-col gap-1">
           <div className="flex flex-col">
             <span className="text-foreground text-sm sm:text-base font-medium leading-6">{contacts.phone}</span>
@@ -74,7 +77,7 @@ const ContactInfoCard = ({
         </div>
       </div>
       <div className="flex-1 px-4 sm:px-5 py-3 bg-background flex flex-col gap-3">
-        <span className="text-foreground text-base font-bold leading-6">Darba laiki:</span>
+        <span className="text-foreground text-base font-bold leading-6">{hoursLabel}</span>
         <div className="flex flex-col gap-1">
           {hours.map((h, i) => (
             <span key={i} className="text-foreground text-sm sm:text-base font-medium leading-6">
@@ -87,7 +90,6 @@ const ContactInfoCard = ({
   </div>
 );
 
-/* ───── Main Contacts Section ───── */
 const ContactsInfoSection = () => {
   const { t } = useTranslation();
   const [allCopied, setAllCopied] = useState(false);
@@ -124,6 +126,8 @@ const ContactsInfoSection = () => {
                 email: t("contacts.administration.email"),
               }}
               hours={[t("contacts.administration.weekdays"), t("contacts.administration.weekend")]}
+              contactsLabel={t("contacts.administration.contactsLabel")}
+              hoursLabel={t("contacts.administration.hoursLabel")}
             />
             <ContactInfoCard
               title={t("contacts.sortingArea.title")}
@@ -137,6 +141,8 @@ const ContactsInfoSection = () => {
                 t("contacts.sortingArea.saturday"),
                 t("contacts.sortingArea.sunday"),
               ]}
+              contactsLabel={t("contacts.sortingArea.contactsLabel")}
+              hoursLabel={t("contacts.sortingArea.hoursLabel")}
             />
           </div>
         </div>
@@ -198,7 +204,6 @@ const ContactsInfoSection = () => {
   );
 };
 
-/* ───── Map Section ───── */
 const ContactsMapSection = () => {
   const { t } = useTranslation();
   return (
@@ -223,7 +228,6 @@ const ContactsMapSection = () => {
   );
 };
 
-/* ───── Page ───── */
 const Contacts = () => {
   return (
     <div className="flex flex-col min-h-screen bg-background">

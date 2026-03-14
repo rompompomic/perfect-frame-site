@@ -5,7 +5,7 @@
     "email": "klienti@nikami.lv",
     "orderContainer": "Pasūtīt konteineru",
     "getOffer": "Saņemt piedāvājumu",
-    "login": "Login",
+    "login": "Ienākt",
     "about": "Par mums",
     "services": "Pakalpojumi",
     "contacts": "Kontakti",
@@ -302,19 +302,382 @@
       },
       "nextStep": "Nākamais solis"
     },
+    "back": "Atpakaļ",
+    "next": "Nākamais solis",
+    "step2": {
+      "title": "2. Piegādes adrese",
+      "subtitle": "Ievadiet piegādes adreses"
+    },
+    "step3": {
+      "title": "3. Izmantošanas periods",
+      "subtitle": "Izvēlieties konteineru lietošanas veidu un periodu",
+      "serviceNew": "Uzstādīt jaunu konteineru",
+      "serviceSwap": "Esošā konteinera maiņa",
+      "servicePickup": "Esošā konteinera izvešana",
+      "containerHeader": "Konteiners",
+      "service": "Pakalpojums",
+      "period": "Periods",
+      "promoLabel": "Ievadiet promo kodu vai objekta numuru šeit:",
+      "promoError": "Promo kods nav derīgs",
+      "promoSuccess": "✓ Atlaide {{amount}} € piemērota",
+      "orderDetails": "Pasūtījuma detaļas",
+      "containerNumber": "Konteiners {{index}}:",
+      "summary": {
+        "address": "Adrese:",
+        "service": "Pakalpojums:",
+        "delivery": "Piegāde:",
+        "removal": "Izvešana:",
+        "price": "Cena:",
+        "priceCalc": "Cenas aprēķināšana",
+        "wasteRemoval": "Būvniecības atkritumu izvešana:",
+        "rentalFee": "Konteinera/u īre par periodu:",
+        "discount": "Piemērotā atlaide:",
+        "subtotal": "Kopā bez PVN:",
+        "vat": "PVN 21%:",
+        "total": "Kopā ar PVN:"
+      }
+    },
+    "step4": {
+      "title": "4. Pieteikuma aizpildīšana",
+      "subtitle": "Aizpildiet pieteikumu",
+      "individual": "Fiziska persona",
+      "legal": "Juridiska persona",
+      "serviceType": "Pakalpojuma veids",
+      "fullName": "Vārds, uzvārds",
+      "phone": "Telefona numurs",
+      "email": "E-pasts",
+      "searchCompany": "Meklēt kompāniju pēc reģistrācijas numura vai nosaukuma",
+      "companyName": "Uzņēmuma nosaukums",
+      "legalAddress": "Juridiskā adrese",
+      "regNumber": "Reģistrācijas numurs",
+      "vatNumber": "PVN maksātāja nr.",
+      "comments": "Komentāri",
+      "attentionBold": "Uzmanību!",
+      "attentionText": "Izvēlētais laiks ir aptuvens. Pēc pasūtījuma saņemšanas dispečeris ar Jums sazināsies un apstiprinās pasūtījumu. Pakalpojuma cena var mainīties atkarībā no laikapstākļiem un ceļu satiksmes.",
+      "apusTitle": "Vai ir nepieciešama apus izziņa?",
+      "apusNo": "Nav nepieciešama",
+      "apusYes": "Ir nepieciešama",
+      "paymentTitle": "Izvēlies apmaksas veidu",
+      "serviceNoma": "Konteineru noma",
+      "serviceIzvesana": "Konteineru izvešana",
+      "serviceMaina": "Konteineru maiņa",
+      "payOnline": "Apmaksa tiešsaistē",
+      "payOnsite": "Samaksa uz vietas ar stingras uzskaites kviti",
+      "payEmail": "Saņemt rēķinu uz e-pastu",
+      "payInternet": "Internetbanka",
+      "payCard": "Kredītkarte/debatkarte",
+      "payGoogle": "Google Pay/Apple Pay",
+      "termsHazardous": "Esmu informēts, ka konteinerā nedrīkst iekraut bīstamos atkritumus – riepas, šiferis, krāsas un citus, kas atbilstoši MK Nr. 302 no 2011.19.04. noteikumiem kvalificējas kā bīstamie/neatļautie atkritumi.",
+      "termsAgree": "Piekrītu portāla:",
+      "termsLink": "Būvniecības atkritumu konteineru pasūtīšanas un lietošanas noteikumiem",
+      "privacyLink": "Privātuma politikai",
+      "marketingText": "Piekrītu saņemt īpašos piedāvājumus no SIA \"NIKA MI\"."
+    },
+    "success": {
+      "title": "Paldies.",
+      "message": "Jūsu pasūtījums ir veiksmīgi iesniegts. Sekojiet statusam savā kontā.",
+      "goToOrders": "Uz pasūtījumiem"
+    },
     "tooltip": {
       "title": "Lorem Ipsum",
       "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been."
     }
   },
+  "auth": {
+    "titles": {
+      "signin": "Pierakstīties",
+      "signup": "Reģistrēties",
+      "verification": "Verifikācija",
+      "resetPassword": "Atjaunot paroli",
+      "changePassword": "Mainīt paroli",
+      "changingEmail": "E-pasta maiņa",
+      "changingPhone": "Tālruņa numura maiņa"
+    },
+    "signIn": {
+      "tabPhone": "Ar tālruni",
+      "tabEmail": "Ar e-pastu",
+      "phoneLabel": "Tālruņa numurs",
+      "emailLabel": "E-pasts",
+      "phonePlaceholder": "Ievadiet tālruņa numuru",
+      "emailPlaceholder": "Ievadiet e-pastu",
+      "passwordLabel": "Parole",
+      "forgotPassword": "Aizmirsi paroli?",
+      "rememberMe": "Atcerēties mani",
+      "signUpBtn": "Reģistrēties",
+      "signInBtn": "Pierakstīties"
+    },
+    "signUp": {
+      "tabIndividual": "Fiziska persona",
+      "tabLegal": "Juridiska persona",
+      "firstNameLabel": "Vārds",
+      "lastNameLabel": "Uzvārds",
+      "emailLabel": "E-pasts",
+      "phoneLabel": "Tālruņa numurs",
+      "companyLabel": "Uzņēmuma nosaukums",
+      "passwordLabel": "Parole",
+      "confirmPasswordLabel": "Apstiprināt paroli",
+      "signUpBtn": "Reģistrēties"
+    },
+    "verification": {
+      "message": "Mēs nosūtījām jums īsziņu",
+      "message2": "ar 4 ciparu kodu",
+      "verifyBtn": "Apstiprināt",
+      "noCode": "Nesaņēmāt kodu?",
+      "resendBtn": "Sūtīt vēlreiz"
+    },
+    "resetPassword": {
+      "emailLabel": "E-pasts",
+      "sendLinkBtn": "Nosūtīt saiti"
+    },
+    "resetCode": {
+      "sentTo": "Mēs nosūtījām kodu uz",
+      "emailLabel": "E-pasts",
+      "changePasswordBtn": "Mainīt paroli",
+      "noCode": "Nesaņēmāt kodu?",
+      "resendBtn": "Sūtīt vēlreiz"
+    },
+    "changePassword": {
+      "currentLabel": "Pašreizējā parole",
+      "newLabel": "Jaunā parole",
+      "confirmLabel": "Apstiprināt jauno paroli",
+      "saveBtn": "Saglabāt izmaiņas"
+    },
+    "changingEmail": {
+      "sentTo": "Mēs nosūtījām kodu uz",
+      "newEmailLabel": "Jaunais e-pasts",
+      "saveBtn": "Saglabāt izmaiņas",
+      "noCode": "Nesaņēmāt kodu?",
+      "resendBtn": "Sūtīt vēlreiz"
+    },
+    "changingPhone": {
+      "sentTo": "Mēs nosūtījām kodu uz",
+      "newPhoneLabel": "Jaunais tālrunis",
+      "saveBtn": "Saglabāt izmaiņas",
+      "noCode": "Nesaņēmāt kodu?",
+      "resendBtn": "Sūtīt vēlreiz"
+    },
+    "otpLabel": "Kods",
+    "orContinueWith": "Vai turpināt ar"
+  },
+  "cart": {
+    "title": "Grozs",
+    "totalTitle": "Kopā",
+    "wasteRemoval": "Būvgružu izvešana (x{{count}})",
+    "priceVat": "Cena ar PVN:",
+    "checkout": "Apmaksa"
+  },
+  "checkout": {
+    "title": "Apmaksa",
+    "shareOrder": "Kopīgot pasūtījumu",
+    "paymentMethod": "Maksājuma veids",
+    "confirmOur": "Piekrītu mūsu",
+    "marketingPolicy": "Mārketinga politikai",
+    "termsAndPrivacy": "Lietošanas noteikumiem un privātuma politikai",
+    "payOrder": "Apmaksāt pasūtījumu",
+    "form": {
+      "individualTab": "Fiziska persona",
+      "legalTab": "Juridiska persona",
+      "nameLabel": "Vārds, uzvārds",
+      "personalCode": "Personas kods",
+      "billingAddress": "Rēķina adrese",
+      "emailLabel": "E-pasts",
+      "phoneLabel": "Telefona numurs",
+      "additionalEmail": "Papildu e-pasts",
+      "comments": "Komentāri",
+      "addBillingContacts": "Pievienot norēķinu kontaktus"
+    },
+    "summary": {
+      "title": "Kopsavilkums",
+      "container": "Konteineris {{id}}:",
+      "address": "Adrese:",
+      "service": "Pakalpojums:",
+      "delivery": "Piegāde:",
+      "removal": "Izvešana:",
+      "price": "Cena:",
+      "priceCalc": "Cenas aprēķināšana",
+      "wasteRemoval": "Būvniecības atkritumu izvešana:",
+      "rentalPeriod": "Konteinera/u īre par periodu:",
+      "discount": "Piemērotā atlaide:",
+      "subtotal": "Kopā bez PVN:",
+      "vat": "PVN 21%:",
+      "total": "Kopā ar PVN:"
+    },
+    "additionalService": {
+      "title": "Papildu pakalpojums",
+      "apusQuestion": "Vai ir nepieciešama APUS izziņa?",
+      "required": "Ir nepieciešama",
+      "notRequired": "Nav nepieciešama",
+      "containers": "Konteineri",
+      "all": "Visi",
+      "containerPrice": "Konteinera {{size}} cena",
+      "total": "Kopā"
+    },
+    "payment": {
+      "internetBanking": "Interneta banka",
+      "appleGooglePay": "Apple Pay vai Google Pay",
+      "card": "Maksāt ar karti",
+      "email": "Saņemt rēķinu e-pastā",
+      "onsite": "Maksāt klātienē ar stingras uzskaites čeku",
+      "paymentMethod": "Maksājuma veids",
+      "securePayments": "100% droši maksājumi",
+      "makePayment": "Veikt maksājumu"
+    }
+  },
+  "invoices": {
+    "title": "Rēķini",
+    "awaitingPayment": "Gaida apmaksu",
+    "paid": "Apmaksāts",
+    "filter": {
+      "dates": "Datumi (no līdz)",
+      "orderStatus": "Pasūtījuma statuss",
+      "address": "Adrese",
+      "paymentStatus": "Maksājuma statuss",
+      "clear": "Notīrīt"
+    },
+    "row": {
+      "view": "Skatīt rēķinu",
+      "download": "Lejupielādēt",
+      "pay": "Veikt maksājumu"
+    },
+    "selection": {
+      "selected": "ATLASĪTS",
+      "of": "NO",
+      "sendEmail": "Sūtīt uz e-pastu"
+    }
+  },
+  "invoiceDetail": {
+    "titlePrefix": "Rēķins №",
+    "daysUntilPayment": "Dienas līdz apmaksai",
+    "sendEmail": "Sūtīt uz e-pastu",
+    "download": "Lejupielādēt",
+    "reorder": "Atkārtot pasūtījumu",
+    "paymentStatus": "Maksājuma statuss",
+    "type": "Veids",
+    "createdAt": "Izveidots",
+    "paymentPeriod": "Apmaksas periods",
+    "relatedOrders": "Saistītie pasūtījumi",
+    "positions": "POZĪCIJAS",
+    "totalTitle": "Kopā",
+    "vat": "PVN",
+    "minusVat": "Bez PVN",
+    "totalPrice": "Kopējā cena",
+    "payInvoice": "Apmaksāt rēķinu",
+    "position": {
+      "titlePrefix": "Būvniecības atkritumu izvešana №",
+      "deliveryAddress": "Piegādes adrese",
+      "container": "Konteiners",
+      "promoUsed": "Izmantotā promo",
+      "originalPrice": "Sākotnējā cena",
+      "priceWithPromo": "Cena ar promo",
+      "vat": "PVN",
+      "rentalPeriod": "Nomas periods",
+      "processingFee": "Apstrādes maksa"
+    },
+    "status": {
+      "awaiting": "Gaida apmaksu",
+      "paid": "Apmaksāts"
+    }
+  },
+  "orders": {
+    "title": "Mani pasūtījumi",
+    "filter": {
+      "dates": "Datumi (no līdz)",
+      "orderStatus": "Pasūtījuma statuss",
+      "address": "Adrese",
+      "paymentStatus": "Maksājuma statuss",
+      "clear": "Notīrīt"
+    },
+    "activeOrders": "Aktīvie pasūtījumi",
+    "orderArchive": "Pasūtījumu arhīvs",
+    "card": {
+      "orderStatus": "Pasūtījuma statuss",
+      "payNow": "Maksāt tagad",
+      "replaceContainer": "Nomainīt konteineru",
+      "viewOrder": "Skatīt pasūtījumu",
+      "invoice": "Rēķins",
+      "receipt": "Kvīts",
+      "reorder": "Atkārtot"
+    }
+  },
+  "orderDetail": {
+    "invoice": "Rēķins",
+    "receipt": "Kvīts",
+    "orderNumber": "Pasūtījuma numurs",
+    "serviceType": "Pakalpojuma veids",
+    "paymentStatus": "Maksājuma statuss",
+    "orderStatus": "Pasūtījuma statuss",
+    "positions": "Pozīcijas",
+    "summary": "Kopsavilkums",
+    "address": "Adrese:",
+    "service": "Pakalpojums:",
+    "delivery": "Piegāde:",
+    "removal": "Izvešana:",
+    "price": "Cena:",
+    "priceCalc": "Cenas aprēķināšana",
+    "wasteRemoval": "Būvniecības atkritumu izvešana:",
+    "rentalPeriod": "Konteinera/u īre par periodu:",
+    "discount": "Piemērotā atlaide:",
+    "subtotal": "Kopā bez PVN:",
+    "vat": "PVN 21%:",
+    "total": "Kopā ar PVN:",
+    "paid": "Apmaksāts",
+    "position": {
+      "deliveryAddress": "Piegādes adrese",
+      "container": "Konteiners",
+      "orderedAt": "Pasūtīts",
+      "pickupAt": "Paņemšana",
+      "deliverAt": "Piegāde",
+      "promoUsed": "Izmantotā promo",
+      "rentalDays": "Nomas dienas",
+      "comments": "Komentāri"
+    }
+  },
+  "profile": {
+    "title": "Profils",
+    "firstName": "Vārds",
+    "lastName": "Uzvārds",
+    "email": "E-pasts",
+    "phone": "Tālruņa numurs",
+    "password": "Parole",
+    "saveChanges": "Saglabāt izmaiņas",
+    "companyName": "Uzņēmuma nosaukums",
+    "type": "Veids",
+    "regNumber": "Reģ. numurs",
+    "paymentTerms": "Maksājuma noteikumi",
+    "vatNumber": "PVN numurs",
+    "invoicingPeriod": "Rēķinu periods",
+    "billingAddress": "Rēķina adrese",
+    "rentalDays": "Nomas dienas",
+    "security": "Drošība",
+    "confirmed": "Apstiprināts",
+    "additional": "Papildu {{label}}",
+    "additionalNumber": "Papildu {{label}} numurs"
+  },
+
   "promotions": {
     "title": "Akcijas",
     "subtitle": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
     "items": [
-      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
-      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
-      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
-      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" }
+      {
+        "title": "Title",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+        "cta": "CTA"
+      },
+      {
+        "title": "Title",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+        "cta": "CTA"
+      },
+      {
+        "title": "Title",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+        "cta": "CTA"
+      },
+      {
+        "title": "Title",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+        "cta": "CTA"
+      }
     ]
   },
   "certificates": {

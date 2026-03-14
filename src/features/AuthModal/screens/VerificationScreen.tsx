@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { OtpInput, PrimaryButton } from "../components";
 import { AuthScreen } from "../UseAuthModal";
 
@@ -9,27 +10,28 @@ export function VerificationScreen({
   navigate: (s: AuthScreen) => void;
   onClose: () => void;
 }) {
+  const { t } = useTranslation();
   const [code, setCode] = useState(Array(4).fill(""));
   const filled = code.every((c) => c !== "");
 
   return (
     <div className="flex flex-col gap-5">
       <p className="text-sm text-[#334155]">
-        We've sent you a text message
+        {t("auth.verification.message")}
         <br />
-        with a 4-digit code
+        {t("auth.verification.message2")}
       </p>
 
       <OtpInput length={4} value={code} onChange={setCode} />
 
       <PrimaryButton onClick={onClose} disabled={!filled}>
-        Verify
+        {t("auth.verification.verifyBtn")}
       </PrimaryButton>
 
       <p className="text-sm text-[#334155]">
-        Didn't receive the code?{" "}
+        {t("auth.verification.noCode")}{" "}
         <button type="button" className="font-semibold text-[#4895E8] underline hover:no-underline">
-          Resend
+          {t("auth.verification.resendBtn")}
         </button>
       </p>
     </div>

@@ -9,6 +9,13 @@ import Contacts from "./pages/Contacts.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import "./lib/i18n";
 import OrderContainer from "./pages/OrderContainer/OrderContainer.tsx";
+import ProfilePage from "./pages/Profile/Profile.tsx";
+import OrdersPage from "./pages/Orders/Orders.tsx";
+import OrderDetailPage from "./pages/OrderDetails/OrderDetails.tsx";
+import InvoicesPage from "./pages/Invoices/Invoices.tsx";
+import InvoiceDetailPage from "./pages/InvoiceDetail/InvoiceDetail.tsx";
+import CartPage from "./pages/Cart/Cart.tsx";
+import CheckoutPage from "./pages/Checkout/Checkout.tsx";
 import Promotions from "./pages/Promotions.tsx";
 import GetOffer from "./pages/GetOffer/GetOffer.tsx";
 import Certificates from "./pages/Certificates.tsx";
@@ -16,6 +23,7 @@ import Demolition from "./pages/Demolition.tsx";
 import SortingArea from "./pages/SortingArea.tsx";
 import SnowRemoval from "./pages/SnowRemoval.tsx";
 import SortingAreaPage from "./pages/SortingAreaPage.tsx";
+
 
 const queryClient = new QueryClient();
 
@@ -38,6 +46,13 @@ const App = () => (
           <Route path="/skirosanas-laukumi" element={<SortingAreaPage />} />
           <Route path="/sanemt-piedavajumu" element={<GetOffer />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/orders" element={<OrdersPage />} />
+          <Route path="/order/:id" element={<OrderDetailPage />} />
+          <Route path="/invoices" element={<InvoicesPage />} />
+          <Route path="/invoices/:id" element={<InvoiceDetailPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
