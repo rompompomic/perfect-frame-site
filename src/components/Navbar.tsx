@@ -86,6 +86,7 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
               {t("navbar.orderContainer")}
             </button>
             <button
+              onClick={() => navigate("/sanemt-piedavajumu")}
               className={`px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${btnOutlineText} text-base font-semibold leading-6`}>
               {t("navbar.getOffer")}
             </button>
@@ -220,6 +221,7 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
               {t("navbar.orderContainer")}
             </button>
             <button
+              onClick={() => navigate("/sanemt-piedavajumu")}
               className={`w-full px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${btnOutlineText} text-sm font-semibold`}>
               {t("navbar.getOffer")}
             </button>
@@ -251,23 +253,29 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="px-6 py-3 bg-secondary rounded-xs shadow-[0px_2px_12px_0px_rgba(0,0,0,0.15)] flex flex-col gap-2 min-w-[220px]">
                 {[
-                  t("navbar.serviceLinks.containerRental"),
-                  t("navbar.serviceLinks.sortingArea"),
-                  t("navbar.serviceLinks.constructionWaste"),
-                  t("navbar.serviceLinks.demolition"),
-                  t("navbar.serviceLinks.snowRemoval"),
-                  t("navbar.serviceLinks.greenCertificates"),
-                ].map((label, index) => (
+                  { label: t("navbar.serviceLinks.containerRental"), to: "/order-container" },
+                  { label: t("navbar.serviceLinks.sortingArea"), to: "/skirosanas-laukumi" },
+                  { label: t("navbar.serviceLinks.constructionWaste"), to: "/buvgruzu-izvesana" },
+                  { label: t("navbar.serviceLinks.demolition"), to: "/demontaza" },
+                  { label: t("navbar.serviceLinks.snowRemoval"), to: "/sniega-tirisana" },
+                ].map((item, index) => (
                   <DropdownMenuItem
                     key={index}
                     className="text-primary text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
-                    {label}
+                    <Link to={item.to}>{item.label}</Link>
                   </DropdownMenuItem>
                 ))}
+                <DropdownMenuItem className="text-primary text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
+                  <Link to="/sertifikati">
+                    {t("navbar.serviceLinks.greenCertificates")}
+                  </Link>
+                </DropdownMenuItem>
                 <DropdownMenuSeparator className="bg-muted-foreground/30" />
                 <DropdownMenuItem className="flex items-center gap-2.5 text-nikami-blue text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
-                  <img src={discountIcon} alt="Akcijas" className="w-5 h-5" />
-                  {t("navbar.promotions")}
+                  <Link to="/akcijas" className="flex items-center gap-2.5">
+                    <img src={discountIcon} alt="Akcijas" className="w-5 h-5" />
+                    {t("navbar.promotions")}
+                  </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

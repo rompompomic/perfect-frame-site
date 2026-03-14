@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import ArrowRightIcon from "@/assets/icons/arrow-right.svg";
 import { InfoTooltip } from "@/components/ui/InfoTooltip/InfoTooltip";
 import { CustomSelect } from "@/components/ui/CustomSelect/CustomSelect";
+
 import {
   ApplicationFormData,
   BANKS,

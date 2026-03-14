@@ -653,4 +653,236 @@
     "additional": "Papildu {{label}}",
     "additionalNumber": "Papildu {{label}} numurs"
   }
+},
+
+  "promotions": {
+    "title": "Akcijas",
+    "subtitle": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+    "items": [
+      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
+      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
+      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" },
+      { "title": "Title", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been", "cta": "CTA" }
+    ]
+  },
+  "certificates": {
+    "hero": {
+      "title": "Piesakies un iegūsti 50% NĪN atlaidi uz 10 gadiem ar zaļās būvniecības sertifikātiem!",
+      "description": "Zaļās būvniecības standarti veicina atjaunojamo un otrreiz pārstrādāto materiālu izmantošanu, jo tiem ir mazāka ietekme uz vidi.",
+      "descriptionBold": "Iegūstiet sertifikāciju ātri, ērti un izdevīgi!",
+      "cta": "Pieteikties"
+    },
+    "section": {
+      "title": "Vadošie zaļās ēkas sertifikāti ir LEED, BREEAM un DGNB",
+      "subtitle": "Iegūstiet vairāk priekšrocības savam nekustamajam īpašumam",
+      "cert1": "LEED",
+      "cert2": "BREEAM",
+      "cert3": "DGNB"
+    },
+    "benefits": [
+      "Vides ietekmes mazināšana un klimata pārmaiņu novēršana",
+      "Palielināta energoefektivitāte un zemas ekspluatācijas izmaksas",
+      "Videi draudzīga uzņēmuma reputācija",
+      "Paaugstināta nekustamā īpašuma vērtība, 50% nodokļu atlaide un ilgtermiņa ieguldījumu atdeve",
+      "Latvijas likumdošanas prasību izpilde attiecībā uz vides aizsardzību un ilgtspēju"
+    ],
+    "conditions": {
+      "title": "Atvieglojumu piešķiršanas nosacījumi",
+      "items": [
+        "Atvieglojumi tiek piešķirti jaunuzceltām vai pilnībā renovētām ēkām, kas nodotas ekspluatācijā pēc 2024. gada 1. janvāra.",
+        "Nav nepieciešams atkārtoti iesniegt pieteikumu, ja nav mainījies atvieglojumu piešķiršanas pamats vai atbilstība.",
+        "Atvieglojumi tiek piešķirti visiem ēkas īpašniekiem, ja ēka atbilst atbilstības kritērijiem.",
+        "Atlaide tiek piemērota 10 gadu periodā, sākot no nākamā mēneša pēc ēkas nodošanas ekspluatācijā un sertifikāta stāšanās spēkā.",
+        "Nodokļa maksātājam līdz taksācijas gada 15. decembrim jāiesniedz pieteikums atvieglojumu saņemšanai."
+      ],
+      "cta": "Saņemt piedāvājumu"
+    },
+    "questions": {
+      "subtitle": "Radušies jautājumi?",
+      "title": "Mēs izstrādāsim labāko risinājumu Jūsu vajadzībām!"
+    },
+    "contact": {
+      "title": "Sazinies ar mums",
+      "name": "Vārds, Uzvārds",
+      "company": "Uzņēmums",
+      "phone": "Telefona numurs",
+      "email": "E-pasts",
+      "message": "Jūsu ziņa",
+      "privacy": "Iepazinies un piekrītu mājas lapas ",
+      "privacyLink": "privātuma politikai",
+      "marketing": "Par piekrītu, ka manu e-pastu izmanto mārketinga aktivitātēm",
+      "submit": "Nosūtīt ziņu"
+    }
+  },
+  "sortingArea": {
+    "hero": {
+      "title": "Būvgružu pārstrāde\nun šķirošana Rīgā\nun Rīgas rajonā",
+      "description": "SIA ''NIKA MI'' piedāvā būvgružu pārstrādes un šķirošanas pakalpojumus, izmantojot speciālas šķirošanas poligonu iekārtas un sadarbojoties ar citiem uzņēmumiem atkritumu utilizācijas jomā.",
+      "cta": "Pieteikt atkritumu nodošanu"
+    },
+    "services": {
+      "title": "Konteineri būvgružiem, būvgružu izvešanu, utilizācija, šķirošana un pārstrāde"
+    },
+    "cards": {
+      "card1": {
+        "title": "Uzņēmuma rīcībā ir savs smagās tehnikas autoparks",
+        "description": "Mēs operatīvi atbrīvosim jūsu objektu no nevajadzīgiem atkritumiem, nodrošinot būvgružu izvešanu jums ērtā laikā. Uzņēmuma rīcībā ir savs smagās tehnikas autoparks, kā arī specializētas iekārtas atkritumu smalcināšanai un utilizācijai."
+      },
+      "card2": {
+        "title": "Pilna cikla demontāžas darbi",
+        "description": "Darbi tiek veikti mūsu uzņēmuma īpašajos šķirošanas poligonos, kā arī sadarbojoties ar partneriem, kuri nodrošina savus utilizācijas laukumus. Pie mums iespējams pasūtīt visu veidu pilna cikla demontāžas darbus – pēc to izpildes pasūtītājam nav jāmeklē citi pakalpojumu sniedzēji atkritumu izvešanai."
+      },
+      "card3": {
+        "title": "NIKA MI piedāvā pilnvērtīgus risinājumus",
+        "description": "Būvniecības un demontāžas procesā nereti rodas problēma ar būvgružu utilizāciju. NIKA MI piedāvā pilnvērtīgus risinājumus – no demontāžas darbu veikšanas līdz būvgružu pārstrādei un šķirošana"
+      }
+    },
+    "ctaBanner": {
+      "title": "Piesaki būvgružu izvešanu sev ērtākajā veidā – mūsu mājaslapā vai pa tālruni",
+      "phone": "+371 28601111",
+      "cta": "Pieteikt būvgružu izvešanu"
+    },
+    "equipment": {
+      "title": "Mūsu spectehnika demontāžai, transportēšanai un smalcināšanai",
+      "items": [
+        {
+          "title": "Ekskavatori (16–30 t)",
+          "description": "ar atskaldāmajiem āmuriem vai hidrauliskajām šķērēm – ēku un būvju demontāžai, kā arī betona, dzelzsbetona, ķieģeļu, metāla smalcināšanai."
+        },
+        {
+          "title": "Būvgružu sijātāji",
+          "description": "precīzu frakciju iegūšanai."
+        },
+        {
+          "title": "Konteineri",
+          "description": "atšķiroto materiālu nogādāšanai utilizācijai."
+        },
+        {
+          "title": "Būvgružu drupinātāji",
+          "description": "sadrupina būvgružus dažādās frakcijās un atdala metālus (armatūru) un citus piemaisījumus."
+        },
+        {
+          "title": "Frontālie iekrāvēji (16 t)",
+          "description": "šķembu un smilts aizvešanai."
+        }
+      ]
+    },
+    "recycling": {
+      "title": "Dzelzsbetona un betona pārstrāde Rīgā un Rīgas rajonā",
+      "description1": "Pēc ēku demontāžas bieži rodas jautājums par būvniecības atkritumu utilizāciju. NIKA MI nodrošina dzelzsbetona un betona pārstrādi, izmantojot modernu aprīkojumu un efektīvas tehnoloģijas.",
+      "description2": "Darbi tiek veikti gan mūsu šķirošanas poligonā, gan pasūtītāja objektā, izmantojot mobilo smalcinātāju.",
+      "benefits": [
+        "Strādājam ar dažādu izmēru dzelzsbetona blokiem.",
+        "Izmantojam progresīvas pārstrādes tehnoloģijas.",
+        "Tehnika ļauj atdalīt armatūru un citus piemaisījumus no betona.",
+        "Pārstrādājam arī lielus dzelzsbetona gabalus.",
+        "Sagatavojam klienta vajadzībām atbilstošas frakcijas.",
+        "Pēc pārstrādes iegūtie materiāli tiek izmantoti atkārtoti būvniecībā vai citām vajadzībām."
+      ]
+    }
+  },
+  "snowRemoval": {
+    "hero": {
+      "title": "Jāatbrīvojas no sniega?\nMēs palīdzēsim!",
+      "description": "NIKA MI piedāvā sniega izvešanu Rīgā, Rīgas rajonā, Ropažu novadā, Ulbrokā un Salaspilī.",
+      "cta": "Pieteikt sniega izvešanu"
+    },
+    "territories": {
+      "title": "Izvedīsim sniegu no jūsu teritorijām:",
+      "parking": "Stāvlaukumiem",
+      "yards": "Lieliem un maziem pagalmiem",
+      "industrial": "Industriālām teritorijām",
+      "company": "Uzņēmumu teritorijām"
+    },
+    "pricing": {
+      "price": "no 7.50 €/m³*",
+      "note": "*Cena norādīta bez PVN, kas ietver tikai sniega izvešanu, bez tā tīrīšanas un iekraušanas."
+    }
+  },
+  "demolition": {
+    "hero": {
+      "title": "Profesionāla ēku demontāža\nRīgā un Rīgas rajonā",
+      "description": "SIA \"NIKA MI\" piedāvā demontāžas darbus, nodrošinot laika termiņu ievērošanu un akurātu darbu izpildi. Piesakaties konsultācijai un saņemiet labāko risinājumu."
+    },
+    "about": {
+      "title": "NIKA MI nodrošina profesionālus demontāžas pakalpojumus ar garantētu kvalitāti un tīrību",
+      "subtitle": "Mēs aprēķinām izmaksas, sastādām grafiku un veicam darbus līgumā noteiktajā termiņā"
+    },
+    "serviceTypes": {
+      "title": "Pakalpojuma veidi:",
+      "type1": {
+        "title": "Mēs veicam pilnu demontāžu",
+        "description": "Sākot no ēkas nojaukšanas līdz būvgružu izvešanai un to utilizācijai."
+      },
+      "type2": {
+        "title": "Klienta veikta demontāža",
+        "description": "Mēs nodrošinām visu nepieciešamo: tehniku, konteinerus, speciālistu atbalstu un darbu organizēšanu."
+      }
+    },
+    "services": {
+      "title": "Mūsu pakalpojumi:",
+      "subtitle": "Mums ir plaša pieredze arī ar sarežģītiem un bīstamiem objektiem – droši nojaucam vecas, avārijas stāvoklī esošas ēkas.",
+      "items": [
+        "Pilns cikls: nojaukšana → smalcināšana → būvgružu izvešana un pārstrāde.",
+        "Dažādu tipu ēku demontāža – garāžas, šķūņi, katlumājas u.c.",
+        "Bunkuru un citu industriālo konstrukciju nojaukšana.",
+        "Viena, divu un daudzstāvu ēku nojaukšana.",
+        "Teritorijas sakopšana pēc darbu pabeigšanas.",
+        "Koka, ķieģeļu, karkasa ēku demontāža (no jumta līdz pamatiem)."
+      ]
+    }
+  },
+  "sortingAreaPage": {
+    "hero": {
+      "title": "Sakrājušies atkritumi?\nNodod tos mūsu šķirošanas laukumā! Mēs palīdzēsim!",
+      "description": "Profesionāla būvniecības atkritumu šķirošana un pārstrāde,",
+      "descriptionBold": "Rumbulā - Kaudzīšu ielā 59",
+      "cta": "Pieteikt atkritumu nodošanu"
+    },
+    "cards": {
+      "title": "NIKA MI šķirošanas laukums pieņem:",
+      "mixed": {
+        "title": "Jaukti, nešķiroti\nbūvniecības atkritumi",
+        "price": "no 79-109 €/t + PVN"
+      },
+      "clean": {
+        "title": "Tīri būvniecības atkritumi",
+        "price": "8.50 €/t + PVN"
+      },
+      "concrete": {
+        "title": "Monolītas betona un dzelzsbetona konstrukcijas",
+        "price": "8.50 €/t + PVN"
+      },
+      "electronics": {
+        "title": "Elektrotehnikas un sadzīves tehnikas nodošana",
+        "price": "Bezmaksas"
+      },
+      "wood": {
+        "title": "Būvniecības atkritumi\nno koka",
+        "price": "Bezmaksas"
+      },
+      "bulky": {
+        "title": "Lielgabarīta\natkritumi",
+        "price": "160 €/t + PVN"
+      },
+      "noticeTitle": "Ievērībai!",
+      "noticeText": "Šķirošanas laukumā pieņemam jebkuru atkritumu daudzumu, taču jāņem vērā, ka tiek piemērota minimālā maksa par 250 kg — tas nozīmē, ka arī tad, ja atvedat 1 kg atkritumu, maksa būs kā par 250 kg.",
+      "cta": "Pieteikt atkritumu nodošanu"
+    }
+  },
+  "getOffer": {
+    "title": "Saņemt piedāvājumu",
+    "subtitle": "Mēs izstrādāsim labāko risinājumu Jūsu vajadzībām!",
+    "serviceType": "Pakalpojuma veids",
+    "name": "Vārds, uzvārds",
+    "phone": "Telefona numurs",
+    "email": "E-pasts",
+    "comments": "Komentāri",
+    "uploadPhoto": "Augšupielādēt fotoattēlu",
+    "photoLimit": "*Līdz 5 fotoattēliem",
+    "privacy": "Iepazinos un piekrītu mājas lapas",
+    "privacyLink": "privātuma politikai",
+    "marketing": "Par piekrītu, ka manu e-pastu izmanto mārketinga aktivitātēm",
+    "submit": "Nosūtīt pieteikumu"
+  }
 }

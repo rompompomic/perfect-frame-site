@@ -16,6 +16,14 @@ import InvoicesPage from "./pages/Invoices/Invoices.tsx";
 import InvoiceDetailPage from "./pages/InvoiceDetail/InvoiceDetail.tsx";
 import CartPage from "./pages/Cart/Cart.tsx";
 import CheckoutPage from "./pages/Checkout/Checkout.tsx";
+import Promotions from "./pages/Promotions.tsx";
+import GetOffer from "./pages/GetOffer/GetOffer.tsx";
+import Certificates from "./pages/Certificates.tsx";
+import Demolition from "./pages/Demolition.tsx";
+import SortingArea from "./pages/SortingArea.tsx";
+import SnowRemoval from "./pages/SnowRemoval.tsx";
+import SortingAreaPage from "./pages/SortingAreaPage.tsx";
+
 
 const queryClient = new QueryClient();
 
@@ -30,6 +38,13 @@ const App = () => (
           <Route path="/par-mums" element={<About />} />
           <Route path="/kontakti" element={<Contacts />} />
           <Route path="/order-container" element={<OrderContainer />} />
+          <Route path="/akcijas" element={<Promotions />} />
+          <Route path="/sertifikati" element={<Certificates />} />
+          <Route path="/demontaza" element={<Demolition />} />
+          <Route path="/buvgruzu-izvesana" element={<SortingArea />} />
+          <Route path="/sniega-tirisana" element={<SnowRemoval />} />
+          <Route path="/skirosanas-laukumi" element={<SortingAreaPage />} />
+          <Route path="/sanemt-piedavajumu" element={<GetOffer />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/orders" element={<OrdersPage />} />

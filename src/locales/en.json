@@ -653,4 +653,248 @@
     "additional": "Additional {{label}}",
     "additionalNumber": "Additional {{label}} number"
   }
+},
+  "promotions": {
+    "title": "Promotions",
+    "subtitle": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+    "items": [
+      {
+        "title": "Title",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+        "cta": "CTA"
+      },
+      {
+        "title": "Title",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+        "cta": "CTA"
+      },
+      {
+        "title": "Title",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+        "cta": "CTA"
+      },
+      {
+        "title": "Title",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
+        "cta": "CTA"
+      }
+    ]
+  },
+  "certificates": {
+    "hero": {
+      "title": "Apply and get a 50% real estate tax discount for 10 years with green building certificates!",
+      "description": "Green building standards promote the use of renewable and recycled materials, as they have a lower environmental impact.",
+      "descriptionBold": "Get certified quickly, conveniently and affordably!",
+      "cta": "Apply"
+    },
+    "section": {
+      "title": "The leading green building certificates are LEED, BREEAM and DGNB",
+      "subtitle": "Gain more advantages for your real estate property"
+    },
+    "benefits": [
+      "Reducing environmental impact and preventing climate change",
+      "Increased energy efficiency and low operating costs",
+      "Environmentally friendly company reputation",
+      "Increased property value, 50% tax discount and long-term return on investment",
+      "Compliance with Latvian legislation on environmental protection and sustainability"
+    ],
+    "conditions": {
+      "title": "Conditions for granting benefits",
+      "items": [
+        "Benefits are granted to newly built or fully renovated buildings commissioned after January 1, 2024.",
+        "No need to resubmit an application if the basis or eligibility for benefits has not changed.",
+        "Benefits are granted to all building owners if the building meets the eligibility criteria.",
+        "The discount is applied for a 10-year period, starting from the month following the building's commissioning and the certificate coming into effect.",
+        "The taxpayer must submit an application for benefits by December 15 of the tax year."
+      ],
+      "cta": "Get an offer"
+    },
+    "questions": {
+      "subtitle": "Have questions?",
+      "title": "We will develop the best solution for your needs!"
+    },
+    "contact": {
+      "title": "Contact us",
+      "name": "Name, Surname",
+      "company": "Company",
+      "phone": "Phone number",
+      "email": "E-mail",
+      "message": "Your message",
+      "privacy": "I have read and agree to the website ",
+      "privacyLink": "privacy policy",
+      "marketing": "I agree that my email will be used for marketing activities",
+      "submit": "Send message"
+    }
+  },
+  "sortingArea": {
+    "hero": {
+      "title": "Construction waste recycling\nand sorting in Riga\nand Riga region",
+      "description": "SIA ''NIKA MI'' offers construction waste recycling and sorting services, using specialized sorting site equipment and cooperating with other companies in the waste utilization field.",
+      "cta": "Apply for waste delivery"
+    },
+    "services": {
+      "title": "Containers for construction waste, waste removal, utilization, sorting and recycling"
+    },
+    "cards": {
+      "card1": {
+        "title": "The company has its own heavy equipment fleet",
+        "description": "We will quickly clear your site of unnecessary waste, ensuring construction waste removal at a time convenient for you. The company has its own heavy equipment fleet, as well as specialized equipment for waste crushing and utilization."
+      },
+      "card2": {
+        "title": "Full-cycle demolition works",
+        "description": "Works are carried out at our company's special sorting sites, as well as in cooperation with partners who provide their own utilization sites. You can order all types of full-cycle demolition works from us – after completion, the client does not need to look for other service providers for waste removal."
+      },
+      "card3": {
+        "title": "NIKA MI offers comprehensive solutions",
+        "description": "During construction and demolition, a problem with construction waste utilization often arises. NIKA MI offers comprehensive solutions – from demolition works to construction waste recycling and sorting."
+      }
+    },
+    "ctaBanner": {
+      "title": "Order construction waste removal in the most convenient way – on our website or by phone",
+      "phone": "+371 28601111",
+      "cta": "Apply for waste removal"
+    },
+    "equipment": {
+      "title": "Our special equipment for demolition, transportation and crushing",
+      "items": [
+        {
+          "title": "Excavators (16–30 t)",
+          "description": "with breaking hammers or hydraulic shears – for building and structure demolition, as well as crushing concrete, reinforced concrete, bricks, and metal."
+        },
+        {
+          "title": "Construction waste screeners",
+          "description": "for obtaining precise fractions."
+        },
+        {
+          "title": "Containers",
+          "description": "for transporting sorted materials for utilization."
+        },
+        {
+          "title": "Construction waste crushers",
+          "description": "crushes construction waste into various fractions and separates metals (reinforcement) and other impurities."
+        },
+        {
+          "title": "Front loaders (16 t)",
+          "description": "for gravel and sand removal."
+        }
+      ]
+    },
+    "recycling": {
+      "title": "Reinforced concrete and concrete recycling in Riga and Riga region",
+      "description1": "After building demolition, the question of construction waste utilization often arises. NIKA MI provides reinforced concrete and concrete recycling using modern equipment and effective technologies.",
+      "description2": "Works are carried out both at our sorting site and at the client's facility using a mobile crusher.",
+      "benefits": [
+        "We work with reinforced concrete blocks of various sizes.",
+        "We use progressive recycling technologies.",
+        "Equipment allows separating reinforcement and other impurities from concrete.",
+        "We also recycle large reinforced concrete pieces.",
+        "We prepare fractions according to client needs.",
+        "Materials obtained after recycling are reused in construction or for other needs."
+      ]
+    }
+  },
+  "snowRemoval": {
+    "hero": {
+      "title": "Need to get rid of snow?\nWe will help!",
+      "description": "NIKA MI offers snow removal in Riga, Riga region, Ropaži municipality, Ulbroka and Salaspils.",
+      "cta": "Request snow removal"
+    },
+    "territories": {
+      "title": "We will remove snow from your territories:",
+      "parking": "Parking lots",
+      "yards": "Large and small courtyards",
+      "industrial": "Industrial territories",
+      "company": "Company territories"
+    },
+    "pricing": {
+      "price": "from 7.50 €/m³*",
+      "note": "*Price is without VAT and includes only snow removal, without cleaning and loading."
+    }
+  },
+  "demolition": {
+    "hero": {
+      "title": "Professional building demolition\nin Riga and Riga region",
+      "description": "SIA \"NIKA MI\" offers demolition services, ensuring deadline compliance and accurate work execution. Apply for a consultation and receive the best solution."
+    },
+    "about": {
+      "title": "NIKA MI provides professional demolition services with guaranteed quality and cleanliness",
+      "subtitle": "We calculate costs, create a schedule and perform work within the contractual deadline"
+    },
+    "serviceTypes": {
+      "title": "Service types:",
+      "type1": {
+        "title": "We perform full demolition",
+        "description": "From building demolition to construction waste removal and utilization."
+      },
+      "type2": {
+        "title": "Client-performed demolition",
+        "description": "We provide everything needed: equipment, containers, specialist support and work organization."
+      }
+    },
+    "services": {
+      "title": "Our services:",
+      "subtitle": "We have extensive experience with complex and hazardous objects – we safely demolish old, emergency-state buildings.",
+      "items": [
+        "Full cycle: demolition → crushing → construction waste removal and recycling.",
+        "Demolition of various building types – garages, sheds, boiler houses, etc.",
+        "Demolition of bunkers and other industrial structures.",
+        "Single, two and multi-story building demolition.",
+        "Site cleanup after completion of work.",
+        "Demolition of wooden, brick, frame buildings (from roof to foundations)."
+      ]
+    }
+  },
+  "sortingAreaPage": {
+    "hero": {
+      "title": "Accumulated waste?\nDrop it off at our sorting area! We will help!",
+      "description": "Professional construction waste sorting and recycling,",
+      "descriptionBold": "in Rumbula - Kaudzīšu iela 59",
+      "cta": "Request waste drop-off"
+    },
+    "cards": {
+      "title": "NIKA MI sorting area accepts:",
+      "mixed": {
+        "title": "Mixed, unsorted\nconstruction waste",
+        "price": "from 79-109 €/t + VAT"
+      },
+      "clean": {
+        "title": "Clean construction waste",
+        "price": "8.50 €/t + VAT"
+      },
+      "concrete": {
+        "title": "Monolithic concrete and reinforced concrete structures",
+        "price": "8.50 €/t + VAT"
+      },
+      "electronics": {
+        "title": "Electronics and household appliance drop-off",
+        "price": "Free"
+      },
+      "wood": {
+        "title": "Wood construction\nwaste",
+        "price": "Free"
+      },
+      "bulky": {
+        "title": "Bulky\nwaste",
+        "price": "160 €/t + VAT"
+      },
+      "noticeTitle": "Attention!",
+      "noticeText": "The sorting area accepts any amount of waste, but please note that a minimum fee for 250 kg applies — this means that even if you bring 1 kg of waste, the fee will be as for 250 kg.",
+      "cta": "Request waste drop-off"
+    }
+  },
+  "getOffer": {
+    "title": "Get an offer",
+    "subtitle": "We will develop the best solution for your needs!",
+    "serviceType": "Service type",
+    "name": "Name, surname",
+    "phone": "Phone number",
+    "email": "Email",
+    "comments": "Comments",
+    "uploadPhoto": "Upload photo",
+    "photoLimit": "*Up to 5 photos",
+    "privacy": "I have read and agree to the website's",
+    "privacyLink": "privacy policy",
+    "marketing": "I agree that my email will be used for marketing activities",
+    "submit": "Submit application"
+  }
 }

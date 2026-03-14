@@ -1,0 +1,163 @@
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import MainLayout from "@/components/MainLayout";
+import WeChatButton from "@/components/WeChatButton";
+import QuestionsBanner from "@/components/QuestionsBanner";
+import ContactFormSection from "@/components/ContactFormSection";
+import heroImage from "@/assets/certificates-hero.webp";
+import cert1 from "@/assets/certificate-1.webp";
+import cert2 from "@/assets/certificate-2.webp";
+import cert3 from "@/assets/certificate-3.webp";
+
+// Benefit icons
+import thumbsUpIcon from "@/assets/icons/ThumbsUp.svg";
+import leafIcon from "@/assets/icons/Leaf.svg";
+import cloudSunIcon from "@/assets/icons/CloudSun.svg";
+import handshakeIcon from "@/assets/icons/Handshake.svg";
+import chartLineUpIcon from "@/assets/icons/ChartLineUp.svg";
+
+// Condition icons
+import buildingIcon from "@/assets/icons/building.svg";
+import documentIcon from "@/assets/icons/document.svg";
+import calendarIcon from "@/assets/icons/calendar.svg";
+import hourglassIcon from "@/assets/icons/hourglass.svg";
+import discountTagIcon from "@/assets/icons/discount-40x40.svg";
+
+const benefitIcons = [cloudSunIcon, leafIcon, thumbsUpIcon, chartLineUpIcon, handshakeIcon];
+const conditionIcons = [calendarIcon, documentIcon, buildingIcon, discountTagIcon, hourglassIcon];
+
+/* ───── Hero ───── */
+const CertificatesHero = () => {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  return (
+    <section className="relative w-full min-h-[520px] sm:min-h-[620px] lg:min-h-[720px] flex flex-col">
+      <div className="absolute inset-0 overflow-hidden">
+        <img src={heroImage} alt="Green certificates" className="w-full h-full object-cover" />
+        <div />
+      </div>
+      <div className="relative z-10 flex-1 flex flex-col">
+        <Navbar />
+        <div className="flex-1 flex items-center pb-10 sm:pb-0">
+          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 w-full flex flex-col gap-8 sm:gap-12">
+            <div className="flex flex-col gap-5">
+              <h1 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black uppercase leading-tight lg:leading-[58px] max-w-[849px]">
+                {t("certificates.hero.title")}
+              </h1>
+              <p className="max-w-[724px] text-primary-foreground text-base sm:text-lg lg:text-xl font-medium leading-6 sm:leading-7">
+                {t("certificates.hero.description")}{" "}
+                <span className="font-bold">{t("certificates.hero.descriptionBold")}</span>
+              </p>
+            </div>
+            <button
+              onClick={() => navigate("/sanemt-piedavajumu")}
+              className="w-36 px-4 py-3 bg-nikami-blue rounded-sm text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity"
+            >
+              {t("certificates.hero.cta")}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ───── Certificates Section ───── */
+const CertificatesSection = () => {
+  const { t } = useTranslation();
+  const benefits = t("certificates.benefits", { returnObjects: true }) as string[];
+
+  return (
+    <section className="px-4 sm:px-6 lg:px-28 py-10 sm:py-16 lg:py-20">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
+        <div className="flex flex-col gap-2">
+          <h2 className="text-primary text-2xl sm:text-3xl lg:text-5xl font-black uppercase leading-tight lg:leading-[48px]">
+            {t("certificates.section.title")}
+          </h2>
+          <p className="max-w-[933px] text-foreground text-base sm:text-lg lg:text-xl font-medium leading-7">
+            {t("certificates.section.subtitle")}
+          </p>
+        </div>
+
+        {/* Certificate logos */}
+        <div className="flex flex-col sm:flex-row gap-1">
+          {[cert1, cert2, cert3].map((src, i) => (
+            <div key={i} className="flex-1 h-48 p-5 bg-muted flex items-center justify-center">
+              <img src={src} alt={["LEED", "BREEAM", "DGNB"][i]} className="w-28 h-28 object-contain" />
+            </div>
+          ))}
+        </div>
+
+        {/* Benefit cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-1">
+          {benefits.map((text, i) => (
+            <div
+              key={i}
+              className={`p-5 border-2 border-secondary flex flex-col justify-between gap-5 min-h-[180px] ${i >= 3 ? "lg:col-span-3" : "lg:col-span-2"} ${i === 4 ? "md:col-span-2" : ""}`}
+            >
+              <div className="w-20 h-20 bg-secondary flex items-center justify-center shrink-0">
+                <img src={benefitIcons[i]} alt="" className="w-10 h-10" />
+              </div>
+              <p className="text-foreground text-base sm:text-xl font-medium leading-7">{text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ───── Conditions Section ───── */
+const ConditionsSection = () => {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const conditions = t("certificates.conditions.items", { returnObjects: true }) as string[];
+
+  return (
+    <section className="px-4 sm:px-6 lg:px-28 py-10 sm:py-16 lg:py-20 bg-secondary">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
+        <h2 className="text-primary text-2xl sm:text-3xl lg:text-5xl font-black uppercase leading-tight lg:leading-[48px]">
+          {t("certificates.conditions.title")}
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-1">
+          {conditions.map((text, i) => (
+            <div
+              key={i}
+              className={`p-5 bg-background flex flex-col justify-between gap-5 min-h-[180px] ${i >= 3 ? "lg:col-span-3" : "lg:col-span-2"} ${i === 4 ? "md:col-span-2" : ""}`}
+            >
+              <div className="w-20 h-20 bg-secondary flex items-center justify-center shrink-0">
+                <img src={conditionIcons[i]} alt="" className="w-10 h-10" />
+              </div>
+              <p className="text-foreground text-base sm:text-xl font-medium leading-7">{text}</p>
+            </div>
+          ))}
+        </div>
+
+        <button
+          onClick={() => navigate("/sanemt-piedavajumu")}
+          className="w-fit px-4 py-3 bg-primary rounded-sm text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity"
+        >
+          {t("certificates.conditions.cta")}
+        </button>
+      </div>
+    </section>
+  );
+};
+
+/* ───── Page ───── */
+const Certificates = () => {
+  return (
+    <MainLayout>
+      <CertificatesHero />
+      <CertificatesSection />
+      <ConditionsSection />
+      <QuestionsBanner />
+      <ContactFormSection />
+      <WeChatButton />
+    </MainLayout>
+  );
+};
+
+export default Certificates;
