@@ -131,40 +131,6 @@ const SenderSection = () => {
           </div>
         ) : (
           <div className="flex flex-col gap-3">
-            {/* Search field */}
-            <div className="flex flex-col gap-0.5">
-              <div className="pl-1 sm:pl-2.5">
-                <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
-                  {t("wasteSubmission.sender.searchCompany")}*
-                </span>
-              </div>
-              <div className="h-11 sm:h-12 pl-4 sm:pl-5 pr-3 bg-background rounded-xs border border-nikami-blue flex items-center gap-2.5">
-                <SearchIcon />
-                <input
-                  type="text"
-                  value={legalSearch}
-                  onChange={(e) => setLegalSearch(e.target.value)}
-                  className="flex-1 bg-transparent text-foreground text-sm sm:text-base font-medium leading-5 sm:leading-6 outline-none"
-                />
-                {legalSearch && (
-                  <button
-                    onClick={() => setLegalSearch("")}
-                    className="w-6 h-6 flex items-center justify-center text-nikami-blue hover:opacity-70"
-                  >
-                    ✕
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {/* Disabled company info fields */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-              <DisabledField label={t("wasteSubmission.sender.companyName")} value={legalData.companyName} />
-              <DisabledField label={t("wasteSubmission.sender.regNumber")} value={legalData.regNumber} />
-              <DisabledField label={t("wasteSubmission.sender.vatNumber")} value={legalData.vatNumber} />
-            </div>
-
-            {/* Editable fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <FormField
                 label={t("wasteSubmission.sender.responsiblePerson")}
@@ -174,27 +140,27 @@ const SenderSection = () => {
                 onClear={() => clearLegalField("responsiblePerson")}
               />
               <FormField
+                label={t("wasteSubmission.sender.personalCode")}
+                required
+                value={legalData.personalCode}
+                onChange={(v) => updateLegalField("personalCode", v)}
+                onClear={() => clearLegalField("personalCode")}
+              />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <FormField
                 label={t("wasteSubmission.sender.email")}
                 required
                 value={legalData.email}
                 onChange={(v) => updateLegalField("email", v)}
                 onClear={() => clearLegalField("email")}
               />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <FormField
                 label={t("wasteSubmission.sender.phone")}
                 required
                 value={legalData.phone}
                 onChange={(v) => updateLegalField("phone", v)}
                 onClear={() => clearLegalField("phone")}
-              />
-              <FormField
-                label={t("wasteSubmission.sender.wasteAddress")}
-                required
-                value={legalData.wasteAddress}
-                onChange={(v) => updateLegalField("wasteAddress", v)}
-                onClear={() => clearLegalField("wasteAddress")}
               />
             </div>
           </div>
