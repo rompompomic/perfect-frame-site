@@ -20,7 +20,7 @@ function InvoiceRow({
   return (
     <div
       onClick={onClick}
-      className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 p-4 sm:pl-[3px] sm:pr-[20px] sm:py-4 rounded-[6px] cursor-pointer transition-colors bg-[hsl(var(--accent))]">
+      className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 p-4 sm:pl-[3px] sm:pr-[20px] sm:py-4 rounded-[6px] cursor-pointer transition-colors bg-nikami-light-blue">
       
       {/* Checkbox - hidden on mobile, shown on desktop */}
       <div className="hidden sm:flex bg-white w-[88px] h-[132px] items-center justify-center p-4 shrink-0">
@@ -55,11 +55,11 @@ function InvoiceRow({
         <button className="bg-primary text-primary-foreground text-[12px] font-semibold px-4 py-2 rounded-[2px] hover:opacity-90 transition-colors whitespace-nowrap flex-1 sm:flex-none">
           {t("invoices.row.view")}
         </button>
-        <button className="flex items-center justify-center gap-1.5 border border-[hsl(var(--ring))] text-primary text-[12px] font-bold px-3 py-2 rounded-[2px] hover:bg-accent transition-colors whitespace-nowrap flex-1 sm:flex-none">
+        <button className="flex items-center justify-center gap-1.5 border border-nikami-blue text-primary text-[12px] font-bold px-3 py-2 rounded-[2px] hover:bg-nikami-light-blue transition-colors whitespace-nowrap flex-1 sm:flex-none">
           <DownloadIcon /> {t("invoices.row.download")}
         </button>
         {invoice.status === "awaiting" && (
-          <button className="bg-[hsl(var(--ring))] text-primary-foreground text-[12px] font-semibold px-4 py-2 rounded-[2px] hover:opacity-90 transition-colors whitespace-nowrap flex-1 sm:flex-none">
+          <button className="bg-nikami-blue text-primary-foreground text-[12px] font-semibold px-4 py-2 rounded-[2px] hover:opacity-90 transition-colors whitespace-nowrap flex-1 sm:flex-none">
             {t("invoices.row.pay")}
           </button>
         )}
