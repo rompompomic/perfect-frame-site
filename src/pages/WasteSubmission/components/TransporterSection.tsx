@@ -56,13 +56,6 @@ const TransporterSection = () => {
             onClear={() => clearField("personalCode")}
           />
           <FormField
-            label={t("wasteSubmission.transporter.email")}
-            required
-            value={formData.email}
-            onChange={(v) => updateField("email", v)}
-            onClear={() => clearField("email")}
-          />
-          <FormField
             label={t("wasteSubmission.transporter.vehicleNumber")}
             required
             value={formData.vehicleNumber}
