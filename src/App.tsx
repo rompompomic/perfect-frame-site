@@ -23,6 +23,7 @@ import Demolition from "./pages/Demolition.tsx";
 import SortingArea from "./pages/SortingArea.tsx";
 import SnowRemoval from "./pages/SnowRemoval.tsx";
 import SortingAreaPage from "./pages/SortingAreaPage.tsx";
+import WasteSubmission from "./pages/WasteSubmission/WasteSubmission.tsx";
 
 
 const queryClient = new QueryClient();
