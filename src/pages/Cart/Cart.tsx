@@ -48,39 +48,33 @@ function Checkbox({ checked, onChange }: { checked: boolean; onChange: () => voi
   return (
     <div
       onClick={onChange}
-      className={`w-[22px] h-[22px] rounded-[4px] border-2 flex items-center justify-center cursor-pointer transition-colors shrink-0
-        ${checked ? "bg-[#4895E8] border-[#4895E8]" : "border-[#D0DCE8] bg-white hover:border-[#4895E8]"}`}>
+      className={`w-[22px] h-[22px] rounded border-2 flex items-center justify-center cursor-pointer transition-colors shrink-0
+        ${checked ? "bg-accent border-accent" : "border-border bg-card hover:border-accent"}`}>
       {checked && (
         <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-          <path
-            d="M1 4l3 3 5-6"
-            stroke="white"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="M1 4l3 3 5-6" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       )}
     </div>
   );
 }
 
-function CartGroup({ group }: { group: CartGroup }) {
+function CartGroupCard({ group }: { group: CartGroup }) {
   const [checked, setChecked] = useState(true);
 
   return (
-    <div className="bg-[#E4F1FF] rounded-[8px] p-[12px] flex flex-col gap-[8px]">
-      <div className="flex items-center justify-between px-[8px] py-[4px]">
-        <div className="flex items-center gap-[12px]">
+    <div className="flex flex-col gap-2 rounded-lg bg-secondary p-3">
+      <div className="flex items-center justify-between px-1 py-1">
+        <div className="flex items-center gap-3 min-w-0">
           <Checkbox checked={checked} onChange={() => setChecked(!checked)} />
-          <span className="font-black text-[#05376D] text-[20px] tracking-tight">
+          <span className="truncate text-lg font-black tracking-tight text-primary sm:text-xl">
             {group.title}
           </span>
         </div>
-        <span className="font-black text-[#05376D] text-[20px] tracking-tight">{group.price}</span>
+        <span className="shrink-0 text-lg font-black tracking-tight text-primary sm:text-xl">{group.price}</span>
       </div>
 
-      <div className="flex flex-col gap-[6px]">
+      <div className="flex flex-col gap-1.5">
         {group.positions.map((pos, i) => (
           <PositionCard
             key={pos.id}
@@ -105,38 +99,39 @@ export default function CartPage() {
         <Navbar variant="light" />
       </div>
 
-      <div className="min-h-screen bg-white">
-        <div className="max-w-[1200px] mx-auto px-[24px] py-[40px]">
-          <h1 className="text-[48px] font-black text-[#05376D] tracking-tight mb-[24px]">
-            {t("cart.title").toUpperCase()} <span className="text-[#94A3B8]">({totalPositions})</span>
+      <div className="min-h-screen bg-card">
+        <div className="mx-auto w-full max-w-[1200px] px-4 py-6 sm:px-6 sm:py-10">
+          <h1 className="mb-5 text-3xl font-black tracking-tight text-primary sm:mb-6 sm:text-[48px]">
+            {t("cart.title").toUpperCase()} <span className="text-muted-foreground">({totalPositions})</span>
           </h1>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-[24px] items-start">
-            <div className="flex flex-col gap-[16px]">
+          <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[3fr_2fr]">
+            <div className="flex flex-col gap-4">
               {MOCK_CART.map((group) => (
-                <CartGroup key={group.id} group={group} />
+                <CartGroupCard key={group.id} group={group} />
               ))}
             </div>
 
-            <div className="sticky top-[24px] border border-[#E2E8F0] rounded-[8px] p-[20px] bg-white">
-              <h2 className="font-black text-[#05376D] text-[22px] uppercase tracking-tight mb-[16px]">
+            <div className="sticky top-6 rounded-lg border border-border bg-card p-4 sm:p-5">
+              <h2 className="mb-4 text-xl font-black uppercase tracking-tight text-primary sm:text-[22px]">
                 {t("cart.totalTitle")}
               </h2>
 
-              <div className="flex items-center justify-between mb-[4px]">
-                <span className="text-[13px] text-[#334155]">
+              <div className="mb-1 flex items-center justify-between">
+                <span className="text-[13px] text-muted-foreground">
                   {t("cart.wasteRemoval", { count: totalPositions })}
                 </span>
               </div>
 
-              <div className="flex items-center justify-between mb-[20px] mt-[12px]">
-                <span className="text-[14px] font-bold text-[#334155]">{t("cart.priceVat")}</span>
-                <span className="text-[22px] font-black text-[#05376D]">{TOTAL_PRICE}</span>
+              <div className="mb-5 mt-3 flex items-center justify-between">
+                <span className="text-sm font-bold text-foreground">{t("cart.priceVat")}</span>
+                <span className="text-xl font-black text-primary sm:text-[22px]">{TOTAL_PRICE}</span>
               </div>
 
               <button
                 onClick={() => navigate("/checkout")}
-                className="w-full bg-[#05376D] text-white font-bold text-[14px] py-[13px] rounded-[4px] hover:bg-[#15305a] transition-colors">
+                className="w-full rounded bg-primary py-3 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90"
+              >
                 {t("cart.checkout")}
               </button>
             </div>
