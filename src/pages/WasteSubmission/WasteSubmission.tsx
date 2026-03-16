@@ -17,6 +17,7 @@ const WasteSubmission = () => {
   const [photos, setPhotos] = useState<{ file: File; preview: string }[]>([]);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [marketingAccepted, setMarketingAccepted] = useState(false);
+  const [personType, setPersonType] = useState<"physical" | "legal">("physical");
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
