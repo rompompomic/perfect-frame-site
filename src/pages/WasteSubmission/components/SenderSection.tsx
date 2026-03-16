@@ -26,6 +26,7 @@ const SenderSection = ({ onPersonTypeChange }: SenderSectionProps) => {
     name: "",
     personalCode: "",
     phone: "",
+    email: "",
   });
 
   const [legalSearch, setLegalSearch] = useState("");
@@ -140,6 +141,13 @@ const SenderSection = ({ onPersonTypeChange }: SenderSectionProps) => {
               value={formData.personalCode}
               onChange={(v) => updateField("personalCode", v)}
               onClear={() => clearField("personalCode")}
+            />
+            <FormField
+              label={t("wasteSubmission.sender.email")}
+              required
+              value={formData.email}
+              onChange={(v) => updateField("email", v)}
+              onClear={() => clearField("email")}
             />
           </div>
         ) : (
