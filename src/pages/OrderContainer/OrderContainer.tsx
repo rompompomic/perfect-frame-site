@@ -66,7 +66,7 @@ export default function OrderContainer() {
         <Navbar variant="light" />
       </div>
 
-      <div className="min-h-screen px-4 py-8 sm:py-[60px] bg-white">
+      <div className={`${currentStep === 4 ? '' : 'min-h-screen'} px-4 py-8 sm:py-[60px] bg-white`}>
         <div className="max-w-[1200px] mx-auto">
           {currentStep !== 4 && <StepIndicator currentStep={currentStep} />}
 
