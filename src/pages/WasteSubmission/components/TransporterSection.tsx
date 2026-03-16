@@ -180,8 +180,8 @@ const TransporterSection = () => {
         </svg>
         <p className="flex-1 text-foreground text-sm sm:text-base font-medium leading-5 sm:leading-6">
           {t("wasteSubmission.transporter.infoNotice")}{" "}
-          <span className="text-primary font-bold">svari@nikami.lv</span>.{" "}
-          {t("wasteSubmission.transporter.infoNotice2")}
+          <span className="text-primary font-bold">svari@nikami.lv</span>
+          <span className="font-bold">. {t("wasteSubmission.transporter.infoNotice2")}</span>
         </p>
       </div>
     </div>
