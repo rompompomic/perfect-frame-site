@@ -16,7 +16,7 @@ function MapPlaceholder({ count }: { count: number }) {
   ].slice(0, count);
 
   return (
-    <div className="relative w-full h-[340px] bg-[#E8EEF3] rounded-[4px] overflow-hidden border border-[#D0DCE8]">
+    <div className="relative w-full h-[200px] sm:h-[280px] lg:h-[340px] bg-[#E8EEF3] rounded-[4px] overflow-hidden border border-[#D0DCE8]">
       {/* Grid */}
       <svg className="absolute inset-0 w-full h-full opacity-20">
         <defs>
@@ -115,61 +115,56 @@ export function DeliveryAddress({ containers, onBack, onNext }: Props) {
   const canProceed = filledCount === addresses.length;
 
   return (
-    <div className="min-h-screen bg-[#E4F1FF] px-4 py-[60px]">
-      <div className="max-w-[1200px] mx-auto">
-        <h1 className="text-[58px] sm:text-5xl font-black text-[#1a3c6e] uppercase tracking-tight mb-2">
-          {t("orderContainer.step2.title")}
-        </h1>
-        <div className="flex items-center gap-2 mb-8 text-[#334155] font-semibold text-[20px]">
-          <span>{t("orderContainer.step2.subtitle")}</span>
-          <InfoTooltip variant="red" text={t("orderContainer.tooltip.text")} />
-        </div>
+    <div className="w-full">
+      <h1 className="text-[28px] sm:text-[40px] lg:text-[58px] font-black text-[#1a3c6e] uppercase tracking-tight mb-2">
+        {t("orderContainer.step2.title")}
+      </h1>
+      <div className="flex items-center gap-2 mb-4 sm:mb-8 text-[#334155] font-semibold text-sm sm:text-[20px]">
+        <span>{t("orderContainer.step2.subtitle")}</span>
+        <InfoTooltip variant="red" text={t("orderContainer.tooltip.text")} />
+      </div>
 
-        {/* Address fields */}
-        <div className="flex flex-wrap gap-4 mb-6">
-          {containers.map((container, i) => {
-            const entry = addresses.find((a) => a.containerId === container.id);
-            return (
-              <AddressInput
-                key={container.id}
-                index={i + 1}
-                size={container.size}
-                value={entry?.value || ""}
-                onChange={(val) => update(container.id, val)}
-                onClear={() => clear(container.id)}
-              />
-            );
-          })}
-        </div>
+      {/* Address fields */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        {containers.map((container, i) => {
+          const entry = addresses.find((a) => a.containerId === container.id);
+          return (
+            <AddressInput
+              key={container.id}
+              index={i + 1}
+              size={container.size}
+              value={entry?.value || ""}
+              onChange={(val) => update(container.id, val)}
+              onClear={() => clear(container.id)}
+            />
+          );
+        })}
+      </div>
 
-        {/* Map */}
-        <div className="mb-8">
-          <MapPlaceholder count={filledCount} />
-        </div>
+      {/* Map */}
+      <div className="mb-6 sm:mb-8">
+        <MapPlaceholder count={filledCount} />
+      </div>
 
-        {/* Navigation */}
-        <div className="flex gap-3">
-          <button
-            onClick={onBack}
-            className={`flex-1 h-[46px] border border-[#4895E8]  font-semibold text-sm rounded-[4px] flex items-center relative transition-colors`}>
-            <span className="absolute left-1/2 -translate-x-1/2 text-[#05376D]">{t("orderContainer.back")}</span>
-            <span className="rotate-180 ml-auto bg-[#4895E8] w-12 h-full absolute left-0 top-0 rounded-r-[4px] flex items-center justify-center">
-              <img src={ArrowRightIcon} alt="Next" className="w-5 h-5 brightness-0 invert" />
-            </span>
-          </button>
+      {/* Navigation */}
+      <div className="flex flex-col sm:flex-row gap-3">
+        <button
+          onClick={onBack}
+          className="flex-1 min-h-[36px] h-[46px] border border-[#4895E8] font-semibold text-sm rounded-[4px] flex items-center relative transition-colors">
+          <span className="absolute left-1/2 -translate-x-1/2 text-[#05376D]">{t("orderContainer.back")}</span>
+          <span className="rotate-180 ml-auto bg-[#4895E8] w-12 h-full absolute left-0 top-0 rounded-r-[4px] flex items-center justify-center">
+            <img src={ArrowRightIcon} alt="Next" className="w-5 h-5 brightness-0 invert" />
+          </span>
+        </button>
 
-          <button
-            onClick={() => onNext(addresses)}
-            // disabled={!canProceed}
-            className={`flex-1 h-[46px] text-white font-semibold text-sm rounded-[4px] flex items-center relative transition-colors
-                ${"bg-[#05376D] hover:bg-[#15305a]"}
-                `}>
-            <span className="absolute left-1/2 -translate-x-1/2">{t("orderContainer.next")}</span>
-            <span className="ml-auto bg-[#4895E8] w-12 h-full absolute right-0 top-0 rounded-r-[4px] flex items-center justify-center">
-              <img src={ArrowRightIcon} alt="Next" className="w-5 h-5 brightness-0 invert" />
-            </span>
-          </button>
-        </div>
+        <button
+          onClick={() => onNext(addresses)}
+          className="flex-1 min-h-[36px] h-[46px] text-white font-semibold text-sm rounded-[4px] flex items-center relative transition-colors bg-[#05376D] hover:bg-[#15305a]">
+          <span className="absolute left-1/2 -translate-x-1/2">{t("orderContainer.next")}</span>
+          <span className="ml-auto bg-[#4895E8] w-12 h-full absolute right-0 top-0 rounded-r-[4px] flex items-center justify-center">
+            <img src={ArrowRightIcon} alt="Next" className="w-5 h-5 brightness-0 invert" />
+          </span>
+        </button>
       </div>
     </div>
   );

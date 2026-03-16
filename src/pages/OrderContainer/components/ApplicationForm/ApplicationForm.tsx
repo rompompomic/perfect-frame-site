@@ -105,24 +105,28 @@ export function ApplicationForm({ onBack, onSubmit }: ApplicationFormProps) {
 
   return (
     <div className="w-full">
-      <h1 className="text-[58px] sm:text-5xl font-black text-[#1a3c6e] uppercase tracking-tight mb-6">
+      <h1 className="text-[28px] sm:text-[40px] lg:text-[58px] font-black text-[#1a3c6e] uppercase tracking-tight mb-4 sm:mb-6">
         {t("orderContainer.step4.title")}
       </h1>
 
-      <h2 className="text-[32px] font-black text-[#000] uppercase mb-4">{t("orderContainer.step4.subtitle")}</h2>
+      <h2 className="text-xl sm:text-[32px] font-black text-[#000] uppercase mb-4">
+        {t("orderContainer.step4.subtitle")}
+      </h2>
 
       <div className="flex mb-5 border border-[#05376D] rounded-[4px] w-fit overflow-hidden">
         {(["fiziska", "juridiska"] as PersonType[]).map((type) => (
           <button
             key={type}
             onClick={() => set("personType", type)}
-            className={`px-5 py-2.5 text-sm font-semibold transition-colors
+            className={`px-3 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-colors
               ${
                 form.personType === type
                   ? "bg-[#05376D] text-white"
                   : "bg-transparent text-[#05376D] hover:bg-[#f0f6ff]"
               }`}>
-            {type === "fiziska" ? t("orderContainer.step4.individual") : t("orderContainer.step4.legal")}
+            {type === "fiziska"
+              ? t("orderContainer.step4.individual")
+              : t("orderContainer.step4.legal")}
           </button>
         ))}
       </div>
@@ -133,7 +137,8 @@ export function ApplicationForm({ onBack, onSubmit }: ApplicationFormProps) {
             <>
               <div className="flex flex-col gap-1 flex-1 min-w-[180px]">
                 <label className="text-xs font-semibold text-[#334155]">
-                  {t("orderContainer.step4.serviceType")}<span className="text-[#4895E8]">*</span>
+                  {t("orderContainer.step4.serviceType")}
+                  <span className="text-[#4895E8]">*</span>
                 </label>
                 <div className="relative">
                   <CustomSelect
@@ -201,7 +206,7 @@ export function ApplicationForm({ onBack, onSubmit }: ApplicationFormProps) {
                 </div>
               </Field>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Field label={t("orderContainer.step4.companyName")}>
                   <input
                     type="text"
@@ -222,7 +227,7 @@ export function ApplicationForm({ onBack, onSubmit }: ApplicationFormProps) {
                 </Field>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Field label={t("orderContainer.step4.regNumber")}>
                   <input
                     type="text"
@@ -261,7 +266,7 @@ export function ApplicationForm({ onBack, onSubmit }: ApplicationFormProps) {
                 </div>
               </Field>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Field label={t("orderContainer.step4.email")} required>
                   <div className="relative">
                     <input
@@ -315,7 +320,9 @@ export function ApplicationForm({ onBack, onSubmit }: ApplicationFormProps) {
           </Field>
 
           <div className="rounded-[4px] font-normal text-[16px] text-[#000] leading-relaxed">
-            <span className="font-bold text-[16px] text-[#05376D]">{t("orderContainer.step4.attentionBold")}</span>{" "}
+            <span className="font-bold text-[16px] text-[#05376D]">
+              {t("orderContainer.step4.attentionBold")}
+            </span>{" "}
             {t("orderContainer.step4.attentionText")}
           </div>
         </div>
@@ -323,7 +330,7 @@ export function ApplicationForm({ onBack, onSubmit }: ApplicationFormProps) {
 
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-4">
-          <h2 className="text-[32px] font-black text-[#000] uppercase">
+          <h2 className="text-xl sm:text-[32px] font-black text-[#000] uppercase">
             {t("orderContainer.step4.apusTitle")}
           </h2>
           <InfoTooltip variant="red" text="Apus izziņa ir nepieciešama noteiktos gadījumos." />
@@ -378,7 +385,7 @@ export function ApplicationForm({ onBack, onSubmit }: ApplicationFormProps) {
             <button
               key={m.value}
               onClick={() => set("paymentMethod", m.value)}
-              className={`px-4 py-2.5 text-sm font-semibold transition-colors border-r border-[#05376D] last:border-r-0
+              className={`px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-colors border-r border-[#05376D] last:border-r-0
                 ${
                   form.paymentMethod === m.value
                     ? "bg-[#05376D] text-white"
@@ -475,11 +482,13 @@ export function ApplicationForm({ onBack, onSubmit }: ApplicationFormProps) {
         </label>
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex flex-col sm:flex-row gap-3">
         <button
           onClick={onBack}
-          className={`flex-1 h-[46px] border border-[#4895E8] font-semibold text-sm rounded-[4px] flex items-center relative transition-colors`}>
-          <span className="absolute left-1/2 -translate-x-1/2 text-[#05376D]">{t("orderContainer.back")}</span>
+          className={`flex-1 min-h-[36px] h-[46px] border border-[#4895E8] font-semibold text-sm rounded-[4px] flex items-center relative transition-colors`}>
+          <span className="absolute left-1/2 -translate-x-1/2 text-[#05376D]">
+            {t("orderContainer.back")}
+          </span>
           <span className="rotate-180 ml-auto bg-[#4895E8] w-12 h-full absolute left-0 top-0 rounded-r-[4px] flex items-center justify-center">
             <img src={ArrowRightIcon} alt="Next" className="w-5 h-5 brightness-0 invert" />
           </span>
@@ -489,7 +498,7 @@ export function ApplicationForm({ onBack, onSubmit }: ApplicationFormProps) {
           //   onClick={() => canSubmit && onSubmit(form)}
           onClick={() => onSubmit(form)}
           disabled={!canSubmit}
-          className={`flex-1 cursor-pointer h-[46px] text-white font-semibold text-sm rounded-[4px] flex items-center relative transition-colors
+          className={`flex-1 cursor-pointer min-h-[36px] h-[46px] text-white font-semibold text-sm rounded-[4px] flex items-center relative transition-colors
                 ${"bg-[#05376D] hover:bg-[#15305a]"}`}>
           <span className="absolute left-1/2 -translate-x-1/2">{t("orderContainer.next")}</span>
           <span className="ml-auto bg-[#4895E8] w-12 h-full absolute right-0 top-0 rounded-r-[4px] flex items-center justify-center">

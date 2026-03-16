@@ -8,7 +8,7 @@ interface AddressInputProps {
 
 export const AddressInput = ({ index, size, value, onChange, onClear }: AddressInputProps) => {
   return (
-    <div className="flex flex-col gap-1 flex-1 min-w-[240px]">
+    <div className="flex flex-col gap-1 w-full">
       <label className="text-sm font-semibold text-[#05376D]">
         {index}. Konteiners {size} m³
         <span className="text-[#000] ml-0.5">*</span>

@@ -8,13 +8,11 @@ interface Props {
 export function OrderSuccess({ onGoToOrders }: Props) {
   const { t } = useTranslation();
   return (
-    <div className="w-full py-16">
-      <h1 className="text-[58px] font-black text-[#05376D] uppercase tracking-tight mb-4">
+    <div className="w-full py-8 sm:py-16">
+      <h1 className="text-[28px] sm:text-[40px] lg:text-[58px] font-black text-[#05376D] uppercase tracking-tight mb-4">
         {t("orderContainer.success.title")}
       </h1>
-      <p className="text-[16px] text-[#000] mb-8">
-        {t("orderContainer.success.message")}
-      </p>
+      <p className="text-[16px] text-[#000] mb-8">{t("orderContainer.success.message")}</p>
       <button
         onClick={onGoToOrders}
         className="bg-[#05376D] text-white font-semibold text-sm px-5 py-3 rounded-[4px] flex items-center gap-3 hover:bg-[#15305a] transition-colors">

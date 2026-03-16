@@ -69,21 +69,22 @@ function ContainerPeriodCard({
         isComplete ? "border-[#D0DCE8] bg-white" : "border-[#D0DCE8] bg-white"
       }`}>
       {/* Header */}
-      <p className="text-[26px] px-6 py-3 font-black text-[#05376D] mb-0.5">
+      <p className="text-lg sm:text-[26px] px-4 sm:px-6 py-3 font-black text-[#05376D] mb-0.5">
         {index}. {t("orderContainer.step3.containerHeader")} {container.size} m³
       </p>
-      <p className="text-[16px] font-semibold px-6 text-[#05376D] mb-4">
+      <p className="text-sm sm:text-[16px] font-semibold px-4 sm:px-6 text-[#05376D] mb-4">
         {container.address}Jaunaudzes iela 4, Jūrmala
       </p>
 
       <div className="h-[2px] w-full bg-[#E4F1FF] "></div>
 
       {/* Fields row */}
-      <div className="flex px-6 py-3 gap-3 flex-wrap">
+      <div className="flex px-4 sm:px-6 py-3 gap-3 flex-wrap">
         {/* Service select */}
         <div className="flex flex-col gap-1 flex-1 min-w-[180px]">
           <label className="text-xs font-semibold text-[#334155]">
-            {t("orderContainer.step3.service")}<span className="text-[#4895E8]">*</span>
+            {t("orderContainer.step3.service")}
+            <span className="text-[#4895E8]">*</span>
           </label>
           <div className="relative">
             <CustomSelect
@@ -97,7 +98,8 @@ function ContainerPeriodCard({
         {/* Date range */}
         <div className="flex flex-col gap-1 flex-1 min-w-[200px]">
           <label className="text-xs font-semibold text-[#334155]">
-            {t("orderContainer.step3.period")}<span className="text-[#4895E8]">*</span>
+            {t("orderContainer.step3.period")}
+            <span className="text-[#4895E8]">*</span>
           </label>
           <DatePicker
             selectsRange={true}
@@ -164,9 +166,11 @@ function OrderSummary({
     SERVICE_OPTIONS.find((o) => o.value === getPeriod(id)?.service)?.label ?? "—";
 
   return (
-    <div className="bg-white rounded-[4px] border border-[#D0DCE8] p-6">
+    <div className="bg-white rounded-[4px] border border-[#D0DCE8] p-4 sm:p-6">
       {/* Title */}
-      <h2 className="text-[32px] font-[900] text-[#05376D] uppercase mb-5">{t("orderContainer.step3.orderDetails")}</h2>
+      <h2 className="text-xl sm:text-[32px] font-[900] text-[#05376D] uppercase mb-3 sm:mb-5">
+        {t("orderContainer.step3.orderDetails")}
+      </h2>
 
       {/* Per container */}
       <div className="space-y-5 mb-6">
@@ -175,7 +179,9 @@ function OrderSummary({
           return (
             <div key={c.id}>
               <div className="flex justify-between items-start mb-1">
-                <span className="text-sm font-bold text-[#000]">{t("orderContainer.step3.containerNumber", { index: i + 1 })}</span>
+                <span className="text-sm font-bold text-[#000]">
+                  {t("orderContainer.step3.containerNumber", { index: i + 1 })}
+                </span>
                 <div className="flex items-center gap-1">
                   <span className="text-sm font-bold text-[#000]">{c.size} m³</span>
                   <button className="text-[#E0E0E0] hover:text-[#4895E8] transition-colors">
@@ -198,11 +204,35 @@ function OrderSummary({
                 </div>
               </div>
               {[
-                { key: "address", label: t("orderContainer.step3.summary.address"), value: c.address },
-                { key: "service", label: t("orderContainer.step3.summary.service"), value: getService(c.id) },
-                p?.dateFrom ? { key: "delivery", label: t("orderContainer.step3.summary.delivery"), value: formatDate(p.dateFrom) } : null,
-                p?.dateTo ? { key: "removal", label: t("orderContainer.step3.summary.removal"), value: formatDate(p.dateTo) } : null,
-                { key: "price", label: t("orderContainer.step3.summary.price"), value: `${BASE_PRICE_PER_CONTAINER.toFixed(2)} €` },
+                {
+                  key: "address",
+                  label: t("orderContainer.step3.summary.address"),
+                  value: c.address,
+                },
+                {
+                  key: "service",
+                  label: t("orderContainer.step3.summary.service"),
+                  value: getService(c.id),
+                },
+                p?.dateFrom
+                  ? {
+                      key: "delivery",
+                      label: t("orderContainer.step3.summary.delivery"),
+                      value: formatDate(p.dateFrom),
+                    }
+                  : null,
+                p?.dateTo
+                  ? {
+                      key: "removal",
+                      label: t("orderContainer.step3.summary.removal"),
+                      value: formatDate(p.dateTo),
+                    }
+                  : null,
+                {
+                  key: "price",
+                  label: t("orderContainer.step3.summary.price"),
+                  value: `${BASE_PRICE_PER_CONTAINER.toFixed(2)} €`,
+                },
               ]
                 .filter(Boolean)
                 .map(({ key, label, value }) => (
@@ -237,12 +267,16 @@ function OrderSummary({
 
       {/* Price breakdown */}
       <div className="border-t border-[#D0DCE8] pt-4">
-        <h3 className="text-[32px] font-[900] text-[#05376D] uppercase mb-3">{t("orderContainer.step3.summary.priceCalc")}</h3>
+        <h3 className="text-xl sm:text-[32px] font-[900] text-[#05376D] uppercase mb-3">
+          {t("orderContainer.step3.summary.priceCalc")}
+        </h3>
         <div className="space-y-1.5">
           {[
             [t("orderContainer.step3.summary.wasteRemoval"), `${subtotal.toFixed(2)} €`],
             [t("orderContainer.step3.summary.rentalFee"), "0.00 €"],
-            ...(promoDiscount > 0 ? [[t("orderContainer.step3.summary.discount"), `${promoDiscount.toFixed(2)} €`]] : []),
+            ...(promoDiscount > 0
+              ? [[t("orderContainer.step3.summary.discount"), `${promoDiscount.toFixed(2)} €`]]
+              : []),
             [t("orderContainer.step3.summary.subtotal"), `${afterDiscount.toFixed(2)} €`],
             [t("orderContainer.step3.summary.vat"), `${vat.toFixed(2)} €`],
           ].map(([label, value]) => (
@@ -252,7 +286,9 @@ function OrderSummary({
             </div>
           ))}
           <div className="flex justify-between border-t border-[#D0DCE8] pt-2 mt-2">
-            <span className="text-sm font-black text-[#05376D]">{t("orderContainer.step3.summary.total")}</span>
+            <span className="text-sm font-black text-[#05376D]">
+              {t("orderContainer.step3.summary.total")}
+            </span>
             <span className="text-sm font-black text-[#05376D]">{total.toFixed(2)} €</span>
           </div>
         </div>
@@ -293,10 +329,10 @@ export function UsagePeriod({ containers, onBack, onNext }: Props) {
 
   return (
     <div className="w-full">
-      <h1 className="text-[58px] sm:text-5xl font-black text-[#1a3c6e] uppercase tracking-tight mb-2">
+      <h1 className="text-[28px] sm:text-[40px] lg:text-[58px] font-black text-[#1a3c6e] uppercase tracking-tight mb-2">
         {t("orderContainer.step3.title")}
       </h1>
-      <div className="flex items-center gap-2 mb-8 text-[#334155] font-semibold text-[20px]">
+      <div className="flex items-center gap-2 mb-4 sm:mb-8 text-[#334155] font-semibold text-sm sm:text-[20px]">
         <span>{t("orderContainer.step3.subtitle")}</span>
         <InfoTooltip variant="red" text={t("orderContainer.tooltip.text")} />
       </div>
@@ -329,8 +365,8 @@ export function UsagePeriod({ containers, onBack, onNext }: Props) {
           })}
 
           {/* Promo code */}
-          <div className="mt-4 bg-[#787878] rounded-[4px] p-5">
-            <p className="text-[26px] font-bold text-[#fff] mb-3">
+          <div className="mt-4 bg-[#787878] rounded-[4px] p-4 sm:p-5">
+            <p className="text-lg sm:text-[26px] font-bold text-[#fff] mb-3">
               {t("orderContainer.step3.promoLabel")}
             </p>
             <div className="relative flex items-center">
@@ -364,7 +400,9 @@ export function UsagePeriod({ containers, onBack, onNext }: Props) {
                 </svg>
               </button>
             </div>
-            {promoError && <p className="text-xs text-red-500 mt-1">{t("orderContainer.step3.promoError")}</p>}
+            {promoError && (
+              <p className="text-xs text-red-500 mt-1">{t("orderContainer.step3.promoError")}</p>
+            )}
             {promoDiscount > 0 && (
               <p className="text-xs text-green-600 font-semibold mt-1">
                 {t("orderContainer.step3.promoSuccess", { amount: promoDiscount.toFixed(2) })}
@@ -381,11 +419,13 @@ export function UsagePeriod({ containers, onBack, onNext }: Props) {
 
       {/* Navigation */}
 
-      <div className="flex gap-3">
+      <div className="flex flex-col sm:flex-row gap-3">
         <button
           onClick={onBack}
-          className={`flex-1 h-[46px] border border-[#4895E8]  font-semibold text-sm rounded-[4px] flex items-center relative transition-colors`}>
-          <span className="absolute left-1/2 -translate-x-1/2 text-[#05376D]">{t("orderContainer.back")}</span>
+          className={`flex-1 min-h-[36px] h-[46px] border border-[#4895E8]  font-semibold text-sm rounded-[4px] flex items-center relative transition-colors`}>
+          <span className="absolute left-1/2 -translate-x-1/2 text-[#05376D]">
+            {t("orderContainer.back")}
+          </span>
           <span className="rotate-180 ml-auto bg-[#4895E8] w-12 h-full absolute left-0 top-0 rounded-r-[4px] flex items-center justify-center">
             <img src={ArrowRightIcon} alt="Next" className="w-5 h-5 brightness-0 invert" />
           </span>
@@ -394,7 +434,7 @@ export function UsagePeriod({ containers, onBack, onNext }: Props) {
         <button
           onClick={() => onNext(periods)}
           // disabled={!canProceed}
-          className={`flex-1 h-[46px] text-white font-semibold text-sm rounded-[4px] flex items-center relative transition-colors
+          className={`flex-1 min-h-[36px] h-[46px] text-white font-semibold text-sm rounded-[4px] flex items-center relative transition-colors
                 ${"bg-[#05376D] hover:bg-[#15305a]"}
                 `}>
           <span className="absolute left-1/2 -translate-x-1/2">{t("orderContainer.next")}</span>

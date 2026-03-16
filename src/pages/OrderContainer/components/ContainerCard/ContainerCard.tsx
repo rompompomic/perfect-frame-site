@@ -17,15 +17,15 @@ export const ContainerCard = ({
   return (
     <div
       onClick={onIncrement}
-      className={`relative max-h-[200px] h-[200px] rounded-[4px] p-4 cursor-pointer transition-all duration-200 select-none
+      className={`relative min-h-[140px] sm:h-[200px] rounded-[4px] p-3 sm:p-4 cursor-pointer transition-all duration-200 select-none flex flex-col
         ${
           isSelected
             ? "bg-[#1a3c6e] text-white shadow-lg"
             : "bg-white text-[#1a3c6e] border border-[#dde8f0] hover:border-[#05376D] hover:shadow-md"
         }`}>
       {/* Size label */}
-      <div className="flex items-start justify-between mb-3">
-        <span className="text-2xl font-black tracking-tight">
+      <div className="flex items-start justify-between mb-2 sm:mb-3">
+        <span className="text-lg sm:text-2xl font-black tracking-tight">
           {container.size} m<sup>3</sup>
         </span>
         <div className={isSelected ? "text-white" : "text-[#7a9ab5]"}>
@@ -34,11 +34,11 @@ export const ContainerCard = ({
       </div>
 
       {/* Container image placeholder */}
-      <div className="w-full flex items-center justify-center mb-3">
+      <div className="w-full flex items-center justify-center mb-2 sm:mb-3 flex-1">
         <img
           src={container.image}
           alt={`Container ${container.size}m³`}
-          className="w-full object-contain max-h-[81px]"
+          className="w-full object-contain max-h-[60px] sm:max-h-[81px]"
         />
       </div>
 
