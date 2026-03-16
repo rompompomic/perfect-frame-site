@@ -1,6 +1,6 @@
-import { InvoicesCloseIcon, InvoicesSendIcon } from "@/components/icons";
 import { DownloadIcon } from "@/components/icons/order-details";
 import { useTranslation } from "react-i18next";
+import sendEmailIcon from "@/assets/icons/send-email.svg";
 
 function SelectionBar({
   count,
@@ -13,24 +13,43 @@ function SelectionBar({
 }) {
   const { t } = useTranslation();
   return (
-    <div className="fixed bottom-6 right-6 z-50 bg-white rounded-[8px] shadow-2xl border border-[#E2E8F0] flex items-center gap-3 px-5 py-3">
-      <span className="text-sm font-bold text-[#05376D]">
-        <span className="text-[#4895E8]">{count}</span> {t("invoices.selection.of")} {total} {t("invoices.selection.selected")}
-      </span>
-      <div className="w-px h-5 bg-[#E2E8F0]" />
-      <button className="flex items-center gap-1.5 bg-[#4895E8] text-white text-[12px] font-semibold px-3 py-2 rounded-[4px] hover:bg-[#3580d0] transition-colors">
-        <InvoicesSendIcon /> {t("invoices.selection.sendEmail")}
+    <div className="fixed bottom-6 right-6 z-50 bg-white rounded-lg border border-primary p-5 flex flex-col gap-5 overflow-hidden">
+      {/* Close button - top right */}
+      <button
+        onClick={onClose}
+        className="absolute top-0 right-0 h-11 px-4 py-3 bg-muted rounded-sm flex items-center justify-center hover:opacity-70 transition-opacity"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M5 5l10 10M15 5L5 15" stroke="hsl(var(--foreground))" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
       </button>
-      {["EXCEL", "CSV", "PDF"].map((fmt) => (
-        <button
-          key={fmt}
-          className="flex items-center gap-1.5 border border-[#D0DCE8] text-[#05376D] text-[12px] font-semibold px-3 py-2 rounded-[4px] hover:border-[#4895E8] hover:bg-[#f0f7ff] transition-colors">
-          <DownloadIcon /> {fmt}
+
+      {/* Count text */}
+      <p className="text-[30px] font-black uppercase leading-8 pr-14">
+        <span className="text-primary">{count} </span>
+        <span className="text-primary/20">{t("invoices.selection.of")} {total} {t("invoices.selection.selected")}</span>
+      </p>
+
+      {/* Action buttons */}
+      <div className="flex items-center gap-4">
+        <button className="h-11 px-4 py-3 bg-primary rounded-sm flex items-center gap-2.5 hover:opacity-90 transition-opacity">
+          <img src={sendEmailIcon} alt="" className="w-5 h-5 brightness-0 invert" />
+          <span className="text-primary-foreground text-base font-semibold leading-6">
+            {t("invoices.selection.sendEmail")}
+          </span>
         </button>
-      ))}
-      <button onClick={onClose} className="ml-1 p-1.5 hover:opacity-60 transition-opacity">
-        <InvoicesCloseIcon />
-      </button>
+        {["EXCEL", "CSV", "PDF"].map((fmt) => (
+          <button
+            key={fmt}
+            className="h-11 px-4 py-3 rounded-sm border border-accent flex items-center gap-2.5 hover:bg-accent/5 transition-colors"
+          >
+            <DownloadIcon />
+            <span className="text-primary text-base font-semibold uppercase leading-6">
+              {fmt}
+            </span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
