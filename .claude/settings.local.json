@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(grep -r \"style.*width\\\\|style.*min-width\\\\|style.*max-width\" /c/Users/ch1cano/Desktop/perfect-frame-site/src --include=*.tsx)",
+      "Bash(grep -r \"w-\\\\|min-w-\\\\|max-w-\" /c/Users/ch1cano/Desktop/perfect-frame-site/src/pages/OrderContainer --include=*.tsx)"
+    ]
+  }
+}

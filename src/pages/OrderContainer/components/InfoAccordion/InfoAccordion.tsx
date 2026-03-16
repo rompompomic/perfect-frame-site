@@ -26,7 +26,7 @@ export const InfoAccordion = ({ category }: { category: Category }) => {
       }`}>
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-5 py-4 text-left font-extrabold text-[#1a3c6e] uppercase tracking-wide text-[26px] transition-colors">
+        className="w-full flex items-center justify-between px-3 sm:px-5 py-3 sm:py-4 text-left font-extrabold text-[#1a3c6e] uppercase tracking-wide text-base sm:text-xl lg:text-[26px] transition-colors">
         {t("orderContainer.step1.accordion.title")}
         <div className={`transition-transform duration-300 ${open ? "rotate-180" : ""}`}>
           <img src={ArrowIcon} alt="Arrow" className="w-4 h-4" />
@@ -37,17 +37,17 @@ export const InfoAccordion = ({ category }: { category: Category }) => {
         className={`transition-all duration-300 ease-in-out ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}>
-        <div className="px-5 pb-5">
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
+        <div className="px-3 sm:px-5 pb-4 sm:pb-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {mockItems.map((item, i) => (
               <div key={i} className="flex w-full flex-col items-start">
                 <img
                   src={MockBetonIcon}
                   alt={item}
-                  className="min-w-[183px] w-full aspect-square"
+                  className="w-full aspect-square"
                 />
-                <div className="border-[2px] border-[#E4F1FF] py-[12px] w-full whitespace-nowrap max-w-[183px] overflow-hidden text-ellipsis">
-                  <span className="text-[16px] p-[12px] w-full  font-bold text-start text-[#000]">
+                <div className="border-[2px] border-[#E4F1FF] py-2 sm:py-[12px] w-full whitespace-nowrap overflow-hidden text-ellipsis">
+                  <span className="text-xs sm:text-[16px] p-2 sm:p-[12px] w-full font-bold text-start text-[#000]">
                     {item}
                   </span>
                 </div>
