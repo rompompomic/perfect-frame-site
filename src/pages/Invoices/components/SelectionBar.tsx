@@ -1,4 +1,4 @@
-import { InvoicesCloseIcon } from "@/components/icons";
+import CloseIcon from "@/assets/icons/close-x.svg";
 import { DownloadIcon } from "@/components/icons/order-details";
 import { useTranslation } from "react-i18next";
 import ShareFatIcon from "@/assets/icons/share-fat.svg";
