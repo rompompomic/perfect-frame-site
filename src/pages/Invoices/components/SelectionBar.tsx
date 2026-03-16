@@ -49,11 +49,11 @@ function SelectionBar({
         </div>
       </div>
 
-      {/* Close button */}
+      {/* Close button - top right corner */}
       <button
         onClick={onClose}
-        className="bg-muted rounded-sm p-3 flex items-center justify-center hover:opacity-60 transition-opacity shrink-0">
-        <InvoicesCloseIcon />
+        className="absolute -top-px -right-px bg-muted rounded-sm p-3 flex items-center justify-center hover:opacity-60 transition-opacity">
+        <img src={CloseIcon} alt="Close" className="w-5 h-5" />
       </button>
     </div>
   );
