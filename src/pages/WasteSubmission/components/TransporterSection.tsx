@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import warningIcon from "@/assets/icons/WarningCircle.svg";
 
 type SenderRole = "payer" | "payerAndTransporter";
 type PermitStatus = "yes" | "no";
