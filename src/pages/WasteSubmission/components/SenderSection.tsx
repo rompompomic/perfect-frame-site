@@ -175,9 +175,9 @@ const SenderSection = () => {
 
             {/* Disabled company info fields */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              <DisabledField label={t("wasteSubmission.sender.companyName")} placeholder="SIA Uzņēmums" />
-              <DisabledField label={t("wasteSubmission.sender.regNumber")} placeholder="40003825499" />
-              <DisabledField label={t("wasteSubmission.sender.vatNumber")} placeholder="LV40003825499" />
+              <DisabledField label={t("wasteSubmission.sender.companyName")} value={legalData.companyName} />
+              <DisabledField label={t("wasteSubmission.sender.regNumber")} value={legalData.regNumber} />
+              <DisabledField label={t("wasteSubmission.sender.vatNumber")} value={legalData.vatNumber} />
             </div>
 
             {/* Editable fields */}
