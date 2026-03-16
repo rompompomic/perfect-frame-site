@@ -5,9 +5,13 @@ import warningIcon from "@/assets/icons/WarningCircle.svg";
 type SenderRole = "payer" | "payerAndTransporter";
 type PermitStatus = "yes" | "no";
 
-const TransporterSection = () => {
+interface TransporterSectionProps {
+  senderRole: SenderRole;
+  onSenderRoleChange: (role: SenderRole) => void;
+}
+
+const TransporterSection = ({ senderRole, onSenderRoleChange }: TransporterSectionProps) => {
   const { t } = useTranslation();
-  const [senderRole, setSenderRole] = useState<SenderRole>("payerAndTransporter");
   const [permitStatus, setPermitStatus] = useState<PermitStatus>("yes");
   const [permitNumber, setPermitNumber] = useState("");
   const [formData, setFormData] = useState({
