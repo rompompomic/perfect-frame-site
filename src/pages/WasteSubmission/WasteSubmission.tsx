@@ -6,6 +6,7 @@ import SenderSection from "./components/SenderSection";
 import WasteCardsSection from "./components/WasteCardsSection";
 import TransporterSection from "./components/TransporterSection";
 import uploadIcon from "@/assets/icons/upload.svg";
+import crossIcon from "@/assets/icons/cross.svg";
 
 const WasteSubmission = () => {
   const { t } = useTranslation();
