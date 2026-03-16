@@ -26,13 +26,13 @@ const TransporterSection = () => {
   };
 
   return (
-    <div className="p-6 sm:p-10 bg-secondary flex flex-col gap-8">
-      <h2 className="text-foreground text-2xl sm:text-3xl font-black uppercase leading-8">
+    <div className="p-4 sm:p-6 md:p-10 bg-secondary flex flex-col gap-6 sm:gap-8">
+      <h2 className="text-foreground text-xl sm:text-2xl md:text-3xl font-black uppercase leading-7 sm:leading-8">
         {t("wasteSubmission.transporter.title")}
       </h2>
 
       {/* Form fields */}
-      <div className="flex flex-col gap-7">
+      <div className="flex flex-col gap-5 sm:gap-7">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <FormField
             label={t("wasteSubmission.transporter.name")}
@@ -72,19 +72,19 @@ const TransporterSection = () => {
         </div>
 
         {/* Sender role radio */}
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row">
           <label
             className="flex items-center gap-2 cursor-pointer"
             onClick={() => setSenderRole("payer")}
           >
-            <div className="w-8 h-8 flex items-center justify-center">
-              <div className="w-5 h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
+            <div className="w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center">
+              <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
                 {senderRole === "payer" && (
-                  <div className="w-2.5 h-2.5 bg-nikami-blue rounded-full" />
+                  <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 bg-nikami-blue rounded-full" />
                 )}
               </div>
             </div>
-            <span className="text-foreground text-base font-bold leading-6">
+            <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
               {t("wasteSubmission.sender.isPayer")}
             </span>
           </label>
@@ -92,14 +92,14 @@ const TransporterSection = () => {
             className="flex items-center gap-2 cursor-pointer"
             onClick={() => setSenderRole("payerAndTransporter")}
           >
-            <div className="w-8 h-8 flex items-center justify-center">
-              <div className="w-5 h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
+            <div className="w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center">
+              <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
                 {senderRole === "payerAndTransporter" && (
-                  <div className="w-2.5 h-2.5 bg-nikami-blue rounded-full" />
+                  <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 bg-nikami-blue rounded-full" />
                 )}
               </div>
             </div>
-            <span className="text-foreground text-base font-bold leading-6">
+            <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
               {t("wasteSubmission.sender.isPayerAndTransporter")}
             </span>
           </label>
@@ -107,30 +107,30 @@ const TransporterSection = () => {
       </div>
 
       {/* Transport permit */}
-      <div className="flex flex-col gap-4">
-        <span className="text-foreground text-base font-bold leading-6">
+      <div className="flex flex-col gap-3 sm:gap-4">
+        <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
           {t("wasteSubmission.transporter.permitLabel")}
           <span className="text-nikami-blue">*</span>
         </span>
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
-          <div className="flex gap-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+          <div className="flex gap-3 sm:gap-4">
             <button
               onClick={() => setPermitStatus("yes")}
-              className={`h-11 px-4 py-3 rounded-xs flex items-center gap-2 ${
+              className={`h-10 sm:h-11 px-3 sm:px-4 py-2 sm:py-3 rounded-xs flex items-center gap-1.5 sm:gap-2 ${
                 permitStatus === "yes"
                   ? "bg-primary"
                   : "border border-primary"
               }`}
             >
-              <div className="w-6 h-6 flex items-center justify-center">
-                <div className="w-4 h-4 rounded-full border border-nikami-blue flex items-center justify-center">
+              <div className="w-5 sm:w-6 h-5 sm:h-6 flex items-center justify-center">
+                <div className="w-3.5 sm:w-4 h-3.5 sm:h-4 rounded-full border border-nikami-blue flex items-center justify-center">
                   {permitStatus === "yes" && (
-                    <div className="w-2 h-2 bg-nikami-blue rounded-full" />
+                    <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-nikami-blue rounded-full" />
                   )}
                 </div>
               </div>
               <span
-                className={`text-base font-semibold leading-6 ${
+                className={`text-sm sm:text-base font-semibold leading-5 sm:leading-6 ${
                   permitStatus === "yes" ? "text-primary-foreground" : "text-primary"
                 }`}
               >
@@ -139,21 +139,21 @@ const TransporterSection = () => {
             </button>
             <button
               onClick={() => setPermitStatus("no")}
-              className={`h-11 px-4 py-3 rounded-xs flex items-center gap-2 ${
+              className={`h-10 sm:h-11 px-3 sm:px-4 py-2 sm:py-3 rounded-xs flex items-center gap-1.5 sm:gap-2 ${
                 permitStatus === "no"
                   ? "bg-primary"
                   : "border border-primary"
               }`}
             >
-              <div className="w-6 h-6 flex items-center justify-center">
-                <div className="w-4 h-4 rounded-full border border-nikami-blue flex items-center justify-center">
+              <div className="w-5 sm:w-6 h-5 sm:h-6 flex items-center justify-center">
+                <div className="w-3.5 sm:w-4 h-3.5 sm:h-4 rounded-full border border-nikami-blue flex items-center justify-center">
                   {permitStatus === "no" && (
-                    <div className="w-2 h-2 bg-nikami-blue rounded-full" />
+                    <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-nikami-blue rounded-full" />
                   )}
                 </div>
               </div>
               <span
-                className={`text-base font-semibold leading-6 ${
+                className={`text-sm sm:text-base font-semibold leading-5 sm:leading-6 ${
                   permitStatus === "no" ? "text-primary-foreground" : "text-primary"
                 }`}
               >
@@ -163,13 +163,13 @@ const TransporterSection = () => {
           </div>
           {permitStatus === "yes" && (
             <div className="flex-1 w-full sm:w-auto">
-              <div className="h-12 pl-5 pr-3 bg-background rounded-xs border border-nikami-blue flex items-center">
+              <div className="h-11 sm:h-12 pl-4 sm:pl-5 pr-3 bg-background rounded-xs border border-nikami-blue flex items-center">
                 <input
                   type="text"
                   value={permitNumber}
                   onChange={(e) => setPermitNumber(e.target.value)}
                   placeholder={t("wasteSubmission.transporter.permitPlaceholder")}
-                  className="flex-1 bg-transparent text-foreground text-base font-medium leading-6 outline-none"
+                  className="flex-1 bg-transparent text-foreground text-sm sm:text-base font-medium leading-5 sm:leading-6 outline-none"
                 />
               </div>
             </div>
@@ -179,13 +179,13 @@ const TransporterSection = () => {
 
       {/* Info notice */}
       <div className="p-3 bg-background flex items-start gap-2.5">
-        <svg className="w-6 h-6 shrink-0 text-nikami-blue mt-0.5" viewBox="0 0 24 24" fill="none">
+        <svg className="w-5 sm:w-6 h-5 sm:h-6 shrink-0 text-nikami-blue mt-0.5" viewBox="0 0 24 24" fill="none">
           <path
             d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
             fill="currentColor"
           />
         </svg>
-        <p className="flex-1 text-foreground text-base font-medium leading-6">
+        <p className="flex-1 text-foreground text-sm sm:text-base font-medium leading-5 sm:leading-6">
           {t("wasteSubmission.transporter.infoNotice")}{" "}
           <span className="text-primary font-bold">svari@nikami.lv</span>.{" "}
           {t("wasteSubmission.transporter.infoNotice2")}
@@ -213,12 +213,12 @@ const FormField = ({
       <span className="text-foreground text-sm font-bold leading-5">{label}</span>
       {required && <span className="text-nikami-blue text-sm font-bold leading-5">*</span>}
     </div>
-    <div className="h-12 pl-5 pr-3 bg-background rounded-xs border border-border flex items-center gap-2.5">
+    <div className="h-11 sm:h-12 pl-4 sm:pl-5 pr-3 bg-background rounded-xs border border-border flex items-center gap-2.5">
       <input
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="flex-1 bg-transparent text-foreground text-base font-medium leading-6 outline-none"
+        className="flex-1 bg-transparent text-foreground text-sm sm:text-base font-medium leading-5 sm:leading-6 outline-none"
       />
       {value && (
         <button onClick={onClear} className="w-6 h-6 flex items-center justify-center text-nikami-blue hover:opacity-70">

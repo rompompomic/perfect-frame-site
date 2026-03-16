@@ -18,7 +18,6 @@ const SenderSection = () => {
   const [personType, setPersonType] = useState<PersonType>("physical");
   const [senderRole, setSenderRole] = useState<SenderRole>("payerAndTransporter");
 
-  // Physical person form
   const [formData, setFormData] = useState({
     name: "",
     personalCode: "",
@@ -26,7 +25,6 @@ const SenderSection = () => {
     email: "",
   });
 
-  // Legal person form
   const [legalSearch, setLegalSearch] = useState("");
   const [legalData, setLegalData] = useState({
     companyName: "",
@@ -55,8 +53,8 @@ const SenderSection = () => {
   };
 
   return (
-    <div className="p-6 sm:p-10 bg-secondary flex flex-col gap-8">
-      <h2 className="text-foreground text-2xl sm:text-3xl font-black uppercase leading-8">
+    <div className="p-4 sm:p-6 md:p-10 bg-secondary flex flex-col gap-6 sm:gap-8">
+      <h2 className="text-foreground text-xl sm:text-2xl md:text-3xl font-black uppercase leading-7 sm:leading-8">
         {t("wasteSubmission.sender.title")}
       </h2>
 
@@ -64,21 +62,21 @@ const SenderSection = () => {
       <div className="inline-flex w-fit border border-primary">
         <button
           onClick={() => setPersonType("physical")}
-          className={`h-11 px-4 py-3 flex items-center gap-2 border-r border-primary ${
+          className={`h-10 sm:h-11 px-3 sm:px-4 py-2 sm:py-3 flex items-center gap-1.5 sm:gap-2 border-r border-primary ${
             personType === "physical" ? "bg-primary" : ""
           }`}
         >
-          <div className="w-6 h-6 flex items-center justify-center">
-            <div className="w-4 h-4 rounded-full border border-nikami-blue">
+          <div className="w-5 sm:w-6 h-5 sm:h-6 flex items-center justify-center">
+            <div className="w-3.5 sm:w-4 h-3.5 sm:h-4 rounded-full border border-nikami-blue">
               {personType === "physical" && (
                 <div className="w-full h-full flex items-center justify-center">
-                  <div className="w-2 h-2 bg-nikami-blue rounded-full" />
+                  <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-nikami-blue rounded-full" />
                 </div>
               )}
             </div>
           </div>
           <span
-            className={`text-base font-semibold leading-6 ${
+            className={`text-sm sm:text-base font-semibold leading-5 sm:leading-6 ${
               personType === "physical" ? "text-primary-foreground" : "text-primary"
             }`}
           >
@@ -87,21 +85,21 @@ const SenderSection = () => {
         </button>
         <button
           onClick={() => setPersonType("legal")}
-          className={`h-11 px-4 py-3 flex items-center gap-2 ${
+          className={`h-10 sm:h-11 px-3 sm:px-4 py-2 sm:py-3 flex items-center gap-1.5 sm:gap-2 ${
             personType === "legal" ? "bg-primary" : ""
           }`}
         >
-          <div className="w-6 h-6 flex items-center justify-center">
-            <div className="w-4 h-4 rounded-full border border-nikami-blue">
+          <div className="w-5 sm:w-6 h-5 sm:h-6 flex items-center justify-center">
+            <div className="w-3.5 sm:w-4 h-3.5 sm:h-4 rounded-full border border-nikami-blue">
               {personType === "legal" && (
                 <div className="w-full h-full flex items-center justify-center">
-                  <div className="w-2 h-2 bg-nikami-blue rounded-full" />
+                  <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-nikami-blue rounded-full" />
                 </div>
               )}
             </div>
           </div>
           <span
-            className={`text-base font-semibold leading-6 ${
+            className={`text-sm sm:text-base font-semibold leading-5 sm:leading-6 ${
               personType === "legal" ? "text-primary-foreground" : "text-primary"
             }`}
           >
@@ -111,9 +109,8 @@ const SenderSection = () => {
       </div>
 
       {/* Form fields */}
-      <div className="flex flex-col gap-7">
+      <div className="flex flex-col gap-5 sm:gap-7">
         {personType === "physical" ? (
-          /* Physical person fields */
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <FormField
               label={t("wasteSubmission.sender.name")}
@@ -145,22 +142,21 @@ const SenderSection = () => {
             />
           </div>
         ) : (
-          /* Legal person fields */
           <div className="flex flex-col gap-3">
             {/* Search field */}
             <div className="flex flex-col gap-0.5">
-              <div className="pl-2.5">
-                <span className="text-foreground text-base font-bold leading-6">
+              <div className="pl-1 sm:pl-2.5">
+                <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
                   {t("wasteSubmission.sender.searchCompany")}*
                 </span>
               </div>
-              <div className="h-12 pl-5 pr-3 bg-background rounded-xs border border-nikami-blue flex items-center gap-2.5">
+              <div className="h-11 sm:h-12 pl-4 sm:pl-5 pr-3 bg-background rounded-xs border border-nikami-blue flex items-center gap-2.5">
                 <SearchIcon />
                 <input
                   type="text"
                   value={legalSearch}
                   onChange={(e) => setLegalSearch(e.target.value)}
-                  className="flex-1 bg-transparent text-foreground text-base font-medium leading-6 outline-none"
+                  className="flex-1 bg-transparent text-foreground text-sm sm:text-base font-medium leading-5 sm:leading-6 outline-none"
                 />
                 {legalSearch && (
                   <button
@@ -174,7 +170,7 @@ const SenderSection = () => {
             </div>
 
             {/* Disabled company info fields */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
               <DisabledField label={t("wasteSubmission.sender.companyName")} value={legalData.companyName} />
               <DisabledField label={t("wasteSubmission.sender.regNumber")} value={legalData.regNumber} />
               <DisabledField label={t("wasteSubmission.sender.vatNumber")} value={legalData.vatNumber} />
@@ -217,19 +213,19 @@ const SenderSection = () => {
         )}
 
         {/* Sender role radio */}
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row">
           <label
             className="flex items-center gap-2 cursor-pointer"
             onClick={() => setSenderRole("payer")}
           >
-            <div className="w-8 h-8 flex items-center justify-center">
-              <div className="w-5 h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
+            <div className="w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center">
+              <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
                 {senderRole === "payer" && (
-                  <div className="w-2.5 h-2.5 bg-nikami-blue rounded-full" />
+                  <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 bg-nikami-blue rounded-full" />
                 )}
               </div>
             </div>
-            <span className="text-foreground text-base font-bold leading-6">
+            <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
               {t("wasteSubmission.sender.isPayer")}
             </span>
           </label>
@@ -237,14 +233,14 @@ const SenderSection = () => {
             className="flex items-center gap-2 cursor-pointer"
             onClick={() => setSenderRole("payerAndTransporter")}
           >
-            <div className="w-8 h-8 flex items-center justify-center">
-              <div className="w-5 h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
+            <div className="w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center">
+              <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
                 {senderRole === "payerAndTransporter" && (
-                  <div className="w-2.5 h-2.5 bg-nikami-blue rounded-full" />
+                  <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 bg-nikami-blue rounded-full" />
                 )}
               </div>
             </div>
-            <span className="text-foreground text-base font-bold leading-6">
+            <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
               {t("wasteSubmission.sender.isPayerAndTransporter")}
             </span>
           </label>
@@ -273,12 +269,12 @@ const FormField = ({
       <span className="text-foreground text-sm font-bold leading-5">{label}</span>
       {required && <span className="text-nikami-blue text-sm font-bold leading-5">*</span>}
     </div>
-    <div className="h-12 pl-5 pr-3 bg-background rounded-xs border border-border flex items-center gap-2.5">
+    <div className="h-11 sm:h-12 pl-4 sm:pl-5 pr-3 bg-background rounded-xs border border-border flex items-center gap-2.5">
       <input
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="flex-1 bg-transparent text-foreground text-base font-medium leading-6 outline-none"
+        className="flex-1 bg-transparent text-foreground text-sm sm:text-base font-medium leading-5 sm:leading-6 outline-none"
       />
       {value && (
         <button onClick={onClear} className="w-6 h-6 flex items-center justify-center text-nikami-blue hover:opacity-70">
@@ -301,13 +297,13 @@ const DisabledField = ({
     <div className="pl-1">
       <span className="text-foreground text-sm font-bold leading-5">{label}</span>
     </div>
-    <div className="h-12 pl-5 pr-3 bg-background rounded-xs border border-border flex items-center gap-2.5">
+    <div className="h-11 sm:h-12 pl-4 sm:pl-5 pr-3 bg-background rounded-xs border border-border flex items-center gap-2.5">
       <input
         type="text"
         disabled
         value={value}
         placeholder="—"
-        className="flex-1 bg-transparent text-muted-foreground text-base font-medium leading-6 outline-none cursor-not-allowed placeholder:text-muted-foreground/50"
+        className="flex-1 bg-transparent text-muted-foreground text-sm sm:text-base font-medium leading-5 sm:leading-6 outline-none cursor-not-allowed placeholder:text-muted-foreground/50"
       />
     </div>
   </div>
