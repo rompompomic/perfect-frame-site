@@ -5,6 +5,7 @@ import WeChatButton from "@/components/WeChatButton";
 import SenderSection from "./components/SenderSection";
 import WasteCardsSection from "./components/WasteCardsSection";
 import TransporterSection from "./components/TransporterSection";
+import PayerSection from "./components/PayerSection";
 import uploadIcon from "@/assets/icons/upload.svg";
 import crossIcon from "@/assets/icons/cross.svg";
 
