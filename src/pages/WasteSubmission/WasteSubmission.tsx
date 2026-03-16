@@ -5,6 +5,7 @@ import WeChatButton from "@/components/WeChatButton";
 import SenderSection from "./components/SenderSection";
 import WasteCardsSection from "./components/WasteCardsSection";
 import TransporterSection from "./components/TransporterSection";
+import PayerSection from "./components/PayerSection";
 import uploadIcon from "@/assets/icons/upload.svg";
 import crossIcon from "@/assets/icons/cross.svg";
 
@@ -16,6 +17,7 @@ const WasteSubmission = () => {
   const [photos, setPhotos] = useState<{ file: File; preview: string }[]>([]);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [marketingAccepted, setMarketingAccepted] = useState(false);
+  const [senderRole, setSenderRole] = useState<"payer" | "payerAndTransporter">("payerAndTransporter");
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -141,7 +143,10 @@ const WasteSubmission = () => {
           </div>
 
           {/* Transporter */}
-          <TransporterSection />
+          <TransporterSection senderRole={senderRole} onSenderRoleChange={setSenderRole} />
+
+          {/* Payer - shown when sender is only payer (not also transporter) */}
+          {senderRole === "payer" && <PayerSection />}
 
           {/* Consent checkboxes */}
           <div className="flex flex-col gap-3">

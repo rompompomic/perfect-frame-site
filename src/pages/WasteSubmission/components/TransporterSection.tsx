@@ -5,9 +5,13 @@ import warningIcon from "@/assets/icons/WarningCircle.svg";
 type SenderRole = "payer" | "payerAndTransporter";
 type PermitStatus = "yes" | "no";
 
-const TransporterSection = () => {
+interface TransporterSectionProps {
+  senderRole: SenderRole;
+  onSenderRoleChange: (role: SenderRole) => void;
+}
+
+const TransporterSection = ({ senderRole, onSenderRoleChange }: TransporterSectionProps) => {
   const { t } = useTranslation();
-  const [senderRole, setSenderRole] = useState<SenderRole>("payerAndTransporter");
   const [permitStatus, setPermitStatus] = useState<PermitStatus>("yes");
   const [permitNumber, setPermitNumber] = useState("");
   const [formData, setFormData] = useState({
@@ -69,7 +73,7 @@ const TransporterSection = () => {
         <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row">
           <label
             className="flex items-center gap-2 cursor-pointer"
-            onClick={() => setSenderRole("payer")}
+            onClick={() => onSenderRoleChange("payer")}
           >
             <div className="w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center">
               <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
@@ -84,7 +88,7 @@ const TransporterSection = () => {
           </label>
           <label
             className="flex items-center gap-2 cursor-pointer"
-            onClick={() => setSenderRole("payerAndTransporter")}
+            onClick={() => onSenderRoleChange("payerAndTransporter")}
           >
             <div className="w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center">
               <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
