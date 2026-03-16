@@ -60,7 +60,7 @@ export default function InvoicesPage() {
 
           {payed.length > 0 && (
             <section>
-              <h2 className="text-[32px] font-black text-[#000] uppercase tracking-wide mb-3">
+              <h2 className="text-[20px] sm:text-[26px] lg:text-[32px] font-black text-foreground uppercase tracking-wide mb-3">
                 {t("invoices.paid")}
               </h2>
               <div className="flex flex-col gap-2">
