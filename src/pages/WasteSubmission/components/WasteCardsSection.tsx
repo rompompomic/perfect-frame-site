@@ -43,12 +43,12 @@ const WasteCardsSection = () => {
           {cards.map((card, idx) => (
             <div
               key={idx}
-              className="min-h-[120px] sm:h-32 border-2 border-secondary flex items-stretch relative"
+              className="border-2 border-secondary flex flex-col sm:flex-row sm:h-32 items-stretch relative"
             >
               <img
                 src={card.img}
                 alt={t(card.titleKey)}
-                className="w-24 sm:w-32 h-full object-cover shrink-0"
+                className="w-full h-40 sm:w-32 sm:h-full object-cover shrink-0"
               />
               <div className="flex-1 p-3 sm:p-5 flex items-start gap-3 sm:gap-5 min-w-0">
                 <div className="flex-1 flex flex-col justify-between h-full gap-2 sm:gap-3 min-w-0">
