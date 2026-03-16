@@ -95,11 +95,22 @@ const WasteSubmission = () => {
             </div>
 
             {/* Photo upload */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
+            <div className="flex flex-col sm:flex-row items-start gap-5">
               <div className="flex flex-col gap-0.5">
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  onChange={handlePhotoUpload}
+                  className="hidden"
+                  id="photo-upload"
+                />
                 <button
-                  onClick={handlePhotoUpload}
-                  className="px-6 sm:px-8 py-3 rounded-xs border border-nikami-blue flex items-center gap-2.5 hover:opacity-80 transition-opacity"
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={photos.length >= 5}
+                  className="px-8 py-3 rounded-xs border border-nikami-blue flex items-center gap-2.5 cursor-pointer hover:bg-nikami-light-blue transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <img src={uploadIcon} alt="" className="w-5 h-5" />
                   <span className="text-primary text-sm sm:text-base font-semibold leading-6">
@@ -110,25 +121,24 @@ const WasteSubmission = () => {
                   {t("wasteSubmission.photoLimit")}
                 </span>
               </div>
-              {photos.length > 0 && (
-                <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
-                  {photos.map((photo, i) => (
-                    <div key={i} className="w-11 h-11 relative">
-                      <img
-                        src={photo}
-                        alt=""
-                        className="w-11 h-11 rounded-xs object-cover"
-                      />
-                      <button
-                        onClick={() => removePhoto(i)}
-                        className="absolute -top-1 -right-1 w-5 h-4 bg-nikami-blue rounded-xs flex items-center justify-center"
-                      >
-                        <span className="text-primary-foreground text-xs">✕</span>
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              )}
+              <div className="flex items-center gap-2 flex-wrap">
+                {photos.map((photo, index) => (
+                  <div key={index} className="relative w-12 h-12 rounded-sm overflow-hidden border border-muted-foreground/20">
+                    <img
+                      src={photo.preview}
+                      alt={`Upload ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => removePhoto(index)}
+                      className="absolute -top-0.5 -right-0.5 w-5 h-4 bg-nikami-blue rounded-sm flex items-center justify-center"
+                    >
+                      <img src={crossIcon} alt="Remove" className="w-2.5 h-2.5" />
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
