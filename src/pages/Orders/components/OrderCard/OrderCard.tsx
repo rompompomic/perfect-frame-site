@@ -89,7 +89,7 @@ export const OrderCard: FC<OrderCardProps> = ({ order, navigate }) => {
       </div>
 
       {/* Actions */}
-      <div className="px-4 md:px-5 py-3 md:py-[14px] border-t border-muted grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-[10px]">
+      <div className="px-4 md:px-5 py-3 md:py-[14px] border-t border-muted grid grid-cols-1 sm:grid-cols-4 gap-2 md:gap-[10px]">
         <button
           onClick={() => navigate(`/order/${order.id}`)}
           className="bg-primary text-primary-foreground font-bold text-xs md:text-[13px] py-2.5 rounded-sm hover:bg-primary/90 transition-colors cursor-pointer">
@@ -101,7 +101,7 @@ export const OrderCard: FC<OrderCardProps> = ({ order, navigate }) => {
         <button className="border border-accent text-primary font-semibold text-xs md:text-[13px] py-2.5 rounded-sm hover:bg-secondary transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
           <DownloadIcon /> {t("orders.card.receipt")}
         </button>
-        <button className="bg-accent text-accent-foreground font-bold text-xs md:text-[13px] py-2.5 rounded-md hover:bg-accent/80 transition-colors flex items-center justify-center gap-1.5 cursor-pointer col-span-2 sm:col-span-1">
+        <button className="bg-accent text-accent-foreground font-bold text-xs md:text-[13px] py-2.5 rounded-md hover:bg-accent/80 transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
           <ReorderIcon /> {t("orders.card.reorder")}
         </button>
       </div>
