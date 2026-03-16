@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import WeChatButton from "@/components/WeChatButton";
