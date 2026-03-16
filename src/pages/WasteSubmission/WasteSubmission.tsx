@@ -10,31 +10,31 @@ import crossIcon from "@/assets/icons/cross.svg";
 
 const WasteSubmission = () => {
   const { t } = useTranslation();
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [materialsAcknowledged, setMaterialsAcknowledged] = useState(false);
   const [notes, setNotes] = useState("");
-  const [photos, setPhotos] = useState<string[]>([]);
+  const [photos, setPhotos] = useState<{ file: File; preview: string }[]>([]);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [marketingAccepted, setMarketingAccepted] = useState(false);
 
-  const handlePhotoUpload = () => {
-    const input = document.createElement("input");
-    input.type = "file";
-    input.accept = "image/*";
-    input.multiple = true;
-    input.onchange = (e) => {
-      const files = (e.target as HTMLInputElement).files;
-      if (files) {
-        const newPhotos = Array.from(files)
-          .slice(0, 5 - photos.length)
-          .map((f) => URL.createObjectURL(f));
-        setPhotos((prev) => [...prev, ...newPhotos].slice(0, 5));
-      }
-    };
-    input.click();
+  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files) return;
+    const newPhotos = Array.from(files)
+      .slice(0, 5 - photos.length)
+      .map((file) => ({
+        file,
+        preview: URL.createObjectURL(file),
+      }));
+    setPhotos((prev) => [...prev, ...newPhotos].slice(0, 5));
+    if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
   const removePhoto = (index: number) => {
-    setPhotos((prev) => prev.filter((_, i) => i !== index));
+    setPhotos((prev) => {
+      URL.revokeObjectURL(prev[index].preview);
+      return prev.filter((_, i) => i !== index);
+    });
   };
 
   return (
