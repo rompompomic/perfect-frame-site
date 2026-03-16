@@ -6,6 +6,8 @@ type SenderRole = "payer" | "payerAndTransporter";
 
 interface SenderSectionProps {
   onPersonTypeChange?: (type: PersonType) => void;
+  senderRole: SenderRole;
+  onSenderRoleChange: (role: SenderRole) => void;
 }
 
 const SearchIcon = () => (
@@ -17,10 +19,9 @@ const SearchIcon = () => (
   </svg>
 );
 
-const SenderSection = ({ onPersonTypeChange }: SenderSectionProps) => {
+const SenderSection = ({ onPersonTypeChange, senderRole, onSenderRoleChange }: SenderSectionProps) => {
   const { t } = useTranslation();
   const [personType, setPersonType] = useState<PersonType>("physical");
-  const [senderRole, setSenderRole] = useState<SenderRole>("payerAndTransporter");
 
   const [formData, setFormData] = useState({
     name: "",
