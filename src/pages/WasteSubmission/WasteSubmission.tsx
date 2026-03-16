@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import WeChatButton from "@/components/WeChatButton";
 import SenderSection from "./components/SenderSection";
+import PayerSection from "./components/PayerSection";
 import WasteCardsSection from "./components/WasteCardsSection";
 import TransporterSection from "./components/TransporterSection";
 import uploadIcon from "@/assets/icons/upload.svg";
