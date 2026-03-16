@@ -144,6 +144,9 @@ const WasteSubmission = () => {
             </div>
           </div>
 
+          {/* Payer section - only for legal person */}
+          {personType === "legal" && <PayerSection />}
+
           {/* Transporter */}
           <TransporterSection />
 
