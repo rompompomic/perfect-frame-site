@@ -1,4 +1,4 @@
-import { InvoicesCloseIcon } from "@/components/icons";
+import CloseIcon from "@/assets/icons/close-x.svg";
 import { DownloadIcon } from "@/components/icons/order-details";
 import { useTranslation } from "react-i18next";
 import ShareFatIcon from "@/assets/icons/share-fat.svg";
@@ -14,7 +14,7 @@ function SelectionBar({
 }) {
   const { t } = useTranslation();
   return (
-    <div className="fixed bottom-6 right-6 z-50 bg-background border border-nikami-blue p-5 inline-flex items-start gap-5 shadow-2xl">
+    <div className="fixed bottom-6 right-6 z-50 bg-background border border-nikami-blue p-5 inline-flex items-start gap-5 shadow-2xl relative">
       {/* Content */}
       <div className="flex flex-col gap-5">
         {/* Title */}
@@ -49,11 +49,11 @@ function SelectionBar({
         </div>
       </div>
 
-      {/* Close button */}
+      {/* Close button - top right corner */}
       <button
         onClick={onClose}
-        className="bg-muted rounded-sm p-3 flex items-center justify-center hover:opacity-60 transition-opacity shrink-0">
-        <InvoicesCloseIcon />
+        className="absolute -top-px -right-px bg-muted rounded-sm p-3 flex items-center justify-center hover:opacity-60 transition-opacity">
+        <img src={CloseIcon} alt="Close" className="w-5 h-5" />
       </button>
     </div>
   );
