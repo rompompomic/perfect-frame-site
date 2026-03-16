@@ -58,15 +58,18 @@ export const PositionCard: FC<PositionCardProps> = ({
 
   return (
     <div
-      className={`rounded-[8px] overflow-hidden border border-[#dde8f5] ${
-        isCart ? "bg-white" : "bg-[#e8f1fb]"
-      }`}>
+      className={`overflow-hidden rounded-lg border border-border ${
+        isCart ? "bg-card" : "bg-secondary"
+      }`}
+    >
+      {/* Header - always visible */}
       <div
-        className="flex items-center justify-between px-[20px] py-[14px] cursor-pointer"
-        onClick={() => setOpen(!open)}>
-        <div>
-          <p className="font-black text-[#05376d] text-[18px] tracking-tight">{position.address}</p>
-          <div className="flex items-center gap-[10px] mt-[5px] flex-wrap">
+        className="flex items-center justify-between gap-3 px-3 py-3 cursor-pointer sm:px-5 sm:py-3.5"
+        onClick={() => setOpen(!open)}
+      >
+        <div className="min-w-0 flex-1">
+          <p className="truncate text-base font-black tracking-tight text-primary sm:text-lg">{position.address}</p>
+          <div className="mt-1 flex flex-wrap items-center gap-1.5 sm:gap-2.5">
             {[
               { icon: <TimeIcon />, value: position.date },
               { icon: <OrderDetailsContainerIcon />, value: position.container },
@@ -74,13 +77,15 @@ export const PositionCard: FC<PositionCardProps> = ({
             ].map(({ icon, value }) => (
               <span
                 key={value}
-                className={`flex rounded-[2px] pr-[6px] border items-center gap-[6px] font-semibold text-[#05376D] text-[12px] ${
-                  isCart ? "border-[#dde8f5]" : "border-[#fff]"
-                }`}>
+                className={`flex items-center gap-1.5 rounded-sm border pr-1.5 text-xs font-semibold text-primary ${
+                  isCart ? "border-border" : "border-card"
+                }`}
+              >
                 <span
-                  className={`flex items-center justify-center w-[26px] h-[26px] rounded-[2px] shrink-0 ${
-                    isCart ? "bg-[#E4F1FF]" : "bg-[#fff]"
-                  }`}>
+                  className={`flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-sm ${
+                    isCart ? "bg-secondary" : "bg-card"
+                  }`}
+                >
                   {icon}
                 </span>
                 {value}
@@ -90,18 +95,21 @@ export const PositionCard: FC<PositionCardProps> = ({
         </div>
 
         <motion.div
-          className="border border-[#4895E8] flex items-center justify-center w-[44px] h-[38px] rounded-[2px] shrink-0"
+          className="flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-sm border border-accent sm:w-[44px]"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          transition={{ duration: 0.2 }}>
+          transition={{ duration: 0.2 }}
+        >
           <motion.div
             animate={{ rotate: open ? 0 : 180 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}>
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
             <ChevronUpIcon />
           </motion.div>
         </motion.div>
       </div>
 
+      {/* Expandable details */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -109,73 +117,78 @@ export const PositionCard: FC<PositionCardProps> = ({
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden">
+            className="overflow-hidden"
+          >
             <motion.div
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.2, delay: 0.1 }}
-              className="mx-[12px] mb-[12px] bg-white border border-[#dde8f5] rounded-[6px] divide-y divide-[#dde8f5]">
+              className="mx-3 mb-3 divide-y divide-border overflow-hidden rounded-md border border-border bg-card"
+            >
               {/* Delivery address */}
-              <div className="flex items-center gap-[12px] px-[16px] py-[13px]">
-                <div className="w-[36px] h-[36px] bg-[#E4F1FF] rounded-[6px] flex items-center justify-center shrink-0">
+              <div className="flex items-center gap-3 px-3 py-3 sm:px-4">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-secondary">
                   <OrderDetailsLocationIcon />
                 </div>
-                <div>
-                  <p className="text-[#94a3b8] text-[11px] font-semibold uppercase tracking-wide mb-[2px]">
+                <div className="min-w-0">
+                  <p className="mb-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
                     {t("orderDetail.position.deliveryAddress")}
                   </p>
-                  <p className="text-[#1e293b] text-[13px] font-medium">
+                  <p className="break-words text-[13px] font-medium text-foreground">
                     {position.deliveryAddress}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-[12px] px-[16px] py-[13px]">
-                <div className="w-[36px] h-[36px] bg-[#E4F1FF] rounded-[6px] flex items-center justify-center shrink-0">
+              {/* Container */}
+              <div className="flex items-center gap-3 px-3 py-3 sm:px-4">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-secondary">
                   <OrderDetailsContainerIcon />
                 </div>
-                <div>
-                  <p className="text-[#94a3b8] text-[11px] font-semibold uppercase tracking-wide mb-[2px]">
+                <div className="min-w-0">
+                  <p className="mb-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
                     {t("orderDetail.position.container")}
                   </p>
-                  <p className="text-[#1e293b] text-[13px] font-medium">{position.containerSize}</p>
+                  <p className="text-[13px] font-medium text-foreground">{position.containerSize}</p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 divide-x divide-[#dde8f5]">
+              {/* Dates — stack on mobile, 3-col on sm+ */}
+              <div className="grid grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
                 {[
                   { label: t("orderDetail.position.orderedAt"), value: position.orderedAt },
                   { label: t("orderDetail.position.pickupAt"), value: position.pickupAt },
                   { label: t("orderDetail.position.deliverAt"), value: position.deliverAt },
                 ].map(({ label, value }) => (
-                  <div key={label} className="flex items-center gap-[10px] px-[14px] py-[13px]">
-                    <div className="w-[36px] h-[36px] bg-[#E4F1FF] rounded-[6px] flex items-center justify-center shrink-0">
+                  <div key={label} className="flex items-center gap-2.5 px-3 py-3 sm:px-3.5">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-secondary">
                       <TimeIcon />
                     </div>
-                    <div>
-                      <p className="text-[#94a3b8] text-[11px] font-semibold uppercase tracking-wide mb-[2px]">
+                    <div className="min-w-0">
+                      <p className="mb-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
                         {label}
                       </p>
-                      <p className="text-[#1e293b] text-[13px] font-medium">{value}</p>
+                      <p className="text-[13px] font-medium text-foreground">{value}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
+              {/* Promo */}
               {position.promo && (
-                <div className="flex items-center gap-[12px] px-[16px] py-[13px]">
-                  <div className="w-[36px] h-[36px] bg-[#E4F1FF] rounded-[6px] flex items-center justify-center shrink-0">
+                <div className="flex items-center gap-3 px-3 py-3 sm:px-4">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-secondary">
                     <PromoIcon />
                   </div>
-                  <div>
-                    <p className="text-[#94a3b8] text-[11px] font-semibold uppercase tracking-wide mb-[2px]">
+                  <div className="min-w-0">
+                    <p className="mb-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
                       {t("orderDetail.position.promoUsed")}
                     </p>
-                    <div className="flex items-center gap-[8px] flex-wrap">
-                      <p className="text-[#1e293b] text-[13px] font-medium">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="text-[13px] font-medium text-foreground">
                         {position.promo.split(" NEWYEAR")[0]}
                       </p>
-                      <span className="border border-dashed border-[#94a3b8] text-[#64748b] text-[11px] font-bold px-[8px] py-[2px] rounded">
+                      <span className="rounded border border-dashed border-muted-foreground px-2 py-0.5 text-[11px] font-bold text-muted-foreground">
                         NEWYEAR2026
                       </span>
                     </div>
@@ -183,24 +196,26 @@ export const PositionCard: FC<PositionCardProps> = ({
                 </div>
               )}
 
-              <div className="flex items-center gap-[12px] px-[16px] py-[13px]">
-                <div className="w-[36px] h-[36px] bg-[#E4F1FF] rounded-[6px] flex items-center justify-center shrink-0">
+              {/* Rental days */}
+              <div className="flex items-center gap-3 px-3 py-3 sm:px-4">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-secondary">
                   <RentalIcon />
                 </div>
-                <div>
-                  <p className="text-[#94a3b8] text-[11px] font-semibold uppercase tracking-wide mb-[2px]">
+                <div className="min-w-0">
+                  <p className="mb-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
                     {t("orderDetail.position.rentalDays")}
                   </p>
-                  <p className="text-[#1e293b] text-[13px] font-medium">{position.rentalDays}</p>
+                  <p className="text-[13px] font-medium text-foreground">{position.rentalDays}</p>
                 </div>
               </div>
             </motion.div>
 
-            <div className="mx-[12px] mb-[12px]">
-              <p className="text-[#000] text-[12px] font-semibold mb-[6px]">{t("orderDetail.position.comments")}</p>
+            {/* Comments */}
+            <div className="mx-3 mb-3">
+              <p className="mb-1.5 text-xs font-semibold text-foreground">{t("orderDetail.position.comments")}</p>
               <textarea
                 placeholder="Some comments..."
-                className="w-full bg-white border border-[#dde8f5] rounded-[6px] p-[12px] min-h-[70px] text-[#334155] text-[13px] focus:outline-none focus:border-[#4895E8] transition-colors resize-none"
+                className="min-h-[70px] w-full resize-none rounded-md border border-border bg-card p-3 text-[13px] text-foreground transition-colors focus:border-accent focus:outline-none"
               />
             </div>
           </motion.div>
