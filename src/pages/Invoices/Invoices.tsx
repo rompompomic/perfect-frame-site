@@ -32,8 +32,8 @@ export default function InvoicesPage() {
         <Navbar variant="light" />
       </div>
       <div className="min-h-screen bg-[#F1F5F9]">
-        <div className="max-w-[1200px] mx-auto px-6 py-7">
-          <h1 className="text-[52px] font-black text-[#05376D] uppercase tracking-tight mb-8">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-5 sm:py-7">
+          <h1 className="text-[28px] sm:text-[40px] lg:text-[52px] font-black text-primary uppercase tracking-tight mb-5 sm:mb-8">
             {t("invoices.title")}
           </h1>
 
