@@ -199,7 +199,7 @@ const WasteSubmission = () => {
         </div>
       </section>
       <WeChatButton />
-    </MainLayout>
+    </div>
   );
 };
 
