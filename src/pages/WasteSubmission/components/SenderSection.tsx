@@ -292,18 +292,18 @@ const FormField = ({
 /* Disabled/read-only field for company info */
 const DisabledField = ({
   label,
-  placeholder,
+  value,
 }: {
   label: string;
-  placeholder: string;
+  value: string;
 }) => (
   <div className="flex flex-col gap-0.5">
     <div className="pl-1">
       <span className="text-foreground text-sm font-bold leading-5">{label}</span>
     </div>
     <div className="h-12 pl-5 pr-3 bg-background rounded-xs border border-border flex items-center gap-2.5">
-      <span className="flex-1 text-muted-foreground text-base font-medium leading-6">
-        {placeholder}
+      <span className={`flex-1 text-base font-medium leading-6 ${value ? "text-muted-foreground" : "text-muted-foreground/50"}`}>
+        {value || "—"}
       </span>
     </div>
   </div>
