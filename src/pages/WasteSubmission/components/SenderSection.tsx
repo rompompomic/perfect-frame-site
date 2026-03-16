@@ -26,6 +26,7 @@ const SenderSection = ({ onPersonTypeChange }: SenderSectionProps) => {
     name: "",
     personalCode: "",
     phone: "",
+    email: "",
   });
 
   const [legalSearch, setLegalSearch] = useState("");
