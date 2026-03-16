@@ -52,7 +52,7 @@ const WasteSubmission = () => {
           </h1>
 
           {/* Sender */}
-          <SenderSection />
+          <SenderSection onPersonTypeChange={setPersonType} />
 
           {/* Waste Cards inside sender box */}
           <div className="p-4 sm:p-6 md:p-10 bg-secondary flex flex-col gap-6 sm:gap-8">
