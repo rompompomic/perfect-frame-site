@@ -239,28 +239,4 @@ const FormField = ({
   </div>
 );
 
-/* Disabled/read-only field for company info */
-const DisabledField = ({
-  label,
-  value,
-}: {
-  label: string;
-  value: string;
-}) => (
-  <div className="flex flex-col gap-0.5">
-    <div className="pl-1">
-      <span className="text-foreground text-sm font-bold leading-5">{label}</span>
-    </div>
-    <div className="h-11 sm:h-12 pl-4 sm:pl-5 pr-3 bg-background rounded-xs border border-border flex items-center gap-2.5">
-      <input
-        type="text"
-        disabled
-        value={value}
-        placeholder="—"
-        className="flex-1 bg-transparent text-muted-foreground text-sm sm:text-base font-medium leading-5 sm:leading-6 outline-none cursor-not-allowed placeholder:text-muted-foreground/50"
-      />
-    </div>
-  </div>
-);
-
 export default SenderSection;
