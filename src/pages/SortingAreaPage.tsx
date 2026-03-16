@@ -103,7 +103,7 @@ const WasteCardsSection = () => {
           {t("sortingAreaPage.cards.noticeText")}
         </p>
         <button
-          onClick={() => navigate("/sanemt-piedavajumu")}
+          onClick={() => navigate("/atkritumu-nodosana")}
           className="w-full px-4 py-3 bg-primary rounded-sm text-primary-foreground text-base font-semibold leading-6 hover:opacity-90 transition-opacity"
         >
           {t("sortingAreaPage.cards.cta")}

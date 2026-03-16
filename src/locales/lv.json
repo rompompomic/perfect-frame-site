@@ -899,5 +899,75 @@
     "privacyLink": "privātuma politikai",
     "marketing": "Par piekrītu, ka manu e-pastu izmanto mārketinga aktivitātēm",
     "submit": "Nosūtīt pieteikumu"
+  },
+  "wasteSubmission": {
+    "title": "Pieteikt atkritumu nodošanu.",
+    "sender": {
+      "title": "Nosūtītājs",
+      "physical": "Fiziska persona",
+      "legal": "Juridiska persona",
+      "name": "Vārds, uzvārds",
+      "personalCode": "Personas kods",
+      "phone": "Telefona numurs",
+      "email": "E-pasts",
+      "isPayer": "Nosūtītājs ir Maksātājs",
+      "isPayerAndTransporter": "Nosūtītājs ir Maksātājs un Pārvadātājs"
+    },
+    "wasteCards": {
+      "title": "Šķirošanas laukumā pieņemam:",
+      "noticeTitle": "Ievērībai!",
+      "noticeText": "Šķirošanas laukumā pieņemam jebkuru atkritumu daudzumu, taču jāņem vērā, ka tiek piemērota minimālā maksa par 250 kg — tas nozīmē, ka arī tad, ja atvedat 1 kg atkritumu, maksa būs kā par 250 kg.",
+      "materialsList": "Materiālu saraksts",
+      "withVat": "ar PVN",
+      "free": "bezmaksas",
+      "concrete": {
+        "title": "Monolītas betona un dzelzsbetona konstrukcijas",
+        "materials": "Betona bloki, dzelzsbetona plātnes, pamatu elementi u.c."
+      },
+      "bulky": {
+        "title": "Lielgabarīta atkritumi",
+        "materials": "Mēbeles, sadzīves tehnika, lieli priekšmeti u.c."
+      },
+      "clean": {
+        "title": "Tīri būvniecības atkritumi",
+        "materials": "Ķieģeļi, flīzes, keramika, betona gabali u.c."
+      },
+      "wood": {
+        "title": "Būvniecības atkritumi no koka",
+        "materials": "Koka konstrukcijas, dēļi, paletes u.c."
+      },
+      "mixed": {
+        "title": "Jaukti, nešķiroti būvniecības atkritumi",
+        "materials": "Dažādi būvniecības atkritumi, kas nav šķiroti."
+      },
+      "electronics": {
+        "title": "Elektrotehnikas un sadzīves tehnikas nodošana",
+        "materials": "Datori, monitori, sadzīves tehnika u.c."
+      }
+    },
+    "materialsAck": "Esmu iepazinies ar informāciju",
+    "materialsAckLink": "''kādus materiālus šķirošanas laukums pieņem''",
+    "notes": "Piezīmes",
+    "notesPlaceholder": "Ja izvēlējāties ''Cits'' atkritumu veidu, aprakstiet, no kā atkritumi sastāv. Neatkarīgi no izvēlētās atkritumu klases, vēlams arī minēt, kāds ir aptuvenais apjoms, vai kubikmetros, vai svarā. Iespējams arī pievienot attēlus ar nododamajiem atkritumiem.",
+    "uploadPhoto": "Augšupielādēt fotoattēlu",
+    "photoLimit": "*Līdz 5 fotoattēliem",
+    "transporter": {
+      "title": "Pārvadātājs",
+      "name": "Vārds, uzvārds / Uzņēmuma nosaukums",
+      "personalCode": "Personas kods / Reģistrācijas nr.",
+      "phone": "Telefona numurs",
+      "email": "E-pasts",
+      "vehicleNumber": "Transportlīdzekļa reģistrācijas numurs",
+      "permitLabel": "Atkritumu pārvadāšanas atļauja",
+      "permitYes": "Ir",
+      "permitNo": "Nav",
+      "permitPlaceholder": "Atļaujas numurs",
+      "infoNotice": "Stundu pirms būvgružu vešanas, lūdzu, nosūtiet transportlīdzekļa numuru, iekraušanas adresi un atkritumu veida klasi uz e-pastu:",
+      "infoNotice2": "Pēc noklusējuma APUS gatavo NIKA MI SIA."
+    },
+    "privacyText": "Piekrītu SIA ''NIKA MI''",
+    "privacyLink": "Privātuma politikai",
+    "marketingText": "Piekrītu saņemt īpašos piedāvājumus no SIA \"NIKA MI\".",
+    "submit": "Nosūtīt pieteikumu"
   }
 }

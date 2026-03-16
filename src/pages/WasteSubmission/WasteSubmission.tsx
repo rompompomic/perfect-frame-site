@@ -1,0 +1,204 @@
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import Navbar from "@/components/Navbar";
+import MainLayout from "@/components/MainLayout";
+import WeChatButton from "@/components/WeChatButton";
+import SenderSection from "./components/SenderSection";
+import WasteCardsSection from "./components/WasteCardsSection";
+import TransporterSection from "./components/TransporterSection";
+import uploadIcon from "@/assets/icons/upload.svg";
+
+const WasteSubmission = () => {
+  const { t } = useTranslation();
+  const [materialsAcknowledged, setMaterialsAcknowledged] = useState(false);
+  const [notes, setNotes] = useState("");
+  const [photos, setPhotos] = useState<string[]>([]);
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const [marketingAccepted, setMarketingAccepted] = useState(false);
+
+  const handlePhotoUpload = () => {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = "image/*";
+    input.multiple = true;
+    input.onchange = (e) => {
+      const files = (e.target as HTMLInputElement).files;
+      if (files) {
+        const newPhotos = Array.from(files)
+          .slice(0, 5 - photos.length)
+          .map((f) => URL.createObjectURL(f));
+        setPhotos((prev) => [...prev, ...newPhotos].slice(0, 5));
+      }
+    };
+    input.click();
+  };
+
+  const removePhoto = (index: number) => {
+    setPhotos((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  return (
+    <MainLayout>
+      <Navbar />
+      <section className="px-4 sm:px-6 lg:px-28 pt-14 pb-20">
+        <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
+          {/* Title */}
+          <h1 className="text-primary text-3xl sm:text-4xl lg:text-6xl font-black uppercase leading-tight lg:leading-[58px]">
+            {t("wasteSubmission.title")}
+          </h1>
+
+          {/* Sender */}
+          <SenderSection />
+
+          {/* Waste Cards inside sender box */}
+          <div className="p-6 sm:p-10 bg-secondary flex flex-col gap-8">
+            <WasteCardsSection />
+
+            {/* Materials acknowledgment */}
+            <label className="flex items-start gap-2 cursor-pointer">
+              <div
+                className={`w-6 h-6 shrink-0 mt-0.5 rounded-xs border flex items-center justify-center ${
+                  materialsAcknowledged
+                    ? "bg-nikami-blue border-nikami-blue"
+                    : "border-nikami-blue"
+                }`}
+                onClick={() => setMaterialsAcknowledged(!materialsAcknowledged)}
+              >
+                {materialsAcknowledged && (
+                  <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+                    <path d="M1 5L5 9L13 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+              </div>
+              <span className="text-foreground text-base font-bold leading-6">
+                {t("wasteSubmission.materialsAck")}{" "}
+                <span className="text-primary underline cursor-pointer">
+                  {t("wasteSubmission.materialsAckLink")}
+                </span>
+                .
+              </span>
+            </label>
+
+            {/* Notes */}
+            <div className="flex flex-col gap-0.5">
+              <label className="pl-2.5 text-foreground text-base font-bold leading-6">
+                {t("wasteSubmission.notes")}
+              </label>
+              <textarea
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                placeholder={t("wasteSubmission.notesPlaceholder")}
+                className="w-full h-36 px-5 pt-5 bg-background rounded-xs border border-border text-base font-medium leading-6 text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:border-nikami-blue"
+              />
+            </div>
+
+            {/* Photo upload */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+              <div className="flex flex-col gap-0.5">
+                <button
+                  onClick={handlePhotoUpload}
+                  className="px-8 py-3 rounded-xs border border-nikami-blue flex items-center gap-2.5 hover:opacity-80 transition-opacity"
+                >
+                  <img src={uploadIcon} alt="" className="w-5 h-5" />
+                  <span className="text-primary text-base font-semibold leading-6">
+                    {t("wasteSubmission.uploadPhoto")}
+                  </span>
+                </button>
+                <span className="text-foreground text-xs font-medium leading-4">
+                  {t("wasteSubmission.photoLimit")}
+                </span>
+              </div>
+              {photos.length > 0 && (
+                <div className="flex items-center gap-3">
+                  {photos.map((photo, i) => (
+                    <div key={i} className="w-11 h-11 relative">
+                      <img
+                        src={photo}
+                        alt=""
+                        className="w-11 h-11 rounded-xs object-cover"
+                      />
+                      <button
+                        onClick={() => removePhoto(i)}
+                        className="absolute -top-1 -right-1 w-5 h-4 bg-nikami-blue rounded-xs flex items-center justify-center"
+                      >
+                        <span className="text-primary-foreground text-xs">✕</span>
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Transporter */}
+          <TransporterSection />
+
+          {/* Consent checkboxes */}
+          <div className="flex flex-col gap-3">
+            <label className="flex items-start gap-2 cursor-pointer">
+              <div
+                className={`w-6 h-6 shrink-0 mt-0.5 rounded-xs border flex items-center justify-center ${
+                  privacyAccepted
+                    ? "bg-nikami-blue border-nikami-blue"
+                    : "border-nikami-blue"
+                }`}
+                onClick={() => setPrivacyAccepted(!privacyAccepted)}
+              >
+                {privacyAccepted && (
+                  <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+                    <path d="M1 5L5 9L13 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+              </div>
+              <span className="text-foreground text-base font-bold leading-6">
+                {t("wasteSubmission.privacyText")}{" "}
+                <span className="text-primary underline cursor-pointer">
+                  {t("wasteSubmission.privacyLink")}
+                </span>
+                .
+              </span>
+            </label>
+            <label className="flex items-start gap-2 cursor-pointer">
+              <div
+                className={`w-6 h-6 shrink-0 mt-0.5 rounded-xs border flex items-center justify-center ${
+                  marketingAccepted
+                    ? "bg-nikami-blue border-nikami-blue"
+                    : "border-nikami-blue"
+                }`}
+                onClick={() => setMarketingAccepted(!marketingAccepted)}
+              >
+                {marketingAccepted && (
+                  <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+                    <path d="M1 5L5 9L13 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+              </div>
+              <span className="text-foreground text-base font-bold leading-6">
+                {t("wasteSubmission.marketingText")}
+              </span>
+            </label>
+          </div>
+
+          {/* Submit button */}
+          <div className="flex">
+            <button className="flex-1 flex">
+              <div className="flex-1 px-8 py-3 bg-nikami-blue rounded-l-xs flex justify-center items-center hover:opacity-90 transition-opacity">
+                <span className="text-primary-foreground text-base font-semibold leading-6">
+                  {t("wasteSubmission.submit")}
+                </span>
+              </div>
+              <div className="w-11 px-3 py-3 bg-accent rounded-r-xs flex justify-center items-center hover:opacity-90 transition-opacity">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+      <WeChatButton />
+    </MainLayout>
+  );
+};
+
+export default WasteSubmission;
