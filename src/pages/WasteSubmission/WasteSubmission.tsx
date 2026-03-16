@@ -198,13 +198,13 @@ const WasteSubmission = () => {
 
           {/* Submit button */}
           <div className="flex">
-            <button className="w-full sm:w-auto sm:min-w-[320px] flex">
-              <div className="flex-1 px-6 sm:px-8 py-3 bg-nikami-blue rounded-l-xs flex justify-center items-center hover:opacity-90 transition-opacity">
-                <span className="text-primary-foreground text-sm sm:text-base font-semibold leading-6">
+            <button className="flex-1 flex">
+              <div className="flex-1 px-8 py-3 bg-primary rounded-l-xs border-l border-r flex justify-center items-center gap-2.5 hover:opacity-90 transition-opacity">
+                <span className="text-primary-foreground text-base font-semibold leading-6">
                   {t("wasteSubmission.submit")}
                 </span>
               </div>
-              <div className="w-11 px-3 py-3 bg-accent rounded-r-xs flex justify-center items-center hover:opacity-90 transition-opacity">
+              <div className="w-11 self-stretch px-3 py-3 bg-nikami-blue rounded-r-xs border-l border-r flex justify-center items-center gap-2.5 hover:opacity-90 transition-opacity">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
