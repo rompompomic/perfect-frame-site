@@ -44,10 +44,10 @@ export default function OrderContainer() {
   };
 
   const wasteCategories = [
-    { id: "clean" as Category, labelKey: "orderContainer.step1.categories.clean" },
-    { id: "mixed" as Category, labelKey: "orderContainer.step1.categories.mixed" },
-    { id: "wood" as Category, labelKey: "orderContainer.step1.categories.wood" },
-  ];
+  { id: "clean" as Category, labelKey: "orderContainer.step1.categories.clean" },
+  { id: "mixed" as Category, labelKey: "orderContainer.step1.categories.mixed" },
+  { id: "wood" as Category, labelKey: "orderContainer.step1.categories.wood" }];
+
 
   const flatContainersWithAddress: FlatContainer[] = Object.entries(quantities).flatMap(
     ([idStr, qty]) => {
@@ -55,9 +55,9 @@ export default function OrderContainer() {
       return Array.from({ length: qty }, (_, i) => ({
         id: Number(idStr) * 10 + i,
         size: c.size,
-        address: addresses[Number(idStr) * 10 + i] ?? "",
+        address: addresses[Number(idStr) * 10 + i] ?? ""
       }));
-    },
+    }
   );
 
   return (
@@ -66,12 +66,12 @@ export default function OrderContainer() {
         <Navbar variant="light" />
       </div>
 
-      <div className="min-h-screen bg-[#E4F1FF] px-4 py-8 sm:py-[60px]">
+      <div className="min-h-screen px-4 py-8 sm:py-[60px] bg-white">
         <div className="max-w-[1200px] mx-auto">
           {currentStep !== 4 && <StepIndicator currentStep={currentStep} />}
 
-          {currentStep == 0 && (
-            <>
+          {currentStep == 0 &&
+          <>
               <h1 className="text-[28px] sm:text-[40px] lg:text-[58px] font-black text-[#1a3c6e] uppercase tracking-tight mb-2">
                 {t("orderContainer.step1.title")}
               </h1>
@@ -82,19 +82,19 @@ export default function OrderContainer() {
 
               <div className="flex flex-wrap items-center gap-2 mb-5">
                 <div className="flex flex-col sm:flex-row flex-wrap bg-transparent rounded-[2px] border-[1px] border-[#05376D] shadow-sm">
-                  {wasteCategories.map((cat) => (
-                    <button
-                      key={cat.id}
-                      onClick={() => setSelectedCategory(cat.id)}
-                      className={`px-3 sm:px-[18px] py-2 sm:py-[12px] rounded-[2px] text-xs sm:text-sm font-semibold transition-all duration-200
+                  {wasteCategories.map((cat) =>
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id)}
+                  className={`px-3 sm:px-[18px] py-2 sm:py-[12px] rounded-[2px] text-xs sm:text-sm font-semibold transition-all duration-200
                     ${
-                      selectedCategory === cat.id
-                        ? "bg-[#1a3c6e] text-white shadow"
-                        : "text-[#1a3c6e] "
-                    }`}>
+                  selectedCategory === cat.id ?
+                  "bg-[#1a3c6e] text-white shadow" :
+                  "text-[#1a3c6e] "}`
+                  }>
                       {t(cat.labelKey)}
                     </button>
-                  ))}
+                )}
                 </div>
                 <InfoTooltip text={t("orderContainer.tooltip.text")} />
               </div>
@@ -102,33 +102,33 @@ export default function OrderContainer() {
               <InfoAccordion category={selectedCategory} />
 
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-[4px] mb-6">
-                {CONTAINERS.map((container) => (
-                  <ContainerCard
-                    key={container.id}
-                    container={container}
-                    quantity={quantities[container.id] || 0}
-                    onIncrement={() => handleIncrement(container.id)}
-                    onDecrement={() => handleDecrement(container.id)}
-                  />
-                ))}
+                {CONTAINERS.map((container) =>
+              <ContainerCard
+                key={container.id}
+                container={container}
+                quantity={quantities[container.id] || 0}
+                onIncrement={() => handleIncrement(container.id)}
+                onDecrement={() => handleDecrement(container.id)} />
+
+              )}
               </div>
 
               <div className="flex flex-wrap gap-3 mb-8">
                 <button
-                  onClick={() => setDeliveryMode("single")}
-                  className={`px-4 sm:px-5 py-2.5 rounded-[2px] border-[1px] border-[#05366A] text-xs sm:text-sm font-semibold transition-all`}>
+                onClick={() => setDeliveryMode("single")}
+                className={`px-4 sm:px-5 py-2.5 rounded-[2px] border-[1px] border-[#05366A] text-xs sm:text-sm font-semibold transition-all`}>
                   {t("orderContainer.step1.delivery.single")}
                 </button>
                 <button
-                  onClick={() => setDeliveryMode("multiple")}
-                  className={`px-4 sm:px-5 py-2.5 rounded-[2px] border-[1px] bg-[#05366A] text-white text-xs sm:text-sm font-semibold transition-all`}>
+                onClick={() => setDeliveryMode("multiple")}
+                className={`px-4 sm:px-5 py-2.5 rounded-[2px] border-[1px] bg-[#05366A] text-white text-xs sm:text-sm font-semibold transition-all`}>
                   {t("orderContainer.step1.delivery.multiple")}
                 </button>
               </div>
 
               <button
-                onClick={() => setCurrentStep(1)}
-                className="w-full bg-[#05376D] h-[46px] text-white font-semibold text-sm tracking-wide py-4 rounded-[4px] flex items-center relative hover:bg-[#15305a] transition-colors">
+              onClick={() => setCurrentStep(1)}
+              className="w-full bg-[#05376D] h-[46px] text-white font-semibold text-sm tracking-wide py-4 rounded-[4px] flex items-center relative hover:bg-[#15305a] transition-colors">
                 <span className="absolute left-1/2 -translate-x-1/2">
                   {t("orderContainer.step1.nextStep")}
                 </span>
@@ -137,42 +137,42 @@ export default function OrderContainer() {
                 </span>
               </button>
             </>
-          )}
+          }
 
-          {currentStep == 1 && (
-            <DeliveryAddress
-              containers={CONTAINERS}
-              onBack={() => setCurrentStep(0)}
-              onNext={(addrs) => {
-                const map: Record<number, string> = {};
-                addrs.forEach((a) => {
-                  map[a.containerId] = a.value;
-                });
-                setAddresses(map);
-                setCurrentStep(2);
-              }}
-            />
-          )}
+          {currentStep == 1 &&
+          <DeliveryAddress
+            containers={CONTAINERS}
+            onBack={() => setCurrentStep(0)}
+            onNext={(addrs) => {
+              const map: Record<number, string> = {};
+              addrs.forEach((a) => {
+                map[a.containerId] = a.value;
+              });
+              setAddresses(map);
+              setCurrentStep(2);
+            }} />
 
-          {currentStep == 2 && (
-            <UsagePeriod
-              containers={flatContainersWithAddress}
-              currentStep={2}
-              onBack={() => setCurrentStep(1)}
-              onNext={(periods) => {
-                setPeriods(periods);
-                setCurrentStep(3);
-              }}
-            />
-          )}
+          }
 
-          {currentStep === 3 && (
-            <ApplicationForm onBack={() => setCurrentStep(2)} onSubmit={() => setCurrentStep(4)} />
-          )}
+          {currentStep == 2 &&
+          <UsagePeriod
+            containers={flatContainersWithAddress}
+            currentStep={2}
+            onBack={() => setCurrentStep(1)}
+            onNext={(periods) => {
+              setPeriods(periods);
+              setCurrentStep(3);
+            }} />
+
+          }
+
+          {currentStep === 3 &&
+          <ApplicationForm onBack={() => setCurrentStep(2)} onSubmit={() => setCurrentStep(4)} />
+          }
 
           {currentStep === 4 && <OrderSuccess onGoToOrders={() => navigate("/orders")} />}
         </div>
       </div>
-    </MainLayout>
-  );
+    </MainLayout>);
+
 }
