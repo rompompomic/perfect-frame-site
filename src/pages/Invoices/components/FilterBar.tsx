@@ -12,40 +12,43 @@ export const FilterBar: FC<FilterBarProps> = ({ onClear }) => {
   const [address, setAddress] = useState("");
 
   return (
-    <div className="flex flex-wrap gap-[10px] mb-[40px]">
-      <div className="flex items-center gap-[8px] bg-white border border-[#dde8f5] rounded-[6px] px-[12px] py-[9px] min-w-[180px]">
+    <div className="mb-8 flex flex-wrap gap-2.5 sm:mb-10">
+      <div className="flex w-full items-center gap-2 rounded-md border border-border bg-card px-3 py-2.5 sm:w-auto sm:min-w-[180px]">
         <input
           type="text"
           placeholder={t("invoices.filter.dates")}
           value={dateFrom}
           onChange={(e) => setDateFrom(e.target.value)}
-          className="flex-1 text-[16px] text-[#9F9F9F] outline-none placeholder:text-[#94a3b8] bg-transparent"
+          className="min-w-0 flex-1 bg-transparent text-base text-muted-foreground outline-none placeholder:text-muted-foreground/80"
         />
         <CalendarIcon />
       </div>
 
-      <div className="flex items-center gap-[8px] bg-white border border-[#dde8f5] rounded-[6px] px-[12px] py-[9px] min-w-[228px] cursor-pointer">
-        <span className="flex-1 text-[16px] text-[#9F9F9F]">{t("invoices.filter.orderStatus")}</span>
+      <div className="flex w-full cursor-pointer items-center gap-2 rounded-md border border-border bg-card px-3 py-2.5 sm:w-auto sm:min-w-[228px]">
+        <span className="flex-1 text-base text-muted-foreground">{t("invoices.filter.orderStatus")}</span>
         <ChevronIcon />
       </div>
 
-      <div className="flex items-center gap-[8px] bg-white border border-[#dde8f5] rounded-[6px] px-[12px] py-[9px] min-w-[180px]">
+      <div className="flex w-full items-center gap-2 rounded-md border border-border bg-card px-3 py-2.5 sm:w-auto sm:min-w-[180px]">
         <input
           type="text"
           placeholder={t("invoices.filter.address")}
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-          className="flex-1 text-[16px] text-[#9F9F9F] outline-none placeholder:text-[#94a3b8] bg-transparent"
+          className="min-w-0 flex-1 bg-transparent text-base text-muted-foreground outline-none placeholder:text-muted-foreground/80"
         />
         <SearchIcon />
       </div>
 
-      <div className="flex items-center gap-[8px] bg-white border border-[#dde8f5] rounded-[6px] px-[12px] py-[9px] min-w-[170px] cursor-pointer">
-        <span className="flex-1 text-[16px] text-[#9F9F9F]">{t("invoices.filter.paymentStatus")}</span>
+      <div className="flex w-full cursor-pointer items-center gap-2 rounded-md border border-border bg-card px-3 py-2.5 sm:w-auto sm:min-w-[170px]">
+        <span className="flex-1 text-base text-muted-foreground">{t("invoices.filter.paymentStatus")}</span>
         <ChevronIcon />
       </div>
 
-      <button className="bg-white border border-[#dde8f5] rounded-[6px] px-[16px] py-[9px] text-[16px] text-[#9F9F9F] font-semibold hover:bg-[#f1f5f9] transition-colors cursor-pointer">
+      <button
+        onClick={onClear}
+        className="w-full rounded-md border border-border bg-card px-4 py-2.5 text-base font-semibold text-muted-foreground transition-colors hover:bg-muted sm:w-auto"
+      >
         {t("invoices.filter.clear")}
       </button>
     </div>

@@ -17,40 +17,44 @@ function InvoiceRow({
   onClick: () => void;
 }) {
   const { t } = useTranslation();
+
   return (
-    <div
-      onClick={onClick}
-      className={`flex max-h-[135px] items-center gap-4 pl-[3px] pr-[20px] py-4 rounded-[6px] cursor-pointer transition-colors
-        ${checked ? "bg-[#E4F1FF]" : "bg-[#E4F1FF]"}`}>
-      <div className="bg-white w-[88px] h-[132px] flex items-center justify-center p-4">
-        <Checkbox checked={checked} onChange={onCheck} />
-      </div>
-
-      <div className="flex-1 min-w-0">
-        <p className="font-bold text-[#05376D] text-[26px]">{invoice.address}</p>
-        <span className="text-[16px] font-semibold mb-2">№ 12345678</span>
-        <div className="flex items-center gap-2 flex-wrap">
-          <StatusBadge status={invoice.status} />
-          <Pill className="font-semibold">{invoice.type}</Pill>
-          <Pill className="font-semibold">{invoice.date}</Pill>
-          <Pill className="font-semibold">{invoice.orders} order</Pill>
-          <Pill className="font-bold">{invoice.amount}</Pill>
+    <div onClick={onClick} className={`cursor-pointer rounded-md transition-colors ${checked ? "bg-secondary" : "bg-secondary/70"}`}>
+      <div className="flex flex-col gap-3 p-3 sm:p-4 md:flex-row md:items-center md:gap-4 md:pl-[3px] md:pr-5 md:py-4">
+        <div className="flex h-auto w-full items-center justify-start bg-card p-3 md:h-[132px] md:w-[88px] md:justify-center md:p-4">
+          <Checkbox checked={checked} onChange={onCheck} />
         </div>
-        <p className="text-[11px] text-[#94A3B8] mt-1 font-medium">№ {invoice.number}</p>
-      </div>
 
-      <div className="flex items-center gap-2 shrink-0" onClick={(e) => e.stopPropagation()}>
-        <button className="bg-[#05376D] text-white text-[12px] font-semibold px-4 py-2 rounded-[2px] hover:bg-[#15305a] transition-colors whitespace-nowrap">
-          {t("invoices.row.view")}
-        </button>
-        <button className="flex items-center gap-1.5 border border-[#4895E8] text-[#05376D] text-[12px] font-bold px-3 py-2 rounded-[2px] hover:border-[#4895E8] hover:bg-[#f0f7ff] transition-colors whitespace-nowrap">
-          <DownloadIcon /> {t("invoices.row.download")}
-        </button>
-        {invoice.status === "awaiting" && (
-          <button className="bg-[#4895E8] text-white text-[12px] font-semibold px-4 py-2 rounded-[2px] hover:bg-[#3580d0] transition-colors whitespace-nowrap">
-            {t("invoices.row.pay")}
+        <div className="min-w-0 flex-1">
+          <p className="break-words text-xl font-bold text-primary sm:text-[26px]">{invoice.address}</p>
+          <span className="mb-2 block text-sm font-semibold sm:text-base">№ 12345678</span>
+
+          <div className="flex flex-wrap items-center gap-2">
+            <StatusBadge status={invoice.status} />
+            <Pill className="font-semibold">{invoice.type}</Pill>
+            <Pill className="font-semibold">{invoice.date}</Pill>
+            <Pill className="font-semibold">{invoice.orders} order</Pill>
+            <Pill className="font-bold">{invoice.amount}</Pill>
+          </div>
+
+          <p className="mt-1 text-xs font-medium text-muted-foreground">№ {invoice.number}</p>
+        </div>
+
+        <div className="flex w-full flex-wrap items-center gap-2 md:w-auto md:shrink-0" onClick={(e) => e.stopPropagation()}>
+          <button className="h-9 flex-1 whitespace-nowrap rounded-sm bg-primary px-4 text-xs font-semibold text-primary-foreground transition-opacity hover:opacity-90 md:flex-none">
+            {t("invoices.row.view")}
           </button>
-        )}
+
+          <button className="flex h-9 flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-sm border border-accent px-3 text-xs font-bold text-primary transition-colors hover:bg-accent/5 md:flex-none">
+            <DownloadIcon /> {t("invoices.row.download")}
+          </button>
+
+          {invoice.status === "awaiting" && (
+            <button className="h-9 flex-1 whitespace-nowrap rounded-sm bg-accent px-4 text-xs font-semibold text-accent-foreground transition-opacity hover:opacity-90 md:flex-none">
+              {t("invoices.row.pay")}
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
