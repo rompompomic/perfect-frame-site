@@ -38,8 +38,10 @@ const WasteSubmission = () => {
   };
 
   return (
-    <MainLayout>
-      <Navbar />
+    <div className="flex flex-col min-h-screen bg-background">
+      <div className="bg-background">
+        <Navbar variant="light" />
+      </div>
       <section className="px-4 sm:px-6 lg:px-28 pt-14 pb-20">
         <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
           {/* Title */}
