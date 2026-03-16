@@ -20,7 +20,7 @@ function InvoiceRow({
   return (
     <div
       onClick={onClick}
-      className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 p-4 sm:pl-[3px] sm:pr-[20px] sm:py-4 rounded-[6px] cursor-pointer transition-colors bg-[hsl(var(--accent))]">
+      className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 p-4 sm:pl-[3px] sm:pr-[20px] sm:py-4 rounded-[6px] cursor-pointer transition-colors bg-nikami-light-blue">
       
       {/* Checkbox - hidden on mobile, shown on desktop */}
       <div className="hidden sm:flex bg-white w-[88px] h-[132px] items-center justify-center p-4 shrink-0">
