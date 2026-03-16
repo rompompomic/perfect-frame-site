@@ -48,16 +48,16 @@ function Field({
   search?: boolean;
 }) {
   return (
-    <div className="flex flex-col gap-[4px]">
+    <div className="flex flex-col gap-1">
       {label && (
-        <label className="text-[14px] pl-[4px] font-semibold text-[#000]">
+        <label className="pl-1 text-sm font-semibold text-foreground">
           {label}
-          {required && <span className="text-[#4895E8]">*</span>}
+          {required && <span className="text-accent">*</span>}
         </label>
       )}
-      <div className="relative flex items-center border border-[#D0DCE8] rounded-[4px] bg-white focus-within:border-[#4895E8] transition-colors">
+      <div className="relative flex items-center rounded border border-border bg-card transition-colors focus-within:border-accent">
         {search && (
-          <div className="pl-[10px]">
+          <div className="pl-2.5">
             <SearchIcon />
           </div>
         )}
@@ -66,13 +66,14 @@ function Field({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full px-[10px] py-[9px] text-[16px] text-[#000] bg-transparent outline-none"
+          className="min-w-0 flex-1 bg-transparent px-2.5 py-2.5 text-base text-foreground outline-none"
         />
         {clearable && value && (
           <button
             type="button"
             onClick={() => onChange("")}
-            className="absolute right-[10px] text-[#4895E8] hover:opacity-70 transition-opacity">
+            className="absolute right-2.5 text-accent transition-opacity hover:opacity-70"
+          >
             <ClearIcon />
           </button>
         )}
@@ -90,14 +91,15 @@ function Tabs({
 }) {
   const { t } = useTranslation();
   return (
-    <div className="flex border h-[46px] border-[#05376D] rounded-[4px] w-fit overflow-hidden mb-[16px]">
+    <div className="mb-4 flex h-[46px] w-fit overflow-hidden rounded border border-primary">
       {(["fiziska", "juridiska"] as const).map((tab) => (
         <button
           key={tab}
           type="button"
           onClick={() => onChange(tab)}
-          className={`px-[16px] py-[7px] text-[16px] font-semibold transition-colors
-            ${value === tab ? "bg-[#05376D] text-white" : "bg-transparent text-[#05376D] hover:bg-[#f0f6ff]"}`}>
+          className={`px-4 py-[7px] text-sm font-semibold transition-colors sm:text-base
+            ${value === tab ? "bg-primary text-primary-foreground" : "bg-transparent text-primary hover:bg-secondary"}`}
+        >
           {tab === "fiziska" ? t("checkout.form.individualTab") : t("checkout.form.legalTab")}
         </button>
       ))}
@@ -133,77 +135,47 @@ export function CheckoutForm() {
 
   return (
     <div>
-      <div className="bg-[#E4F1FF] rounded-[8px] p-[20px]">
-        <h2 className="text-[32px] font-black text-[#000] mb-[14px]">
+      <div className="rounded-lg bg-secondary p-4 sm:p-5">
+        <h2 className="mb-3.5 break-words text-xl font-black text-foreground sm:text-[32px]">
           Citadeles iela 6A, Riga, LV-1010
         </h2>
 
         <Tabs value={personType} onChange={setPersonType} />
 
-        <div className="flex flex-col gap-[12px]">
-          <Field
-            label={t("checkout.form.nameLabel")}
-            required
-            value={form.name}
-            onChange={set("name")}
-            clearable
-          />
+        <div className="flex flex-col gap-3">
+          <Field label={t("checkout.form.nameLabel")} required value={form.name} onChange={set("name")} clearable />
+          <Field label={t("checkout.form.personalCode")} required value={form.personalCode} onChange={set("personalCode")} clearable />
+          <Field label={t("checkout.form.billingAddress")} required value={form.billingAddress} onChange={set("billingAddress")} clearable search />
 
-          <Field
-            label={t("checkout.form.personalCode")}
-            required
-            value={form.personalCode}
-            onChange={set("personalCode")}
-            clearable
-          />
-
-          <Field
-            label={t("checkout.form.billingAddress")}
-            required
-            value={form.billingAddress}
-            onChange={set("billingAddress")}
-            clearable
-            search
-          />
-
-          <div className="grid grid-cols-2 gap-[10px]">
-            <Field
-              label={t("checkout.form.emailLabel")}
-              required
-              type="email"
-              value={form.email}
-              onChange={set("email")}
-            />
-            <Field
-              label={t("checkout.form.phoneLabel")}
-              required
-              type="tel"
-              value={form.phone}
-              onChange={set("phone")}
-            />
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+            <Field label={t("checkout.form.emailLabel")} required type="email" value={form.email} onChange={set("email")} />
+            <Field label={t("checkout.form.phoneLabel")} required type="tel" value={form.phone} onChange={set("phone")} />
           </div>
 
           <button
             type="button"
-            className="flex items-center gap-[6px] text-[13px] font-semibold text-[#05376D] hover:opacity-70 transition-opacity w-fit">
+            className="flex w-fit items-center gap-1.5 text-[13px] font-semibold text-primary transition-opacity hover:opacity-70"
+          >
             <PlusIcon /> {t("checkout.form.additionalEmail")}
           </button>
 
-          <div className="flex flex-col gap-[4px]">
-            <label className="text-[14px] font-bold pl-[4px] text-[#000]">{t("checkout.form.comments")}</label>
+          <div className="flex flex-col gap-1">
+            <label className="pl-1 text-sm font-bold text-foreground">{t("checkout.form.comments")}</label>
             <textarea
               placeholder="Placeholder"
               value={form.comment}
               onChange={(e) => setForm((p) => ({ ...p, comment: e.target.value }))}
               rows={4}
-              className="w-full border border-[#D0DCE8] rounded-[4px] bg-white px-[10px] py-[9px] text-[13px] text-[#334155] outline-none focus:border-[#4895E8] transition-colors resize-none"
+              className="w-full resize-none rounded border border-border bg-card px-2.5 py-2.5 text-[13px] text-foreground outline-none transition-colors focus:border-accent"
             />
           </div>
         </div>
       </div>
+
       <button
         type="button"
-        className="mt-[16px] w-full flex items-center text-[16px] justify-center gap-[6px] border border-[#4895E8] rounded-[4px] py-[10px] text-[13px] font-semibold text-[#05376D] hover:bg-[#f0f7ff] transition-colors">
+        className="mt-4 flex w-full items-center justify-center gap-1.5 rounded border border-accent py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-secondary"
+      >
         <PlusIcon /> {t("checkout.form.addBillingContacts")}
       </button>
     </div>

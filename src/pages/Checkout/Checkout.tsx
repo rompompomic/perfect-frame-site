@@ -21,13 +21,7 @@ const ShareIcon = () => (
 
 const CheckIcon = () => (
   <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-    <path
-      d="M1 4l3 3 5-6"
-      stroke="white"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <path d="M1 4l3 3 5-6" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -41,13 +35,14 @@ function Checkbox({
   children: React.ReactNode;
 }) {
   return (
-    <label className="flex items-center gap-[10px] cursor-pointer" onClick={onChange}>
+    <label className="flex cursor-pointer items-start gap-2.5" onClick={onChange}>
       <div
-        className={`w-[18px] h-[18px] rounded-[3px] border-2 flex items-center justify-center shrink-0 transition-colors
-          ${checked ? "bg-[#4895E8] border-[#4895E8]" : "border-[#D0DCE8] bg-white"}`}>
+        className={`mt-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-[3px] border-2 transition-colors
+          ${checked ? "border-accent bg-accent" : "border-border bg-card"}`}
+      >
         {checked && <CheckIcon />}
       </div>
-      <span className="text-[13px] text-[#334155]">{children}</span>
+      <span className="text-sm text-foreground">{children}</span>
     </label>
   );
 }
@@ -63,31 +58,31 @@ export default function CheckoutPage() {
         <Navbar variant="light" />
       </div>
 
-      <div className="min-h-screen bg-white">
-        <div className="max-w-[1200px] mx-auto px-[24px] py-[40px]">
+      <div className="min-h-screen bg-card">
+        <div className="mx-auto w-full max-w-[1200px] px-4 py-6 sm:px-6 sm:py-10">
           {/* ── Page header ── */}
-          <div className="flex items-center justify-between mb-[28px]">
-            <h1 className="text-[58px] font-black text-[#05376D] uppercase tracking-tight">
+          <div className="mb-6 flex flex-col gap-3 sm:mb-7 sm:flex-row sm:items-center sm:justify-between">
+            <h1 className="text-3xl font-black uppercase tracking-tight text-primary sm:text-[58px]">
               {t("checkout.title")}
             </h1>
-            <button className="flex items-center gap-[8px] border border-[#4895E8] rounded-[4px] px-[14px] py-[8px] text-[16px] font-semibold text-[#05376D] hover:border-[#4895E8] hover:text-[#4895E8] transition-colors">
+            <button className="flex w-fit items-center gap-2 rounded border border-accent px-3.5 py-2 text-sm font-semibold text-primary transition-colors hover:text-accent sm:text-base">
               <ShareIcon /> {t("checkout.shareOrder")}
             </button>
           </div>
 
           {/* ── Two-column layout ── */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-[24px] items-start mb-[32px]">
+          <div className="mb-8 grid grid-cols-1 items-start gap-6 lg:grid-cols-[1fr_360px]">
             {/* Left — billing form */}
             <CheckoutForm />
 
             {/* Right — summary + pricing + payment */}
-            <div className="flex flex-col gap-[20px]">
+            <div className="flex flex-col gap-5">
               <SummarySection />
               <PricingSection />
 
               {/* Payment */}
               <div>
-                <h2 className="text-[22px] font-black text-[#05376D] uppercase tracking-tight mb-[14px]">
+                <h2 className="mb-3.5 text-xl font-black uppercase tracking-tight text-primary sm:text-[22px]">
                   {t("checkout.paymentMethod")}
                 </h2>
                 <PaymentSection />
@@ -96,25 +91,21 @@ export default function CheckoutPage() {
           </div>
 
           {/* ── Additional Service — full width ── */}
-          <div className="mb-[32px]">
+          <div className="mb-8">
             <AdditionalServiceSection />
           </div>
 
           {/* ── Checkboxes + submit ── */}
-          <div className="flex flex-col gap-[10px] mb-[20px]">
+          <div className="mb-5 flex flex-col gap-2.5">
             <Checkbox checked={agreeMarketing} onChange={() => setAgreeMarketing(!agreeMarketing)}>
-              <span className="text-[16px] text-[#000]">{t("checkout.confirmOur")} </span>
-              <button
-                type="button"
-                className="text-[#000] text-[16px] underline hover:no-underline font-bold">
+              <span className="text-sm text-foreground sm:text-base">{t("checkout.confirmOur")} </span>
+              <button type="button" className="text-sm font-bold text-foreground underline hover:no-underline sm:text-base">
                 {t("checkout.marketingPolicy")}
               </button>
             </Checkbox>
             <Checkbox checked={agreeTerms} onChange={() => setAgreeTerms(!agreeTerms)}>
-              <span className="text-[16px] text-[#000]">{t("checkout.confirmOur")} </span>
-              <button
-                type="button"
-                className="text-[#000] text-[16px] underline hover:no-underline font-bold">
+              <span className="text-sm text-foreground sm:text-base">{t("checkout.confirmOur")} </span>
+              <button type="button" className="text-sm font-bold text-foreground underline hover:no-underline sm:text-base">
                 {t("checkout.termsAndPrivacy")}
               </button>
             </Checkbox>
@@ -123,12 +114,9 @@ export default function CheckoutPage() {
           {/* Pay button — full width */}
           <button
             disabled={!agreeTerms}
-            className={`w-full py-[16px] rounded-[4px] text-[16px] font-bold transition-colors
-              ${
-                agreeTerms
-                  ? "bg-[#05376D] text-white hover:bg-[#15305a]"
-                  : "bg-[#B0C4D8] text-white cursor-not-allowed"
-              }`}>
+            className={`w-full rounded py-4 text-base font-bold transition-colors
+              ${agreeTerms ? "bg-primary text-primary-foreground hover:opacity-90" : "cursor-not-allowed bg-muted-foreground/40 text-primary-foreground"}`}
+          >
             {t("checkout.payOrder")}
           </button>
         </div>

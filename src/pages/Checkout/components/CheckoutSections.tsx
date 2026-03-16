@@ -38,17 +38,13 @@ const PlusIcon = () => (
 function SummaryRow({ c }: { c: ContainerSummary }) {
   const { t } = useTranslation();
   return (
-    <div className="pb-[14px] mb-[14px] border-b border-[#E2E8F0] last:border-0 last:mb-0 last:pb-0">
-      <div className="flex items-start justify-between gap-2 mb-[6px]">
-        <span className="text-[16px] font-bold text-[#000]">{t("checkout.summary.container", { id: c.id })}</span>
-        <div className="flex items-center gap-[6px]">
-          <span className="text-[13px] font-bold text-[#000]">{c.size}</span>
-          <button className="text-[#4895E8] hover:opacity-70 transition-opacity">
-            <EditIcon />
-          </button>
-          <button className="text-[#4895E8] hover:opacity-70 transition-opacity">
-            <TrashIcon />
-          </button>
+    <div className="mb-3.5 border-b border-border pb-3.5 last:mb-0 last:border-0 last:pb-0">
+      <div className="mb-1.5 flex items-start justify-between gap-2">
+        <span className="text-sm font-bold text-foreground sm:text-base">{t("checkout.summary.container", { id: c.id })}</span>
+        <div className="flex shrink-0 items-center gap-1.5">
+          <span className="text-[13px] font-bold text-foreground">{c.size}</span>
+          <button className="text-accent transition-opacity hover:opacity-70"><EditIcon /></button>
+          <button className="text-accent transition-opacity hover:opacity-70"><TrashIcon /></button>
         </div>
       </div>
 
@@ -60,12 +56,10 @@ function SummaryRow({ c }: { c: ContainerSummary }) {
         { label: t("checkout.summary.price"), value: `${c.price.toFixed(2)} €` },
       ].map(({ label, value }) => (
         <div key={label} className="flex items-start justify-between gap-2">
-          <span className="text-[14px] text-[#000] shrink-0">{label}</span>
-          <div className="flex items-center gap-[6px]">
-            <span className="text-[14px] text-[#000] text-right font-medium">{value}</span>
-            <button className="text-[#4895E8] hover:opacity-70 transition-opacity">
-              <EditIcon />
-            </button>
+          <span className="shrink-0 text-sm text-foreground">{label}</span>
+          <div className="flex min-w-0 items-center gap-1.5">
+            <span className="truncate text-right text-sm font-medium text-foreground">{value}</span>
+            <button className="shrink-0 text-accent transition-opacity hover:opacity-70"><EditIcon /></button>
           </div>
         </div>
       ))}
@@ -77,10 +71,10 @@ export function SummarySection() {
   const { t } = useTranslation();
   return (
     <div>
-      <h2 className="text-[32px] font-black text-[#05376D] uppercase tracking-tight mb-[16px]">
+      <h2 className="mb-4 text-2xl font-black uppercase tracking-tight text-primary sm:text-[32px]">
         {t("checkout.summary.title")}
       </h2>
-      <div className="border border-[#E2E8F0] rounded-[6px] p-[16px] bg-white">
+      <div className="rounded-md border border-border bg-card p-4">
         {MOCK_CONTAINERS.map((c) => (
           <SummaryRow key={c.id} c={c} />
         ))}
@@ -94,10 +88,10 @@ export function PricingSection() {
   const p = MOCK_PRICING;
   return (
     <div>
-      <h2 className="text-[32px] font-black text-[#000] uppercase tracking-tight mb-[14px]">
+      <h2 className="mb-3.5 text-2xl font-black uppercase tracking-tight text-foreground sm:text-[32px]">
         {t("checkout.summary.priceCalc")}
       </h2>
-      <div className="border border-[#E2E8F0] rounded-[6px] p-[16px] bg-white flex flex-col gap-[8px]">
+      <div className="flex flex-col gap-2 rounded-md border border-border bg-card p-4">
         {[
           { label: t("checkout.summary.wasteRemoval"), value: `${p.buvnieciba.toFixed(2)} €` },
           { label: t("checkout.summary.rentalPeriod"), value: `${p.noma.toFixed(2)} €` },
@@ -106,13 +100,13 @@ export function PricingSection() {
           { label: t("checkout.summary.vat"), value: `${p.pvn.toFixed(2)} €` },
         ].map(({ label, value }) => (
           <div key={label} className="flex items-center justify-between">
-            <span className="text-[14px] font-semibold text-[#000]">{label}</span>
-            <span className="text-[14px] font-bold text-[#000]">{value}</span>
+            <span className="text-sm font-semibold text-foreground">{label}</span>
+            <span className="text-sm font-bold text-foreground">{value}</span>
           </div>
         ))}
-        <div className="border-t border-[#E2E8F0] pt-[8px] flex items-center justify-between">
-          <span className="text-[20px] font-black text-[#05376D]">{t("checkout.summary.total")}</span>
-          <span className="text-[20px] font-black text-[#05376D]">{p.kopaArPvn.toFixed(2)} €</span>
+        <div className="flex items-center justify-between border-t border-border pt-2">
+          <span className="text-lg font-black text-primary sm:text-xl">{t("checkout.summary.total")}</span>
+          <span className="text-lg font-black text-primary sm:text-xl">{p.kopaArPvn.toFixed(2)} €</span>
         </div>
       </div>
     </div>
@@ -123,40 +117,41 @@ export function AdditionalServiceSection() {
   const { t } = useTranslation();
   const [open, setOpen] = useState(true);
   const [needed, setNeeded] = useState<"ir" | "nav">("ir");
-  const [container, setContainer] = useState("all");
   const [code6, setCode6] = useState("12364346");
   const [code9, setCode9] = useState("123564346");
 
   return (
     <div>
-      <h2 className="text-[48px] font-black text-[#05376D] uppercase tracking-tight mb-[14px]">
+      <h2 className="mb-3.5 text-3xl font-black uppercase tracking-tight text-primary sm:text-[48px]">
         {t("checkout.additionalService.title")}
       </h2>
 
-      <div className="border border-[#E2E8F0] rounded-[6px] overflow-hidden bg-white">
+      <div className="overflow-hidden rounded-md border border-border bg-card">
         {/* Accordion header */}
         <div
-          className="flex items-center justify-between px-[16px] py-[14px] cursor-pointer bg-[#E4F1FF] hover:bg-[#d8ecff] transition-colors"
-          onClick={() => setOpen(!open)}>
-          <span className="text-[26px] font-bold text-[#05376D]">
+          className="flex cursor-pointer items-center justify-between gap-3 bg-secondary px-4 py-3.5 transition-colors hover:bg-secondary/80"
+          onClick={() => setOpen(!open)}
+        >
+          <span className="text-lg font-bold text-primary sm:text-[26px]">
             {t("checkout.additionalService.apusQuestion")}
           </span>
-          <div className="border border-[#4895E8] rounded-[2px] w-[52px] h-[44px] flex items-center justify-center shrink-0">
+          <div className="flex h-[44px] w-[44px] shrink-0 items-center justify-center rounded-sm border border-accent sm:w-[52px]">
             <MinusIcon />
           </div>
         </div>
 
         {open && (
-          <div className="p-[16px] flex flex-col gap-[14px]">
+          <div className="flex flex-col gap-3.5 p-4">
             {/* Ir/Nav tabs */}
-            <div className="flex border border-[#05376D] rounded-[4px] w-fit overflow-hidden">
+            <div className="flex w-fit overflow-hidden rounded border border-primary">
               {(["ir", "nav"] as const).map((tab) => (
                 <button
                   key={tab}
                   type="button"
                   onClick={() => setNeeded(tab)}
-                  className={`px-[16px] py-[7px] text-[12px] font-semibold transition-colors
-                    ${needed === tab ? "bg-[#05376D] text-white" : "bg-white text-[#05376D] hover:bg-[#f0f6ff]"}`}>
+                  className={`px-4 py-[7px] text-xs font-semibold transition-colors
+                    ${needed === tab ? "bg-primary text-primary-foreground" : "bg-card text-primary hover:bg-secondary"}`}
+                >
                   {tab === "ir" ? t("checkout.additionalService.required") : t("checkout.additionalService.notRequired")}
                 </button>
               ))}
@@ -165,56 +160,50 @@ export function AdditionalServiceSection() {
             {needed === "ir" && (
               <>
                 {/* Container inputs */}
-                <div className="flex items-end gap-[12px] flex-wrap">
-                  <div className="flex flex-col gap-[4px]">
-                    <label className="text-[14px] font-semibold text-[#000]">{t("checkout.additionalService.containers")}</label>
-                    <div className="flex items-center border border-[#D0DCE8] rounded-[4px] bg-white px-[10px] py-[8px] gap-[6px] min-w-[100px]">
-                      <span className="text-[13px] text-[#334155] flex-1">{t("checkout.additionalService.all")}</span>
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-end">
+                  <div className="flex flex-col gap-1">
+                    <label className="text-sm font-semibold text-foreground">{t("checkout.additionalService.containers")}</label>
+                    <div className="flex min-w-[100px] items-center gap-1.5 rounded border border-border bg-card px-2.5 py-2">
+                      <span className="flex-1 text-[13px] text-muted-foreground">{t("checkout.additionalService.all")}</span>
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                        <path
-                          d="M2 4l4 4 4-4"
-                          stroke="#334155"
-                          strokeWidth="1.2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
+                        <path d="M2 4l4 4 4-4" stroke="#334155" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-[4px]">
-                    <label className="text-[14px] font-semibold text-[#000]">6 m²</label>
+                  <div className="flex flex-col gap-1">
+                    <label className="text-sm font-semibold text-foreground">6 m²</label>
                     <input
                       value={code6}
                       onChange={(e) => setCode6(e.target.value)}
-                      className="border border-[#D0DCE8] rounded-[4px] px-[10px] py-[8px] text-[13px] text-[#334155] outline-none focus:border-[#4895E8] w-[120px]"
+                      className="w-full rounded border border-border px-2.5 py-2 text-[13px] text-foreground outline-none transition-colors focus:border-accent sm:w-[120px]"
                     />
                   </div>
 
-                  <div className="flex flex-col gap-[4px]">
-                    <label className="text-[14px] font-semibold text-[#000]">9 m²</label>
+                  <div className="flex flex-col gap-1">
+                    <label className="text-sm font-semibold text-foreground">9 m²</label>
                     <input
                       value={code9}
                       onChange={(e) => setCode9(e.target.value)}
-                      className="border border-[#D0DCE8] rounded-[4px] px-[10px] py-[8px] text-[13px] text-[#334155] outline-none focus:border-[#4895E8] w-[120px]"
+                      className="w-full rounded border border-border px-2.5 py-2 text-[13px] text-foreground outline-none transition-colors focus:border-accent sm:w-[120px]"
                     />
                   </div>
                 </div>
 
                 {/* Prices */}
-                <div className="flex flex-col gap-[6px]">
+                <div className="flex flex-col gap-1.5">
                   {[
                     { label: t("checkout.additionalService.containerPrice", { size: "6 m³(x2)" }), value: "€10" },
                     { label: t("checkout.additionalService.containerPrice", { size: "9 m³(x2)" }), value: "€10" },
                   ].map(({ label, value }) => (
                     <div key={label} className="flex items-center justify-between">
-                      <span className="text-[16px] text-[#000]">{label}</span>
-                      <span className="text-[16px] font-bold text-[#000]">{value}</span>
+                      <span className="text-sm text-foreground sm:text-base">{label}</span>
+                      <span className="text-sm font-bold text-foreground sm:text-base">{value}</span>
                     </div>
                   ))}
-                  <div className="border-t border-[#E2E8F0] pt-[6px] flex items-center justify-between">
-                    <span className="text-[20px] font-bold text-[#000]">{t("checkout.additionalService.total")}</span>
-                    <span className="text-[20px] font-bold text-[#000]">€20</span>
+                  <div className="flex items-center justify-between border-t border-border pt-1.5">
+                    <span className="text-lg font-bold text-foreground sm:text-xl">{t("checkout.additionalService.total")}</span>
+                    <span className="text-lg font-bold text-foreground sm:text-xl">€20</span>
                   </div>
                 </div>
               </>
