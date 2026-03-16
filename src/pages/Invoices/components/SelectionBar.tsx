@@ -24,7 +24,7 @@ function SelectionBar({
       {["EXCEL", "CSV", "PDF"].map((fmt) => (
         <button
           key={fmt}
-          className="flex items-center gap-1.5 border border-border text-primary text-[12px] font-semibold px-3 py-2 rounded-[4px] hover:border-[hsl(var(--ring))] hover:bg-accent transition-colors">
+          className="flex items-center gap-1.5 border border-border text-primary text-[12px] font-semibold px-3 py-2 rounded-[4px] hover:border-nikami-blue hover:bg-nikami-light-blue transition-colors">
           <DownloadIcon /> {fmt}
         </button>
       ))}

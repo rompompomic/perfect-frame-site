@@ -59,7 +59,7 @@ function InvoiceRow({
           <DownloadIcon /> {t("invoices.row.download")}
         </button>
         {invoice.status === "awaiting" && (
-          <button className="bg-[hsl(var(--ring))] text-primary-foreground text-[12px] font-semibold px-4 py-2 rounded-[2px] hover:opacity-90 transition-colors whitespace-nowrap flex-1 sm:flex-none">
+          <button className="bg-nikami-blue text-primary-foreground text-[12px] font-semibold px-4 py-2 rounded-[2px] hover:opacity-90 transition-colors whitespace-nowrap flex-1 sm:flex-none">
             {t("invoices.row.pay")}
           </button>
         )}
