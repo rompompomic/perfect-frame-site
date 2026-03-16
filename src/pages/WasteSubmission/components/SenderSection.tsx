@@ -17,15 +17,11 @@ const SenderSection = () => {
     email: "",
   });
 
-  const [legalSearch, setLegalSearch] = useState("");
   const [legalData, setLegalData] = useState({
-    companyName: "",
-    regNumber: "",
-    vatNumber: "",
     responsiblePerson: "",
+    personalCode: "",
     email: "",
     phone: "",
-    wasteAddress: "",
   });
 
   const updateField = (field: string, value: string) => {
