@@ -18,7 +18,7 @@ function SelectionBar({
         <span className="text-nikami-blue">{count}</span> {t("invoices.selection.of")} {total} {t("invoices.selection.selected")}
       </span>
       <div className="hidden sm:block w-px h-5 bg-border" />
-      <button className="flex items-center gap-1.5 bg-[hsl(var(--ring))] text-primary-foreground text-[12px] font-semibold px-3 py-2 rounded-[4px] hover:opacity-90 transition-colors flex-1 sm:flex-none justify-center">
+      <button className="flex items-center gap-1.5 bg-nikami-blue text-primary-foreground text-[12px] font-semibold px-3 py-2 rounded-[4px] hover:opacity-90 transition-colors flex-1 sm:flex-none justify-center">
         <InvoicesSendIcon /> {t("invoices.selection.sendEmail")}
       </button>
       {["EXCEL", "CSV", "PDF"].map((fmt) => (
