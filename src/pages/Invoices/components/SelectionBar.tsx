@@ -13,22 +13,22 @@ function SelectionBar({
 }) {
   const { t } = useTranslation();
   return (
-    <div className="fixed bottom-6 right-6 z-50 bg-white rounded-[8px] shadow-2xl border border-[#E2E8F0] flex items-center gap-3 px-5 py-3">
-      <span className="text-sm font-bold text-[#05376D]">
-        <span className="text-[#4895E8]">{count}</span> {t("invoices.selection.of")} {total} {t("invoices.selection.selected")}
+    <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-50 bg-background rounded-[8px] shadow-2xl border border-border flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3 px-4 sm:px-5 py-3">
+      <span className="text-sm font-bold text-primary">
+        <span className="text-[hsl(var(--ring))]">{count}</span> {t("invoices.selection.of")} {total} {t("invoices.selection.selected")}
       </span>
-      <div className="w-px h-5 bg-[#E2E8F0]" />
-      <button className="flex items-center gap-1.5 bg-[#4895E8] text-white text-[12px] font-semibold px-3 py-2 rounded-[4px] hover:bg-[#3580d0] transition-colors">
+      <div className="hidden sm:block w-px h-5 bg-border" />
+      <button className="flex items-center gap-1.5 bg-[hsl(var(--ring))] text-primary-foreground text-[12px] font-semibold px-3 py-2 rounded-[4px] hover:opacity-90 transition-colors flex-1 sm:flex-none justify-center">
         <InvoicesSendIcon /> {t("invoices.selection.sendEmail")}
       </button>
       {["EXCEL", "CSV", "PDF"].map((fmt) => (
         <button
           key={fmt}
-          className="flex items-center gap-1.5 border border-[#D0DCE8] text-[#05376D] text-[12px] font-semibold px-3 py-2 rounded-[4px] hover:border-[#4895E8] hover:bg-[#f0f7ff] transition-colors">
+          className="flex items-center gap-1.5 border border-border text-primary text-[12px] font-semibold px-3 py-2 rounded-[4px] hover:border-[hsl(var(--ring))] hover:bg-accent transition-colors">
           <DownloadIcon /> {fmt}
         </button>
       ))}
-      <button onClick={onClose} className="ml-1 p-1.5 hover:opacity-60 transition-opacity">
+      <button onClick={onClose} className="ml-auto sm:ml-1 p-1.5 hover:opacity-60 transition-opacity">
         <InvoicesCloseIcon />
       </button>
     </div>
