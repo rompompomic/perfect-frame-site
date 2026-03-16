@@ -15,7 +15,7 @@ function SelectionBar({
   return (
     <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-50 bg-background rounded-[8px] shadow-2xl border border-border flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3 px-4 sm:px-5 py-3">
       <span className="text-sm font-bold text-primary">
-        <span className="text-[hsl(var(--ring))]">{count}</span> {t("invoices.selection.of")} {total} {t("invoices.selection.selected")}
+        <span className="text-nikami-blue">{count}</span> {t("invoices.selection.of")} {total} {t("invoices.selection.selected")}
       </span>
       <div className="hidden sm:block w-px h-5 bg-border" />
       <button className="flex items-center gap-1.5 bg-[hsl(var(--ring))] text-primary-foreground text-[12px] font-semibold px-3 py-2 rounded-[4px] hover:opacity-90 transition-colors flex-1 sm:flex-none justify-center">
