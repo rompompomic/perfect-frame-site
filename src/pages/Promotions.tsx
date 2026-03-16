@@ -81,7 +81,7 @@ const Promotions = () => {
       </div>
 
       <WeChatButton />
-    </MainLayout>
+    </div>
   );
 };
 
