@@ -23,7 +23,7 @@ function SelectionBar({
         </button>
       </div>
       <div className="hidden sm:block w-px h-5 bg-border" />
-      <button className="flex items-center justify-center gap-1.5 bg-nikami-blue text-primary-foreground text-[12px] font-semibold px-3 py-2 rounded-[4px] hover:opacity-90 transition-colors">
+      <button className="w-full sm:w-auto flex items-center justify-center gap-1.5 bg-nikami-blue text-primary-foreground text-[12px] font-semibold px-3 py-2 rounded-[4px] hover:opacity-90 transition-colors">
         <InvoicesSendIcon /> {t("invoices.selection.sendEmail")}
       </button>
       <div className="grid grid-cols-3 sm:flex gap-2">
