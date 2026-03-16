@@ -47,10 +47,21 @@ const Promotions = () => {
   const promotions = t("promotions.items", { returnObjects: true }) as Promotion[];
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
-      <div className="bg-background">
-        <Navbar variant="light" />
-      </div>
+    <MainLayout>
+      {/* Hero header with navbar */}
+      <section className="relative w-full flex flex-col">
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src={heroImage}
+            alt="Promotions"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/70 to-nikami-dark/80" />
+        </div>
+        <div className="relative z-10">
+          <Navbar />
+        </div>
+      </section>
 
       {/* Title section */}
       <div className="max-w-[1440px] mx-auto w-full px-4 sm:px-8 lg:px-28 pt-12 md:pt-20 pb-10 flex flex-col gap-5">
@@ -81,7 +92,7 @@ const Promotions = () => {
       </div>
 
       <WeChatButton />
-    </div>
+    </MainLayout>
   );
 };
 

@@ -32,8 +32,8 @@ export default function InvoicesPage() {
         <Navbar variant="light" />
       </div>
       <div className="min-h-screen bg-[#F1F5F9]">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-5 sm:py-7">
-          <h1 className="text-[28px] sm:text-[40px] lg:text-[52px] font-black text-primary uppercase tracking-tight mb-5 sm:mb-8">
+        <div className="max-w-[1200px] mx-auto px-6 py-7">
+          <h1 className="text-[52px] font-black text-[#05376D] uppercase tracking-tight mb-8">
             {t("invoices.title")}
           </h1>
 
@@ -41,7 +41,7 @@ export default function InvoicesPage() {
 
           {awaiting.length > 0 && (
             <section className="mb-8">
-              <h2 className="text-[20px] sm:text-[26px] lg:text-[32px] font-black text-foreground uppercase tracking-wide mb-3">
+              <h2 className="text-[32px] font-black text-[#000] uppercase tracking-wide mb-3">
                 {t("invoices.awaitingPayment")}
               </h2>
               <div className="flex flex-col gap-2">
@@ -60,7 +60,7 @@ export default function InvoicesPage() {
 
           {payed.length > 0 && (
             <section>
-              <h2 className="text-[20px] sm:text-[26px] lg:text-[32px] font-black text-foreground uppercase tracking-wide mb-3">
+              <h2 className="text-[32px] font-black text-[#000] uppercase tracking-wide mb-3">
                 {t("invoices.paid")}
               </h2>
               <div className="flex flex-col gap-2">
@@ -77,15 +77,15 @@ export default function InvoicesPage() {
             </section>
           )}
         </div>
-      </div>
 
-      {selected.size > 0 && (
-        <SelectionBar
-          count={selected.size}
-          total={MOCK_INVOICES.length}
-          onClose={() => setSelected(new Set())}
-        />
-      )}
+        {selected.size > 0 && (
+          <SelectionBar
+            count={selected.size}
+            total={MOCK_INVOICES.length}
+            onClose={() => setSelected(new Set())}
+          />
+        )}
+      </div>
     </MainLayout>
   );
 }

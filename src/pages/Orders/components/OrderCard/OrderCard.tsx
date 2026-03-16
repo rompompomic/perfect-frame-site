@@ -18,90 +18,89 @@ interface OrderCardProps {
 export const OrderCard: FC<OrderCardProps> = ({ order, navigate }) => {
   const { t } = useTranslation();
   return (
-    <div className="bg-white border border-[#dde8f5] rounded-lg overflow-hidden">
-      {/* Header */}
-      <div className="bg-secondary px-4 md:px-5 py-3 md:py-[14px] flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4">
-        <div className="bg-white w-14 h-14 md:w-[72px] md:h-[72px] flex items-center justify-center rounded-md p-2 shrink-0">
+    <div className="bg-white border border-[#dde8f5] rounded-[8px] overflow-hidden">
+      <div className="bg-[#e8f1fb] px-[20px] py-[14px] flex items-center gap-[16px]">
+        <div className="bg-white w-[72px] h-[72px] flex items-center justify-center rounded-[6px] p-[10px] shrink-0">
           <ContainerIcon />
         </div>
-        <div className="flex items-start flex-col gap-2 flex-1 min-w-0">
-          <span className="font-black text-primary text-base md:text-lg tracking-tight">
-            Order №{order.id}
-          </span>
-          <div className="flex items-center gap-1.5 md:gap-2 flex-wrap">
-            <span className="border border-accent text-accent text-[10px] md:text-[11px] font-medium px-2 py-0.5 rounded-full">
+        <div className="flex items-start flex-col gap-[8px] flex-1 flex-wrap">
+          <div>
+            <span className="font-black text-[#05376d] text-[18px] tracking-tight">
+              Order №{order.id}
+            </span>
+          </div>
+          <div className="flex items-center gap-[8px]">
+            <span className="border border-[#4895E8] text-[#4895E8] text-[11px] font-medium px-[8px] py-[2px] rounded-full">
               {t("orders.card.orderStatus")}
             </span>
-            <span className="border border-border text-foreground text-[11px] md:text-xs font-medium px-2 py-0.5 rounded-full">
+            <span className="border border-[#BDC8D3] text-[#000] text-[12px] font-medium px-[8px] py-[2px] rounded-full">
               {order.date}
             </span>
-            <span className="border border-border text-foreground text-[11px] md:text-xs font-bold px-2 py-0.5 rounded-full">
+            <span className="border border-[#BDC8D3] text-[#000] text-[12px] font-bold px-[8px] py-[2px] rounded-full">
               {order.price}
             </span>
-            <span className="border border-border text-foreground text-[11px] md:text-xs font-semibold px-2 py-0.5 rounded-full">
+            <span className="border border-[#BDC8D3] text-[#000] text-[12px] font-semibold px-[8px] py-[2px] rounded-full">
               {order.type}
             </span>
             <span
-              className={`text-[11px] md:text-xs font-semibold px-2 py-0.5 rounded-full ${order.paymentPaid ? "bg-[#E1F5E7] text-[#16a34a]" : "bg-[#E9D0D0] text-[#6D1505]"}`}>
+              className={`text-[12px] font-semibold px-[8px] py-[2px] rounded-full ${order.paymentPaid ? "bg-[#E1F5E7] text-[#16a34a]" : "bg-[#E9D0D0] text-[#6D1505]"}`}>
               {order.paymentStatus}
             </span>
           </div>
         </div>
         {!order.paymentPaid && (
-          <button className="bg-accent text-white font-bold text-xs md:text-[13px] px-4 md:px-5 py-2 rounded-md hover:bg-primary transition-colors shrink-0 cursor-pointer w-full sm:w-auto">
+          <button className="bg-[#4895E8] text-white font-bold text-[13px] px-[20px] py-[8px] rounded-[6px] hover:bg-[#042c5a] transition-colors shrink-0 cursor-pointer">
             {t("orders.card.payNow")}
           </button>
         )}
       </div>
 
-      {/* Positions */}
-      <div className="divide-y divide-muted">
+      <div className="divide-y divide-[#f1f5f9]">
         {order.positions.map((pos, i) => (
-          <div key={i} className="px-4 md:px-5 py-3 md:py-[14px] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 md:gap-4">
-            <div className="min-w-0">
-              <p className="font-bold text-foreground text-sm mb-1.5 break-words">{pos.address}</p>
-              <div className="flex items-center gap-2 md:gap-3 flex-wrap">
-                <span className="flex rounded-sm pr-1.5 border border-secondary items-center gap-1.5 font-semibold text-primary text-[11px] md:text-xs">
-                  <span className="flex items-center justify-center w-7 h-7 bg-secondary rounded-sm shrink-0">
+          <div key={i} className="px-[20px] py-[14px] flex items-center justify-between gap-[16px]">
+            <div>
+              <p className="font-bold text-[#000] text-[14px] mb-[6px]">{pos.address}</p>
+              <div className="flex items-center gap-[12px] flex-wrap">
+                <span className="flex rounded-[1px] pr-[6px] border border-[#E4F1FF] items-center gap-[8px] font-semibold text-[#05376D] text-[12px]">
+                  <span className="flex items-center justify-center w-[28px] h-[28px] bg-[#E4F1FF] rounded-[1px] shrink-0">
                     <DateIcon />
                   </span>
                   {pos.date}
                 </span>
-                <span className="flex rounded-sm pr-1.5 border border-secondary items-center gap-1.5 font-semibold text-primary text-[11px] md:text-xs">
-                  <span className="flex items-center justify-center w-7 h-7 bg-secondary rounded-sm shrink-0">
+                <span className="flex rounded-[1px] pr-[6px] border border-[#E4F1FF] items-center gap-[8px] font-semibold text-[#05376D] text-[12px]">
+                  <span className="flex items-center justify-center w-[28px] h-[28px] bg-[#E4F1FF] rounded-[1px] shrink-0">
                     <ContainerSmallIcon />
                   </span>
                   {pos.container}
                 </span>
-                <span className="flex rounded-sm pr-1.5 border border-secondary items-center gap-1.5 font-semibold text-primary text-[11px] md:text-xs">
-                  <span className="flex items-center justify-center w-7 h-7 bg-secondary rounded-sm shrink-0">
+                <span className="flex rounded-[1px] pr-[6px] border border-[#E4F1FF] items-center gap-[8px] font-semibold text-[#05376D] text-[12px]">
+                  <span className="flex items-center justify-center w-[28px] h-[28px] bg-[#E4F1FF] rounded-[1px] shrink-0">
                     <PriceIcon />
                   </span>
                   {pos.price}
                 </span>
               </div>
             </div>
-            <button className="border border-accent text-primary font-semibold text-xs px-3 py-1.5 rounded-sm hover:bg-secondary transition-colors shrink-0 cursor-pointer whitespace-nowrap w-full sm:w-auto">
+            <button className="border border-[#4895E8] text-[#05376D] font-semibold text-[12px] px-[14px] py-[7px] rounded-[2px] hover:bg-[#e8f1fb] transition-colors shrink-0 cursor-pointer whitespace-nowrap">
               {t("orders.card.replaceContainer")}
             </button>
           </div>
         ))}
       </div>
 
-      {/* Actions */}
-      <div className="px-4 md:px-5 py-3 md:py-[14px] border-t border-muted grid grid-cols-1 sm:grid-cols-4 gap-2 md:gap-[10px]">
+      <div className="px-[20px] py-[14px] border-t border-[#f1f5f9] grid grid-cols-4 gap-[10px]">
         <button
           onClick={() => navigate(`/order/${order.id}`)}
-          className="bg-primary text-primary-foreground font-bold text-xs md:text-[13px] py-2.5 rounded-sm hover:bg-primary/90 transition-colors cursor-pointer">
+          className="bg-[#05376d] text-white font-bold text-[13px] py-[10px] rounded-[2px] hover:bg-[#042c5a] transition-colors cursor-pointer">
           {t("orders.card.viewOrder")}
         </button>
-        <button className="border border-accent text-primary font-semibold text-xs md:text-[13px] py-2.5 rounded-sm hover:bg-secondary transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+        <button className="border border-[#4895E8] text-[#05376D] font-semibold text-[13px] py-[10px] rounded-[2px] hover:bg-[#f8faff] transition-colors flex items-center justify-center gap-[6px] cursor-pointer">
           <DownloadIcon /> {t("orders.card.invoice")}
         </button>
-        <button className="border border-accent text-primary font-semibold text-xs md:text-[13px] py-2.5 rounded-sm hover:bg-secondary transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+        <button className="border border-[#4895E8] text-[#05376D] font-semibold text-[13px] py-[10px] rounded-[2px] hover:bg-[#f8faff] transition-colors flex items-center justify-center gap-[6px] cursor-pointer">
           <DownloadIcon /> {t("orders.card.receipt")}
         </button>
-        <button className="bg-accent text-accent-foreground font-bold text-xs md:text-[13px] py-2.5 rounded-md hover:bg-accent/80 transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+        <button className="bg-[#4a90d9] text-white font-bold text-[13px] py-[10px] rounded-[6px] hover:bg-[#357abd] transition-colors flex items-center justify-center gap-[6px] cursor-pointer">
           <ReorderIcon /> {t("orders.card.reorder")}
         </button>
       </div>

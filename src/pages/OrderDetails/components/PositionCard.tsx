@@ -142,21 +142,21 @@ export const PositionCard: FC<PositionCardProps> = ({
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 sm:divide-x divide-y sm:divide-y-0 divide-border">
+              <div className="grid grid-cols-3 divide-x divide-[#dde8f5]">
                 {[
                   { label: t("orderDetail.position.orderedAt"), value: position.orderedAt },
                   { label: t("orderDetail.position.pickupAt"), value: position.pickupAt },
                   { label: t("orderDetail.position.deliverAt"), value: position.deliverAt },
                 ].map(({ label, value }) => (
-                  <div key={label} className="flex items-center gap-2.5 px-3 md:px-[14px] py-3">
-                    <div className="w-9 h-9 bg-secondary rounded-md flex items-center justify-center shrink-0">
+                  <div key={label} className="flex items-center gap-[10px] px-[14px] py-[13px]">
+                    <div className="w-[36px] h-[36px] bg-[#E4F1FF] rounded-[6px] flex items-center justify-center shrink-0">
                       <TimeIcon />
                     </div>
                     <div>
-                      <p className="text-muted-foreground text-[11px] font-semibold uppercase tracking-wide mb-0.5">
+                      <p className="text-[#94a3b8] text-[11px] font-semibold uppercase tracking-wide mb-[2px]">
                         {label}
                       </p>
-                      <p className="text-foreground/80 text-[13px] font-medium">{value}</p>
+                      <p className="text-[#1e293b] text-[13px] font-medium">{value}</p>
                     </div>
                   </div>
                 ))}

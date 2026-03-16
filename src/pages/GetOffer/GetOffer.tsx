@@ -58,8 +58,8 @@ const GetOffer = () => {
 
   return (
     <MainLayout>
-      <div className="bg-background w-full">
-        <Navbar variant="light" />
+      <div className="bg-primary w-full">
+        <Navbar variant="dark" />
       </div>
 
       <div className="bg-nikami-light-blue px-4 sm:px-8 md:px-16 lg:px-28 py-12 md:py-20">
