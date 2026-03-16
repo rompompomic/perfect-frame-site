@@ -911,7 +911,13 @@
       "phone": "Telefona numurs",
       "email": "E-pasts",
       "isPayer": "Nosūtītājs ir Maksātājs",
-      "isPayerAndTransporter": "Nosūtītājs ir Maksātājs un Pārvadātājs"
+      "isPayerAndTransporter": "Nosūtītājs ir Maksātājs un Pārvadātājs",
+      "searchCompany": "Meklēt kompāniju pēc reģistrācijas numura vai nosaukuma",
+      "companyName": "Uzņēmuma nosaukums",
+      "regNumber": "Reģistrācijas numurs",
+      "vatNumber": "PVN maksātāja nr.",
+      "responsiblePerson": "Atbildīgā persona",
+      "wasteAddress": "Atkritumu izvešanas adrese"
     },
     "wasteCards": {
       "title": "Šķirošanas laukumā pieņemam:",
