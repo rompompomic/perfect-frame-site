@@ -142,11 +142,11 @@ const WasteSubmission = () => {
             </div>
           </div>
 
-          {/* Transporter */}
-          <TransporterSection senderRole={senderRole} onSenderRoleChange={setSenderRole} />
-
           {/* Payer - shown when sender is only payer (not also transporter) */}
           {senderRole === "payer" && <PayerSection />}
+
+          {/* Transporter */}
+          <TransporterSection senderRole={senderRole} onSenderRoleChange={setSenderRole} />
 
           {/* Consent checkboxes */}
           <div className="flex flex-col gap-3">
