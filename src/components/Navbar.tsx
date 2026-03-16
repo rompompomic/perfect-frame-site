@@ -12,8 +12,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
-  DropdownMenuTrigger } from
-"@/components/ui/dropdown-menu";
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useAuthModal } from "@/features/AuthModal/UseAuthModal";
 import { AuthModal } from "@/features/AuthModal/AuthModal";
 
@@ -53,8 +53,8 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
           <img
             src={isLight ? logoBlack : logoWhite}
             alt="NIKAMI logo"
-            className="w-full h-full object-contain" />
-          
+            className="w-full h-full object-contain"
+          />
         </Link>
 
         {/* Desktop contact & actions */}
@@ -90,11 +90,11 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
               className={`px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${btnOutlineText} text-base font-semibold leading-6`}>
               {t("navbar.getOffer")}
             </button>
-            
-
-
-
-            
+            <button
+              onClick={() => auth.open("signin")}
+              className={`px-4 py-3 bg-primary rounded-sm text-white text-base font-semibold leading-6`}>
+              {t("navbar.login")}
+            </button>
           </div>
           <button className="relative px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue flex items-center gap-2.5">
             <ShoppingCart className="w-5 h-5 text-nikami-blue" onClick={() => navigate("/cart")} />
@@ -124,9 +124,9 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
       </div>
 
       {/* Mobile menu */}
-      {mobileMenuOpen &&
-      <div
-        className={`md:hidden self-stretch flex flex-col gap-4 pt-4 pb-2 border-t ${borderColor} animate-in slide-in-from-top-2 duration-200`}>
+      {mobileMenuOpen && (
+        <div
+          className={`md:hidden self-stretch flex flex-col gap-4 pt-4 pb-2 border-t ${borderColor} animate-in slide-in-from-top-2 duration-200`}>
           {/* Contact info */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
@@ -148,34 +148,34 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
           {/* Nav links */}
           <div className="flex flex-col gap-3">
             <Link
-            to="/par-mums"
-            className={`${textColor} text-base font-medium cursor-pointer hover:opacity-80`}>
+              to="/par-mums"
+              className={`${textColor} text-base font-medium cursor-pointer hover:opacity-80`}>
               {t("navbar.about")}
             </Link>
             <button
-            onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-            className={`flex items-center gap-1 ${textColor} text-base font-semibold cursor-pointer hover:opacity-80`}>
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              className={`flex items-center gap-1 ${textColor} text-base font-semibold cursor-pointer hover:opacity-80`}>
               {t("navbar.services")}
               <ChevronDown
-              className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
-            
+                className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
+              />
             </button>
-            {mobileServicesOpen &&
-          <div className="pl-4 flex flex-col gap-2">
+            {mobileServicesOpen && (
+              <div className="pl-4 flex flex-col gap-2">
                 {[
-            t("navbar.serviceLinks.containerRental"),
-            t("navbar.serviceLinks.sortingArea"),
-            t("navbar.serviceLinks.constructionWaste"),
-            t("navbar.serviceLinks.demolition"),
-            t("navbar.serviceLinks.snowRemoval"),
-            t("navbar.serviceLinks.greenCertificates")].
-            map((label, index) =>
-            <span
-              key={index}
-              className={`${mobileSubText} text-sm font-medium cursor-pointer hover:opacity-80`}>
+                  t("navbar.serviceLinks.containerRental"),
+                  t("navbar.serviceLinks.sortingArea"),
+                  t("navbar.serviceLinks.constructionWaste"),
+                  t("navbar.serviceLinks.demolition"),
+                  t("navbar.serviceLinks.snowRemoval"),
+                  t("navbar.serviceLinks.greenCertificates"),
+                ].map((label, index) => (
+                  <span
+                    key={index}
+                    className={`${mobileSubText} text-sm font-medium cursor-pointer hover:opacity-80`}>
                     {label}
                   </span>
-            )}
+                ))}
                 <div className={`h-px ${dividerBg} my-1`} />
                 <div className="flex items-center gap-2 cursor-pointer hover:opacity-80">
                   <img src={discountIcon} alt="Akcijas" className="w-5 h-5" />
@@ -184,10 +184,10 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
                   </span>
                 </div>
               </div>
-          }
+            )}
             <Link
-            to="/kontakti"
-            className={`${textColor} text-base font-semibold cursor-pointer hover:opacity-80`}>
+              to="/kontakti"
+              className={`${textColor} text-base font-semibold cursor-pointer hover:opacity-80`}>
               {t("navbar.contacts")}
             </Link>
           </div>
@@ -197,18 +197,18 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
           {/* Language switcher */}
           <div className="flex items-center gap-4">
             <span
-            className={`${textColor} text-sm font-semibold ${i18n.language === "lv" ? "opacity-40" : "cursor-pointer hover:opacity-80"}`}
-            onClick={() => i18n.language !== "lv" && changeLanguage("lv")}>
+              className={`${textColor} text-sm font-semibold ${i18n.language === "lv" ? "opacity-40" : "cursor-pointer hover:opacity-80"}`}
+              onClick={() => i18n.language !== "lv" && changeLanguage("lv")}>
               LV
             </span>
             <span
-            className={`${textColor} text-sm font-semibold ${i18n.language === "en" ? "opacity-40" : "cursor-pointer hover:opacity-80"}`}
-            onClick={() => i18n.language !== "en" && changeLanguage("en")}>
+              className={`${textColor} text-sm font-semibold ${i18n.language === "en" ? "opacity-40" : "cursor-pointer hover:opacity-80"}`}
+              onClick={() => i18n.language !== "en" && changeLanguage("en")}>
               EN
             </span>
             <span
-            className={`${textColor} text-sm font-semibold ${i18n.language === "ru" ? "opacity-40" : "cursor-pointer hover:opacity-80"}`}
-            onClick={() => i18n.language !== "ru" && changeLanguage("ru")}>
+              className={`${textColor} text-sm font-semibold ${i18n.language === "ru" ? "opacity-40" : "cursor-pointer hover:opacity-80"}`}
+              onClick={() => i18n.language !== "ru" && changeLanguage("ru")}>
               RU
             </span>
           </div>
@@ -216,23 +216,23 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
           {/* CTA buttons */}
           <div className="flex flex-col gap-2">
             <button
-            onClick={() => navigate("/order-container")}
-            className={`w-full px-4 py-3 ${btnPrimaryBg} rounded-sm ${btnPrimaryText} text-sm font-semibold`}>
+              onClick={() => navigate("/order-container")}
+              className={`w-full px-4 py-3 ${btnPrimaryBg} rounded-sm ${btnPrimaryText} text-sm font-semibold`}>
               {t("navbar.orderContainer")}
             </button>
             <button
-            onClick={() => navigate("/sanemt-piedavajumu")}
-            className={`w-full px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${btnOutlineText} text-sm font-semibold`}>
+              onClick={() => navigate("/sanemt-piedavajumu")}
+              className={`w-full px-4 py-3 rounded-sm outline outline-1 outline-nikami-blue ${btnOutlineText} text-sm font-semibold`}>
               {t("navbar.getOffer")}
             </button>
             <button
-            onClick={() => auth.open("signin")}
-            className={`w-full px-4 py-3 bg-primary rounded-sm text-white text-sm font-semibold`}>
+              onClick={() => auth.open("signin")}
+              className={`w-full px-4 py-3 bg-primary rounded-sm text-white text-sm font-semibold`}>
               {t("navbar.login")}
             </button>
           </div>
         </div>
-      }
+      )}
 
       {/* Desktop bottom bar */}
       <div className="hidden md:block self-stretch">
@@ -253,18 +253,18 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="px-6 py-3 bg-secondary rounded-xs shadow-[0px_2px_12px_0px_rgba(0,0,0,0.15)] flex flex-col gap-2 min-w-[220px]">
                 {[
-                { label: t("navbar.serviceLinks.containerRental"), to: "/order-container" },
-                { label: t("navbar.serviceLinks.sortingArea"), to: "/skirosanas-laukumi" },
-                { label: t("navbar.serviceLinks.constructionWaste"), to: "/buvgruzu-izvesana" },
-                { label: t("navbar.serviceLinks.demolition"), to: "/demontaza" },
-                { label: t("navbar.serviceLinks.snowRemoval"), to: "/sniega-tirisana" }].
-                map((item, index) =>
-                <DropdownMenuItem
-                  key={index}
-                  className="text-primary text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
+                  { label: t("navbar.serviceLinks.containerRental"), to: "/order-container" },
+                  { label: t("navbar.serviceLinks.sortingArea"), to: "/skirosanas-laukumi" },
+                  { label: t("navbar.serviceLinks.constructionWaste"), to: "/buvgruzu-izvesana" },
+                  { label: t("navbar.serviceLinks.demolition"), to: "/demontaza" },
+                  { label: t("navbar.serviceLinks.snowRemoval"), to: "/sniega-tirisana" },
+                ].map((item, index) => (
+                  <DropdownMenuItem
+                    key={index}
+                    className="text-primary text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
                     <Link to={item.to}>{item.label}</Link>
                   </DropdownMenuItem>
-                )}
+                ))}
                 <DropdownMenuItem className="text-primary text-base font-bold leading-6 cursor-pointer px-0 py-0 focus:bg-transparent hover:opacity-70">
                   <Link to="/sertifikati">
                     {t("navbar.serviceLinks.greenCertificates")}
@@ -320,10 +320,10 @@ const Navbar = ({ variant = "dark" }: NavbarProps) => {
         navigate={auth.navigate}
         onClose={auth.close}
         phone={auth.phone}
-        setPhone={auth.setPhone} />
-      
-    </nav>);
-
+        setPhone={auth.setPhone}
+      />
+    </nav>
+  );
 };
 
 export default Navbar;
