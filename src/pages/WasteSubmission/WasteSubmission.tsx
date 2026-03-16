@@ -52,7 +52,7 @@ const WasteSubmission = () => {
           </h1>
 
           {/* Sender */}
-          <SenderSection />
+          <SenderSection senderRole={senderRole} onSenderRoleChange={setSenderRole} />
 
           {/* Waste Cards inside sender box */}
           <div className="p-4 sm:p-6 md:p-10 bg-secondary flex flex-col gap-6 sm:gap-8">
@@ -142,11 +142,11 @@ const WasteSubmission = () => {
             </div>
           </div>
 
-          {/* Transporter */}
-          <TransporterSection senderRole={senderRole} onSenderRoleChange={setSenderRole} />
-
           {/* Payer - shown when sender is only payer (not also transporter) */}
           {senderRole === "payer" && <PayerSection />}
+
+          {/* Transporter */}
+          <TransporterSection senderRole={senderRole} onSenderRoleChange={setSenderRole} />
 
           {/* Consent checkboxes */}
           <div className="flex flex-col gap-3">
