@@ -62,11 +62,11 @@ export default function OrdersPage() {
             </button>
           </div>
 
-          <section className="mb-[40px]">
-            <h2 className="font-black text-[#000] text-[32px] uppercase tracking-wide mb-[16px]">
+          <section className="mb-8 md:mb-10">
+            <h2 className="font-black text-foreground text-xl md:text-[32px] uppercase tracking-wide mb-3 md:mb-4">
               {t("orders.activeOrders")}
             </h2>
-            <div className="flex flex-col gap-[16px]">
+            <div className="flex flex-col gap-3 md:gap-4">
               {orders.map((order) => (
                 <OrderCard key={order.id} order={order} navigate={navigate} />
               ))}
@@ -74,10 +74,10 @@ export default function OrdersPage() {
           </section>
 
           <section>
-            <h2 className="font-black text-[#000] text-[32px] uppercase tracking-wide mb-[16px]">
+            <h2 className="font-black text-foreground text-xl md:text-[32px] uppercase tracking-wide mb-3 md:mb-4">
               {t("orders.orderArchive")}
             </h2>
-            <div className="flex flex-col gap-[16px]">
+            <div className="flex flex-col gap-3 md:gap-4">
               {archiveOrders.map((order) => (
                 <OrderCard key={order.id} order={order} navigate={navigate} />
               ))}
