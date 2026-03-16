@@ -77,15 +77,15 @@ export default function InvoicesPage() {
             </section>
           )}
         </div>
-
-        {selected.size > 0 && (
-          <SelectionBar
-            count={selected.size}
-            total={MOCK_INVOICES.length}
-            onClose={() => setSelected(new Set())}
-          />
-        )}
       </div>
+
+      {selected.size > 0 && (
+        <SelectionBar
+          count={selected.size}
+          total={MOCK_INVOICES.length}
+          onClose={() => setSelected(new Set())}
+        />
+      )}
     </MainLayout>
   );
 }
