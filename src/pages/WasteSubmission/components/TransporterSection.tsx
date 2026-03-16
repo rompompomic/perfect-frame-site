@@ -88,7 +88,7 @@ const TransporterSection = ({ senderRole, onSenderRoleChange }: TransporterSecti
           </label>
           <label
             className="flex items-center gap-2 cursor-pointer"
-            onClick={() => setSenderRole("payerAndTransporter")}
+            onClick={() => onSenderRoleChange("payerAndTransporter")}
           >
             <div className="w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center">
               <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
