@@ -45,6 +45,7 @@ const App = () => (
           <Route path="/buvgruzu-izvesana" element={<SortingArea />} />
           <Route path="/sniega-tirisana" element={<SnowRemoval />} />
           <Route path="/skirosanas-laukumi" element={<SortingAreaPage />} />
+          <Route path="/atkritumu-nodosana" element={<WasteSubmission />} />
           <Route path="/sanemt-piedavajumu" element={<GetOffer />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/profile" element={<ProfilePage />} />
