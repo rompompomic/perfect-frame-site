@@ -919,6 +919,13 @@
       "responsiblePerson": "Atbildīgā persona",
       "wasteAddress": "Atkritumu izvešanas adrese"
     },
+    "payer": {
+      "title": "Maksātājs",
+      "responsiblePerson": "Atbildīgā persona",
+      "personalCode": "Personas kods",
+      "email": "E-pasts",
+      "phone": "Telefona numurs"
+    },
     "wasteCards": {
       "title": "Šķirošanas laukumā pieņemam:",
       "noticeTitle": "Ievērībai!",

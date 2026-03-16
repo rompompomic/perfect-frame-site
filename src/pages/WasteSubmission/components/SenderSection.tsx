@@ -4,8 +4,11 @@ import { useTranslation } from "react-i18next";
 type PersonType = "physical" | "legal";
 type SenderRole = "payer" | "payerAndTransporter";
 
+interface SenderSectionProps {
+  onPersonTypeChange?: (type: PersonType) => void;
+}
 
-const SenderSection = () => {
+const SenderSection = ({ onPersonTypeChange }: SenderSectionProps) => {
   const { t } = useTranslation();
   const [personType, setPersonType] = useState<PersonType>("physical");
   const [senderRole, setSenderRole] = useState<SenderRole>("payerAndTransporter");
@@ -13,14 +16,6 @@ const SenderSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     personalCode: "",
-    phone: "",
-    email: "",
-  });
-
-  const [legalData, setLegalData] = useState({
-    responsiblePerson: "",
-    personalCode: "",
-    email: "",
     phone: "",
   });
 
@@ -32,12 +27,9 @@ const SenderSection = () => {
     setFormData((prev) => ({ ...prev, [field]: "" }));
   };
 
-  const updateLegalField = (field: string, value: string) => {
-    setLegalData((prev) => ({ ...prev, [field]: value }));
-  };
-
-  const clearLegalField = (field: string) => {
-    setLegalData((prev) => ({ ...prev, [field]: "" }));
+  const handlePersonTypeChange = (type: PersonType) => {
+    setPersonType(type);
+    onPersonTypeChange?.(type);
   };
 
   return (
@@ -49,7 +41,7 @@ const SenderSection = () => {
       {/* Person type toggle */}
       <div className="inline-flex w-fit border border-primary">
         <button
-          onClick={() => setPersonType("physical")}
+          onClick={() => handlePersonTypeChange("physical")}
           className={`h-10 sm:h-11 px-3 sm:px-4 py-2 sm:py-3 flex items-center gap-1.5 sm:gap-2 border-r border-primary ${
             personType === "physical" ? "bg-primary" : ""
           }`}
@@ -72,7 +64,7 @@ const SenderSection = () => {
           </span>
         </button>
         <button
-          onClick={() => setPersonType("legal")}
+          onClick={() => handlePersonTypeChange("legal")}
           className={`h-10 sm:h-11 px-3 sm:px-4 py-2 sm:py-3 flex items-center gap-1.5 sm:gap-2 ${
             personType === "legal" ? "bg-primary" : ""
           }`}
@@ -96,9 +88,9 @@ const SenderSection = () => {
         </button>
       </div>
 
-      {/* Form fields */}
-      <div className="flex flex-col gap-5 sm:gap-7">
-        {personType === "physical" ? (
+      {/* Form fields - only for physical person */}
+      {personType === "physical" && (
+        <div className="flex flex-col gap-5 sm:gap-7">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <FormField
               label={t("wasteSubmission.sender.name")}
@@ -121,85 +113,43 @@ const SenderSection = () => {
               onChange={(v) => updateField("personalCode", v)}
               onClear={() => clearField("personalCode")}
             />
-            <FormField
-              label={t("wasteSubmission.sender.email")}
-              required
-              value={formData.email}
-              onChange={(v) => updateField("email", v)}
-              onClear={() => clearField("email")}
-            />
           </div>
-        ) : (
-          <div className="flex flex-col gap-3">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              <FormField
-                label={t("wasteSubmission.sender.responsiblePerson")}
-                required
-                value={legalData.responsiblePerson}
-                onChange={(v) => updateLegalField("responsiblePerson", v)}
-                onClear={() => clearLegalField("responsiblePerson")}
-              />
-              <FormField
-                label={t("wasteSubmission.sender.personalCode")}
-                required
-                value={legalData.personalCode}
-                onChange={(v) => updateLegalField("personalCode", v)}
-                onClear={() => clearLegalField("personalCode")}
-              />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              <FormField
-                label={t("wasteSubmission.sender.email")}
-                required
-                value={legalData.email}
-                onChange={(v) => updateLegalField("email", v)}
-                onClear={() => clearLegalField("email")}
-              />
-              <FormField
-                label={t("wasteSubmission.sender.phone")}
-                required
-                value={legalData.phone}
-                onChange={(v) => updateLegalField("phone", v)}
-                onClear={() => clearLegalField("phone")}
-              />
-            </div>
-          </div>
-        )}
 
-        {/* Sender role radio */}
-        <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row">
-          <label
-            className="flex items-center gap-2 cursor-pointer"
-            onClick={() => setSenderRole("payer")}
-          >
-            <div className="w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center">
-              <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
-                {senderRole === "payer" && (
-                  <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 bg-nikami-blue rounded-full" />
-                )}
+          {/* Sender role radio */}
+          <div className="flex flex-col gap-3 sm:gap-4 sm:flex-row">
+            <label
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={() => setSenderRole("payer")}
+            >
+              <div className="w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center">
+                <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
+                  {senderRole === "payer" && (
+                    <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 bg-nikami-blue rounded-full" />
+                  )}
+                </div>
               </div>
-            </div>
-            <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
-              {t("wasteSubmission.sender.isPayer")}
-            </span>
-          </label>
-          <label
-            className="flex items-center gap-2 cursor-pointer"
-            onClick={() => setSenderRole("payerAndTransporter")}
-          >
-            <div className="w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center">
-              <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
-                {senderRole === "payerAndTransporter" && (
-                  <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 bg-nikami-blue rounded-full" />
-                )}
+              <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
+                {t("wasteSubmission.sender.isPayer")}
+              </span>
+            </label>
+            <label
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={() => setSenderRole("payerAndTransporter")}
+            >
+              <div className="w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center">
+                <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full border-[1.33px] border-nikami-blue flex items-center justify-center">
+                  {senderRole === "payerAndTransporter" && (
+                    <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 bg-nikami-blue rounded-full" />
+                  )}
+                </div>
               </div>
-            </div>
-            <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
-              {t("wasteSubmission.sender.isPayerAndTransporter")}
-            </span>
-          </label>
+              <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
+                {t("wasteSubmission.sender.isPayerAndTransporter")}
+              </span>
+            </label>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
@@ -239,4 +189,5 @@ const FormField = ({
   </div>
 );
 
+export { FormField };
 export default SenderSection;

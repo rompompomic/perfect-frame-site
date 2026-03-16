@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import WeChatButton from "@/components/WeChatButton";
 import SenderSection from "./components/SenderSection";
+import PayerSection from "./components/PayerSection";
 import WasteCardsSection from "./components/WasteCardsSection";
 import TransporterSection from "./components/TransporterSection";
 import uploadIcon from "@/assets/icons/upload.svg";
@@ -16,6 +17,7 @@ const WasteSubmission = () => {
   const [photos, setPhotos] = useState<{ file: File; preview: string }[]>([]);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [marketingAccepted, setMarketingAccepted] = useState(false);
+  const [personType, setPersonType] = useState<"physical" | "legal">("physical");
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -50,7 +52,7 @@ const WasteSubmission = () => {
           </h1>
 
           {/* Sender */}
-          <SenderSection />
+          <SenderSection onPersonTypeChange={setPersonType} />
 
           {/* Waste Cards inside sender box */}
           <div className="p-4 sm:p-6 md:p-10 bg-secondary flex flex-col gap-6 sm:gap-8">
@@ -141,6 +143,9 @@ const WasteSubmission = () => {
               </div>
             </div>
           </div>
+
+          {/* Payer section - only for legal person */}
+          {personType === "legal" && <PayerSection />}
 
           {/* Transporter */}
           <TransporterSection />
