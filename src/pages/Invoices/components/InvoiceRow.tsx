@@ -55,7 +55,7 @@ function InvoiceRow({
         <button className="bg-primary text-primary-foreground text-[12px] font-semibold px-4 py-2 rounded-[2px] hover:opacity-90 transition-colors whitespace-nowrap flex-1 sm:flex-none">
           {t("invoices.row.view")}
         </button>
-        <button className="flex items-center justify-center gap-1.5 border border-[hsl(var(--ring))] text-primary text-[12px] font-bold px-3 py-2 rounded-[2px] hover:bg-accent transition-colors whitespace-nowrap flex-1 sm:flex-none">
+        <button className="flex items-center justify-center gap-1.5 border border-nikami-blue text-primary text-[12px] font-bold px-3 py-2 rounded-[2px] hover:bg-nikami-light-blue transition-colors whitespace-nowrap flex-1 sm:flex-none">
           <DownloadIcon /> {t("invoices.row.download")}
         </button>
         {invoice.status === "awaiting" && (
