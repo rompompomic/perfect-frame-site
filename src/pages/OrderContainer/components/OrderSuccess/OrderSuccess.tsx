@@ -17,7 +17,7 @@ export function OrderSuccess({ onGoToOrders }: Props) {
         onClick={onGoToOrders}
         className="bg-[#05376D] text-white font-semibold text-sm px-5 py-3 rounded-[4px] flex items-center gap-3 hover:bg-[#15305a] transition-colors">
         <span>{t("orderContainer.success.goToOrders")}</span>
-        <img src={ArrowRightIcon} alt="Arrow" className="w-4 h-4 brightness-0 invert" />
+        <img src={ArrowRightIcon} alt="Arrow" className="w-4 h-4 [filter:brightness(0)_saturate(100%)_invert(18%)_sepia(96%)_saturate(1000%)_hue-rotate(190deg)_brightness(90%)_contrast(95%)]" />
       </button>
     </div>
   );
