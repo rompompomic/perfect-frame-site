@@ -61,7 +61,7 @@ const SenderSection = () => {
       </h2>
 
       {/* Person type toggle */}
-      <div className="inline-flex border border-primary">
+      <div className="inline-flex w-fit border border-primary">
         <button
           onClick={() => setPersonType("physical")}
           className={`h-11 px-4 py-3 flex items-center gap-2 border-r border-primary ${
