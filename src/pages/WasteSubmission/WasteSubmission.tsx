@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
-import MainLayout from "@/components/MainLayout";
 import WeChatButton from "@/components/WeChatButton";
 import SenderSection from "./components/SenderSection";
 import WasteCardsSection from "./components/WasteCardsSection";
@@ -42,10 +41,10 @@ const WasteSubmission = () => {
       <div className="bg-background">
         <Navbar variant="light" />
       </div>
-      <section className="px-4 sm:px-6 lg:px-28 pt-14 pb-20">
-        <div className="max-w-[1200px] mx-auto flex flex-col gap-10">
+      <section className="px-4 sm:px-6 md:px-10 lg:px-28 pt-8 sm:pt-14 pb-12 sm:pb-20">
+        <div className="max-w-[1200px] mx-auto flex flex-col gap-6 sm:gap-8 lg:gap-10">
           {/* Title */}
-          <h1 className="text-primary text-3xl sm:text-4xl lg:text-6xl font-black uppercase leading-tight lg:leading-[58px]">
+          <h1 className="text-primary text-2xl sm:text-4xl lg:text-6xl font-black uppercase leading-tight lg:leading-[58px]">
             {t("wasteSubmission.title")}
           </h1>
 
@@ -53,7 +52,7 @@ const WasteSubmission = () => {
           <SenderSection />
 
           {/* Waste Cards inside sender box */}
-          <div className="p-6 sm:p-10 bg-secondary flex flex-col gap-8">
+          <div className="p-4 sm:p-6 md:p-10 bg-secondary flex flex-col gap-6 sm:gap-8">
             <WasteCardsSection />
 
             {/* Materials acknowledgment */}
@@ -72,7 +71,7 @@ const WasteSubmission = () => {
                   </svg>
                 )}
               </div>
-              <span className="text-foreground text-base font-bold leading-6">
+              <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
                 {t("wasteSubmission.materialsAck")}{" "}
                 <span className="text-primary underline cursor-pointer">
                   {t("wasteSubmission.materialsAckLink")}
@@ -83,26 +82,26 @@ const WasteSubmission = () => {
 
             {/* Notes */}
             <div className="flex flex-col gap-0.5">
-              <label className="pl-2.5 text-foreground text-base font-bold leading-6">
+              <label className="pl-2.5 text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
                 {t("wasteSubmission.notes")}
               </label>
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 placeholder={t("wasteSubmission.notesPlaceholder")}
-                className="w-full h-36 px-5 pt-5 bg-background rounded-xs border border-border text-base font-medium leading-6 text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:border-nikami-blue"
+                className="w-full h-28 sm:h-36 px-4 sm:px-5 pt-4 sm:pt-5 bg-background rounded-xs border border-border text-sm sm:text-base font-medium leading-5 sm:leading-6 text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:border-nikami-blue"
               />
             </div>
 
             {/* Photo upload */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
               <div className="flex flex-col gap-0.5">
                 <button
                   onClick={handlePhotoUpload}
-                  className="px-8 py-3 rounded-xs border border-nikami-blue flex items-center gap-2.5 hover:opacity-80 transition-opacity"
+                  className="px-6 sm:px-8 py-3 rounded-xs border border-nikami-blue flex items-center gap-2.5 hover:opacity-80 transition-opacity"
                 >
                   <img src={uploadIcon} alt="" className="w-5 h-5" />
-                  <span className="text-primary text-base font-semibold leading-6">
+                  <span className="text-primary text-sm sm:text-base font-semibold leading-6">
                     {t("wasteSubmission.uploadPhoto")}
                   </span>
                 </button>
@@ -111,7 +110,7 @@ const WasteSubmission = () => {
                 </span>
               </div>
               {photos.length > 0 && (
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
                   {photos.map((photo, i) => (
                     <div key={i} className="w-11 h-11 relative">
                       <img
@@ -152,7 +151,7 @@ const WasteSubmission = () => {
                   </svg>
                 )}
               </div>
-              <span className="text-foreground text-base font-bold leading-6">
+              <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
                 {t("wasteSubmission.privacyText")}{" "}
                 <span className="text-primary underline cursor-pointer">
                   {t("wasteSubmission.privacyLink")}
@@ -175,7 +174,7 @@ const WasteSubmission = () => {
                   </svg>
                 )}
               </div>
-              <span className="text-foreground text-base font-bold leading-6">
+              <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
                 {t("wasteSubmission.marketingText")}
               </span>
             </label>
@@ -183,9 +182,9 @@ const WasteSubmission = () => {
 
           {/* Submit button */}
           <div className="flex">
-            <button className="flex-1 flex">
-              <div className="flex-1 px-8 py-3 bg-nikami-blue rounded-l-xs flex justify-center items-center hover:opacity-90 transition-opacity">
-                <span className="text-primary-foreground text-base font-semibold leading-6">
+            <button className="w-full sm:w-auto sm:min-w-[320px] flex">
+              <div className="flex-1 px-6 sm:px-8 py-3 bg-nikami-blue rounded-l-xs flex justify-center items-center hover:opacity-90 transition-opacity">
+                <span className="text-primary-foreground text-sm sm:text-base font-semibold leading-6">
                   {t("wasteSubmission.submit")}
                 </span>
               </div>

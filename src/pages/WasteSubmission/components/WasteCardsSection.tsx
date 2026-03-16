@@ -29,80 +29,75 @@ const WasteCardsSection = () => {
   ];
 
   return (
-    <div className="p-6 sm:p-10 bg-background flex flex-col gap-5">
-      <h3 className="text-foreground text-2xl sm:text-3xl font-black uppercase leading-8">
+    <div className="p-4 sm:p-6 md:p-10 bg-background flex flex-col gap-4 sm:gap-5">
+      <h3 className="text-foreground text-xl sm:text-2xl md:text-3xl font-black uppercase leading-7 sm:leading-8">
         {t("wasteSubmission.wasteCards.title")}
       </h3>
-      <p className="max-w-[810px] text-foreground text-base font-medium leading-6">
+      <p className="max-w-[810px] text-foreground text-sm sm:text-base font-medium leading-5 sm:leading-6">
         <span className="font-bold">{t("wasteSubmission.wasteCards.noticeTitle")}</span>{" "}
         {t("wasteSubmission.wasteCards.noticeText")}
       </p>
       <div className="flex flex-col gap-3">
-        {/* Cards in rows of 2 */}
-        {[0, 2, 4].map((rowStart) => (
-          <div key={rowStart} className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-            {cards.slice(rowStart, rowStart + 2).map((card, i) => {
-              const idx = rowStart + i;
-              return (
-                <div
-                  key={idx}
-                  className="h-32 border-2 border-secondary flex items-center relative"
-                >
-                  <img
-                    src={card.img}
-                    alt={t(card.titleKey)}
-                    className="w-32 h-full object-cover shrink-0"
-                  />
-                  <div className="flex-1 p-5 flex items-start gap-5">
-                    <div className="flex-1 flex flex-col justify-between h-full gap-3">
-                      <span className="text-foreground text-base font-bold leading-6">
-                        {t(card.titleKey)}
-                      </span>
-                      <button
-                        className="flex items-center gap-2"
-                        onClick={() => setOpenTooltip(openTooltip === idx ? null : idx)}
-                      >
-                        <span className="text-nikami-blue text-base font-bold underline leading-6">
-                          {t("wasteSubmission.wasteCards.materialsList")}
-                        </span>
-                        <div className="w-5 h-5 bg-secondary rounded-full flex items-center justify-center">
-                          <span className="text-nikami-blue text-xs font-bold">i</span>
-                        </div>
-                      </button>
+        {/* Mobile: 1 col, Tablet: 1 col, Desktop: 2 cols */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+          {cards.map((card, idx) => (
+            <div
+              key={idx}
+              className="min-h-[120px] sm:h-32 border-2 border-secondary flex items-stretch relative"
+            >
+              <img
+                src={card.img}
+                alt={t(card.titleKey)}
+                className="w-24 sm:w-32 h-full object-cover shrink-0"
+              />
+              <div className="flex-1 p-3 sm:p-5 flex items-start gap-3 sm:gap-5 min-w-0">
+                <div className="flex-1 flex flex-col justify-between h-full gap-2 sm:gap-3 min-w-0">
+                  <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
+                    {t(card.titleKey)}
+                  </span>
+                  <button
+                    className="flex items-center gap-2"
+                    onClick={() => setOpenTooltip(openTooltip === idx ? null : idx)}
+                  >
+                    <span className="text-nikami-blue text-sm sm:text-base font-bold underline leading-5 sm:leading-6">
+                      {t("wasteSubmission.wasteCards.materialsList")}
+                    </span>
+                    <div className="w-5 h-5 shrink-0 bg-secondary rounded-full flex items-center justify-center">
+                      <span className="text-nikami-blue text-xs font-bold">i</span>
                     </div>
-                    <div className="flex flex-col items-end shrink-0">
-                      <span className="text-primary text-xl font-bold leading-7">
-                        {card.price}
-                      </span>
-                      <span
-                        className={`text-xs font-medium leading-4 ${
-                          card.free ? "text-amber-500" : "text-foreground"
-                        }`}
-                      >
-                        {card.free
-                          ? t("wasteSubmission.wasteCards.free")
-                          : t("wasteSubmission.wasteCards.withVat")}
-                      </span>
-                    </div>
-                  </div>
-                  {/* Tooltip */}
-                  {openTooltip === idx && (
-                    <div className="absolute left-1/2 -translate-x-1/2 top-full z-20 mt-1 w-96 p-3 bg-muted rounded-xs shadow-lg flex flex-col gap-3">
-                      <div className="flex flex-col">
-                        <span className="text-foreground text-base font-bold leading-6">
-                          {t(card.titleKey)}
-                        </span>
-                        <span className="text-foreground text-xs font-medium leading-4">
-                          {t(card.materialsKey)}
-                        </span>
-                      </div>
-                    </div>
-                  )}
+                  </button>
                 </div>
-              );
-            })}
-          </div>
-        ))}
+                <div className="flex flex-col items-end shrink-0">
+                  <span className="text-primary text-base sm:text-xl font-bold leading-6 sm:leading-7">
+                    {card.price}
+                  </span>
+                  <span
+                    className={`text-xs font-medium leading-4 ${
+                      card.free ? "text-amber-500" : "text-foreground"
+                    }`}
+                  >
+                    {card.free
+                      ? t("wasteSubmission.wasteCards.free")
+                      : t("wasteSubmission.wasteCards.withVat")}
+                  </span>
+                </div>
+              </div>
+              {/* Tooltip */}
+              {openTooltip === idx && (
+                <div className="absolute left-2 sm:left-1/2 sm:-translate-x-1/2 right-2 sm:right-auto top-full z-20 mt-1 sm:w-96 p-3 bg-muted rounded-xs shadow-lg flex flex-col gap-3">
+                  <div className="flex flex-col">
+                    <span className="text-foreground text-sm sm:text-base font-bold leading-5 sm:leading-6">
+                      {t(card.titleKey)}
+                    </span>
+                    <span className="text-foreground text-xs font-medium leading-4">
+                      {t(card.materialsKey)}
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
