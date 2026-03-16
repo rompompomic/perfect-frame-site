@@ -31,17 +31,18 @@ export default function InvoicesPage() {
       <div className="bg-primary">
         <Navbar variant="light" />
       </div>
-      <div className="min-h-screen bg-[#F1F5F9]">
-        <div className="max-w-[1200px] mx-auto px-6 py-7">
-          <h1 className="text-[52px] font-black text-[#05376D] uppercase tracking-tight mb-8">
+
+      <div className="min-h-screen bg-muted">
+        <div className="mx-auto w-full max-w-[1200px] px-4 py-6 pb-40 sm:px-6 sm:py-7 sm:pb-44 md:pb-32">
+          <h1 className="mb-6 text-3xl font-black uppercase tracking-tight text-primary sm:mb-8 sm:text-[52px]">
             {t("invoices.title")}
           </h1>
 
           <FilterBar onClear={() => {}} />
 
           {awaiting.length > 0 && (
-            <section className="mb-8">
-              <h2 className="text-[32px] font-black text-[#000] uppercase tracking-wide mb-3">
+            <section className="mb-6 sm:mb-8">
+              <h2 className="mb-3 text-2xl font-black uppercase tracking-wide text-foreground sm:text-[32px]">
                 {t("invoices.awaitingPayment")}
               </h2>
               <div className="flex flex-col gap-2">
@@ -60,7 +61,7 @@ export default function InvoicesPage() {
 
           {payed.length > 0 && (
             <section>
-              <h2 className="text-[32px] font-black text-[#000] uppercase tracking-wide mb-3">
+              <h2 className="mb-3 text-2xl font-black uppercase tracking-wide text-foreground sm:text-[32px]">
                 {t("invoices.paid")}
               </h2>
               <div className="flex flex-col gap-2">
